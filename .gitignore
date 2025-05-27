@@ -1,0 +1,19 @@
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.lof
+*.lot
+*.bbl
+*.blg
+
+# VSCode settings (optional)
+.vscode/
