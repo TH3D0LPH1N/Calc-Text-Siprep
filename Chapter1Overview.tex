@@ -1,0 +1,75 @@
+\textbf{\underline{\large{Chapter 1 Overview: Review of Derivatives}}} \par
+
+The purpose of this chapter is to review the "how" of differentiation. We will review all the derivative rules learned last year in PreCalculus. In the next two chapters, we will review the "why." As a quick reference, here are those rules: 
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{align*}
+            & \text{The Power Rule: } \diff \left[u^n\right] = nu^{n - 1} \dfrac{du}{dx} \\[11pt]
+            & \text{The Product Rule: } \diff \left[u \cdot v\right] = u \cdot \dfrac{dv}{dx} + v \cdot \dfrac{du}{dx} \\[11pt]
+            & \text{The Quotient Rule: } \diff \left[\dfrac{u(x)}{v(x)}\right] = \dfrac{v \cdot \dfrac{du}{dx} - u \cdot \dfrac{dv}{dx}}{v^2} \\[11pt]
+            & \text{The Chain Rule: } \diff \left[f(g(x))\right] = f'(g(x)) \cdot g'(x)
+        \end{align*}
+        \begin{align*}
+            & \diff[\sin u] = (\cos u) \dfrac{du}{dx} && \diff[\csc u] = (-\csc u \cot u) \dfrac{du}{dx} \\[11pt] % Line 1
+            & \diff[\cos u] = (-\sin u) \dfrac{du}{dx} && \diff[\sec u] = (\sec u \tan u) \dfrac{du}{dx} \\[11pt] % Line 2
+            & \diff[\tan u] = \left(\sec^2 u\right) \dfrac{du}{dx} && \diff[\cot u] = \left(-\csc^2 u\right) \dfrac{du}{dx} \\[11pt] % Line 3
+            & \diff\left[e^u\right] = \left(e^u\right) \dfrac{du}{dx} && \diff[\ln{u}] = \left(\dfrac{1}{u}\right) \dfrac{du}{dx}\\[11pt] % Line 4
+            & \diff\left[a^u\right] = \left(a^u \cdot \ln{u}\right) \dfrac{du}{dx} && \diff\left[\log_a{u}\right] = \left(\dfrac{1}{u \cdot \ln{a}}\right) \dfrac{du}{dx} \\[11pt] % Line 5
+            & \diff\left[\sin^{-1} u\right] = \left(\dfrac{1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\csc^{-1} u\right] = \left(\dfrac{-1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] % Line 6
+            & \diff\left[\cos^{-1} u\right] = \left(\dfrac{-1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\sec^{-1} u\right] = \left(\dfrac{1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] % Line 7 
+            & \diff\left[\tan^{-1} u\right] = \left(\dfrac{1}{u^2+ 1} \right) \dfrac{du}{dx} && \diff\left[\cot^{-1} u\right] = \left(\dfrac{-1}{u^2 + 1}\right) \dfrac{du}{dx} \\[11pt] % Line 8
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+Here is a quick review from last year: \par
+
+\textbf{Identities: } While all will eventually be used somewhere in Calculus, the ones that occur most often early are the Reciprocals and Quotients, the Pythagoreans, and the Double Angle Identities. 
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            $\hfill \tan x = \dfrac{\sin x}{\cos x}; \hfill \cot x = \dfrac{\cos x}{\sin x}; \hfill \sec x = \dfrac{1}{\cos x}; \hfill \csc x = \dfrac{1}{\sin x} \hfill$ \\[11pt]
+            $\hfill \sin^2 x + \cos^2 x = 1; \hfill \tan^2 x + 1 = \sec^2 x; \hfill \cot^2 x + 1 = \csc^2 x \hfill$ \\[11pt]
+            $\hfill \sin 2x = 2\sin x \cos x; \hfill \cos 2x = \cos^2 x - \sin^2 x \hfill$ \\
+        \end{center}
+        \vspace{11pt}
+    \end{minipage}}}
+\end{center}
+
+\textbf{Inverses: } Because of the quadrants, taking an inverse yields two answers, only one of which your calculator can show.  How the second answer is found depends on the kind of inverse: 
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            $\hfill \cos^{-1} x = \left\{ \begin{array}{l}
+            \textit{calculator } \pm 2\pi n \\
+            -\textit{calculator } \pm 2\pi n
+        \end{array} \right\} \hfill \sin^{-1} x = \left\{ \begin{array}{l}
+            \textit{calculator } \pm 2\pi n \\
+            \pi - \textit{calculator } \pm 2\pi n
+        \end{array} \right\} \hfill$ \\[11pt]
+        $\tan^{-1} x = \left\{ \begin{array}{l}
+            \textit{calculator } \pm 2\pi n \\
+            \pi + \textit{calculator } \pm 2\pi n
+        \end{array} \right\} = \textit{calculator } \pm \pi n$
+        \end{center}
+        \vspace{11pt}
+    \end{minipage}}}
+\end{center}
+
+\textbf{Logarithm Rules: } Here are some logarithm rules which you should recall:
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \begin{align*}
+            & \log_a{x} + \log_a{y} = \log_a{xy} \\[11pt]
+            & \log_a{x} - \log_a{y} = \log_a{\dfrac{x}{y}} \\[11pt]
+            & \log_a{x^n} = n\log_a{x} \\
+        \end{align*}
+    \end{minipage}}}
+\end{center}

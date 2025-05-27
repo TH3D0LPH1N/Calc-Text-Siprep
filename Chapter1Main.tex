@@ -1,0 +1,62 @@
+\documentclass[11pt]{exam}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{setspace} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xpatch} 
+\usepackage{lmodern}
+\usepackage[skip=11pt plus1pt]{parskip}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\everymath{\displaystyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Commands and Fixes
+\let \templim \lim
+\renewcommand{\lim}{\templim\limits}
+\renewcommand{\choicelabel}{\alph{choice})}
+\newcommand{\horizontalline}{\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}} 
+\newcommand{\diff}{\dfrac{d}{dx}}
+\newcommand{\twoquestion}[2]{%
+    \makebox[0.57\textwidth][l]{$#1$}%
+    \makebox[0.43\textwidth][l]{$#2$}%
+}
+ 
+
+\hbadness = 10000 %Hotfix
+\xpatchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Document Begins, Page Setup
+\begin{document}
+\pagestyle{plain}
+\allowdisplaybreaks
+
+% Title Page
+\vspace*{2.5cm}
+\begin{center}
+    {\fontsize{48}{48}\selectfont \textbf{Chapter 1:}} \\
+    \vspace{72pt}
+    {\fontsize{48}{48}\selectfont \textbf{Review of}} \\
+    \vspace{24pt}
+    {\fontsize{48}{48}\selectfont \textbf{Derivatives}}
+\end{center}
+
+\newpage
+\setcounter{page}{1}
+
+\include{Chapter1Overview}
+
+\newpage
+
+\include{Chapter1Section1} 
+
+\newpage
+
+\include{Chapter1Section2}
+
+
+
+
+
+\end{document}

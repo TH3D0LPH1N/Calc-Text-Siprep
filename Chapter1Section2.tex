@@ -1,0 +1,279 @@
+\textbf{\underline{\large{1.2: Trig, Trig Inverse, and Log Rules}}} \par
+
+\begin{tabbing}
+    \textit{Trigonometric}: \= $\rightarrow$ \= Definition: A function $(\sin, \; \cos, \; \tan, \; \sec, \; \csc, \text{ or } \cot)$ whose independent \\ \> \> variable represents an angle measure. \\[5.5pt]
+    \> $\rightarrow$ Means: An equation with sine, cosine, tangent, secant, cosecant, or \\ \> \> cotangent in it.
+\end{tabbing}
+\begin{tabbing}
+    \textit{Logarithmic}: \= $\rightarrow$ Definition: The inverse of an exponential function. \\[5.5pt]
+    \> $\rightarrow$ Means: An equation with $\log$ or $\ln$ in it.
+\end{tabbing}
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            Trig Derivative Rules
+        \end{center}
+        \vspace{11pt}
+        \begin{align*}
+            & \diff[\sin u] = (\cos u) \dfrac{du}{dx} && \diff[\csc u] = (-\csc u \cot u) \dfrac{du}{dx} \\[11pt] % Line 1
+            & \diff[\cos u] = (-\sin u) \dfrac{du}{dx} && \diff[\sec u] = (\sec u \tan u) \dfrac{du}{dx} \\[11pt] % Line 2
+            & \diff[\tan u] = \left(\sec^2 u\right) \dfrac{du}{dx} && \diff[\cot u] = \left(-\csc^2 u\right) \dfrac{du}{dx} \\[11pt]
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            Log Derivative Rules
+        \end{center}
+        \vspace{11pt}
+        \begin{align*}
+            & \diff [\ln u] = \left(\dfrac{1}{u}\right) \dfrac{du}{dx} && \diff [\log_a u] = \left(\dfrac{1}{u \cdot \ln a}\right) \dfrac{du}{dx} \\[11pt]
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+Note that all these rules are expressed in terms of the Chain Rule.
+
+\fbox{\begin{minipage}{0.96 \textwidth}
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Find Derivatives Involving Trig, Trig Inverse, and Logarithmic Functions.  
+\end{minipage}}
+
+\textbf{Ex 1.2.1: } $\diff \left[\sin^3 (x)\right]$ \\[11pt]
+\textbf{Sol 1.2.1: } \begin{align*}
+    \diff \left[\sin^3 (x)\right] = \boxed{3\sin^2 (x)\cos (x)}
+\end{align*} 
+
+\textbf{Ex 1.2.2: } $\diff \left[\sin \left(x^3\right)\right]$ \\[11pt]
+\textbf{Sol 1.2.2: } \begin{align*}
+    \diff\left[\sin \left(x^3\right)\right] = \boxed{3x^2\cos  \left(x^3\right)}
+\end{align*}
+
+\textbf{Ex 1.2.3: } $\diff \left[\ln \left(4x^3\right)\right]$ \\[11pt]
+\textbf{Sol 1.2.3: } \begin{align*}
+    & \diff \left[\ln \left(4x^3\right)\right] \begin{aligned}[t]
+        & = \dfrac{1}{4x^3} \cdot 12x^2 \\[11pt]
+        & = \boxed{\dfrac{3}{x}} 
+    \end{aligned} \\[11pt]
+    & \text{We could have also simplified algebraically before} \\
+    & \text{taking the derivative: } \\[11pt]
+    & \ln \left(4x^3\right) \begin{aligned}[t]
+        & = \ln 4 + \ln x^3 \\[11pt]
+        & = \ln 4 + 3\ln x 
+    \end{aligned} \\[11pt]
+    & \diff \left[\ln 4 + 3\ln x\right] \begin{aligned}[t]
+        & = 0 + 3 \cdot \dfrac{1}{x} \\
+        & = \boxed{\dfrac{3}{x}}
+    \end{aligned}
+\end{align*}
+
+Of course, composites can involve more than two functions. The Chain Rule has as many derivatives in the chain as there are functions. \par
+
+\textbf{Ex 1.2.4: } $\diff \left[\sec^5 \left(3x^4\right)\right]$ \\[11pt]
+\textbf{Sol 1.2.4 } \begin{align*}
+    \diff \left[\sec^5 \left(3x^4\right)\right] & = 5\sec^4 \left(3x^4\right) \cdot \sec \left(3x^4\right) \tan \left(3x^4\right) \cdot \left(12x^3\right) \\
+    & = \boxed{60x^3\sec^5 \left(3x^4\right)\tan \left(3x^4\right)}
+\end{align*}
+
+\textbf{Ex 1.2.5: } $\diff \ln \left(\cos \left(\sqrt{x}\right)\right)$ \\[11pt]
+\textbf{Sol 1.2.5: } \begin{align*}
+    \diff \ln \left(\cos \left(\sqrt{x}\right)\right) & = \dfrac{1}{\cos \left(\sqrt{x}\right)} \cdot \left(-\sin \left(\sqrt{x}\right)\right) \cdot \dfrac{1}{2\left(\sqrt{x}\right)} \\[11pt]
+    & = -\tan \left(\sqrt{x}\right) \cdot \dfrac{1}{2\left(\sqrt{x}\right)} \\[11pt]
+    & = \boxed{\dfrac{-\tan \left(\sqrt{x}\right)}{2\sqrt{x}}}
+\end{align*}
+
+General inverses are not all that interesting. We are more interested in particular \textit{transcendental} inverse functions, like the natural log. Another particular kind of inverse function that bears more study is the trig inverse function. Interestingly, as with the log functions, the derivatives of these transcendental functions become algebraic functions. \par
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            Inverse Trig Derivative Rules
+        \end{center}
+        \vspace{11pt}
+        \begin{align*}
+            & \diff\left[\sin ^{-1} u\right] = \left(\dfrac{1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\csc^{-1} u\right] = \left(\dfrac{-1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] 
+            & \diff\left[\cos ^{-1} u\right] = \left(\dfrac{-1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\sec^{-1} u\right] = \left(\dfrac{1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] 
+            & \diff\left[\tan ^{-1} u\right] = \left(\dfrac{1}{u^2+ 1} \right) \dfrac{du}{dx} && \diff\left[\cot^{-1} u\right] = \left(\dfrac{-1}{u^2 + 1}\right) \dfrac{du}{dx} \\[11pt]
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+\textbf{Ex 1.2.6: } $\diff \left[\tan^{-1} \left(3x^4\right)\right]$ \\[11pt]
+\textbf{Sol 1.2.6: } \begin{align*}
+    \diff \left[\tan^{-1} \left(3x^4\right)\right] & = \dfrac{1}{\left(3x^4\right)^2 + 1} \cdot \left(12x^3\right) \\[11pt]
+    & = \boxed{\dfrac{12x^3}{9x^8 + 1}}
+\end{align*}
+
+\textbf{Ex 1.2.7: } $\diff \left[\sec^{-1} \left(x^2\right)\right]$ \\[11pt]
+\textbf{Sol 1.2.7: } \begin{align*}
+    \diff \left[\sec^{-1} \left(x^2\right)\right] & = \dfrac{1}{|x^2|\sqrt{\left(x^2\right)^2 - 1}} \cdot 2x \\[11pt]
+    & = \dfrac{2x}{\left(x^2\right)\sqrt{\left(x^2\right)^2 - 1}} \\[11pt]
+    & = \boxed{\dfrac{2}{x\sqrt{x^4 - 1}}}
+\end{align*}
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            General Inverse Derivative
+        \end{center}
+        \vspace{11pt}
+        \begin{align*}
+            \diff \left[f^{-1}(x)\right] - \dfrac{1}{f'\left[f^{-1}(x)\right]} \\[11pt]
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+\textbf{Ex 1.2.8: } If $f(x) = x^2 + 2x + 3, \; g(x) = f^{-1}(x), \; \text{and } g(1) = 2; \; \text{find } g'(1)$. \\[11pt]
+\textbf{Sol 1.2.8: } \begin{align*}
+    & f'(x) = 2x + 2 \; \therefore \; f'\left(g(x)\right) = 2\left(g(x)\right) + 2 \\[11pt]
+    & \dfrac{d}{dx} \left[f^{-1}(x)\right] = \dfrac{1}{f'\left[f^{-1}(x)\right]} = \dfrac{1}{f'\left(g(x)\right)} \\[11pt]
+    & g'(1) = \dfrac{1}{f'\left(g(1)\right)} = 2\left(g(1)\right) + 2 = \boxed{6}
+\end{align*}
+
+\newpage
+
+\textbf{\large{1.2 Free Response Homework Set A}} \par
+
+Find the derivatives of the given functions. Simplify where possible. \par
+
+\twoquestion{\text{1. } y = \sin (4x)}{\text{2. } y = 4\sec\left(x^5\right)} \\[11pt]
+\twoquestion{\text{3. } f(t) = \sqrt[3]{1 + \tan t}}{\text{4. } f(\theta) = \ln \left(\cos (\theta)\right)} \\[11pt]
+\twoquestion{\text{5. } y = a^3 + \cos^3 (x)}{\text{6. } y = \cos \left(a^3 + x^3\right)} \\[11pt]
+\twoquestion{\text{7. } f(x) = \cos \left(\ln x\right)}{\text{8. } f(x) = \sqrt[5]{\ln x}} \\[11pt]
+\twoquestion{\text{9. } f(x) = \log_{10} \left(2 + \sin (x)\right)}{\text{10. } f(x) = \log_2 (1 - 3x)} \\[11pt]
+\twoquestion{\text{11. } y = \sin^{-1} \left(e^x\right)}{\text{12. } y = \tan^{-1} \left(\sqrt{x}\right)} \\[11pt]
+
+Complete the following. \par
+
+\twoquestion{\text{13. } \diff \left[\sin^{-1} \left(e^{3x}\right)\right]}{\text{14. } \diff \left[\cot^{-1} \left(e^{2x}\right)\right]} \\[11pt]
+\twoquestion{\text{15. } \diff \left[\tan^{-1} \left(x^2\right)\right]}{\text{16. } \diff \left[\cot^{-1} \left(\dfrac{1}{x}\right) - \tan^{-1} (x)\right]} \\[11pt]
+\twoquestion{\text{17. } \diff \left[3e^{x^2  + 2x}\right]}{\text{18. } \diff \left[3\cos \left(x^2 + 2x\right)\right]} \\[11pt]
+\twoquestion{\text{19. } \diff \left[\sqrt[3]{16 + x^3}\right]}{\text{20. } \diff \left[\sec^{-1} \left(2x^2\right)\right]} \\[11pt]
+\twoquestion{\text{21. } \diff \left[5e^{\tan (7x)}\right]}{\text{22. } \diff \left[\sqrt{\cos \left(1 - x^2\right)}\right]} \\[11pt]
+\twoquestion{\text{23. } \diff \left[\ln^3 \left(x^2 + 1\right)\right]}{\text{24. } \diff \left[\ln \sin \left(x^3\right)\right]} \\[11pt]
+\twoquestion{\text{25. } \diff \left[\ln \left(\sec (x)\right)\right]}{\text{26. } \diff \left[\cos \left(x^2\right)\right]} \\[11pt]
+\twoquestion{\text{27. } f(x) = \ln \left(x^2 + 3\right), \text{ find } f'(x)}{\text{28. } g(x) = \ln \left(x^2 - 4x + 4\right), \text{ find } g'(x)} \\[11pt]
+\twoquestion{\text{29. } h(x) = \sqrt{x^2 + 5}, \text{ find } h'(x)}{\text{30. } F(x) = \sqrt[3]{3x^2 - 6x + 1}, \text{ find } F'(x)} \\[11pt]
+\twoquestion{\text{31. } y = \sin^{-1} \left(\cos (x)\right) , \text{ find } y'}{\text{32. } y = \sin \left(\cos^{-1} (x)\right) , \text{ find } y'} \\[11pt]
+\twoquestion{\text{33. } y = \tan^2 \left(3\theta\right) , \text{ find } y'}{\text{34. } y = \cot^7 \left(\sin (\theta)\right) , \text{ find } y'} \\[11pt]
+\twoquestion{\text{35. } y = \sin^{-1} \left(\sqrt{2}(x)\right) , \text{ find } y'}{\text{36. } y = \sin^{-1} \left(2x + 1\right) , \text{ find } y'} \\[11pt]
+
+The following table shows some values of $g(x), \; g'(x), \text{ and } h(x)$, where $h(x) = g^{-1}(x)$. \begin{align*}
+    \arraycolsep=22pt\def\arraystretch{2.2} 
+    \begin{array}{|c|c|c|c|c|}
+        \hline
+        x & g(x) & h(x) & g'(x) & h'(x) \\ \hline
+        1 & 2 & 3 & \frac{1}{2} & \frac{1}{3} \\ \hline
+        3 & 1 & 2 & -2 & \frac{1}{2} \\ 
+        \hline
+    \end{array}
+\end{align*}
+
+\twoquestion{\text{37. } \text{Find } h'(1)}{\text{38. } \text{Find } g'(1)} \\[11pt]
+
+\textbf{\large{1.2 Free Response Homework Set B}} \par
+
+Find the derivatives of the given functions. Simplify where possible. \par
+
+\twoquestion{\text{1. } y = \cos^{-1} \left(e^{3z}\right)}{\text{2. } y = \tan^{-1} \sqrt{x^2 - 1}} \\[11pt]
+\twoquestion{\text{3. } y = \sec^{-1} (4x) + \csc^{-1} (4x)}{\text{4. } f(x) = \ln \left(\tan^{-1} (5x)\right)} \\[11pt]
+\twoquestion{\text{5. } g(w) = \sin^{-1} (5w) + \cos^{-1} (5w)}{\text{6. } f(t) = \sec^{-1} \sqrt{9 + t^2}} \\[11pt]
+
+Complete the following. \par
+
+\twoquestion{\text{7. } \dfrac{d}{d\theta} \left[e^{\csc (\theta)} + \ln \left(\cot \left(\theta^2\right)\right) - \sec (\theta) \right]}{\text{8. } \diff \left[\ln \left(\sec \left(x^3 + 5\ln x + 7\right)^3\right)\right]} \\[11pt]
+\twoquestion{\text{9. } \diff \left[\ln \left(\tan \left(x^2 + 5e^x + 7\right)^3\right)\right]}{\text{10. } \diff \left[\dfrac{\cos \left(\ln \left(5x^2\right)\right)}{\sin \left(\ln \left(5x^2\right)\right)} \right]} \\[11pt]
+\twoquestion{\text{11. } \diff \left[\ln \left(\sqrt{x^2 + 4x -5}\right)\right]}{\text{12. } \dfrac{d}{dt} \left[\sin^{5} \left(\ln \left(7t + 3\right)\right)\right]} \\[11pt]
+\twoquestion{\text{13. } \diff \left[\csc \left(\ln \left(7x^2 + x\right)\right)\right]}{\text{14. } \diff \left[\ln \left(\sqrt{e^{4t^2 + 6}}\right)\right]} \\[11pt]
+\twoquestion{\text{15. } \diff \left[\diff \left[\sqrt{9x - 27x^2 + \dfrac{5}{x^3}}\right]\right]}{\text{16. } \diff \left[\sec (5x) + \cot \left(e^x\right) - 10\ln x\right]} \\[11pt]
+\twoquestion{\text{17. } z = \ln \left(\cos (t)\right) + \sec \left(e^t\right) + 7\pi^2 \text{ , find } \dfrac{dz}{dt}}{\text{18. } z = \ln \left(\tan (t)\right) + \sin \left(e^t\right) + 7\pi^2 \text{ , find } \dfrac{dz}{dt}} \\[11pt]
+\twoquestion{\text{19. } z = \ln \left(\cot (\theta)\right) + \sec \left(\ln \theta\right) + 7\pi^2 \text{ , find } \dfrac{dz}{d\theta}}{\text{20. } z = \ln \left(\cos (\theta)\right) + \sin \left(\ln \theta\right) + 7\pi^2 \text{ , find } \dfrac{dz}{d\theta}}
+
+
+
+
+
+\textbf{\large{1.2 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question If $y = \sin^{-1} \left(e^{3\theta}\right)$, then $\dfrac{dy}{d\theta} = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{1}{\sqrt{1 - e^{3\theta}}}$
+        \choice $\dfrac{1}{\sqrt{1 - e^{6\theta}}}$
+        \choice $\dfrac{1}{\sqrt{1 - e^{9\theta^2}}}$ \\[11pt]
+        \makebox[0.2 \textwidth] \choice $-3e^{3\theta}\cos^{-1} \left(e^{3\theta}\right)$ 
+        \makebox[0.25 \textwidth] \choice $\dfrac{3e^{3\theta}}{\sqrt{1 - e^{6\theta}}}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If $f(x) = \tan^{-1}(\cos x)$, then $f'(x) = $ \\
+
+    \begin{oneparchoices}
+        \choice $-\csc (x)\sec^{-2} (\cos (x))$
+        \choice $-\sin (x)\sec^{-2} (\cos (x))$
+        \choice $-\cos (x)\csc^{-2} (\cos (x))$ \\[11pt] 
+        \makebox[0.23 \textwidth] \choice $\dfrac{-\cos (x)}{1 - \sin^2(x)}$
+        \makebox[0.25 \textwidth] \choice $\dfrac{-\sin (x)}{\cos^2 (x) + 1}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If $h(x) = \ln \left(x^2\right)\tan^{-1} (x)$, then $h'(1) = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{\pi}{4}$
+        \choice $\dfrac{\pi}{4} + 1$
+        \choice $\dfrac{\pi}{2}$
+        \choice $\dfrac{\pi}{2} + 1$
+        \choice $\dfrac{\pi}{2} + 2$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If $f(t) = t\sqrt{1 - t^2} + \cos^{-1} (t)$, then $f'(t) = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{t - 2}{2\sqrt{t^2 - 1}}$
+        \choice $\dfrac{-2t^2}{\sqrt{1 - t^2}}$
+        \choice $\dfrac{-2t^2 + 2}{\sqrt{1 - t^2}}$
+        \choice $\dfrac{-1 - t^2}{\sqrt{1 - t^2}}$
+        \choice $\dfrac{1 - t^2}{\sqrt{1 - t^2}}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If $h$ is the function defined by $h(x) = e^{5x} + x + 3$, then $h'(0) = $ \\
+    
+    \begin{oneparchoices}
+        \choice $2$
+        \choice $4$
+        \choice $5$
+        \choice $6$
+        \choice $8$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Given that $f(x) = 8\sin^2 (5x)$, find $f''\left(\dfrac{\pi}{30}\right)$ \\
+
+    \begin{oneparchoices}
+        \choice $40\sqrt{3}$
+        \choice $40\sqrt{2}$
+        \choice $40$
+        \choice $200$
+        \choice $0$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If $g(x) = \cos^2 (2x)$, then $g'(x)$ is \\
+
+    \begin{oneparchoices}
+        \choice $2\cos (2x)\sin (2x)$
+        \choice $-4\cos (2x)\sin (2x)$
+        \choice $2\cos (2x)$ \\[11pt]
+        \makebox[0.25 \textwidth] \choice $-2\cos (2x)$ 
+        \makebox[0.25 \textwidth] \choice $4\cos (2x)$
+    \end{oneparchoices} \par \horizontalline
+
+    \question 
+    
+\end{questions}
