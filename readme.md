@@ -4,4 +4,12 @@ Hello!! My name is Wilson Chen, SI class of '25. This is a fun side project that
 
 Hope you find this useful :)
 
-The text lies within the file called "MainText.pdf"
+The full text lies within the file called "MainText.pdf"
+
+Chapters lie within their respective "Chapter#.pdf" files
+
+The tex files for each chapter are in their respective Chapter# folders
+
+The preamble and other commands/settings are in Support/Settings.tex
+
+Thanks for viewing :)
