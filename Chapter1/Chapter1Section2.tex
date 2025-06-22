@@ -1,13 +1,17 @@
 \textbf{\underline{\large{1.2: Trig, Trig Inverse, and Log Rules}}} \par
 
-\begin{tabbing}
-    \textit{Trigonometric}: \= $\rightarrow$ \= Definition: A function $(\sin, \; \cos, \; \tan, \; \sec, \; \csc, \text{ or } \cot)$ whose independent \\ \> \> variable represents an angle measure. \\[5.5pt]
-    \> $\rightarrow$ Means: An equation with sine, cosine, tangent, secant, cosecant, or \\ \> \> cotangent in it.
-\end{tabbing}
-\begin{tabbing}
-    \textit{Logarithmic}: \= $\rightarrow$ Definition: The inverse of an exponential function. \\[5.5pt]
-    \> $\rightarrow$ Means: An equation with $\log$ or $\ln$ in it.
-\end{tabbing}
+\begin{tcolorbox}[definition]
+    \begin{tabbing}
+        \textit{Trigonometric}: \= $\rightarrow$ \= Definition: A function $(\sin, \; \cos, \; \tan, \; \sec, \; \csc, \text{ or } \cot)$ whose \\ 
+        \> \> independent variable represents an angle measure. \\[5.5pt]
+        \> $\rightarrow$ Means: An equation with sine, cosine, tangent, secant, cosecant, \\ 
+        \> \> or cotangent in it.
+    \end{tabbing}
+    \begin{tabbing}
+        \textit{Logarithmic}: \= $\rightarrow$ Definition: The inverse of an exponential function. \\[5.5pt]
+        \> $\rightarrow$ Means: An equation with $\log$ or $\ln$ in it.
+    \end{tabbing}
+\end{tcolorbox}
 
 \begin{center}
     \fbox{\fbox{\begin{minipage}{0.96\textwidth}
@@ -38,57 +42,76 @@
 
 Note that all these rules are expressed in terms of the Chain Rule.
 
-\begin{center}  
-    \fbox{\begin{minipage}{0.96 \textwidth}
-        \begin{center}
-            OBJECTIVES \\[11pt]
-        \end{center}
-        Find Derivatives Involving Trig, Trig Inverse, and Logarithmic Functions.  
-    \end{minipage}}
-\end{center}
 
-\textbf{Ex 1.2.1: } $\diff \left[\sin^3 (x)\right]$ \\[11pt]
-\textbf{Sol 1.2.1: } \begin{align*}
-    \diff \left[\sin^3 (x)\right] = \boxed{3\sin^2 (x)\cos (x)}
-\end{align*} 
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Find Derivatives Involving Trig, Trig Inverse, and Logarithmic Functions.  
+\end{tcolorbox} \vspace{11pt}
 
-\textbf{Ex 1.2.2: } $\diff \left[\sin \left(x^3\right)\right]$ \\[11pt]
-\textbf{Sol 1.2.2: } \begin{align*}
-    \diff\left[\sin \left(x^3\right)\right] = \boxed{3x^2\cos  \left(x^3\right)}
-\end{align*}
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.1: } $\diff \left[\sin^3 (x)\right]$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.2.1: } \begin{align*}
+        \diff \left[\sin^3 (x)\right] = \boxed{3\sin^2 (x)\cos (x)}
+    \end{align*} 
+\end{tcolorbox} \vspace{11pt}
 
-\textbf{Ex 1.2.3: } $\diff \left[\ln \left(4x^3\right)\right]$ \\[11pt]
-\textbf{Sol 1.2.3: } \begin{align*}
-    & \diff \left[\ln \left(4x^3\right)\right] \begin{aligned}[t]
-        & = \dfrac{1}{4x^3} \cdot 12x^2 \\[11pt]
-        & = \boxed{\dfrac{3}{x}} 
-    \end{aligned} \\[11pt]
-    & \text{We could have also simplified algebraically before} \\
-    & \text{taking the derivative: } \\[11pt]
-    & \ln \left(4x^3\right) \begin{aligned}[t]
-        & = \ln 4 + \ln x^3 \\[11pt]
-        & = \ln 4 + 3\ln x 
-    \end{aligned} \\[11pt]
-    & \diff \left[\ln 4 + 3\ln x\right] \begin{aligned}[t]
-        & = 0 + 3 \cdot \dfrac{1}{x} \\
-        & = \boxed{\dfrac{3}{x}}
-    \end{aligned}
-\end{align*}
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.2: } $\diff \left[\sin \left(x^3\right)\right]$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.2.2: } \begin{align*}
+        \diff\left[\sin \left(x^3\right)\right] = \boxed{3x^2\cos  \left(x^3\right)}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.3: } $\diff \left[\ln \left(4x^3\right)\right]$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.2.3: } \begin{align*}
+        & \diff \left[\ln \left(4x^3\right)\right] \begin{aligned}[t]
+            & = \dfrac{1}{4x^3} \cdot 12x^2 \\[11pt]
+            & = \boxed{\dfrac{3}{x}} 
+        \end{aligned}
+    \end{align*} 
+    We could have also simplified algebraically before taking the derivative: \begin{align*}
+        & \ln \left(4x^3\right) \begin{aligned}[t]
+            & = \ln 4 + \ln x^3 \\[11pt]
+            & = \ln 4 + 3\ln x 
+        \end{aligned} \\[11pt]
+        & \diff \left[\ln 4 + 3\ln x\right] \begin{aligned}[t]
+            & = 0 + 3 \cdot \dfrac{1}{x} \\
+            & = \boxed{\dfrac{3}{x}}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox}
 
 Of course, composites can involve more than two functions. The Chain Rule has as many derivatives in the chain as there are functions. \par
 
-\textbf{Ex 1.2.4: } $\diff \left[\sec^5 \left(3x^4\right)\right]$ \\[11pt]
-\textbf{Sol 1.2.4 } \begin{align*}
-    \diff \left[\sec^5 \left(3x^4\right)\right] & = 5\sec^4 \left(3x^4\right) \cdot \sec \left(3x^4\right) \tan \left(3x^4\right) \cdot \left(12x^3\right) \\
-    & = \boxed{60x^3\sec^5 \left(3x^4\right)\tan \left(3x^4\right)}
-\end{align*}
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.4: } $\diff \left[\sec^5 \left(3x^4\right)\right]$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.2.4 } \begin{align*}
+        \diff \left[\sec^5 \left(3x^4\right)\right] & = 5\sec^4 \left(3x^4\right) \cdot \sec \left(3x^4\right) \tan \left(3x^4\right) \cdot \left(12x^3\right) \\
+        & = \boxed{60x^3\sec^5 \left(3x^4\right)\tan \left(3x^4\right)}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
 
-\textbf{Ex 1.2.5: } $\diff \ln \left(\cos \left(\sqrt{x}\right)\right)$ \\[11pt]
-\textbf{Sol 1.2.5: } \begin{align*}
-    \diff \ln \left(\cos \left(\sqrt{x}\right)\right) & = \dfrac{1}{\cos \left(\sqrt{x}\right)} \cdot \left(-\sin \left(\sqrt{x}\right)\right) \cdot \dfrac{1}{2\left(\sqrt{x}\right)} \\[11pt]
-    & = -\tan \left(\sqrt{x}\right) \cdot \dfrac{1}{2\left(\sqrt{x}\right)} \\[11pt]
-    & = \boxed{\dfrac{-\tan \left(\sqrt{x}\right)}{2\sqrt{x}}}
-\end{align*}
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.5: } $\diff \ln \left(\cos \left(\sqrt{x}\right)\right)$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.2.5: } \begin{align*}
+        \diff \ln \left(\cos \left(\sqrt{x}\right)\right) & = \dfrac{1}{\cos \left(\sqrt{x}\right)} \cdot \left(-\sin \left(\sqrt{x}\right)\right) \cdot \dfrac{1}{2\left(\sqrt{x}\right)} \\[11pt]
+        & = -\tan \left(\sqrt{x}\right) \cdot \dfrac{1}{2\left(\sqrt{x}\right)} \\[11pt]
+        & = \boxed{\dfrac{-\tan \left(\sqrt{x}\right)}{2\sqrt{x}}}
+    \end{align*}
+\end{tcolorbox}
 
 General inverses are not all that interesting. We are more interested in particular \textit{transcendental} inverse functions, like the natural log. Another particular kind of inverse function that bears more study is the trig inverse function. Interestingly, as with the log functions, the derivatives of these transcendental functions become algebraic functions. \par
 
@@ -107,18 +130,26 @@ General inverses are not all that interesting. We are more interested in particu
     \end{minipage}}}
 \end{center}
 
-\textbf{Ex 1.2.6: } $\diff \left[\tan^{-1} \left(3x^4\right)\right]$ \\[11pt]
-\textbf{Sol 1.2.6: } \begin{align*}
-    \diff \left[\tan^{-1} \left(3x^4\right)\right] & = \dfrac{1}{\left(3x^4\right)^2 + 1} \cdot \left(12x^3\right) \\[11pt]
-    & = \boxed{\dfrac{12x^3}{9x^8 + 1}}
-\end{align*}
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.6: } $\diff \left[\tan^{-1} \left(3x^4\right)\right]$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.2.6: } \begin{align*}
+        \diff \left[\tan^{-1} \left(3x^4\right)\right] & = \dfrac{1}{\left(3x^4\right)^2 + 1} \cdot \left(12x^3\right) \\[11pt]
+        & = \boxed{\dfrac{12x^3}{9x^8 + 1}}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
 
-\textbf{Ex 1.2.7: } $\diff \left[\sec^{-1} \left(x^2\right)\right]$ \\[11pt]
-\textbf{Sol 1.2.7: } \begin{align*}
-    \diff \left[\sec^{-1} \left(x^2\right)\right] & = \dfrac{1}{|x^2|\sqrt{\left(x^2\right)^2 - 1}} \cdot 2x \\[11pt]
-    & = \dfrac{2x}{\left(x^2\right)\sqrt{\left(x^2\right)^2 - 1}} \\[11pt]
-    & = \boxed{\dfrac{2}{x\sqrt{x^4 - 1}}}
-\end{align*}
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.7: } $\diff \left[\sec^{-1} \left(x^2\right)\right]$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+        \textbf{Sol 1.2.7: } \begin{align*}
+        \diff \left[\sec^{-1} \left(x^2\right)\right] & = \dfrac{1}{|x^2|\sqrt{\left(x^2\right)^2 - 1}} \cdot 2x \\[11pt]
+        & = \dfrac{2x}{\left(x^2\right)\sqrt{\left(x^2\right)^2 - 1}} \\[11pt]
+        & = \boxed{\dfrac{2}{x\sqrt{x^4 - 1}}}
+    \end{align*}
+\end{tcolorbox}
 
 \begin{center}
     \fbox{\fbox{\begin{minipage}{0.96\textwidth}
@@ -133,12 +164,16 @@ General inverses are not all that interesting. We are more interested in particu
     \end{minipage}}}
 \end{center}
 
-\textbf{Ex 1.2.8: } If $f(x) = x^2 + 2x + 3, \; g(x) = f^{-1}(x), \; \text{and } g(1) = 2; \; \text{find } g'(1)$. \\[11pt]
-\textbf{Sol 1.2.8: } \begin{align*}
-    & f'(x) = 2x + 2 \; \therefore \; f'\left(g(x)\right) = 2\left(g(x)\right) + 2 \\[11pt]
-    & \dfrac{d}{dx} \left[f^{-1}(x)\right] = \dfrac{1}{f'\left[f^{-1}(x)\right]} = \dfrac{1}{f'\left(g(x)\right)} \\[11pt]
-    & g'(1) = \dfrac{1}{f'\left(g(1)\right)} = 2\left(g(1)\right) + 2 = \boxed{6}
-\end{align*}
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.2.8: } If $f(x) = x^2 + 2x + 3, \; g(x) = f^{-1}(x), \; \text{and } g(1) = 2; \; \text{find } g'(1)$. 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.2.8: } \begin{align*}
+        & f'(x) = 2x + 2 \; \therefore \; f'\left(g(x)\right) = 2\left(g(x)\right) + 2 \\[11pt]
+        & \dfrac{d}{dx} \left[f^{-1}(x)\right] = \dfrac{1}{f'\left[f^{-1}(x)\right]} = \dfrac{1}{f'\left(g(x)\right)} \\[11pt]
+        & g'(1) = \dfrac{1}{f'\left(g(1)\right)} = 2\left(g(1)\right) + 2 = \boxed{6}
+    \end{align*}
+\end{tcolorbox}
 
 \newpage
 
@@ -169,7 +204,7 @@ Complete the following. \par
 \twoquestion{\text{35. } y = \sin^{-1} \left(\sqrt{2}(x)\right) , \text{ find } y'}{\text{36. } y = \sin^{-1} \left(2x + 1\right) , \text{ find } y'} \\[11pt]
 
 The following table shows some values of $g(x), \; g'(x), \text{ and } h(x)$, where $h(x) = g^{-1}(x)$. \begin{align*}
-    \arraycolsep=22pt\def\arraystretch{2.2} 
+    \arraycolsep=22pt\def\arraystretch{2.5} 
     \begin{array}{|c|c|c|c|c|}
         \hline
         x & g(x) & h(x) & g'(x) & h'(x) \\ \hline

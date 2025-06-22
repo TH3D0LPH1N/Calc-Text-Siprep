@@ -5,6 +5,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xpatch} 
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
 \usepackage{lmodern}
 \usepackage{datetime}
 \usepackage{hyperref}
@@ -19,6 +21,7 @@
 \renewcommand{\choicelabel}{\alph{choice})}
 \newcommand{\horizontalline}{\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}} 
 \newcommand{\diff}{\dfrac{d}{dx}}
+\newcommand{\forcespace}{\vphantom{\Bigg|}}
 \newcommand{\twoquestion}[2]{%
     \makebox[0.57\textwidth][l]{$#1$}%
     \makebox[0.43\textwidth][l]{$#2$}%
@@ -26,6 +29,13 @@
 \newcommand{\onequestion}[1]{
     \makebox[\textwidth][l]{$#1$}
 }
+
+\tcbset{example/.style={colback=Cyan!25, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+\tcbset{solution/.style={colback=Green!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+\tcbset{objective/.style={colback=Gray!20, colframe=Black, arc=0.5mm, boxrule=0.5pt}}
+\tcbset{definition/.style={colback=Goldenrod!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+
+\bigskipamount = 165pt
 
 \newdateformat{fulldate}{\monthname[\THEMONTH]~\THEDAY, \THEYEAR}
  
