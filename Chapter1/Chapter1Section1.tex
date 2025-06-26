@@ -4,11 +4,11 @@ In Precalculus we developed the idea of the derivative geometrically. That is, t
 
 \begin{tcolorbox}[definition]
     \begin{tabbing}
-        \textit{Derivative}: \= $\rightarrow \text{Definition: } f(x) = \lim_{h \to 0} \dfrac{f(x + h) - f(x)}{h}$ \\[5.5pt]
+        \textit{Derivative} \= $\rightarrow \text{Definition: } f(x) = \lim_{h \to 0} \dfrac{f(x + h) - f(x)}{h}$ \\[5.5pt]
         \> $\rightarrow$ {Means:  The function that yields the slope of the tangent line.}
-\end{tabbing}
+\end{tabbing} \vspace{11pt}
 \begin{tabbing}
-    \textit{Numerical Derivative}: \= $\rightarrow \text{Definition: } f'(a) = \lim_{x \to a} \dfrac{f(x) - f(a)}{x - a}$ \\[5.5pt]
+    \textit{Numerical Derivative} \= $\rightarrow \text{Definition: } f'(a) = \lim_{x \to a} \dfrac{f(x) - f(a)}{x - a}$ \\[5.5pt]
     \> $\rightarrow$ Means: \= The numerical value of the slope of the tangent line \\
     \> \> at $x = a$ 
 \end{tabbing}
@@ -56,12 +56,12 @@ The difference between these is where the variable is. The Power Rule applies wh
 
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.1:} Find a) $\diff\left[x^5\right]$ and b) $\diff\left[5^x\right]$. 
+    \textbf{Ex 1.1.1: } Find a) $\diff \left[x^5\right]$ and b) $\diff \left[5^x\right]$. 
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.1:} The first is a case of the Power Rule while the second is a case of the second Exponential Rule. Therefore, \\
+    \textbf{Sol 1.1.1: } The first is a case of the Power Rule while the second is a case of the second Exponential Rule. Therefore, \\
 \begin{center}
-$\hfill \text{a) } \diff\left[x^5\right] = \boxed{5x^4} \hfill \text{b) } \diff\left[5^x\right] = \boxed{5^x \ln{5}} \hfill$
+$\hfill \text{a) } \diff \left[x^5\right] = \boxed{5x^4} \hfill \text{b) } \diff \left[5^x\right] = \boxed{5^x \ln{5}} \hfill$
 \end{center} 
 \end{tcolorbox} \vspace{11pt}
 
@@ -71,9 +71,9 @@ There are a few other basic rules that we need to remember.
 \begin{center}
     \fbox{\fbox{\begin{minipage}{0.96 \textwidth}
         \begin{align*}
-            & \diff[\text{constant}] = 0 \\[11pt]
-            & \diff[cx^n] = (cn)x^{n - 1} \\[11pt]
-            & \diff[f(x) + g(x)] = \diff[f(x)] + \diff[g(x)] \\
+            & \diff [\text{constant}] = 0 \\[11pt]
+            & \diff \left[cx^n\right] = (cn)x^{n - 1} \\[11pt]
+            & \diff [f(x) + g(x)] = \diff [f(x)] + \diff [g(x)] \\
         \end{align*}
     \end{minipage}}}
 \end{center}
@@ -81,38 +81,38 @@ There are a few other basic rules that we need to remember.
 These rules allow us to easily differentiate a polynomial term by term.
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.2:} $y = 3x^2 + 5x + 1$; find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.2: } $y = 3x^2 + 5x + 1$; find $\dfrac{dy}{dx}$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.2:} \begin{align*}
-        \dfrac{dy}{dx} & = \diff[3x^2 + 5x + 1] \\[11pt]
+    \textbf{Sol 1.1.2: } \begin{align*}
+        \dfrac{dy}{dx} & = \diff \left[3x^2 + 5x + 1\right] \\[11pt]
         & = (3 \cdot 2)x^{2 - 1} + (5 \cdot 1)x^{1 - 1} + 0 \\[11pt]
         & = \boxed{6x + 5} 
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.3:} $f(x) = x^2 + 4x - 3 + e^x$; find $f'(x)$. 
+    \textbf{Ex 1.1.3: } $f(x) = x^2 + 4x - 3 + e^x$; find $f'(x)$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.3:} \begin{align*}
-        f'(x) & = \diff\left[x^2 + 4x - 3 + e^x\right] \\[11pt]
+    \textbf{Sol 1.1.3: } \begin{align*}
+        f'(x) & = \diff \left[x^2 + 4x - 3 + e^x\right] \\[11pt]
         & = (1 \cdot 2)x^{2 - 1} + (4 \cdot 1)x^{1 - 1} - 0 + e^x \\[11pt]
         & = \boxed{2x + 4 + e^x} 
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.4:} $y = \sqrt{x^3} + \dfrac{4}{\sqrt{x}} - \sqrt[4]{x^3} + e^4$; find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.4: } $y = \sqrt{x^3} + \dfrac{4}{\sqrt{x}} - \sqrt[4]{x^3} + e^4$; find $\dfrac{dy}{dx}$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.4:} \begin{align*}
+    \textbf{Sol 1.1.4: } \begin{align*}
         & y \begin{aligned}[t]
             & = \sqrt{x^3} + \frac{4}{\sqrt{x}} - \sqrt[4]{x^3} + e^4 \\[11pt]
             & = x^{\frac{3}{2}} + 4x^{-\frac{1}{2}} - x^{\frac{3}{4}} + e^4
         \end{aligned} \\[11pt]
         & \frac{dy}{dx} \begin{aligned}[t]
-            & = \diff\left[x^{\frac{3}{2}} + 4x^{-\frac{1}{2}} - x^{\frac{3}{4}} + e^4\right] \\[11pt]
+            & = \diff \left[x^{\frac{3}{2}} + 4x^{-\frac{1}{2}} - x^{\frac{3}{4}} + e^4\right] \\[11pt]
             & = \left(1 \cdot \dfrac{3}{2}\right)x^{\frac{3}{2} - 1} + \left(4 \cdot -\dfrac{1}{2}\right)x^{-\frac{1}{2} - 1} - \left(1 \cdot \dfrac{3}{4}\right)x^{\frac{3}{4} - 1} + 0 \\[11pt]
             & =\boxed{\dfrac{3}{2}x^{\frac{1}{2}} - 2x^{-\frac{3}{2}} - \dfrac{3}{4}x^{-\frac{1}{4}}} \\
         \end{aligned}
@@ -120,15 +120,15 @@ These rules allow us to easily differentiate a polynomial term by term.
 \end{tcolorbox} \vspace{11pt}
 
 \hypertarget{Section 1.1} Note in Ex 1.1.4 that $e^4$ is a constant. Therefore, its derivative is $0$. \par
-As we have seen, when the variable was in the exponent, we use the Exponential Rules. When the variable was in the base, we used the Power Rule. But what if the variable is in both \\[5.5pt] places, such as $\diff\left[(2x - 1)^{x^2}\right]$? It is definitely an exponential problem, but the base is not \\[5.5pt] a constant as the rules above have. The Change of Base Rule allows us to clarify the problem: \begin{align*}
-    \diff\left[(2x - 1)^{x^2}\right] = \diff\left[e^{x^2\ln(2x - 1)}\right]
+As we have seen, when the variable was in the exponent, we use the Exponential Rules. When the variable was in the base, we used the Power Rule. But what if the variable is in both places, such as $\diff\left[(2x - 1)^{x^2}\right] \forcespace$? It is definitely an exponential problem, but the base is not a constant as the rules above have. The Change of Base Rule allows us to clarify the problem: \begin{align*}
+    \diff \left[(2x - 1)^{x^2}\right] = \diff \left[e^{x^2\ln(2x - 1)}\right]
 \end{align*} but we will need the \hyperlink{Product Rule}{Product Rule} for this derivative. Therefore, we will save this for later.
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.5:} If $y = (x^2 + 1)(x^3 - 4x)$, find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.5: } If $y = (x^2 + 1)(x^3 - 4x)$, find $\dfrac{dy}{dx}$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.5:} \begin{align*}
+    \textbf{Sol 1.1.5: } \begin{align*}
         & y \begin{aligned}[t]
             & = (x^2 + 1)(x^3 - 4x) \\[11pt]
             & = x^5 - 4x^3 + x^3 - 4x \\[11pt]
@@ -142,17 +142,17 @@ As we have seen, when the variable was in the exponent, we use the Exponential R
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.6:} If $y = \dfrac{x^2 - 4x + 6}{\sqrt[3]{x}}$, find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.6: } If $y = \dfrac{x^2 - 4x + 6}{\sqrt[3]{x}}$, find $\dfrac{dy}{dx}$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.6:} \begin{align*}
+    \textbf{Sol 1.1.6: } \begin{align*}
         & y \begin{aligned}[t]
             & = \dfrac{x^2 - 4x + 6}{\sqrt[3]{x}} \\[11pt]
             & = \dfrac{x^2 - 4x + 6}{x^{\frac{1}{3}}} \\[11pt]
             & = x^{\frac{5}{3}} - 4x^{\frac{2}{3}} + 6x^{-\frac{1}{3}}
         \end{aligned} \\[11pt]
         & \dfrac{dy}{dx} \begin{aligned}[t]
-            & = \diff\left[x^{\frac{5}{3}} - 4x^{\frac{2}{3}} + 6x^{-\frac{1}{3}}\right] \\[11pt]
+            & = \diff \left[x^{\frac{5}{3}} - 4x^{\frac{2}{3}} + 6x^{-\frac{1}{3}}\right] \\[11pt]
             & = \boxed{\dfrac{5}{3}x^{\frac{2}{3}} - \dfrac{8}{3}x^{-\frac{1}{3}} - 2x^{-\frac{4}{3}}}
         \end{aligned}
     \end{align*}
@@ -162,13 +162,20 @@ As we have seen, when the variable was in the exponent, we use the Exponential R
 
 \textbf{\large{The Chain Rule}} \par
 
-\textit{Composite Function} $\rightarrow$ A function made of two other functions, one within the other. For example, $y = \sqrt{16x - x^3}$, $y = \sin{x^3}$. $y = \cos^3{x}$, and $y = \left(x^2 + 2x - 5\right)^3$. The general symbol is $f(g(x))$. \par
+\begin{tcolorbox}[definition]
+    \begin{tabbing}
+        \textit{Composite Function} \= $\rightarrow$ \= Definition: A function made of two other functions, one \\
+        \> \> within the other. \\[5.5pt]
+        \> $\rightarrow$ \> For example, $y = \sqrt{16x - x^3}$, $y = \sin \left(x^3\right)$. $y = \cos^3 (x)$, \\
+        \> \> and $y = \left(x^2 + 2x - 5\right)^3$. The general symbol is $f(g(x))$. 
+    \end{tabbing}
+\end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.7:} Given $f(x) = \cos^{-1} x$, $g(x) = x^2 - 1$, and $h(x) = \sqrt{1 + x^2}$, find a) $f\left(g\left(\sqrt{2}\right)\right)$, b) $h(g(1))$, and c) $f(h(g(1)))$. 
+    \textbf{Ex 1.1.7: } Given $f(x) = \cos^{-1} (x)$, $g(x) = x^2 - 1$, and $h(x) = \sqrt{1 + x^2}$, find a) $f\left(g\left(\sqrt{2}\right)\right)$, b) $h(g(1))$, and c) $f(h(g(1)))$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.7:} \begin{align*}
+    \textbf{Sol 1.1.7: } \begin{align*}
         &\text{(a) } g\left(\sqrt{2}\right) = \left(\sqrt{2}\right)^2 - 1 = 1, \text{ so } f\left(g\left(\sqrt{2}\right)\right) = f(1) = \cos^{-1}(1) = \boxed{0}. \\[11pt]
         &\text{(b) } g(1) = 0, \text{ so } h(g(1)) = h(0) = \sqrt{1 + 0^2} = \boxed{1} \\[11pt]
         &\text{(c) } g(1) = 0 \text{ and } h(g(1)) = h(0) = \sqrt{1 + 0^2} = 1, \text{ so } f(h(g(1))) = \cos^{-1}(1) = \boxed{0}
@@ -188,7 +195,7 @@ So. How do we take the derivative of a composite function? There are two (or mor
 \end{center}
 
 If you think of the inside function (the $g(x)$) as equaling $u$, we could write the Chain Rule like this: \begin{align*}
-    \diff[f(u)] = \dfrac{df}{du} \cdot \dfrac{du}{dx}
+    \diff [f(u)] = \dfrac{df}{du} \cdot \dfrac{du}{dx}
 \end{align*}
 This is the way that most derivatives are written with the Chain Rule. \par
 
@@ -207,10 +214,10 @@ The Chain Rule is one of the cornerstones of Calculus. It can be embedded within
 \end{minipage}}}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.8:} $\diff \left[(4x^2 - 2x - 1)^{10}\right]$ 
+    \textbf{Ex 1.1.8: } $\diff \left[(4x^2 - 2x - 1)^{10}\right]$ 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.8:} \begin{align*}
+    \textbf{Sol 1.1.8: } \begin{align*}
         & u = 4x^2 - 2x - 1 \text{ and } f(u) = u^{10} \\[11pt]
         & \diff \left[f(u)\right] \begin{aligned}[t]
             & = f'(u) \cdot \dfrac{du}{dx} \\[11pt] 
@@ -221,10 +228,10 @@ The Chain Rule is one of the cornerstones of Calculus. It can be embedded within
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.9:} $\diff \left[e^{4x^2}\right]$ 
+    \textbf{Ex 1.1.9: } $\diff \left[e^{4x^2}\right]$ 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.9:} \begin{align*}
+    \textbf{Sol 1.1.9: } \begin{align*}
         & u = 4x^2 \\[11pt]
         & \diff \left[e^u\right] \begin{aligned}[t]
             & = e^u \cdot \dfrac{du}{dx} \\[11pt]
@@ -235,10 +242,10 @@ The Chain Rule is one of the cornerstones of Calculus. It can be embedded within
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.10:} If $y = \sqrt{16 - x^3}$, find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.10: } If $y = \sqrt{16 - x^3}$, find $\dfrac{dy}{dx}$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.10:} \begin{align*}
+    \textbf{Sol 1.1.10: } \begin{align*}
         & u = 16 - x^3 \text{ and } f(u) = \sqrt{u} \\[11pt]
         & \dfrac{dy}{dx} \begin{aligned}[t]
             & = \diff \left[f(u)\right] = f'(u) \cdot \dfrac{du}{dx} \\[11pt] 
@@ -249,10 +256,10 @@ The Chain Rule is one of the cornerstones of Calculus. It can be embedded within
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.11:} $\diff \left[\sqrt{\left(x^2 + 1\right)^5 + 7}\right]$
+    \textbf{Ex 1.1.11: } $\diff \left[\sqrt{\left(x^2 + 1\right)^5 + 7}\right]$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.1.11:}\begin{align*}
+    \textbf{Sol 1.1.11: }\begin{align*}
         & u = x^2 + 1, \; g(u) = u^5 + 7, \text{ and } f(g(u)) = \sqrt{g(u)} \\[11pt]
         & \diff \left[f(g(u))\right] \begin{aligned}[t]
             & = f'(g(u)) \cdot g'(u) \cdot \dfrac{du}{dx} \\[11pt]
@@ -268,26 +275,27 @@ The Chain Rule is one of the cornerstones of Calculus. It can be embedded within
 
 Find the derivatives of the given functions. Simplify where possible. \par
 
-\twoquestion{\text{1. } f(x) = x^2 + 3x - 4}{\text{2. } f(t) = \dfrac{1}{4}\left(t^4 + 8\right)} \\[11pt]
-\twoquestion{\text{3. } y = x^{-\frac{2}{3}}}{\text{4. } y = 5e^x + 3} \\[11pt]
-\twoquestion{\text{5. } v(r) = \dfrac{4}{3} \pi r^3}{\text{6. } g(x) = x^2 + \dfrac{1}{x^2}} \\[11pt]
-\twoquestion{\text{7. } y = \dfrac{x^2 + 4x + 3}{\sqrt x}}{\text{8. } u = \sqrt[3]{t^2} + 2\sqrt{t^3}} \\[11pt]
-\twoquestion{\text{9. } z = \dfrac{A}{y^{10}} + Be^y}{\text{10. } y = e^{x + 1} + 1} \\[11pt]
+\twoquestion{1. $f(x) = x^2 + 3x - 4$}{2. $f(t) = \dfrac{1}{4}\left(t^4 + 8\right)$} \\[11pt]
+\twoquestion{3. $y = x^{-\frac{2}{3}}$}{4. $y = 5e^x + 3$} \\[11pt]
+\twoquestion{5. $v(r) = \dfrac{4}{3} \pi r^3$}{6. $g(x) = x^2 + \dfrac{1}{x^2}$} \\[11pt]
+\twoquestion{7. $y = \dfrac{x^2 + 4x + 3}{\sqrt x}$}{8. $u = \sqrt[3]{t^2} + 2\sqrt{t^3}$} \\[11pt]
+\twoquestion{9. $z = \dfrac{A}{y^{10}} + Be^y$}{10. $y = e^{x + 1} + 1$} \\[11pt]
 
 Complete the following. \par
 
-\twoquestion{\text{11. } \diff \left[x^7 - 4\sqrt[8]{x^7} + 7^x - \dfrac{1}{\sqrt[7]{x^4}} + \dfrac{1}{5x}\right]}{\text{12. } \diff \left[x^6 - 3\sqrt[6]{x^7} + 5^x - \dfrac{1}{\sqrt[3]{x^5}} + \dfrac{1}{8x} \right]} \\[11pt]
-\twoquestion{\text{13. } \diff \left[x^4 - 14\sqrt[7]{x^9}\right] + 8^x - \dfrac{1}{\sqrt[3]{x^7}} + \dfrac{1}{8x}}{\text{14. } \diff \left[(x - 1)\sqrt{x}\right]} \\[11pt]
-\twoquestion{\text{15. } \dfrac{d}{dz} \left[\left(z^2 - 4\right)\sqrt{z^3}\right]}{\text{16. } \diff \left[\left(x^2 - 4x + 3\right)\sqrt{x^5}\right]} \\[11pt]
-\twoquestion{\text{17. } \dfrac{d}{dt} \left[\left(4t^2 + 1\right)\left(3t^3 + 7\right)\right]}{\text{18. } \diff \left[\left(x^3 + 4x - \pi\right)^{-7}\right]} \\[11pt]
-\twoquestion{\text{19. } \diff \left[\sqrt{3x^2 - 4x + 9}\right]}{\text{20. } \diff \left[\sqrt[7]{x^3 - 2x}\right]} \\[11pt]
-\twoquestion{\text{21. } \dfrac{d}{dy} \left[\dfrac{4y^3 - 2y^2 - 5y}{\sqrt y}\right]}{\text{22. } \dfrac{d}{dv} \left[\dfrac{v^2 - 4v + 7} {2\sqrt v}\right]} \\[11pt]
-\twoquestion{\text{23. } \dfrac{d}{dw}\left[\dfrac{7w^2 - 4w + 1}{5w^3}\right]}{\text{24. } \dfrac{d}{dw}\left[\dfrac{5w^2 - 3w - 4}{7w^2}\right]} \\[11pt]
-\twoquestion{\text{25. } f(x) = \sqrt[4]{1 + 2x + x^3} \text{, find } f'(x)}{\text{26. } f(x) = \sqrt[5]{\left(\dfrac{1}{x} + 2x + e^x\right)^3} \text{, find } f'(x)} \\[11pt]
-\twoquestion{\text{27. } f(x) = \left(x^3 + 2x\right)^{37}\text{, find } f'(x)}{\text{28. } f(x) = 3x^5 - 5x^3 + 3 \text{, find } f'(x)} \\[11pt]
-\twoquestion{\text{29. } g(2) = 3, \; g'(2) = -4, \; f(x) = e^{g(x)} \text{, find } f'(2)}{\text{30. } y = e^{\sqrt x} \text{, find } \dfrac{dy}{dx}} \\[11pt]
-\twoquestion{\text{31. } f(x) = \sqrt{4 - \dfrac{4}{9}x^2} \text{, find } f'\left(\sqrt 5\right)}{\text{32. } f(x) = e^{\sqrt{9 - x^2}} \text{, find } f'(x)} \\[11pt]
-\twoquestion{\text{33. } v(t) = \sqrt{\left(\dfrac{E(t)}{3} + 3t\right)^{\frac{3}{7}} - 4}, \text{, find } v'(t)}{\text{34. } v(t) = \sqrt[3]{\left(\dfrac{C(t)}{7} + 4t^2\right)^{\frac{5}{7}} - 1} \text{, find } v'(t)} \\[11pt]
+\twoquestion{11. $\diff \left[x^7 - 4\sqrt[8]{x^7} + 7^x - \dfrac{1}{\sqrt[7]{x^4}} + \dfrac{1}{5x}\right]$}{12. $\diff \left[x^6 - 3\sqrt[6]{x^7} + 5^x - \dfrac{1}{\sqrt[3]{x^5}} + \dfrac{1}{8x} \right]$} \\[11pt]
+\twoquestion{13. $\diff \left[x^4 - 14\sqrt[7]{x^9}\right] + 8^x - \dfrac{1}{\sqrt[3]{x^7}} + \dfrac{1}{8x}$}{14. $\diff \left[(x - 1)\sqrt{x}\right]$} \\[11pt]
+\twoquestion{15. $\dfrac{d}{dz} \left[\left(z^2 - 4\right)\sqrt{z^3}\right]$}{16. $\diff \left[\left(x^2 - 4x + 3\right)\sqrt{x^5}\right]$} \\[11pt]
+\twoquestion{17. $\dfrac{d}{dt} \left[\left(4t^2 + 1\right)\left(3t^3 + 7\right)\right]$}{18. $\diff \left[\left(x^3 + 4x - \pi\right)^{-7}\right]$} \\[11pt]
+\twoquestion{19. $\diff \left[\sqrt{3x^2 - 4x + 9}\right]$}{20. $\diff \left[\sqrt[7]{x^3 - 2x}\right]$} \\[11pt]
+\twoquestion{21. $\dfrac{d}{dy} \left[\dfrac{4y^3 - 2y^2 - 5y}{\sqrt y}\right]$}{22. $\dfrac{d}{dv} \left[\dfrac{v^2 - 4v + 7} {2\sqrt v}\right]$} \\[11pt]
+\twoquestion{23. $\dfrac{d}{dw}\left[\dfrac{7w^2 - 4w + 1}{5w^3}\right]$}{24. $\dfrac{d}{dw}\left[\dfrac{5w^2 - 3w - 4}{7w^2}\right]$} \\[11pt]
+\twoquestion{25. $f(x) = \sqrt[4]{1 + 2x + x^3}$, find $f'(x)$}{26. $f(x) = \sqrt[5]{\left(\dfrac{1}{x} + 2x + e^x\right)^3}$, find $f'(x)$} \\[11pt]
+\twoquestion{27. $f(x) = \left(x^3 + 2x\right)^{37}$, find $f'(x)$}{28. $f(x) = 3x^5 - 5x^3 + 3$, find $f'(x)$} \\[11pt]
+\twoquestion{29. $g(2) = 3, \; g'(2) = -4, \; f(x) = e^{g(x)}$, find $f'(2)$}{30. $y = e^{\sqrt x}$, find $\dfrac{dy}{dx}$} \\[11pt]
+\twoquestion{31. $f(x) = \sqrt{4 - \dfrac{4}{9}x^2}$, find $f'\left(\sqrt 5\right)$}{32. $f(x) = e^{\sqrt{9 - x^2}}$, find $f'(x)$} \\[11pt]
+\twoquestion{33. $v(t) = \sqrt{\left(\dfrac{E(t)}{3} + 3t\right)^{\frac{3}{7}} - 4}$, find $v'(t)$}{34. $v(t) = \sqrt[3]{\left(\dfrac{C(t)}{7} + 4t^2\right)^{\frac{5}{7}} - 1}$, find $v'(t)$} \\[11pt]
+
 
 \textbf{\large{1.1 Multiple Choice Homework}} \par
 

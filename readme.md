@@ -12,4 +12,6 @@ The tex files for each chapter are in their respective Chapter# folders
 
 The preamble and other commands/settings are in Support/Settings.tex
 
+Links to all videos are in https://drive.google.com/drive/folders/1Zf4oZXG6ctf94wPKOlyKIBbZ_X-aIGTz?usp=sharing.
+
 Thanks for viewing :)
