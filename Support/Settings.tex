@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xpatch} 
+\usepackage{etoolbox}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[most]{tcolorbox}
 \usepackage{lmodern}
@@ -49,5 +50,12 @@
 
 \hbadness = 10000 %Hotfix
 \xpatchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
+
+\makeatletter
+\xpatchcmd{\questions}
+  {question@\arabic{question}}
+  {question@chapter\arabic{chaptercount}section\arabic{sectioncount}question\arabic{question}@\arabic{question}}
+  {}{}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

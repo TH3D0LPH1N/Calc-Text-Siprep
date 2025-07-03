@@ -1,4 +1,4 @@
-\documentclass[11pt]{exam}
+\documentclass[11pt,addpoints,answers]{exam}
 
 % Import All Settings 
 
@@ -36,9 +36,9 @@
 \end{center}
 
 \setcounter{page}{0}
+\newcounter{chaptercount}
 
-\renewcommand{\choicelabel}{\alph{choice})}
-
+\stepcounter{chaptercount}
 \include{Chapter1/Chapter1Main}
 
 \end{document}
