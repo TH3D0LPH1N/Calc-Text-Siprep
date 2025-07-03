@@ -42,13 +42,73 @@ Just as with the first derivative, there are several symbols for the second deri
         & = \boxed{12x^2 - 42x - 6}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
-
+ 
 \begin{tcolorbox}[example]
     \textbf{Ex 1.4.2: } Find $\dfrac{d^3y}{dx^3}$ if $y = \sin (3x)$.
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.4.2: } \begin{align*}
         & y = \sin (3x) \\[11pt]
-        & \dfrac{dy}{dx} = a
+        & \dfrac{dy}{dx} = \cos (3x) \cdot 3 = 3\cos (3x) \\[11pt]
+        & \dfrac{d^2y}{dx^2} = 3(-\sin (3x)) \cdot 3 = -9\sin (3x) \\[11pt]
+        & \dfrac{d^3y}{dx^3} = -9\cos (3x) \cdot 3 = \boxed{-27\cos (3x)}
+    \end{align*}
+\end{tcolorbox}
+
+More complicated functions, in particular \hyperlink{Composite Function}{composite functions}, have a more complicated process. When the Chain Rule is applied, the result often includes a product or a quotient. Therefore, the second derivative will require the Product or Quotient Rules, as well as possibly the Chain Rule. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.4.3: } $y = e^{3x^2}$, find $\dfrac{d^y}{dx^2}$. 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.4.3: }\begin{align*}
+        & \dfrac{dy}{dx} = e^{3x^2} \cdot 6x = 6xe^{3x^2} \\[11pt]
+        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
+            & = 6x\left(e^{3x^2} \cdot 6x\right) + e^{3x^2} \cdot 6 \\[11pt]
+            & = 36x^2e^{3x^2} + 6e^{3x^2} \\[11pt]
+            & = \boxed{6e^{3x^2}\left(6x^2 + 1\right)}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.4.4: } $y = \sin^3 (x)$, find $y''$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution] 
+    \textbf{Sol 1.4.4: } \begin{align*}
+        & y' = 3\sin^2 (x) \cdot \cos (x) \\[11pt]
+        & y'' \begin{aligned}[t]
+            & = 3\sin^2 (x)(-\sin (x)) + \cos (x)(6\sin (x) \cdot \cos (x)) \\[11pt]
+            & = \boxed{3 \sin (x)\left(2\cos^2(x) - \sin^2(x)\right)}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.4.5: } $f(x) = \ln \left(x^2 + 3x - 1\right)$, find $f''(x)$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.4.5: } \begin{align*}
+        & f'(x) = \dfrac{1}{x^2 + 3x - 1}\left(2x + 3\right) = \dfrac{2x + 3}{x^2 + 3x - 1} \\[11pt]
+        & f''(x) \begin{aligned}[t]
+            & = \dfrac{\left(x^2 + 3x - 1\right)(2) - (2x + 3)(2x + 3)}{\left(x^2 + 3x - 1\right)^2} \\[11pt]
+            & = \dfrac{\left(2x^2 + 6x - 2\right) - \left(4x^2 + 12x + 9\right)}{\left(x^2 + 3x - 1\right)^2} \\[11pt]
+            & = \boxed{-\dfrac{2x^2 - 6x - 11}{\left(x^2 + 3x - 1\right)^2}}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.4.6: } $g(x) = \sqrt{4x^2 + 1}$, find $g''(x)$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.4.6: } \begin{align*}
+        & g'(x) = \dfrac{1}{2}\left(4x^2 + 1\right)^{-\frac{1}{2}}(8x) = \dfrac{4x}{\left(4x^2 + 1\right)^{\frac{1}{2}}} \\[11pt]
+        & g''(x) \begin{aligned}[t]
+            & = \dfrac{\left(4x^2 + 1\right)^{\frac{1}{2}}(4) - (4x)\left[\dfrac{1}{2}\left(4x^2 + 1\right)^{-\frac{1}{2}}(8x)\right]}{\left[\left(4x^2 + 1\right)^{\frac{1}{2}}\right]^2} \\[11pt]
+            & = \dfrac{{\left(4x^2 + 1\right)^{\frac{1}{2}}}(4) - \dfrac{16x^2}{\left(4x^2 + 1\right)^{\frac{1}{2}}}}{\left(4x^2 + 1\right)} \\[11pt]
+            & = \dfrac{\left(4x^2 + 1\right)(4) - 16x^2}{\left(4x^2 + 1\right)^{\frac{3}{2}}} \\[11pt]
+            & = \boxed{\dfrac{4}{\left(4x^2 + 1\right)^{\frac{3}{2}}}}
+        \end{aligned}
     \end{align*}
 \end{tcolorbox}
