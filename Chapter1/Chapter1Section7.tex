@@ -2,7 +2,7 @@
 
 Traditionally, calculus was an algebraically heavy subject. One of the philosophical changes that the CollegeBoard made in the 1990s was to emphasize that calculus should be understood in a variety of modes. As they state in their enduring understanding: \begin{center}
     \parbox{0.8\textwidth}{\textit{
-        ``Students should be able to work with functions represented in a veriety of ways: graphical, numerical, analytical or verbal.  They should understand the connections among these representations.''}
+       ``Students should be able to work with functions represented in a veriety of ways: graphical, numerical, analytical or verbal.  They should understand the connections among these representations.''}
     }
 \end{center} \par
 
@@ -17,13 +17,13 @@ Later, they added that students should be able to verbalize their understanding 
 
 \begin{tcolorbox}[example]
     \textbf{Ex 1.7.1: } Assume $h(x) = f(x)g(x)$. Given the table of values below, find $h'(2)$. \begin{align*}
-        \arraycolsep=11pt\def\arraystretch{2.2}
+        \arraycolsep=22pt\def\arraystretch{1.5}
         \begin{array}{|c|c|c|c|c|}
             \hline
-            x & f(x) & g(x) & f'(x) & g'(x) \\[11pt] \hline
-            1 & 3 & 2 & 4 & 6 \\[5.5pt] \hline
-            2 & 1 & 8 & 5 & 7 \\[5.5pt] \hline
-            3 & 7 & 2 & 7 & 9 \\[5.5pt]
+            x & f(x) & g(x) & f'(x) & g'(x) \\ \hline
+            1 & 3 & 2 & 4 & 6 \\ \hline
+            2 & 1 & 8 & 5 & 7 \\ \hline
+            3 & 7 & 2 & 7 & 9 \\
             \hline
         \end{array}
     \end{align*}
@@ -180,12 +180,12 @@ Later, they added that students should be able to verbalize their understanding 
 \textbf{\large{1.7 Free Response Homework}} \par
 
 1. Given the following table of values, find the indicated derivatives. \begin{align*}
-    \arraycolsep=11pt\def\arraystretch{2.2}
+    \arraycolsep=22pt\def\arraystretch{1.5}
     \begin{array}{|c|c|c|}
         \hline
-        x & f(x) & f'(x) \\[5.5pt] \hline
-        2 & 1 & 7 \\[5.5pt] \hline
-        8 & 5 & -3 \\[5.5pt]
+        x & f(x) & f'(x) \\ \hline
+        2 & 1 & 7 \\ \hline
+        8 & 5 & -3 \\
         \hline
     \end{array}
 \end{align*}
@@ -206,13 +206,13 @@ Later, they added that students should be able to verbalize their understanding 
 \hspace{0.05\textwidth}\makebox[0.57\textwidth][l]{a) Find $g'(1)$}\makebox[0.37\textwidth][l]{b) Find $h'(1)$} \\[11pt]
 
 For problems 3 -- 14, refer to the values in the table below. \begin{align*}
-    \arraycolsep=22pt\def\arraystretch{2.2} 
+    \arraycolsep=22pt\def\arraystretch{1.5} 
     \begin{array}{|c|c|c|c|c|}
         \hline
-        x & f(x) & f'(x) & g(x) & g'(x) \\[5.5pt] \hline
-        2 & 4 & -2 & 8 & 1 \\[5.5pt] \hline
-        4 & 2 & 8 & 4 & 3 \\[5.5pt] \hline
-        8 & 8 & -12 & 2 & 4 \\[5.5pt]
+        x & f(x) & f'(x) & g(x) & g'(x) \\ \hline
+        2 & 4 & -2 & 8 & 1 \\ \hline
+        4 & 2 & 8 & 4 & 3 \\ \hline
+        8 & 8 & -12 & 2 & 4 \\
         \hline
     \end{array}
 \end{align*}
@@ -328,9 +328,123 @@ For problems 15 -- 26, the graphs of $f(x)$ and $g(x)$ are given below. \begin{c
 \textbf{\large{1.7 Multiple Choice Homework}} \par
 
 \begin{questions}
-    \question Let the function $f$ be differentiable on the interval $[0, 2.5]$ and $g$ be defined by $g(x) = f(f(x))$. Use the table to find $g'(1.5)$.  \\
+    \question Let the function $f$ be differentiable on the interval $[0, 2.5]$ and $g$ be defined by $g(x) = f(f(x))$. Use the table to find $g'(1.5)$. \begin{align*}
+        \arraycolsep=22pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|c|}
+            \hline
+            x & 0 & 0.5 & 1 & 1.5 & 2 & 2.5 \\ \hline
+            f(x) & 0.5 & 1.5 & 2 & 2.5 & 1 & 0 \\ \hline
+            f'(x) & 0.1 & 0.3 & 0.6 & 1.1 & 2 & 2.2 \\
+            \hline
+        \end{array}
+    \end{align*}
 
     \begin{oneparchoices}
-        asdf 
-    \end{oneparchoices}
-\end{questions}
+        \choice $0$
+        \choice $1.24$
+        \choice $1.65$
+        \choice $2.08$
+        \choice $2.42$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Given the functions $f(x)$ and $g(x)$ that are both continuous and differentiable, and that have values given in the table below, find $h'(2)$, where $h(x) = g(x) \cdot f(x)$.  \begin{align*}
+        \arraycolsep=22pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|}
+            \hline
+            x & f(x) & g(x) & f'(x) & g'(x) \\[5.5pt] \hline
+            2 & 4 & -2 & 8 & 1 \\ \hline
+            4 & 10 & 8 & 4 & 3 \\ \hline
+            8 & 6 & -12 & 2 & 4 \\
+            \hline
+        \end{array}
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice $-12$
+        \choice $-2$
+        \choice $0$
+        \choice $30$
+        \choice $64$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Let $f(x)$ and $g(x)$ be differentiable functions. The table below gives the values of $f(x)$ and $g(x)$, and their derivatives, at several values of $x$. \begin{align*}
+        \arraycolsep=22pt\def\arraystretch{1.5} 
+        \begin{array}{|c|c|c|c|c|}
+            \hline
+            x & f(x) & g(x) & f'(x) & g'(x) \\ \hline
+            1 & 3 & 2 & 4 & -6 \\ \hline
+            2 & 1 & 8 & -5 & 7 \\ \hline
+            3 & 7 & -2 & 7 & 9 \\
+            \hline
+        \end{array}
+    \end{align*}
+    If $h(x) = \dfrac{f(x)}{g(x)}$, what is the value of $h'(2)$?
+
+    \begin{oneparchoices}
+        \choice $-4$
+        \choice $-63$
+        \choice $51$
+        \choice $-\dfrac{47}{64}$
+        \choice $-\dfrac{33}{64}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Let $h(x) = g(x) \cdot f\left(x^3\right)$. According to the table below, what is the value of $h'(2)$? \begin{align*}
+        \arraycolsep=22pt\def\arraystretch{1.5} 
+        \begin{array}{|c|c|c|c|c|}
+            \hline
+            x & f(x) & g(x) & f'(x) & g'(x) \\ \hline
+            1 & -3 & 0 & 9 & 10 \\ \hline
+            2 & 4 & 6 & -4 & 1 \\ \hline
+            4 & 9 & 2 & 3 & 3 \\ \hline
+            8 & -1 & 1 & 2 & 5 \\
+            \hline
+        \end{array}
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice $-6$
+        \choice $2$
+        \choice $11$
+        \choice $24$
+        \choice $143$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The figure below shows the graph of the functions $f$ and $g$. The graph of the line tangent to the graph of $f$ at $x = 1$ is also shown. If $B(x) = f(x) \cdot g(x)$, what is $B'(1)$? 
+    \begin{center}
+        \includegraphics[width = 0.7\textwidth]{Support/Chapter 1 Graphics/1.7-Graphic8.png}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $\dfrac{5}{6}$
+        \choice $-\dfrac{1}{2}$
+        \choice $-\dfrac{1}{6}$
+        \choice $\dfrac{1}{3}$
+        \choice $\dfrac{7}{6}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The figure below shows the graph of the functions $f$ and $g$. The graphs of the lines tangent to the grpah of $g$ at $x = -3$ and $x = 1$ are also shown. If $B(x) = f(g(x))$, what is $B'(1)$?
+    \begin{center}
+        \includegraphics[width = 0.7\textwidth]{Support/Chapter 1 Graphics/1.7-Graphic9.png}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $-\dfrac{1}{2}$
+        \choice $-\dfrac{1}{6}$
+        \choice $\dfrac{1}{6}$
+        \choice $\dfrac{1}{3}$
+        \choice $\dfrac{1}{2}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Given the graphs of the two functions below and the fact that $B(x) = f(g(x))$, $B'(4) =$ 
+    \begin{center}
+        \includegraphics[width = 0.75\textwidth]{Support/Chapter 1 Graphics/1.7-Graphic10.png}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $0$
+        \choice $1$
+        \choice $\dfrac{1}{2}$
+        \choice $-\dfrac{1}{3}$
+        \choice $DNE$
+    \end{oneparchoices} \par \horizontalline
+\end{questions} 
