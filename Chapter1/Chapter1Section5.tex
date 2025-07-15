@@ -1,1 +1,246 @@
 \textbf{\underline{\large{1.5: Implicit Differentiation and Second Derivative Applications}}} \par
+
+Implicit differentiation is a technique that might be better suited to the Derivative Review chapter, but it is considered here because of its direct impact within the next few sections. Implicit differentiation is an application of the Chain Rule where the $y$-function is not easily defined explicitly. \par 
+
+One of the most useful aspects of the Chain Rule is that we can take derivatives of more complicated equations that would be difficult to take the derivative of otherwise. One of the key elements to remember is that we already know the derivative of $y$ with respect to $x$ --- that is, $\dfrac{dy}{dx} \forcespace$. This can be a powerful tool as it allows us to take the derivative of relations as well as functions while bypassing a lot of tedious algebra. When $y$ cannot easily be isolated, we can treat $y$ like we treat $g(x)$. In other words: \begin{align*}
+    \diff \left[f\left(g(x)\right)\right] = f'\left(g(x)\right) \cdot \left[g'(x)\right] \text{ is the same as } \diff \left[f(y)\right] = f'(y) \cdot \left(\dfrac{dy}{dx}\right)
+\end{align*}
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Take Derivatives of Relations Implicitly. \\
+    Use Implicit Differentiation to Find Higher Order Derivatives. \\
+    Use the Second Derivative Test to Determine Whether a Point is at a Maximum, Minimum, or Neither.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.5.1: } Find $\dfrac{dy}{dx}$ if $x^2 + y^2 = 25$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.5.1: } \begin{align*}
+        & \diff \left[x^2 + y^2 = 25\right] \\[11pt]
+        & \diff \left[x^2\right] + \diff \left[y^2\right] = \diff [25] \\[11pt]
+        & \rightarrow 2x + 2y\dfrac{dy}{dx} = 0 
+    \end{align*}
+    We can now isolate $\dfrac{dy}{dx}$ \begin{align*}
+        & 2y\dfrac{dy}{dx} = -2x \\[11pt]
+        & \dfrac{dy}{dx} = \boxed{-\dfrac{x}{y}}
+    \end{align*}
+\end{tcolorbox}
+
+With this function, notice that $y$ could have been isolated and $\dfrac{dy}{dx}$ could've been found \textbf{explicitly}. \begin{align*}
+    & x^2 + y^2 = 25 \\[11pt]
+    & y^2 = 25 - x^2 \\[11pt]
+    & y = \sqrt{25 - x^2} \\[11pt]
+    & \dfrac{dy}{dx} = -\dfrac{x}{\sqrt{25 - x^2}}
+\end{align*}
+
+Notice that this is the same answer as we found with implicit differentiation. You could substitute $y$ for $\sqrt{25 - x^2}$ in the denominator and come up with the same derivative, $\dfrac{dy}{dx} \forcespace= -\dfrac{x}{y}$. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.5.2: } Find the derivative of $x^2 - 3y^2 + 4x - 12y - 2 = 0$ implicitly.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.5.2: } \begin{align*}
+        & \diff \left[x^2 - 3y^2 + 4x - 12y - 2 = 0\right] \\[11pt]
+        & 2x - 6y\dfrac{dy}{dx} + 4 - 12\dfrac{dy}{dx} = 0 \\[11pt]
+        &(-6y - 12)\dfrac{dy}{dx} = -2x - 4 \\[11pt]
+        &\dfrac{dy}{dx} = \boxed{\dfrac{-2x - 4}{-6y - 12}}
+    \end{align*}
+\end{tcolorbox}
+
+When considering functions, implicit differentiation may not seem to be a particularly powerful tool, because it is often simple to isolate $y$. But consider a non-function, like this circle, ellipse, or hyperbola, where $y$ is not so easily isolated. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.5.3: } Find $\dfrac{dy}{dx}$ for the hyperbola $x^2 - 3xy + 3y^2 = 2$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.5.3: } It would be very difficult to solve for $y$ here, so implicit differentiation is
+    really our only option. \begin{align*}
+        & \diff \left[x^2 - 3xy + 3y^2 = 2\right] 
+    \end{align*}
+    Note that $-3xy$ is a product. It will require the Product Rule. \begin{align*}
+        & 2x - 3x\dfrac{dy}{dx} - 3y + 6y\dfrac{dy}{dx} = 0 \\
+        & (-3x + 6y)\dfrac{dy}{dx} = -2x + 3y \\
+        & \dfrac{dy}{dx} = \boxed{\dfrac{-2x + 3y}{-3x + 6y}}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.5.4: } Find the equation of the line tangent to $x^3 - y^2 + 6y = -3$ at $y = 1$ \\
+
+    \begin{oneparchoices}
+        \choice $3x^2 - 2y = 6$ 
+        \choice $3x - y = -7$
+        \choice $3x + y = -5$ \\[11pt]
+        \makebox[0.25\textwidth] \choice $x + 3y = 1$
+        \makebox[0.27\textwidth] \choice $x - 3y = -5$
+    \end{oneparchoices}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.5.4: } First, let's find the point of tangency. \begin{align*}
+        & x^3 - y^2 + 6y = -3 \rightarrow x^3 - (1)^2 + 6(1) = -3 \\[11pt]
+        & x^3 = -8 \therefore x = -2 \\[11pt]
+        & \diff \left[x^3 - y^2 + 6y = -3\right] \\[11pt]
+        & 3x^2 - 2y\dfrac{dy}{dx} + 6\dfrac{dy}{dx} = 0 \\[11pt]
+        & \dfrac{dy}{dx} = \dfrac{-3x^2}{-2y + 6}
+    \end{align*}
+    Now, let's plug in our point that we found, $(-2, 1)$ \begin{align*}
+        & \dfrac{dy}{dx} = \dfrac{-3(-2)^2}{-2(1) + 6} \\[11pt]
+        & \dfrac{dy}{dx} = -3 \\[11pt]
+        & y - 1 = -3(x + 2) \\[11pt]
+        & y - 1 = -3x - 6 \\[11pt]
+        & \rightarrow \boxed{\text{c) } 3x + y = -5}
+    \end{align*}
+\end{tcolorbox}
+
+Of course, if we want to find a second derivative, we can use implicit differentiation a second time. \par 
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.5.5: } Given $\dfrac{dy}{dx} = \dfrac{x + 2}{3y + 6}$, find $\dfrac{d^2y}{dx^2}$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.5.5: } \begin{align*}
+        & \diff \left[\dfrac{dy}{dx} = \dfrac{x + 2}{3y + 6}\right] \\[11pt]
+        & \dfrac{d^2y}{dx^2} = \dfrac{(3y + 6) - (x + 2)\left(3\dfrac{dy}{dx}\right)}{(3y + 6)^2} 
+    \end{align*}
+    Since we already know $\dfrac{dy}{dx}$, we can substitute \begin{align*}
+        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
+            & = \dfrac{(3y + 6) - (x + 2)(3)\left(\dfrac{x + 2}{3y + 6}\right)}{(3y + 6)^2} \\[11pt]
+            & = \dfrac{(3y + 6) - (x + 2)(3)\left(\dfrac{x + 2}{3y + 6}\right)}{(3y + 6)^2} \cdot \dfrac{3y + 6}{3y + 6} \\[11pt]
+            & = \boxed{\dfrac{(3y + 6)^2 - 3(x + 2)^2}{(3y + 6)^3}}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.5.6: } Find $\dfrac{dy}{dx}$ and $\dfrac{d^2y}{dx^2}$ for $\sin (y) = 2\cos (3x)$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.5.6: } \begin{align*}
+        & \diff \left[\sin (y) = 2\cos (3x)\right] \\[11pt]
+        & \cos (y)\dfrac{dy}{dx} = -6\sin (3x) \\[11pt]
+        & \dfrac{dy}{dx} = \boxed{-\dfrac{6\sin (3x)}{\cos (y)}} \\[11pt]
+        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
+            & = \dfrac{-18\cos (y)\cos (3x) - 6\sin (3x)\sin (y)\dfrac{dy}{dx}}{\cos^2 (y)} \\[11pt]
+            & = \dfrac{-18\cos (y)\cos (3x) - 6\sin (3x)\sin (y)\left(-\dfrac{6\sin (3x)}{\cos (y)}\right)}{\cos^2 (y)} \\[11pt]
+            & = \boxed{\dfrac{-18\cos (y)\cos (3x) + 36\sin^2 (3x)\sin (y)}{\cos^3 (y)}}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox}
+
+\bigskip
+
+\textbf{\large{AP-Style Implicit Differentiation Problems}} \par
+
+\textbf{Common Sub-topics:} \begin{itemize}
+    \item Demonstrating implicit differentiation 
+    \item Finding the equation of a tangent line
+    \item Finding points where the tangent line is horizontal and/or vertical
+    \item Finding points on a curve with a particular slope
+    \item Finding the second derivative and apply the Second Derivative Test
+    \item Finding the particular solution (this will have to wait for the next chapter)
+\end{itemize}
+
+Remember: 
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            The Second Derivative Test
+        \end{center}
+        \vspace{11pt}
+        For a function $f$: 
+        \vspace{11pt}
+        \begin{center}
+            1) If $f'(c) = 0$ and $f''(c) > 0$, then $f$ has a relative minimum at $c$ \\[11pt]
+            2) If $f'(c) = 0$ and $f''(c) < 0$, then $f$ has a relative maximum at $c$ \\[11pt]
+        \end{center}
+    \end{minipage}}}
+\end{center}
+
+This is necessary because one cannot create a sign pattern without an \textbf{explicitly} stated function, so the First Derivative Test will not work on problems which require implicit differentiation to find the derivative. \par
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Take Derivatives of Relations Implicitly. \\
+    Use Implicit Differentiation to Find Higher Order Derivatives. \\
+    Use Separation of Variables to Find the Particular Solution to a Differential Equation.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.5.7: } Consider the curve given by $x^2 + 4xy + y^2 = -12$. \\[11pt]
+
+    (a) Show that $\dfrac{dy}{dx} = -\dfrac{x + 2y}{2x + y}$ \\[11pt]
+    (b) Find the point(s) where the equation of the tangent line(s) is/are horizontal. \\[11pt]
+    (c) Find the value(s) of $\dfrac{d^2y}{dx^2} \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
+\end{tcolorbox} 
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.5.7: } \\[11pt]
+    (a) Because we have a $4xy$ term, we need to use the product rule \begin{align*}
+        & \diff \left[x^2 + 4xy + y^2 = -12\right] \\[11pt]
+        & 2x + 4x\dfrac{dy}{dx} + 4y(1) + 2y\dfrac{dy}{dx} = 0 \\[11pt]
+        & 4x\dfrac{dy}{dx}+ 2y\dfrac{dy}{dx} = -2x - 4y \\[11pt]
+        & (4x + 2y)\dfrac{dy}{dx} = -2x - 4y \\[11pt]
+        & \dfrac{dy}{dx} = \dfrac{-2x - 4y}{4x + 2y} = \boxed{-\dfrac{x + 2y}{2x + y}}
+    \end{align*}
+    (b) Horizontal lines have a slope of $0$, so we need to find when $\dfrac{dy}{dx} = 0$. \begin{align*}
+        & \dfrac{dy}{dx} = 0 \\[11pt]
+        & -\dfrac{x + 2y}{2x + y} = 0 \\[11pt]
+        & x + 2y = 0 \\[11pt]
+        & x = -2y
+    \end{align*}
+    To be on the curve, $x = -2y$ must satisfy the original equation. \begin{align*}
+        & (-2y)^2 + 4(-2y)y + y^2 = -12 \\[11pt]
+        & 4y^2 - 8y^2 + y^2 = -12 \\[11pt]
+        & -3y^2 = -12 \\[11pt]
+        & y^2 = 4 \therefore y = \pm 2 \\[11pt]
+        & x = -2y \rightarrow \boxed{(-4, 2) \text{ and } (4, -2)}
+    \end{align*}
+    (c) What is really asked here is to apply the Second Derivative Test, because we cannot create a sign pattern for non-functions. The $y$ is not isolated in the equation. \begin{align*}
+        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
+            & = \diff \left[\dfrac{dy}{dx} = -\dfrac{x + 2y}{2x + y}\right] \\[11pt]
+            & = \dfrac{(2x + y)\left(1 + 2\dfrac{dy}{dx}\right) - (x + 2y)\left(2 + \dfrac{dy}{dx}\right)}{(2x + y)^2} \\[11pt]
+        \end{aligned} \\[11pt]
+        & \dfrac{d^2y}{dx^2} \eval_{(-4, 2)} \begin{aligned}[t]
+            & = \dfrac{(2(-4) + 2)\left(1 + 2(0)\right) - (-4 + 2(2))\left(2 + 0\right)}{(2(-4) + 2)^2} \\[11pt]
+            & = \dfrac{6}{(-6)^2} > 0
+        \end{aligned} \\[11pt]
+        & \dfrac{d^2y}{dx^2} \eval_{(4, -2)} \begin{aligned}[t]
+            & = \dfrac{(2(4) - 2)\left(1 + 2(0)\right) - (4 + 2(-2))\left(2 + 0\right)}{(2(4) + 2)^2} \\[11pt]
+            & = \dfrac{6}{(-6)^2} < 0
+        \end{aligned}
+    \end{align*}
+    $\boxed{(-4, 2) \text{ will be a minimum}}$ because the second derivative is positive. \\[11pt]
+    $\boxed{(4, -2) \text{ will be a maximum}}$ because the second derivative is negative.
+\end{tcolorbox}
+
+Be Careful!! There is a lot of algebraic simplification that happens in these problems, and it is easy to make mistakes. Take your time with the simplifications so that you don't make careless mistakes. \par
+
+\newpage
+
+\textbf{\large{1.5 Free Response Homework}} \par
+
+Find $\dfrac{dy}{dx}$ for each of these equations, first by implicit differentiation, then by solving for $y$ and differentiating. Show that $\dfrac{dy}{dx}$ is the same in both cases. \par
+
+\twoquestion{1. $x^2 + y^2 = 1$}{2. $x^3 + 4y^2 = 16$} \\[11pt]
+\twoquestion{3. $\dfrac{1}{x} + \dfrac{1}{y} = 1$}{4. $\sqrt{x} + \sqrt{y} = 4$} \\[11pt]
+
+Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \par
+
+\twoquestion{5. $x^2 + xy = 10$}{6. $x^3 + 10x^2y + 7y^2 = 60$} \\[11pt]
+\twoquestion{7. $x^2 + xy - 4y - 1 = 0$}{8. $xy + 2x + 3x^2 = 4$} \\[11pt]
+\twoquestion{9. $x^2 + 4xy - 5y^2 = 4$}{10. $3x^2 + xy - 4y^2 = 5$} \\[11pt]
+\twoquestion{11. $x^2 = \dfrac{x - y}{x + y}$}{12. $x^2 + y^2 = \dfrac{x}{y}$} \\[11pt]
+\twoquestion{13. $y^2 = \dfrac{x - y}{x + y}$}{14. $y^2 = \dfrac{x^2 - 1}{x + 2}$} \\[11pt]
+\twoquestion{15. $x^2y^2 + x\sin (y) = 4$}{16. $4\cos (x)\sin (y) = 1$} \\[11pt]
+\twoquestion{17. $e^{x^2y} = x + y$}{18. $\tan(x - y) = \dfrac{y}{1 + x^2}$} \\[11pt]
+\onequestion{19. Find the equation of the line tangent to $x^2 - y^2 - 6y - 3 = 0$ at $\left(\sqrt{3}, 0\right)$} \\[11pt]
+\onequestion{20. Find the equation of the line tangent to $9x^2 + 4y^2 + 36x - 8y - 32 = 0$ at $(0, 2)$} \\[11pt]
+\onequestion{21. Find the equation of the line tangent to $12x^2 - 4y^2 + 72x + 16y + 44 = 0$ at $(-1, -3)$} \\[11pt]
+\onequestion{22. Find the equation of the line tangent to $x^3 + \dfrac{y}{x} + y^2 = 7$ at $(1, 2)$} \\[11pt]
+\onequestion{23. Find the equation of the lines tangent and normal to $y - \dfrac{4}{\pi^2}x^2 = 2e^{y\sin (x)} + y^3 - 3$ through the point $\left(\dfrac{\pi}{2}, 0\right)$}
