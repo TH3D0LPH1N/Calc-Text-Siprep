@@ -6,9 +6,7 @@ Hope you find this useful :)
 
 The full text lies within the file called "MainText.pdf"
 
-Chapters lie within their respective "Chapter#.pdf" files
-
-The tex files for each chapter are in their respective Chapter# folders
+The tex files and pdfs for each chapter are in their respective Chapter# folders
 
 The preamble and other commands/settings are in Support/Settings.tex
 
