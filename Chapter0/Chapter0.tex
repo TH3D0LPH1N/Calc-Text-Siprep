@@ -1,0 +1,31 @@
+\ifx\mainfile\undefined
+  \documentclass[11pt]{exam}
+  \input{../Support/Settings.tex}
+  \def\graphicsdir{../Support/}
+  \def\inputpathChapterZero{}
+  \begin{document}
+\fi
+
+% Title Page
+
+\vspace*{2.5cm}
+\begin{center}
+    {\fontsize{48}{48}\selectfont \textbf{Chapter 0:}} \\
+    \vspace{72pt}
+    {\fontsize{48}{48}\selectfont \textbf{Synthesis Of}} \\
+    \vspace{24pt}
+    {\fontsize{48}{48}\selectfont \textbf{Precalculus}}
+\end{center}
+
+\stepcounter{chaptercount}
+\setcounter{sectioncount}{0}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterZero Chapter0Overview.tex}
+
+\ifdefined\mainfile
+\else
+  \end{document}
+\fi

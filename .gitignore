@@ -18,5 +18,4 @@
 # VSCode settings (optional)
 .vscode/
 
-# Redundant tex files for Chapter pdfs
-Chapter[0-10].tex
+

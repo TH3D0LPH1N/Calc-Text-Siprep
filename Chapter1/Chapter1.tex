@@ -1,0 +1,70 @@
+\ifx\mainfile\undefined
+  \documentclass[11pt]{exam}
+  \input{../Support/Settings.tex}
+  \def\graphicsdir{../Support/}
+  \def\inputpathChapterOne{}
+  \begin{document}
+\fi
+
+% Title Page
+
+\vspace*{2.5cm}
+\begin{center}
+    {\fontsize{48}{48}\selectfont \textbf{Chapter 1:}} \\
+    \vspace{72pt}
+    {\fontsize{48}{48}\selectfont \textbf{Review of}} \\
+    \vspace{24pt}
+    {\fontsize{48}{48}\selectfont \textbf{Derivatives}}
+\end{center}
+
+\stepcounter{chaptercount}
+\setcounter{sectioncount}{0}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Overview.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section1.tex} 
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section2.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section3.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section4.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section5.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section6.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section7.tex}
+
+\ifdefined\mainfile
+\else
+  \end{document}
+\fi
+
+
+
+
