@@ -16,6 +16,7 @@
 \usepackage[skip=11pt plus1pt]{parskip}
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
 \everymath{\displaystyle}
+\pagestyle{plain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Commands, Macros, and Fixes
@@ -57,5 +58,8 @@
   {question@chapter\arabic{chaptercount}section\arabic{sectioncount}question\arabic{question}@\arabic{question}}
   {}{}
 \makeatother
+
+\newcounter{sectioncount}
+\newcounter{chaptercount}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

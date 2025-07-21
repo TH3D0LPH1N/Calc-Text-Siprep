@@ -19,4 +19,4 @@
 .vscode/
 
 # Redundant tex files for Chapter pdfs
-Chapter[1-10].tex
+Chapter[0-10].tex

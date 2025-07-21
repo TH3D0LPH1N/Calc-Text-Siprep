@@ -3,10 +3,11 @@
 % Import All Settings 
 
 \input{Support/Settings.tex}
+\def\mainfile{}
+\def\graphicsdir{Support/}
 
 % Document Begins, Page Setup
 \begin{document}
-\pagestyle{plain}
 \allowdisplaybreaks
 
 % Main Title Page
@@ -35,10 +36,7 @@
 
 \end{center}
 
-\setcounter{page}{0}
-\newcounter{sectioncount}
-\newcounter{chaptercount}
-
-\include{Chapter1/Chapter1Main}
+\def\inputpathChapterOne{Chapter1/}
+\include{Chapter1/Chapter1}
 
 \end{document}
