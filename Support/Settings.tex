@@ -14,8 +14,10 @@
 \usepackage{calc}
 \usepackage{longtable}
 \usepackage{enumitem}
+\usepackage{siunitx}
 \usepackage[skip=11pt plus1pt]{parskip}
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{tikz}
 \everymath{\displaystyle}
 \pagestyle{plain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,6 +25,8 @@
 % Commands, Macros, and Fixes
 \let \templim \lim
 \renewcommand{\lim}{\templim\limits}
+\let\tempsi\si
+\renewcommand{\si}[1]{\;\tempsi{#1}}
 \renewcommand{\choicelabel}{\alph{choice})}
 \newcommand{\horizontalline}{\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}} 
 \newcommand{\diff}{\dfrac{d}{dx}}
@@ -43,6 +47,7 @@
 \tcbset{solution/.style={colback=Green!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
 \tcbset{objective/.style={colback=Gray!20, colframe=Black, arc=0.5mm, boxrule=0.5pt}}
 \tcbset{definition/.style={colback=Goldenrod!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+\tcbset{default/.style={colback=White, colframe=Black, arc=0.5mm}}
 
 \bigskipamount = 154pt
 
@@ -62,5 +67,13 @@
 
 \newcounter{sectioncount}
 \newcounter{chaptercount}
+
+% TikzImage Settings
+
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=0.99\textwidth, minimum height=1cm,text centered, draw=black, fill=WildStrawberry!50!white]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=5cm, draw=black, fill=Green!50!white]
+\tikzstyle{decision} = [diamond, minimum width=3cm, aspect=2.5, text centered, draw=black, fill=Cyan!30!white]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

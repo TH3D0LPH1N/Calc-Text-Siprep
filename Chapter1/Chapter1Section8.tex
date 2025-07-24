@@ -2,3 +2,69 @@
 
 In this course, derivatives have primarily been interpreted as the slope of the tangent line. But, as with \href{https://www.merriam-webster.com/dictionary/rectilinear\%20motion}{\text{\textcolor{blue}{rectilinear motion}}}, there are other contexts for the derivative. One overarching concept is that the derivative is a \textbf{rate of change}. The tendency is to think of rates as distance per time unit, like miles per hour or meters per second, but even slope is a rate of change---it is just that the rise and run are both measured as distances. \par
 
+The idea behind related rates is two-fold. First, change is occurring in two or more measurements that are related to each other by the geometry (or algebra) of the situation. Second, an implicit Chain Rule situation exists in that the $x$ and $y$-values are functions of time, which may or may not be a variable in the problem. Therefore, when taking the derivative of an $x$ or $y$, an \textbf{implicit rate term} $\left(\dfrac{dx}{dx} \text{ or } \dfrac{dy}{dt}\right) \forcespace$ often occurs. \par
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Solve Related Rates Problems.
+\end{tcolorbox}
+
+At first glance, related rates problems might seem like optimization problems that we've seen last year. Consider the following example:
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.8.1: } The volume of a cylindrical cola can is $32\pi \si{in^3}$. What is the minimum surface area for such a can?
+\end{tcolorbox}
+
+The word ``minimum'' tells us that we have an optimization problem. Recall our workflow for tackling optimization problems:
+
+\begin{center}
+    \begin{tcolorbox}[default]
+        \begin{center}
+            \textbf{Strategy For Optimization Problems} \\[22pt]
+        \end{center}
+        \begin{tikzpicture}[node distance=2cm]
+        
+            \node (read) [startstop] 
+                {Read the problem to decide on a primary equation (the one to maximize)};
+            \node (decision) [decision, below of=read, yshift=-1cm, xshift=-3.5cm] 
+                {Are there more than two variables?};
+            \node (secondary) [process, right of=decision, xshift=6cm] 
+                {Create a secondary equation};
+            \node (picture) [process, below of=secondary] 
+                {Draw and label a picture. \\ Do not use $x$ or $y$!};
+            \node (isolate) [process, below of=picture] 
+                {Isolate the variable to eliminate from the primary equation.};
+            \node (substitute) [process, below of=isolate] 
+                {Substitute into the primary equation.};
+            \node (derivative) [process, below of=decision, yshift=-4cm] 
+                {Take the derivative and set it equal to zero.};
+            \node (critical) [process, below of=derivative] 
+                {Solve for the critical values. \\ \textbf{Don't forget endpoints!}};
+            \node (sign) [process, below of=critical] 
+                {Check the sign pattern to determine max vs. minimum.};
+            \node (answer) [startstop, below of=sign, xshift=3.5cm] 
+                {Reread the problem and \textbf{answer the question that was asked.}};
+
+            % Arrows
+            \draw [arrow] ([xshift=-3.5cm]read.south) -- (decision.north);
+            \draw [arrow] (decision) -- (secondary) node[midway, above] {\textbf{Yes}};
+            \draw [arrow] (secondary) -- (picture);
+            \draw [arrow] (picture) -- (isolate);
+            \draw [arrow] (isolate) -- (substitute);
+            \draw [arrow] (substitute) -- (derivative);
+            \draw [arrow] (decision.south) -- (derivative) node[midway, left] {\textbf{No}};
+            \draw [arrow] (derivative) -- (critical);
+            \draw [arrow] (critical) -- (sign);
+            \draw [arrow] (sign.south) -- ([xshift=-3.5cm]answer.north);
+    
+        \end{tikzpicture}
+    \end{tcolorbox}
+\end{center}
+
+So, let's tackle our example. \par
+
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.8.1: } The problem asks for 
+\end{tcolorbox}
