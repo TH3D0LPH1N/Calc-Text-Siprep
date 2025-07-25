@@ -93,13 +93,13 @@ Though not as useful as practically useful (in 2 dimensions) as the tangent line
 
 In the previous section, we learned a little regarding approximations with tangent lines. Euler's Method is just a better approximation method. It uses more than one tangent line to get the job done. \par
 
-The process is similar to approximating with tangent lines. We use $\dfrac{dy}{dx} \forcespace$ to find a tangent line, then use that tangent line to find an approximate value for $y$. We then use that $y$ value and another $x$ value to create another "tangent line." Of course, it isn't actually a tangent line because our $y$ value wasn't actually on the curve. We then repeat the process until we get to the value we want to approximate. \par
+The process is similar to approximating with tangent lines. We use $\deriv \forcespace$ to find a tangent line, then use that tangent line to find an approximate value for $y$. We then use that $y$ value and another $x$ value to create another "tangent line." Of course, it isn't actually a tangent line because our $y$ value wasn't actually on the curve. We then repeat the process until we get to the value we want to approximate. \par
 
 \textbf{Steps to Euler's Method}
 
 \begin{enumerate}
     \item Identify your starting point and step size.
-    \item Use $\dfrac{dy}{dx}$ to find the slope and make it a tangent line. 
+    \item Use $\deriv$ to find the slope and make it a tangent line. 
     \item Find an approximate $y$ value by plugging in $x + (\textit{1 step size})$ to the tangent line.
     \item Use the approximate $y$ value and the next $x$ step over to make a new tangent line.
     \item Repeat steps 3 and 4 until you reach your final $x$ value -- the one you actually want an approximation for.
@@ -138,14 +138,14 @@ We could also use this process to approximate a value for a curve when we only
 know its derivative and an initial value on the curve. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.6.6: } Use Euler's method with a step size of $\dfrac{1}{2}$ to estimate $f\left(\dfrac{5}{2}\right)$ for the function whose derivative is given by $\dfrac{dy}{dx} = 2x + y$ with an initial value of $f(1) = 4$.
+    \textbf{Ex 1.6.6: } Use Euler's method with a step size of $\dfrac{1}{2}$ to estimate $f\left(\dfrac{5}{2}\right)$ for the function whose derivative is given by $\deriv = 2x + y$ with an initial value of $f(1) = 4$.
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.6.6: } For this problem, to find the slope for each step, we simply we need to plug in our point into the given differential equation. \begin{align*}
         \def\arraystretch{2.2} 
         \begin{array}{|c|c|c|c|c|c|}
             \hline
-            \textbf{Step} & \textbf{Point} & \dfrac{dy}{dx} \textbf{ (Slope)} & \textbf{Tangent Line Equation} & \textbf{New } x & \textbf{New } y \\[5.5pt] \hline
+            \textbf{Step} & \textbf{Point} & \deriv \textbf{ (Slope)} & \textbf{Tangent Line Equation} & \textbf{New } x & \textbf{New } y \\[5.5pt] \hline
             1 & (1, 4) & 6 & y - 4 = 6(x - 1) & \dfrac{3}{2} & 7 \\[5.5pt] \hline
             2 & \left(\dfrac{3}{2}, 7\right) & 10 & y - 7 = 10\left(x - \dfrac{3}{2}\right) & 2 & 12 \\[5.5pt] \hline
             3 & (2, 12) & 16 & y - 12 = 16(x - 2) & \dfrac{5}{2} & 20 \\[5.5pt]
@@ -160,10 +160,10 @@ know its derivative and an initial value on the curve. \par
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.6.7: } To determine this, we need to look at the concavity of the curve -- this requires the second derivative. \begin{align*}
-        & \dfrac{dy}{dx} = 2x + y \\[11pt]
-        & \dfrac{d^2y}{dx^2} = 2 + \dfrac{dy}{dx} && \text{Don't forget implicit differentiation!} \\[11pt]
-        & \dfrac{d^2y}{dx^2} = 2 + (2x + y) \\[11pt]
-        & \dfrac{d^2y}{dx^2} \eval_{(1, 4)} = 2 + 2(1) + 4 = 8 && \text{Plug in our initial value}
+        & \deriv = 2x + y \\[11pt]
+        & \deriv[2] = 2 + \deriv && \text{Don't forget implicit differentiation!} \\[11pt]
+        & \deriv[2] = 2 + (2x + y) \\[11pt]
+        & \deriv[2] \eval_{(1, 4)} = 2 + 2(1) + 4 = 8 && \text{Plug in our initial value}
     \end{align*}
     Since the second derivative is positive, our curve is concave up at this point, which means our tangent line lies under the curve. This is indicative of an $\boxed{\text{underestimate}} \smallforcespace$.
 \end{tcolorbox}
@@ -182,7 +182,7 @@ Generally: \par
 \end{center}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.6.8: } Use Euler's method with four equal step sizes to approximate $f(2)$ for $\dfrac{dy}{dx} = 3y - x$, given $f(0) = 1$. Is this an overestimate or an underestimate?
+    \textbf{Ex 1.6.8: } Use Euler's method with four equal step sizes to approximate $f(2)$ for $\deriv = 3y - x$, given $f(0) = 1$. Is this an overestimate or an underestimate?
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.6.8: } First, let's figure out our step sizes. We know that we start with $x = 0$, and we need to end up at $x = 2$. Therefore, four equal step sizes means that each step must be $+\dfrac{1}{2} \forcespace$. \par
@@ -190,7 +190,7 @@ Generally: \par
         \def\arraystretch{2.2} 
         \begin{array}{|c|c|c|c|c|c|}
             \hline
-            \textbf{Step} & \textbf{Point} & \dfrac{dy}{dx} \textbf{ (Slope)} & \textbf{Tangent Line Equation} & \textbf{New } x & \textbf{New } y \\[5.5pt] \hline
+            \textbf{Step} & \textbf{Point} & \deriv \textbf{ (Slope)} & \textbf{Tangent Line Equation} & \textbf{New } x & \textbf{New } y \\[5.5pt] \hline
             1 & (0, 1) & 3 & y - 1 = 3(x - 0) & \dfrac{1}{2} & \dfrac{5}{2} \\[5.5pt] \hline
             2 & \left(\dfrac{1}{2}, \dfrac{5}{2}\right) & 7 & y - \dfrac{5}{2} = 7\left(x - \dfrac{1}{2}\right) & 1 & 6 \\[5.5pt] \hline
             3 & (1, 6) & 17 & y - 6 = 17(x - 1) & \dfrac{3}{2} & \dfrac{29}{2} \\[5.5pt] \hline
@@ -199,8 +199,8 @@ Generally: \par
         \end{array}
     \end{align*}
     We can see that $f(2) \approx y(2) = \boxed{\dfrac{71}{2}} \forcespace$. Now, let's solve for the second derivative to find out if this is an overestimate or underestimate. \begin{align*}
-        & \dfrac{d^2y}{dx^2} = 3\dfrac{dy}{dx} - 1 = 9y - 3x - 1 \\[11pt]
-        & \dfrac{d^2y}{dx^2} \eval_{(0, 1)} = 9(1) - 3(0) - 1 = 8
+        & \deriv[2] = 3\deriv - 1 = 9y - 3x - 1 \\[11pt]
+        & \deriv[2] \eval_{(0, 1)} = 9(1) - 3(0) - 1 = 8
     \end{align*}
     Because the positive second derivative indicates that $y$ is concave up at $(0, 1)$, our Euler's Method result is going to be an $\boxed{\text{underestimate}} \smallforcespace$.
 \end{tcolorbox}
@@ -228,9 +228,9 @@ Complete the following: \par
 \onequestion{15. Find the equation of the lines tangent and normal to $y = \dfrac{x^2 - 4x + 3}{2x^2 - 5x - 3}$ at $x = 2$.} \\[11pt]
 \onequestion{16. Find the equation of the lines tangent and normal to $y = x\sin \left(\dfrac{\pi}{2}\ln x\right)$ when $x = e$.} \\[11pt]
 \onequestion{17. Find the equation of the lines tangent and normal to $y = x\sin \left(\dfrac{1}{x}\right)$ when $x = \dfrac{4}{\pi}$.} \\[11pt]
-\onequestion{18. Use Euler's Method with 2 equal step sizes to find an approximation for $f(0)$, given that $f(-1) = 2$ and $\dfrac{dy}{dx} = 6x^2 - x^2y$.} \\[11pt]
+\onequestion{18. Use Euler's Method with 2 equal step sizes to find an approximation for $f(0)$, given that $f(-1) = 2$ and $\deriv = 6x^2 - x^2y$.} \\[11pt]
 \onequestion{19. Use Euler's Method with 4 equal step sizes to find an approximation for $f(1.4)$, given that $f(1) = 0$ and $f(x) = \ln (2x - 1)$.} \\[11pt]
-\onequestion{20. Use Euler's Method with 3 equal step sizes to find an approximation for $f(2.6)$, given that $f(2) = -2$ and $\dfrac{dy}{dx} = 2x + y$.} \\[11pt]
+\onequestion{20. Use Euler's Method with 3 equal step sizes to find an approximation for $f(2.6)$, given that $f(2) = -2$ and $\deriv = 2x + y$.} \\[11pt]
 
 \textbf{\large{1.6 Multiple Choice Homework}} \par
 
@@ -275,7 +275,7 @@ Complete the following: \par
         \makebox[0.27 \textwidth] \choice $y - 2x = -4$
     \end{oneparchoices} \par \horizontalline
 
-    \question Let $y = f(x)$ be the solution to the differential equation $\dfrac{dy}{dx} = \dfrac{4x}{y} \forcespace$ with the initial condition $f(0) = 1$. What is the best approximation for $f(1)$ using Euler's Method, starting at $x = 0$ with a step size of $0.5$? \\
+    \question Let $y = f(x)$ be the solution to the differential equation $\deriv = \dfrac{4x}{y} \forcespace$ with the initial condition $f(0) = 1$. What is the best approximation for $f(1)$ using Euler's Method, starting at $x = 0$ with a step size of $0.5$? \\
 
     \begin{oneparchoices}
         \choice $1$
@@ -285,7 +285,7 @@ Complete the following: \par
         \choice $3$
     \end{oneparchoices} \par \horizontalline
 
-    \question Let $y = f(x)$ be the solution to the differential equation $\dfrac{dy}{dx} = x - y^2 \forcespace$ with the initial condition $f(0) = 1$. What is the best approximation for $f(2)$ using Euler's Method, starting at $x = 0$ with a step size of $1$? \\
+    \question Let $y = f(x)$ be the solution to the differential equation $\deriv = x - y^2 \forcespace$ with the initial condition $f(0) = 1$. What is the best approximation for $f(2)$ using Euler's Method, starting at $x = 0$ with a step size of $1$? \\
 
     \begin{oneparchoices}
         \choice $-1$
@@ -295,7 +295,7 @@ Complete the following: \par
         \choice $3$
     \end{oneparchoices} \par \horizontalline
 
-    \question Let $y = f(x)$ be the solution to the differential equation $\dfrac{dy}{dx} = y - x \forcespace$ with the initial condition $f(1) = 2$. What is the best approximation for $f(2)$ using Euler's Method, starting at $x = 1$ with a step size of $0.5$? \\
+    \question Let $y = f(x)$ be the solution to the differential equation $\deriv = y - x \forcespace$ with the initial condition $f(1) = 2$. What is the best approximation for $f(2)$ using Euler's Method, starting at $x = 1$ with a step size of $0.5$? \\
 
     \begin{oneparchoices}
         \choice $1$

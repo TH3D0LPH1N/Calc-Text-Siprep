@@ -16,7 +16,7 @@ Just as with the first derivative, there are several symbols for the second deri
         \begin{center}
             Higher Order Derivative Symbols
             \\[11pt]
-            $\dfrac{d^2y}{dx^2} = \text{``d squared y, d - x squared''} \rightarrow \dfrac{d^3y}{dx^3}, \; \dfrac{d^4y}{dx^4} \dots \dfrac{d^ny}{dx^n}$ \\[11pt]
+            $\deriv[2] = \text{``d squared y, d - x squared''} \rightarrow \dfrac{d^3y}{dx^3}, \; \dfrac{d^4y}{dx^4} \dots \dfrac{d^ny}{dx^n}$ \\[11pt]
             $\dfrac{d^2}{dx^2} = \text{``d squared, d - x squared''} \rightarrow \dfrac{d^3}{dx^3}, \; \dfrac{d^4}{dx^4} \dots \dfrac{d^n}{dx^n}$ \\[11pt]
             $f''(x) = \text{``f double prime of x''} \rightarrow f'''(x), \; f^{IV}(x) \dots f^{n}(x)$ \\[11pt]
             $y'' = \text{``y double prime''}$ 
@@ -49,8 +49,8 @@ Just as with the first derivative, there are several symbols for the second deri
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.4.2: } \begin{align*}
         & y = \sin (3x) \\[11pt]
-        & \dfrac{dy}{dx} = \cos (3x) \cdot 3 = 3\cos (3x) \\[11pt]
-        & \dfrac{d^2y}{dx^2} = 3(-\sin (3x)) \cdot 3 = -9\sin (3x) \\[11pt]
+        & \deriv = \cos (3x) \cdot 3 = 3\cos (3x) \\[11pt]
+        & \deriv[2] = 3(-\sin (3x)) \cdot 3 = -9\sin (3x) \\[11pt]
         & \dfrac{d^3y}{dx^3} = -9\cos (3x) \cdot 3 = \boxed{-27\cos (3x)}
     \end{align*}
 \end{tcolorbox}
@@ -62,8 +62,8 @@ More complicated functions, in particular \hyperlink{Composite Function}{composi
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.4.3: }\begin{align*}
-        & \dfrac{dy}{dx} = e^{3x^2} \cdot 6x = 6xe^{3x^2} \\[11pt]
-        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
+        & \deriv = e^{3x^2} \cdot 6x = 6xe^{3x^2} \\[11pt]
+        & \deriv[2] \begin{aligned}[t]
             & = 6x\left(e^{3x^2} \cdot 6x\right) + e^{3x^2} \cdot 6 \\[11pt]
             & = 36x^2e^{3x^2} + 6e^{3x^2} \\[11pt]
             & = \boxed{6e^{3x^2}\left(6x^2 + 1\right)}
@@ -132,10 +132,10 @@ Find the second derivatives of the given functions. Simplify where possible. \pa
 Complete the following: \par
 
 \twoquestion{21. $y = \cos \left(x^2\right)$, find $y''$}{22. $y = \tan^2 (x)$, find $y''$} \\[11pt]
-\twoquestion{23. $y = \sec (3x)$, find $\dfrac{d^2y}{dx^2}$}{24. $y = xe^{2x}$, find $\dfrac{d^2y}{dx^2}$} \\[11pt]
+\twoquestion{23. $y = \sec (3x)$, find $\deriv[2]$}{24. $y = xe^{2x}$, find $\deriv[2]$} \\[11pt]
 \twoquestion{25. $f(x) = \ln \left(x^2 + 3\right)$, find $f''(x)$}{25. $g(x) = \ln \left(x^2 - 4x + 4\right)$, find $g''(x)$} \\[11pt]
 \twoquestion{27. $h(x) = \sqrt{x^2 + 5}$, find $h''(x)$}{28. $F(x) = \sqrt{3x^2 - 2x + 1}$, find $F''(x)$} \\[11pt]
-\twoquestion{29. $y = \dfrac{x^2 - 3}{x^2 - 10}$, find $\dfrac{d^2y}{dx^2}$}{30. $y = \dfrac{3x + 3}{x^3 + 1}$, find $\dfrac{d^2y}{dx^2}$} \\[11pt]
+\twoquestion{29. $y = \dfrac{x^2 - 3}{x^2 - 10}$, find $\deriv[2]$}{30. $y = \dfrac{3x + 3}{x^3 + 1}$, find $\deriv[2]$} \\[11pt]
 
 \textbf{\large{1.4 Multiple Choice Homework}} \par
 
@@ -150,7 +150,7 @@ Complete the following: \par
         \makebox[0.13\textwidth] \choice $g'\left(f(x)\right)f''(x) + \left[f'(x)\right]^2g''\left(f(x)\right)$ 
     \end{oneparchoices} \par \horizontalline
 
-    \question Find $\dfrac{d^2y}{dx^2}$ if $y = \dfrac{x + 2}{x - 3}$ \\
+    \question Find $\deriv[2]$ if $y = \dfrac{x + 2}{x - 3}$ \\
 
     \begin{oneparchoices}
         \choice $-\dfrac{2}{(x - 3)^2}$
@@ -160,7 +160,7 @@ Complete the following: \par
         \choice None of these
     \end{oneparchoices} \par \horizontalline
 
-    \question If $y = \ln (\cos (x))$ and $0 \leq x \leq \pi$, then $\dfrac{d^2y}{dx^2}$ is \\
+    \question If $y = \ln (\cos (x))$ and $0 \leq x \leq \pi$, then $\deriv[2]$ is \\
 
     \begin{oneparchoices}
         \choice $-\tan (x)$
@@ -170,7 +170,7 @@ Complete the following: \par
         \choice $\sec (x)\tan (x)$
     \end{oneparchoices} \par \horizontalline
 
-    \question If $y = \ln \left(x^2 + 4\right)$, then $\dfrac{d^2y}{dx^2}$ is \\
+    \question If $y = \ln \left(x^2 + 4\right)$, then $\deriv[2]$ is \\
 
     \begin{oneparchoices}
         \choice $\dfrac{1}{x^2 + 4}$ 
@@ -180,7 +180,7 @@ Complete the following: \par
         \choice $\dfrac{-2x^2 + 8}{\left(x^2 + 4\right)^2}$
     \end{oneparchoices} \par \horizontalline
 
-    \question If $y = e^{x^2}$, then $\dfrac{d^2y}{dx^2} = $ \\
+    \question If $y = e^{x^2}$, then $\deriv[2] = $ \\
 
     \begin{oneparchoices}
         \choice $e^{x^2}$
@@ -200,7 +200,7 @@ Complete the following: \par
         \choice $DNE$
     \end{oneparchoices} \par \horizontalline
 
-    \question If $y = \sin \left(e^x\right)$, then $\dfrac{d^2y}{dx^2} = $ \\
+    \question If $y = \sin \left(e^x\right)$, then $\deriv[2] = $ \\
 
     \begin{oneparchoices}
         \choice $\cos \left(e^x\right)$

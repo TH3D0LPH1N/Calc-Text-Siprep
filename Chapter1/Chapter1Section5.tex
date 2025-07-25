@@ -2,8 +2,8 @@
 
 Implicit differentiation is a technique that is considered here because of its direct impact on related rates in section 8 of this chapter. Implicit differentiation is an application of the Chain Rule where the $y$-function is not easily defined explicitly. \par 
 
-One of the most useful aspects of the Chain Rule is that we can take derivatives of more complicated equations that would be difficult to take the derivative of otherwise. One of the key elements to remember is that we already know the derivative of $y$ with respect to $x$ --- that is, $\dfrac{dy}{dx} \forcespace$. This can be a powerful tool as it allows us to take the derivative of relations as well as functions while bypassing a lot of tedious algebra. When $y$ cannot easily be isolated, we can treat $y$ like we treat $g(x)$. In other words: \begin{align*}
-    \diff \left[f\left(g(x)\right)\right] = f'\left(g(x)\right) \cdot \left[g'(x)\right] \text{ is the same as } \diff \left[f(y)\right] = f'(y) \cdot \left(\dfrac{dy}{dx}\right)
+One of the most useful aspects of the Chain Rule is that we can take derivatives of more complicated equations that would be difficult to take the derivative of otherwise. One of the key elements to remember is that we already know the derivative of $y$ with respect to $x$ --- that is, $\deriv \forcespace$. This can be a powerful tool as it allows us to take the derivative of relations as well as functions while bypassing a lot of tedious algebra. When $y$ cannot easily be isolated, we can treat $y$ like we treat $g(x)$. In other words: \begin{align*}
+    \diff \left[f\left(g(x)\right)\right] = f'\left(g(x)\right) \cdot \left[g'(x)\right] \text{ is the same as } \diff \left[f(y)\right] = f'(y) \cdot \left(\deriv\right)
 \end{align*}
 
 \begin{tcolorbox}[objective]
@@ -16,28 +16,28 @@ One of the most useful aspects of the Chain Rule is that we can take derivatives
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.5.1: } Find $\dfrac{dy}{dx}$ if $x^2 + y^2 = 25$
+    \textbf{Ex 1.5.1: } Find $\deriv$ if $x^2 + y^2 = 25$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.5.1: } \begin{align*}
         & \diff \left[x^2 + y^2 = 25\right] \\[11pt]
         & \diff \left[x^2\right] + \diff \left[y^2\right] = \diff [25] \\[11pt]
-        & \rightarrow 2x + 2y\dfrac{dy}{dx} = 0 
+        & \rightarrow 2x + 2y\deriv = 0 
     \end{align*}
-    We can now isolate $\dfrac{dy}{dx}$ \begin{align*}
-        & 2y\dfrac{dy}{dx} = -2x \\[11pt]
-        & \dfrac{dy}{dx} = \boxed{-\dfrac{x}{y}}
+    We can now isolate $\deriv$ \begin{align*}
+        & 2y\deriv = -2x \\[11pt]
+        & \deriv = \boxed{-\dfrac{x}{y}}
     \end{align*}
 \end{tcolorbox}
 
-With this function, notice that $y$ could have been isolated and $\dfrac{dy}{dx}$ could've been found \textbf{explicitly}. \begin{align*}
+With this function, notice that $y$ could have been isolated and $\deriv$ could've been found \textbf{explicitly}. \begin{align*}
     & x^2 + y^2 = 25 \\[11pt]
     & y^2 = 25 - x^2 \\[11pt]
     & y = \sqrt{25 - x^2} \\[11pt]
-    & \dfrac{dy}{dx} = -\dfrac{x}{\sqrt{25 - x^2}}
+    & \deriv = -\dfrac{x}{\sqrt{25 - x^2}}
 \end{align*}
 
-Notice that this is the same answer as we found with implicit differentiation. You could substitute $y$ for $\sqrt{25 - x^2}$ in the denominator and come up with the same derivative, $\dfrac{dy}{dx} \forcespace= -\dfrac{x}{y}$. \par
+Notice that this is the same answer as we found with implicit differentiation. You could substitute $y$ for $\sqrt{25 - x^2}$ in the denominator and come up with the same derivative, $\deriv \forcespace= -\dfrac{x}{y}$. \par
 
 \begin{tcolorbox}[example]
     \textbf{Ex 1.5.2: } Find the derivative of $x^2 - 3y^2 + 4x - 12y - 2 = 0$ implicitly.
@@ -45,16 +45,16 @@ Notice that this is the same answer as we found with implicit differentiation. Y
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.5.2: } \begin{align*}
         & \diff \left[x^2 - 3y^2 + 4x - 12y - 2 = 0\right] \\[11pt]
-        & 2x - 6y\dfrac{dy}{dx} + 4 - 12\dfrac{dy}{dx} = 0 \\[11pt]
-        &(-6y - 12)\dfrac{dy}{dx} = -2x - 4 \\[11pt]
-        &\dfrac{dy}{dx} = \boxed{\dfrac{-2x - 4}{-6y - 12}}
+        & 2x - 6y\deriv + 4 - 12\deriv = 0 \\[11pt]
+        &(-6y - 12)\deriv = -2x - 4 \\[11pt]
+        &\deriv = \boxed{\dfrac{-2x - 4}{-6y - 12}}
     \end{align*}
 \end{tcolorbox}
 
 When considering functions, implicit differentiation may not seem to be a particularly powerful tool, because it is often simple to isolate $y$. But consider a non-function, like this circle, ellipse, or hyperbola, where $y$ is not so easily isolated. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.5.3: } Find $\dfrac{dy}{dx}$ for the hyperbola $x^2 - 3xy + 3y^2 = 2$
+    \textbf{Ex 1.5.3: } Find $\deriv$ for the hyperbola $x^2 - 3xy + 3y^2 = 2$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.5.3: } It would be very difficult to solve for $y$ here, so implicit differentiation is
@@ -62,9 +62,9 @@ When considering functions, implicit differentiation may not seem to be a partic
         & \diff \left[x^2 - 3xy + 3y^2 = 2\right] 
     \end{align*}
     Note that $-3xy$ is a product. It will require the Product Rule. \begin{align*}
-        & 2x - 3x\dfrac{dy}{dx} - 3y + 6y\dfrac{dy}{dx} = 0 \\
-        & (-3x + 6y)\dfrac{dy}{dx} = -2x + 3y \\
-        & \dfrac{dy}{dx} = \boxed{\dfrac{-2x + 3y}{-3x + 6y}}
+        & 2x - 3x\deriv - 3y + 6y\deriv = 0 \\
+        & (-3x + 6y)\deriv = -2x + 3y \\
+        & \deriv = \boxed{\dfrac{-2x + 3y}{-3x + 6y}}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
@@ -84,12 +84,12 @@ When considering functions, implicit differentiation may not seem to be a partic
         & x^3 - y^2 + 6y = -3 \rightarrow x^3 - (1)^2 + 6(1) = -3 \\[11pt]
         & x^3 = -8 \therefore x = -2 \\[11pt]
         & \diff \left[x^3 - y^2 + 6y = -3\right] \\[11pt]
-        & 3x^2 - 2y\dfrac{dy}{dx} + 6\dfrac{dy}{dx} = 0 \\[11pt]
-        & \dfrac{dy}{dx} = \dfrac{-3x^2}{-2y + 6}
+        & 3x^2 - 2y\deriv + 6\deriv = 0 \\[11pt]
+        & \deriv = \dfrac{-3x^2}{-2y + 6}
     \end{align*}
     Now, let's plug in our point that we found, $(-2, 1)$ \begin{align*}
-        & \dfrac{dy}{dx} = \dfrac{-3(-2)^2}{-2(1) + 6} \\[11pt]
-        & \dfrac{dy}{dx} = -3 \\[11pt]
+        & \deriv = \dfrac{-3(-2)^2}{-2(1) + 6} \\[11pt]
+        & \deriv = -3 \\[11pt]
         & y - 1 = -3(x + 2) \\[11pt]
         & y - 1 = -3x - 6 \\[11pt]
         & \rightarrow \boxed{\text{c) } 3x + y = -5}
@@ -99,15 +99,15 @@ When considering functions, implicit differentiation may not seem to be a partic
 Of course, if we want to find a second derivative, we can use implicit differentiation a second time. \par 
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.5.5: } Given $\dfrac{dy}{dx} = \dfrac{x + 2}{3y + 6}$, find $\dfrac{d^2y}{dx^2}$
+    \textbf{Ex 1.5.5: } Given $\deriv = \dfrac{x + 2}{3y + 6}$, find $\deriv[2]$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.5.5: } \begin{align*}
-        & \diff \left[\dfrac{dy}{dx} = \dfrac{x + 2}{3y + 6}\right] \\[11pt]
-        & \dfrac{d^2y}{dx^2} = \dfrac{(3y + 6) - (x + 2)\left(3\dfrac{dy}{dx}\right)}{(3y + 6)^2} 
+        & \diff \left[\deriv = \dfrac{x + 2}{3y + 6}\right] \\[11pt]
+        & \deriv[2] = \dfrac{(3y + 6) - (x + 2)\left(3\deriv\right)}{(3y + 6)^2} 
     \end{align*}
-    Since we already know $\dfrac{dy}{dx}$, we can substitute \begin{align*}
-        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
+    Since we already know $\deriv$, we can substitute \begin{align*}
+        & \deriv[2] \begin{aligned}[t]
             & = \dfrac{(3y + 6) - (x + 2)(3)\left(\dfrac{x + 2}{3y + 6}\right)}{(3y + 6)^2} \\[11pt]
             & = \dfrac{(3y + 6) - (x + 2)(3)\left(\dfrac{x + 2}{3y + 6}\right)}{(3y + 6)^2} \cdot \dfrac{3y + 6}{3y + 6} \\[11pt]
             & = \boxed{\dfrac{(3y + 6)^2 - 3(x + 2)^2}{(3y + 6)^3}}
@@ -116,15 +116,15 @@ Of course, if we want to find a second derivative, we can use implicit different
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.5.6: } Find $\dfrac{dy}{dx}$ and $\dfrac{d^2y}{dx^2}$ for $\sin (y) = 2\cos (3x)$.
+    \textbf{Ex 1.5.6: } Find $\deriv$ and $\deriv[2]$ for $\sin (y) = 2\cos (3x)$.
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.5.6: } \begin{align*}
         & \diff \left[\sin (y) = 2\cos (3x)\right] \\[11pt]
-        & \cos (y)\dfrac{dy}{dx} = -6\sin (3x) \\[11pt]
-        & \dfrac{dy}{dx} = \boxed{-\dfrac{6\sin (3x)}{\cos (y)}} \\[11pt]
-        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
-            & = \dfrac{-18\cos (y)\cos (3x) - 6\sin (3x)\sin (y)\dfrac{dy}{dx}}{\cos^2 (y)} \\[11pt]
+        & \cos (y)\deriv = -6\sin (3x) \\[11pt]
+        & \deriv = \boxed{-\dfrac{6\sin (3x)}{\cos (y)}} \\[11pt]
+        & \deriv[2] \begin{aligned}[t]
+            & = \dfrac{-18\cos (y)\cos (3x) - 6\sin (3x)\sin (y)\deriv}{\cos^2 (y)} \\[11pt]
             & = \dfrac{-18\cos (y)\cos (3x) - 6\sin (3x)\sin (y)\left(-\dfrac{6\sin (3x)}{\cos (y)}\right)}{\cos^2 (y)} \\[11pt]
             & = \boxed{\dfrac{-18\cos (y)\cos (3x) + 36\sin^2 (3x)\sin (y)}{\cos^3 (y)}}
         \end{aligned}
@@ -175,21 +175,21 @@ This is necessary because one cannot create a sign pattern without an \textbf{ex
 \begin{tcolorbox}[example]
     \textbf{Ex 1.5.7: } Consider the curve given by $x^2 + 4xy + y^2 = -12$. \\[11pt]
 
-    (a) Show that $\dfrac{dy}{dx} = -\dfrac{x + 2y}{2x + y}$ \\[11pt]
+    (a) Show that $\deriv = -\dfrac{x + 2y}{2x + y}$ \\[11pt]
     (b) Find the point(s) where the equation of the tangent line(s) is/are horizontal. \\[11pt]
-    (c) Find the value(s) of $\dfrac{d^2y}{dx^2} \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
+    (c) Find the value(s) of $\deriv[2] \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.5.7: } \\[11pt]
     (a) Because we have a $4xy$ term, we need to use the product rule \begin{align*}
         & \diff \left[x^2 + 4xy + y^2 = -12\right] \\[11pt]
-        & 2x + 4x\dfrac{dy}{dx} + 4y(1) + 2y\dfrac{dy}{dx} = 0 \\[11pt]
-        & 4x\dfrac{dy}{dx}+ 2y\dfrac{dy}{dx} = -2x - 4y \\[11pt]
-        & (4x + 2y)\dfrac{dy}{dx} = -2x - 4y \\[11pt]
-        & \dfrac{dy}{dx} = \dfrac{-2x - 4y}{4x + 2y} = \boxed{-\dfrac{x + 2y}{2x + y}}
+        & 2x + 4x\deriv + 4y(1) + 2y\deriv = 0 \\[11pt]
+        & 4x\deriv+ 2y\deriv = -2x - 4y \\[11pt]
+        & (4x + 2y)\deriv = -2x - 4y \\[11pt]
+        & \deriv = \dfrac{-2x - 4y}{4x + 2y} = \boxed{-\dfrac{x + 2y}{2x + y}}
     \end{align*}
-    (b) Horizontal lines have a slope of $0$, so we need to find when $\dfrac{dy}{dx} = 0$. \begin{align*}
-        & \dfrac{dy}{dx} = 0 \\[11pt]
+    (b) Horizontal lines have a slope of $0$, so we need to find when $\deriv = 0$. \begin{align*}
+        & \deriv = 0 \\[11pt]
         & -\dfrac{x + 2y}{2x + y} = 0 \\[11pt]
         & x + 2y = 0 \\[11pt]
         & x = -2y
@@ -202,15 +202,15 @@ This is necessary because one cannot create a sign pattern without an \textbf{ex
         & x = -2y \rightarrow \boxed{(-4, 2) \text{ and } (4, -2)}
     \end{align*}
     (c) What is really asked here is to apply the Second Derivative Test, because we cannot create a sign pattern for non-functions. The $y$ is not isolated in the equation. \begin{align*}
-        & \dfrac{d^2y}{dx^2} \begin{aligned}[t]
-            & = \diff \left[\dfrac{dy}{dx} = -\dfrac{x + 2y}{2x + y}\right] \\[11pt]
-            & = \dfrac{(2x + y)\left(1 + 2\dfrac{dy}{dx}\right) - (x + 2y)\left(2 + \dfrac{dy}{dx}\right)}{(2x + y)^2} \\[11pt]
+        & \deriv[2] \begin{aligned}[t]
+            & = \diff \left[\deriv = -\dfrac{x + 2y}{2x + y}\right] \\[11pt]
+            & = \dfrac{(2x + y)\left(1 + 2\deriv\right) - (x + 2y)\left(2 + \deriv\right)}{(2x + y)^2} \\[11pt]
         \end{aligned} \\[11pt]
-        & \dfrac{d^2y}{dx^2} \eval_{(-4, 2)} \begin{aligned}[t]
+        & \deriv[2] \eval_{(-4, 2)} \begin{aligned}[t]
             & = \dfrac{(2(-4) + 2)\left(1 + 2(0)\right) - (-4 + 2(2))\left(2 + 0\right)}{(2(-4) + 2)^2} \\[11pt]
             & = \dfrac{6}{(-6)^2} > 0
         \end{aligned} \\[11pt]
-        & \dfrac{d^2y}{dx^2} \eval_{(4, -2)} \begin{aligned}[t]
+        & \deriv[2] \eval_{(4, -2)} \begin{aligned}[t]
             & = \dfrac{(2(4) - 2)\left(1 + 2(0)\right) - (4 + 2(-2))\left(2 + 0\right)}{(2(4) + 2)^2} \\[11pt]
             & = \dfrac{6}{(-6)^2} < 0
         \end{aligned}
@@ -225,12 +225,12 @@ Be Careful!! There is a lot of algebraic simplification that happens in these pr
 
 \textbf{\large{1.5 Free Response Homework}} \par
 
-Find $\dfrac{dy}{dx}$ for each of these equations, first by implicit differentiation, then by solving for $y$ and differentiating. Show that $\dfrac{dy}{dx}$ is the same in both cases. \par
+Find $\deriv$ for each of these equations, first by implicit differentiation, then by solving for $y$ and differentiating. Show that $\deriv$ is the same in both cases. \par
 
 \twoquestion{1. $x^2 + y^2 = 1$}{2. $x^3 + 4y^2 = 16$} \\[11pt]
 \twoquestion{3. $\dfrac{1}{x} + \dfrac{1}{y} = 1$}{4. $\sqrt{x} + \sqrt{y} = 4$} \\[11pt]
 
-Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \par
+Find $\deriv$ for each of these equations by implicit differentiation. \par
 
 \twoquestion{5. $x^2 + xy = 10$}{6. $x^3 + 10x^2y + 7y^2 = 60$} \\[11pt]
 \twoquestion{7. $x^2 + xy - 4y - 1 = 0$}{8. $xy + 2x + 3x^2 = 4$} \\[11pt]
@@ -245,12 +245,12 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
 \onequestion{22. Find the equation of the line tangent to $x^3 + \dfrac{y}{x} + y^2 = 7$ at $(1, 2)$.} \\[11pt]
 \onequestion{23. Find the equation of the lines tangent and normal to $y - \dfrac{4}{\pi^2}x^2 = 2e^{y\sin (x)} + y^3 - 3$ through the point $\left(\dfrac{\pi}{2}, 0\right)$.} \\[11pt]
 \onequestion{24. Find the equation of the lines tangent and normal to $x^2 + 3xy + y^2 = 11$ through the point $(1, 2)$.} \\[11pt]
-\twoquestion{25. Find $\dfrac{d^2y}{dx^2}$ if $xy + y^2 = 1$.}{26. Find $\dfrac{d^2y}{dx^2}$ if $4x^2 + 9y^2 = 36$.} \\[11pt]
-\twoquestion{27. Find $\dfrac{d^2y}{dx^2}$ if $x^2 + y^2 = 1$}{28. Find $\dfrac{d^2y}{dx^2}$ if $x^3 + 4y^2 = 16$.} \\
+\twoquestion{25. Find $\deriv[2]$ if $xy + y^2 = 1$.}{26. Find $\deriv[2]$ if $4x^2 + 9y^2 = 36$.} \\[11pt]
+\twoquestion{27. Find $\deriv[2]$ if $x^2 + y^2 = 1$}{28. Find $\deriv[2]$ if $x^3 + 4y^2 = 16$.} \\
 
 \onequestion{29. Consider the curve given by $3x^2 - 4xy + 5y^2 = 25$.} 
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Show that $\dfrac{dy}{dx} = \dfrac{3x - 2y}{2x - 5y}$.
+    \item Show that $\deriv = \dfrac{3x - 2y}{2x - 5y}$.
     \item Determine point(s) $P$ on the curve for which the $x$-coordinate is equal to $2$.
     \item Find the equation(s) of the line(s) tangent to $3x^2 - 4xy + 5y^2 = 25$ at the point(s) $P$ found in part (b).
     \item Find the point(s) on $3x^2 - 4xy + 5y^2 = 25$ where the tangent line is horizontal.
@@ -258,7 +258,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
 
 \onequestion{30. Consider the curve given by $x^2 - xy + y^2 = 4$.}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Show that $\dfrac{dy}{dx} = \dfrac{y - 2x}{2y - x}$.
+    \item Show that $\deriv = \dfrac{y - 2x}{2y - x}$.
     \item Determine point(s) $P$ on the curve for which the $x$-coordinate is equal to $2$.
     \item Find the equation(s) of the line(s) tangent to $x^2 - xy + y^2 = 4$ at the point(s) $P$ found in part (b).
     \item Find the point(s) on $x^2 - xy + y^2 = 4$ where the tangent line is vertical.
@@ -266,7 +266,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
 
 \onequestion{31. Consider the curve given by $2x^2 - xy + y^2 = 44$.}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Show that $\dfrac{dy}{dx} = \dfrac{4x - y}{x - 2y}$.
+    \item Show that $\deriv = \dfrac{4x - y}{x - 2y}$.
     \item Determine point(s) $P$ on the curve for which the $x$-coordinate is equal to $5$.
     \item Find the equation(s) of the line(s) tangent to $2x^2 - xy + y^2 = 44$ at the point(s) $P$ found in part (b).
     \item Find the point(s) on $x^2 - xy + y^2 = 4$ where the tangent line is vertical.
@@ -274,21 +274,21 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
 
 \onequestion{32. Consider the curve given by $x^2 + xy + y^2 = 12$.} 
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Show that $\dfrac{dy}{dx} = \dfrac{-y - 2x}{2y + x}$.
+    \item Show that $\deriv = \dfrac{-y - 2x}{2y + x}$.
     \item Find the point(s) $P$ on $x^2 + xy + y^2 = 12$ where the tangent line is horizontal.
-    \item Find the value(s) of $\dfrac{d^2y}{dx^2} \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
+    \item Find the value(s) of $\deriv[2] \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
 \end{enumerate} \vspace{11pt}
  
 \onequestion{33. Consider the curve given by $xy + y^3 = 4x$.}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Show that $\dfrac{dy}{dx} = \dfrac{4 - y}{3y^2 = x}$.
+    \item Show that $\deriv = \dfrac{4 - y}{3y^2 = x}$.
     \item Show that there are no points on the curve where the tangent line is horizontal.
     \item Find the point(s) on $xy + y^3 = 4x$ where the tangent line is vertical.
 \end{enumerate} \vspace{11pt}
 
 \onequestion{34. Consider the curve given by $x^2 + xy + y^2 = 4$.}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Show that $\dfrac{dy}{dx} = \dfrac{-2x - y}{x + 2y}$.
+    \item Show that $\deriv = \dfrac{-2x - y}{x + 2y}$.
     \item Find the point(s) on $x^2 + xy + y^2 = 4$ where the tangent line is horizontal.
     \item Find the $y$-coordinates of the point(s) where the tangent line is vertical.
 \end{enumerate} \vspace{11pt}
@@ -306,7 +306,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
         \makebox[0.21\textwidth] \choice No such points exist
     \end{oneparchoices} \par \horizontalline
 
-    \question If $x^2 + xy = 10$, then when $x = 2$, $\dfrac{dy}{dx} = $ \\
+    \question If $x^2 + xy = 10$, then when $x = 2$, $\deriv = $ \\
     
     \begin{oneparchoices}
         \choice $-\dfrac{7}{2}$
@@ -336,7 +336,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
         \choice $\dfrac{9x^2 - 4y}{4 + 8y}$
     \end{oneparchoices} \par \horizontalline
 
-    \question Given $x + xy + 2y^2 = 6$, then $\dfrac{dy}{dx} \eval_{(2, 1)} = $ \\
+    \question Given $x + xy + 2y^2 = 6$, then $\deriv \eval_{(2, 1)} = $ \\
 
     \begin{oneparchoices}
         \choice $\dfrac{2}{3}$
@@ -349,11 +349,11 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
     \question Consider the closed curve in the $xy$-plane given by $2x^2 + 5x + y^2 + y = 8$. Which of the following is correct? \\
 
     \begin{oneparchoices}
-        \choice $\dfrac{dy}{dx} = -\dfrac{4x + 5}{8x + 2y + 1}$
-        \choice $\dfrac{dy}{dx} = \dfrac{4x + 5}{2y + 1}$
-        \choice $\dfrac{dy}{dx} = -\dfrac{4x + 5}{8x + 2y}$ \\[11pt]
-        \makebox[0.21\textwidth] \choice $\dfrac{dy}{dx} = \dfrac{4x + 5}{8x + 2y}$
-        \makebox[0.25\textwidth] \choice $\dfrac{dy}{dx} = \dfrac{4x + 5}{2y + 1}$
+        \choice $\deriv = -\dfrac{4x + 5}{8x + 2y + 1}$
+        \choice $\deriv = \dfrac{4x + 5}{2y + 1}$
+        \choice $\deriv = -\dfrac{4x + 5}{8x + 2y}$ \\[11pt]
+        \makebox[0.21\textwidth] \choice $\deriv = \dfrac{4x + 5}{8x + 2y}$
+        \makebox[0.25\textwidth] \choice $\deriv = \dfrac{4x + 5}{2y + 1}$
     \end{oneparchoices} \par \horizontalline
 
     \question The slope of the line tangent to $xy - y^3 + 6 = 0$ at $(1, 2)$ is \\
@@ -376,7 +376,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
         \choice $y - 2 = x$
     \end{oneparchoices} \par \horizontalline
 
-    \question If $\sin^{-1} (x) = \ln y$, then $\dfrac{dy}{dx} = $ \\
+    \question If $\sin^{-1} (x) = \ln y$, then $\deriv = $ \\
 
     \begin{oneparchoices}
         \choice $\dfrac{y}{\sqrt{1 - x^2}}$
@@ -386,7 +386,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
         \choice $\dfrac{e^{\sin^{-1} (x)}}{1 + x^2}$
     \end{oneparchoices} \par \horizontalline
 
-    \question If $x^2y + yx^2 = 6$, then at $(1, 3)$, $\dfrac{d^2y}{dx^2} = $ \\
+    \question If $x^2y + yx^2 = 6$, then at $(1, 3)$, $\deriv[2] = $ \\
 
     \begin{oneparchoices}
         \choice $-18$
@@ -396,7 +396,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
         \choice $18$
     \end{oneparchoices} \par \horizontalline
 
-    \question If $y = x + \sin (xy)$, then $\dfrac{dy}{dx} = $ \\
+    \question If $y = x + \sin (xy)$, then $\deriv = $ \\
     
     \begin{oneparchoices}
         \choice $1 + \cos (xy)$
@@ -406,7 +406,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
         \makebox[0.24\textwidth] \choice $\dfrac{1 + y\cos (xy)}{1 - \cos (xy)}$
     \end{oneparchoices} \par \horizontalline
 
-    \question If $\sin (xy) = x^2$, then $\dfrac{dy}{dx} = $ \\
+    \question If $\sin (xy) = x^2$, then $\deriv = $ \\
 
     \begin{oneparchoices}
         \choice $2x\sec (xy)$
@@ -416,7 +416,7 @@ Find $\dfrac{dy}{dx}$ for each of these equations by implicit differentiation. \
         \makebox[0.25\textwidth] \choice $\dfrac{2x\sec (xy) - y}{x}$
     \end{oneparchoices} \par \horizontalline
 
-    \question Given $y = \ln \left(x^2 + y^2\right)$, find $\dfrac{dy}{dx}$ at the point $(1, 0)$. \\
+    \question Given $y = \ln \left(x^2 + y^2\right)$, find $\deriv$ at the point $(1, 0)$. \\
 
     \begin{oneparchoices}
         \choice $0$

@@ -66,5 +66,69 @@ The word ``minimum'' tells us that we have an optimization problem. Recall our w
 So, let's tackle our example. \par
 
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.8.1: } The problem asks for 
+    \textbf{Sol 1.8.1: } The problem asks to minimize surface area, which is determined by: \begin{align*}
+        S = 2\pi r^2 + 2\pi rh 
+    \end{align*}
+    As there are more than two variables in this equation, either $r$ or $h$ needs to be eliminated in this formula before differentiating. The volume is $V = \pi r^2h = 32\pi$, so $h = \dfrac{32}{r^2}$ and \begin{align*}
+        & S \begin{aligned}[t]
+            & = 2\pi r^2 + 2\pi r\left(\dfrac{32}{r^2}\right) \\[11pt]
+            & = 2\pi r^2 + \dfrac{64\pi}{r}
+        \end{aligned} \\[11pt]
+        & S' = 4\pi r - \dfrac{64\pi}{r^2} = 0 \\[11pt]
+        & \therefore 4\pi r = \dfrac{64\pi}{r^2} \\[11pt]
+        & r^3 = 16 \rightarrow r = 2.5198
+    \end{align*}
+    Now, let's make a sign pattern to determine if this critical value is a minimum. \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (4,0);
+
+            \node at (2,-0.6) {2.520};
+            \node at (-0.5, -0.6) {$r$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (-0.5, 0.5) {$S'$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    Because the derivative changes from negative to positive, we know that 2.5198 is a minimum. We can plug it back into our surface area equation to find our minimum surface area. \begin{align*}
+        & S(2.5198) = 2\pi(2.5198)^2 + \dfrac{64\pi}{2.5198} \\[11pt]
+        & S(2.5198) = 119.687 \si{in^2}
+    \end{align*}
+    Therefore, the minimum surface area of the cola can is $\boxed{119.687 \si{in^2}}$.
 \end{tcolorbox}
+
+A related rates problem is characterized by various measurements that are changing \textbf{in relation to each other}. The variables are still related to each other through a geometric or physical relationship. The key difference from other differentiation problems is that we differentiate implicitly with respect to time, rather than a variable like $x$. In other words, 
+
+\begin{center}  
+    \fbox{\fbox{\begin{minipage}{0.96 \textwidth}
+        \begin{align*}
+            & \text{Optimization Problems:} && \text{Apply } \diff \\[11pt]
+            & \text{Related Rates Problems:} && \text{Apply } \dfrac{d}{dt} \\
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+Now, let's take a look at this different (related rates) cola problem.
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.8.2: } The volume of a cylindrical cola can is $32\pi \si{in^3}$. The height of the can is changing at $\dfrac{1}{4} \si{in \per sec} \forcespace$. If the radius changes at the same time so as to maintain the volume, how fast is the radius shrinking when the can is $4$ inches tall? 
+\end{tcolorbox} 
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.8.2: } \begin{align*}
+        & V = \pi r^2h = 32\pi \\[11pt]
+        & h = \dfrac{32}{r^2} \\[11pt]
+        & \tdiff\left[h = \dfrac{32}{r^2}\right] \\[11pt]
+        & \dfrac{dh}{dt} = -\dfrac{64}{r^2}\left(\dfrac{dr}{dt}\right)
+    \end{align*}
+    Now that we have a method to find what we are looking for, $\dfrac{dr}{dt}$, let's substitute in the values that we are given in the problem. \begin{align*}
+        & h = 4 \rightarrow \dfrac{32}{r^2} = 4 \rightarrow r^2 = 8 \\[11pt]
+        & \dfrac{1}{4} = -\dfrac{64}{8}\left(\dfrac{dr}{dt}\right) \\[11pt]
+        & \dfrac{dr}{dt} = \boxed{-\dfrac{1}{32} \si{in \per sec}}
+    \end{align*}
+\end{tcolorbox}
+
+As we can see, many of the steps that we take in the related rates cola problem is similar to those of the optimization cola problem. 
+
+

@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xpatch} 
+\usepackage{ifthen}
 \usepackage{etoolbox}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[most]{tcolorbox}
@@ -30,6 +31,12 @@
 \renewcommand{\choicelabel}{\alph{choice})}
 \newcommand{\horizontalline}{\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}} 
 \newcommand{\diff}{\dfrac{d}{dx}}
+\newcommand{\tdiff}{\dfrac{d}{dt}}
+\newcommand{\deriv}[1][]{%
+  \ifthenelse{\equal{#1}{}}%
+    {\dfrac{dy}{dx}}
+    {\dfrac{d^{#1}y}{dx^{#1}}}
+}
 \newcommand{\forcespace}{\vphantom{\Bigg|}}
 \newcommand{\smallforcespace}{\vphantom{\Big|}}
 \newcommand{\eval}{\bigg|}
