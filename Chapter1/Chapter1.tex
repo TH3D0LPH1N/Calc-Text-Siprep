@@ -64,7 +64,6 @@
 \stepcounter{sectioncount}
 \input{\inputpathChapterOne Chapter1Section8.tex}
 
-\ifdefined\mainfile
-\else
+\ifx\mainfile\undefined
   \end{document}
 \fi
