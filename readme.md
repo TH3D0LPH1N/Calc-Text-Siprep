@@ -8,7 +8,7 @@ The full text lies within the file called "MainText.pdf"
 
 The tex files and pdfs for each chapter are in their respective Chapter# folders
 
-The preamble and other commands/settings are in Support/Settings.tex
+The preamble and other commands/settings are in Support/Settings.tex. The support folder also contains image files used in the chapters.
 
 Links to all videos are in https://drive.google.com/drive/folders/1Zf4oZXG6ctf94wPKOlyKIBbZ_X-aIGTz?usp=sharing.
 
