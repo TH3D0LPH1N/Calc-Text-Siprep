@@ -304,3 +304,49 @@ Another common related rates problem is where a tank of a particular shape is fi
     It should make sense that $\dfrac{dr}{dt} \forcespace$ is negative since the two cars are approaching one another. The units also make sense: since $r$ is in miles and $h$ is in hours, the final units should be miles per hour.
 \end{tcolorbox}
 
+\begin{tcolorbox}[default]
+    \begin{center}
+        \textbf{Strategy For Related Rates Problems} \\[22pt]
+    \end{center}
+    \begin{center}
+        \begin{tikzpicture}[node distance=2cm]
+            
+            \node (read) [startstop]
+                {Read the problem and draw a visual.};
+            \node (choose) [decision, below of=read, yshift=-1cm]
+                {Choose a place to start.};
+            \node (identify_c) [process, below of=choose, yshift=-1cm, text width=3.5cm]
+                {Identify the constants given in the problem. \textbf{Use the units to decide.}};
+            \node (identify_v) [process, left of=identify_c, text width=3.5cm, xshift=-3cm]
+                {Identify the variables in the problem.};
+            \node (decide) [process, right of=identify_c, text width=3.5cm, xshift=3cm]
+                {Decide on the equation for the relationship between the variables};
+            \node (undifferentiated) [process, below of=identify_c, xshift=-3.75cm, yshift=-1cm, text width=6cm]
+                {Use the undifferentiated equation(s) to find any other missing constant(s)};
+            \node (two_v) [process, below of=identify_c, xshift=3.75cm, yshift=-1cm, text width=6cm]
+                {If there are more than two variables, substitute to eliminate an unnecessary variable.};
+            \node (differentiate) [process, below of=two_v, text width=6cm, yshift=-0.25cm, xshift=-3.75cm]
+                {Differentiate in terms of time.};
+            \node (substitute) [process, below of=differentiate]
+                {Substitute the constants into the differentiated equation.};
+            \node (solve) [process, below of=substitute]
+                {Solve for the missing variable};
+            \node (reread) [startstop, below of=solve, align=center]
+                {Reread the problem and answer the question that was asked. \\ \textbf{Don't forget the units}};
+            
+            \draw [arrow] (read) -- (choose);
+            \draw [arrow] (choose.west) -| (identify_v.north);
+            \draw [arrow] (choose) -- (identify_c);
+            \draw [arrow] (choose.east) -| (decide.north);
+            \draw [arrow] (identify_v) -- (undifferentiated);
+            \draw [arrow] (identify_c) -- (undifferentiated);
+            \draw [arrow] (decide) -- (two_v);
+            \draw [arrow] (two_v) |- (differentiate.east);
+            \draw [arrow] (undifferentiated.south) |- (differentiate.west);
+            \draw [arrow] (differentiate) -- (substitute);
+            \draw [arrow] (substitute) -- (solve);
+            \draw [arrow] (solve) -- (reread);
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+
