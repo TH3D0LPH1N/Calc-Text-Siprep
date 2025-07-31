@@ -419,9 +419,26 @@ Another common related rates problem is where a tank of a particular shape is fi
 \end{enumerate} \vspace{11pt}
 
 \onequestion{8. Sand is dumped onto a pile at $30\pi \si{ft^3 \per min}$. The pile forms a cone with the height always equal to the base diameter. How fast is the base area changing when the pile is $10$ feet high?} \\[11pt]
-\onequestion{9. A spherical balloon is being inflated so that its volume is increasing at a rate of $6 \si{ft^3 \per min}$. How fast is the radius changing when $r = 10 \si{ft}$.} \\[11pt]
+\onequestion{9. A spherical balloon is being inflated so that its volume is increasing at a rate of $6 \si{ft^3 \per min}$. How fast is the radius changing when $r = 10 \si{ft}$?} \\[11pt]
 \onequestion{10. The edge of a cube is expanding at a constant rate of $6$ inches per second. What is the rate of the change of the volume, in inches cubed per second, when the total surface area of the cube is $54 \si{in^2}$.} \\[11pt]
 \onequestion{11. A $25$-foot tall ladder is leaning against a wall. The bottom of the ladder is pushed toward the wall at $5 \si{ft \per sec}$. How fast is the top of the ladder moving up the wall when it is $7$ feet up?} \\[11pt]
 \begin{minipage}{0.5\textwidth}
     \onequestion{12. You are standing outside. A plane flies overhead, approaching you at constant altitude and a constant speed of $600$ miles per hour. When the plane flies over a house $13$ miles away from where you are standing, the angle of elevation is $0.647$ radians. How quickly is the direct (diagonal) distance between you and the plane changing at that moment?}
-\end{minipage} 
+\end{minipage} \hfill \begin{minipage}{0.45\textwidth} \vspace{0pt}%
+    \begin{center}
+        \begin{tikzpicture}[scale=0.93]
+            \draw[thick] (0, 0) -- (5, 0);
+            \draw[dashed, thick] (5, 0) -- (5, 2.2);
+            \draw[dashed, thick] (5, 2.2) -- (0, 0);
+            \draw[thick] (4.7, 0) -- (4.7, 0.3) -- (5, 0.3);
+            \draw[arrow] (1.25, 0) arc[start angle=0, end angle=30, radius=1cm];
+
+            \node at (1.45,0.3) {$\theta$};
+            \node at (5, 2.5) {\includegraphics[width=2cm]{\graphicsdir Chapter 1 Graphics/1.8-Graphic1.png}};
+            \node at (-0.5, 0) {\includegraphics[width=0.75cm]{\graphicsdir Chapter 1 Graphics/1.8-Graphic2.png}};
+        \end{tikzpicture}
+    \end{center}
+\end{minipage} \\[11pt]
+\onequestion{13. The altitude of a triangle is increasing at a rate of $2 \si{cm \per sec}$ at the same time that the area of the triangle is increasing at a rate of $5 \si{cm^2 \per sec}$. At what rate is the base increasing when the altitude is $12 \si{cm}$ and the area is $144 \si{cm^2}$?} \\[11pt]
+\onequestion{14. Two cars start moving away from the same point. One travels south at $60 \si{mph}$, and the other travels west at $25 \si{mph}$. At what rate is the distance between the cars increasing two hours later?} \\[11pt]
+
