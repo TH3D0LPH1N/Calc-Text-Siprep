@@ -441,4 +441,61 @@ Another common related rates problem is where a tank of a particular shape is fi
 \end{minipage} \\[11pt]
 \onequestion{13. The altitude of a triangle is increasing at a rate of $2 \si{cm \per sec}$ at the same time that the area of the triangle is increasing at a rate of $5 \si{cm^2 \per sec}$. At what rate is the base increasing when the altitude is $12 \si{cm}$ and the area is $144 \si{cm^2}$?} \\[11pt]
 \onequestion{14. Two cars start moving away from the same point. One travels south at $60 \si{mph}$, and the other travels west at $25 \si{mph}$. At what rate is the distance between the cars increasing two hours later?} \\[11pt]
+\onequestion{15. According to Boyle's Law, gas pressure varies directly with temperature and inversely with volume, as described by the following equation: \begin{align*}
+    P = \dfrac{kT}{V}
+\end{align*}
+Suppose that the temperature is held constant while the pressure increases at at $20 \si{kPa \per min}$. What is the rate of change of the volume when the volume is $600 \si{in^3}$ and the pressure is $150 \si{kPa}$?} \\[11pt]
+\onequestion{16. The Adiabatic Law for expansion of air can be represented with the equation \begin{align*}
+    P \cdot V^{1.4} = \dfrac{4}{81},
+\end{align*} where $P$ represents pressure and $V$ represents volume. If, at a specific instant, $P = 108 \si{lb \per in^2}$ and is increasing at $27 \si{lb \per in^2}$ per second, what is the rate of change of the volume?} 
 
+\onequestion{17. Person $A$ is $220$ feet north of an intersection and walking toward it at $10 \si{ft \per sec}$. Person $B$ starts at the intersection and walks east at $5 \si{ft \per sec}$.} \\[11pt]
+\begin{minipage}{0.49\textwidth} 
+    \vspace{-16.5pt} %Countercorrection
+    \begin{center}
+        \begin{tikzpicture}[scale=0.55]
+            \draw[thick] (0, 0) -- (2, 0) -- (2, 5);
+            \draw[thick] (4, 5) -- (4, 0) -- (10, 0);
+            \draw[thick] (0, -2) -- (2, -2) -- (2, -5);
+            \draw[thick] (4, -5) -- (4, -2) -- (10, -2);
+
+            \node at (3, 4.5) {$A$};
+            \node at (3, -1) {$B$};
+            \draw[arrow] (3, 4) -- (3, 1);
+            \draw[arrow] (3.5, -1) -- (6.5, -1);
+        \end{tikzpicture}
+    \end{center}
+\end{minipage} \hfill \begin{minipage}{0.5\textwidth} \vspace{0pt}%
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, itemsep=1em]
+        \item At $t = 10$ seconds, how far is each person from the intersection? 
+        \item At $t = 10$ seconds, how far apart are the two people? 
+        \item How fast is the distance between the two people changing at $t = 10$ seconds? 
+        \item At time $t = 10$ seconds, if person $A$ looks at person $B$, how fast is the angle between person $A$'s line of sight to person $B$ and the eastward direction changing? 
+    \end{enumerate} \vspace{5.5pt}
+\end{minipage} 
+
+\onequestion{18. A fire truck is parked $7$ feet away from the base of a building and its ladder is extended to the top of the building. The ladder retracts at a rate of $0.5$ feet per second, while the angle of the ladder changes such that the bucket at the end of the ladder comes down vertically.} \\[11pt]
+\begin{minipage}{0.49\textwidth}
+    \vspace{-16.5pt} %Countercorrection
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            \draw[thick] (0, 0) -- (2, 0) -- (2, 7) -- (0, 7) -- cycle;
+            \fill[Gray!40] (0, 0) -- (2, 0) -- (2, 7) -- (0, 7) -- cycle;
+            \draw[thick] (2, 0) -- (6, 0);
+            \draw[thick] (6, 0) -- (2, 7) node[midway, above, sloped] {Ladder};
+            \draw[arrow] (5.4, 0) arc[start angle=170, end angle=135, radius=1cm];
+
+            \node[rotate=90] at (1, 3.5) {Building};
+            \node at (5.2, 0.4) {$\theta$};
+            \node at (2, 7) {\includegraphics[width=1cm]{\graphicsdir Chapter 1 Graphics/1.8-Graphic3.png}};
+            \node at (7, 0.5) {\includegraphics[width=1.6cm]{\graphicsdir Chapter 1 Graphics/1.8-Graphic4.png}};
+        \end{tikzpicture}
+    \end{center}
+\end{minipage} \hfill \begin{minipage}{0.5\textwidth} \vspace{0pt}%
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, itemsep=1em]
+        \item How far is the ladder extended when the bucket is $10$ feet above the ground?
+        \item Find the rate at which the bucket is dropping vertically when the bucket is $10$ feet above the ground.
+        \item What is the relationship between the angle $\theta$ and the height of the bucket? Find $\theta$, in radians, when the bucket is $10$ feet above the ground. 
+        \item Find the rate, in radians per second, at which the angle the ladder forms with the ground is changing when the bucket is $10$ feet above the ground.
+    \end{enumerate} \vspace{16.5pt}
+\end{minipage}
