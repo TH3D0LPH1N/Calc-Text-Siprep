@@ -471,7 +471,7 @@ Suppose that the temperature is held constant while the pressure increases at at
         \item At $t = 10$ seconds, how far apart are the two people? 
         \item How fast is the distance between the two people changing at $t = 10$ seconds? 
         \item At time $t = 10$ seconds, if person $A$ looks at person $B$, how fast is the angle between person $A$'s line of sight to person $B$ and the eastward direction changing? 
-    \end{enumerate} \vspace{5.5pt}
+    \end{enumerate} \vspace{11pt}
 \end{minipage} 
 
 \onequestion{18. A fire truck is parked $7$ feet away from the base of a building and its ladder is extended to the top of the building. The ladder retracts at a rate of $0.5$ feet per second, while the angle of the ladder changes such that the bucket at the end of the ladder comes down vertically.} \\[11pt]
@@ -482,7 +482,8 @@ Suppose that the temperature is held constant while the pressure increases at at
             \draw[thick] (0, 0) -- (2, 0) -- (2, 7) -- (0, 7) -- cycle;
             \fill[Gray!40] (0, 0) -- (2, 0) -- (2, 7) -- (0, 7) -- cycle;
             \draw[thick] (2, 0) -- (6, 0);
-            \draw[thick] (6, 0) -- (2, 7) node[midway, above, sloped] {Ladder};
+            \draw[thick] (6, 0) -- (2, 7) 
+                node[midway, above, sloped] {Ladder};
             \draw[arrow] (5.4, 0) arc[start angle=170, end angle=135, radius=1cm];
 
             \node[rotate=90] at (1, 3.5) {Building};
@@ -497,5 +498,78 @@ Suppose that the temperature is held constant while the pressure increases at at
         \item Find the rate at which the bucket is dropping vertically when the bucket is $10$ feet above the ground.
         \item What is the relationship between the angle $\theta$ and the height of the bucket? Find $\theta$, in radians, when the bucket is $10$ feet above the ground. 
         \item Find the rate, in radians per second, at which the angle the ladder forms with the ground is changing when the bucket is $10$ feet above the ground.
-    \end{enumerate} \vspace{16.5pt}
+    \end{enumerate} \vspace{11pt}
+\end{minipage}
+
+\onequestion{19. A telephone crew is replacing a phone line from one telephone pole to the next. The line is on a spool on the back of a truck, and one end is attached to the top of a 25-foot pole. The vertical distance from the top of the pole to the level of the spool is 20 feet. The truck moves down the street at $20 \si{ft \per sec}$.} \\[11pt]
+\begin{minipage}{0.49\textwidth}
+    \vspace{-22pt} %Countercorrection
+    \begin{center}
+        \begin{tikzpicture}[scale=0.80]
+            \draw[thick] (-0.25, 0) -- (0, 0) -- (0, 5) -- (-0.25, 5) -- cycle;
+            \fill[Brown!50] (-0.25, 0) -- (0, 0) -- (0, 5) -- (-0.25, 5) -- cycle;
+            \draw[thick] (0, 5) -- (5, 1);
+            \draw[dashed] (0, 1) -- (5, 1);
+            \draw[arrow] (0, 4.4) arc[start angle=280, end angle=315, radius=0.9cm];
+
+            \draw[decorate, decoration={brace, mirror}, thick] 
+                (-0.5, 5) -- (-0.5, 1) 
+                node[midway, above, rotate=90, yshift=5pt] {$20 \si{ft}$};
+
+            \node at (6.4, 0.6) {\includegraphics[width=2.5cm]{\graphicsdir Chapter 1 Graphics/1.8-Graphic5.png}};
+            \node at (0.3, 4.1) {$\theta$};
+        \end{tikzpicture}
+    \end{center}
+\end{minipage} \hfill \begin{minipage}{0.5\textwidth} \vspace{0pt}%
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, itemsep=1em]
+        \item Find the length of line that has been rolled out when $t = 15$ seconds.
+        \item Find the rate at which the telephone line is coming off the spool when the truck is $50$ feet from the pole.
+        \item What is the relationship between the angle and the truck's distance from the pole? Find $\theta$, in radians, when the truck is $40$ feet from the pole.
+        \item Find the rate, in radians per second, at which the angle the line forms with horizontal is changing when the truck is $40$ feet from the pole.
+    \end{enumerate} \vspace{11pt}
+\end{minipage}
+
+\onequestion{20. At the end of the first season of the series \textit{Snowpiercer}, a second train (Big Alice) controlled by the industrialist Mr. Wilford came down another track to intercept and stop Snowpiercer. If the two train tracks meet at a $30^\circ$ then the Law of Cosines would apply such that $c^2 = a^2 + b^2 - 1.969ab$ as in the figure below. Snowpiercer is described as being two-and-a-half stories tall and $1,001$ cars long, with an average speed of $100 \si{km \per hour}$. Wilford's train Big Alice is much shorter, so it can average $120 \si{km \per hour}$.} \\[11pt]
+\begin{minipage}{0.49\textwidth}
+    \vspace{-11pt} %Countercorrection
+    \begin{center}
+        \begin{tikzpicture}[scale=0.50]
+            \draw[arrow] (0, 0) -- (9.95, -1.95) 
+                node[midway, above] {$a$};
+            \draw[arrow] (2.5, -5) -- (9.95, -2.05)
+                node[midway, below] {$b$};
+            \draw[dashed, thick] (2.5, -5) -- (0, 0)
+                node[midway, left, xshift=-5pt] {$c$};
+
+            \node[circle, fill=black, inner sep=1.5pt, label={[yshift=-7.5pt, xshift=2.5pt]below:Intersection}] at (10,-2) {};
+            \node[circle, fill=black, inner sep=1.5pt, label={above:Wilford's Train}] at (0, 0) {};
+            \node[circle, fill=black, inner sep=1.5pt, label={below:Snowpiercer}] at (2.5, -5) {};
+        \end{tikzpicture}
+    \end{center}
+\end{minipage} \hfill \begin{minipage}{0.5\textwidth} \vspace{0pt}%
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, itemsep=1em]
+        \item If Snowpiercer is $38 \si{km}$ from the junction, how soon will it reach the junction?
+        \item If Wilford’s train is $45 \si{km}$ from the junction, which train will reach the junction first?
+        \item How fast is the distance $c$ between the two trains changing when Snowpiercer is $38 \si{km}$ from the junction and Big Alice is $45 \si{km}$ from the junction.
+    \end{enumerate} \vspace{11pt}
+\end{minipage}
+
+\onequestion{21. The triangle-shaped swamp on Oak Island has been proven to have been manmade sometime around 1250 AD, possibly by the Knights Templar. It has been drained several times, revealing a stone-paved wharf and paths, an ancient clay mine, and the remains of a galleon which had been destroyed by fire and sunk in the swamp to conceal it. The triangle is roughly isosceles, with legs measuring $730$ feet and a base of $640$ feet. The apex (top angle) of the triangle measures $0.79$ radians.} \\[11pt]
+\begin{minipage}{0.49\textwidth}
+    \vspace{-11pt} %Countercorrection
+    \includegraphics[width=\textwidth]{\graphicsdir Chapter 1 Graphics/1.8-Graphic6.png}
+    \vspace{22pt}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.5]
+            \draw[thick] (0, 0) -- (8, 0) -- (4, 9) -- cycle;
+            \fill[Brown!30] (0, 0) -- (8, 0) -- (4, 9) -- cycle; 
+        \end{tikzpicture}
+    \end{center}
+\end{minipage} \hfill \begin{minipage}{0.5\textwidth} \vspace{0pt}%
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, itemsep=1em]
+        \item Based on the Law of Sines, the area of a triangle can be determined by the equation $Area = \dfrac{1}{2}ab\sin (C) \forcespace$, where $a$ and $b$ are the lengths of the legs and $\angle C$ is the measure of the angle in between the two legs. Find the surface area of the swamp before it was drained. Indicate the units.
+        \item The length of third side of the Triangle can be found using the Law of Cosine, $c^2 = a^2 + b^2 - 2ab\cos(C)$, where $c$ is the third side and $a$, $b$, and $\angle C$ are the same as those of part (a). How long is the third side when the legs are each $370$ feet?
+        \item At $t = 24$ hours, the legs are $370$ feet and their rate of change is $-15.2 \si{ft \per hr}$. How fast is the third side of the triangle changing?
+        \item Find the rate of change of the surface area [Hint: Use the Law of Sines]. Indicate the units.
+    \end{enumerate} \vspace{11pt}
 \end{minipage}
