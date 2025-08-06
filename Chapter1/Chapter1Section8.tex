@@ -563,13 +563,177 @@ Suppose that the temperature is held constant while the pressure increases at at
         \begin{tikzpicture}[scale=0.5]
             \draw[thick] (0, 0) -- (8, 0) -- (4, 9) -- cycle;
             \fill[Brown!30] (0, 0) -- (8, 0) -- (4, 9) -- cycle; 
+
+            \node at (4, 3.5) {Swamp};
         \end{tikzpicture}
     \end{center}
 \end{minipage} \hfill \begin{minipage}{0.5\textwidth} \vspace{0pt}%
     \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, itemsep=1em]
         \item Based on the Law of Sines, the area of a triangle can be determined by the equation $Area = \dfrac{1}{2}ab\sin (C) \forcespace$, where $a$ and $b$ are the lengths of the legs and $\angle C$ is the measure of the angle in between the two legs. Find the surface area of the swamp before it was drained. Indicate the units.
-        \item The length of third side of the Triangle can be found using the Law of Cosine, $c^2 = a^2 + b^2 - 2ab\cos(C)$, where $c$ is the third side and $a$, $b$, and $\angle C$ are the same as those of part (a). How long is the third side when the legs are each $370$ feet?
+        \item The length of third side of the triangle can be found using the Law of Cosine, $c^2 = a^2 + b^2 - 2ab\cos(C)$, where $c$ is the third side and $a$, $b$, and $\angle C$ are the same as those of part (a). How long is the third side when the legs are each $370$ feet?
         \item At $t = 24$ hours, the legs are $370$ feet and their rate of change is $-15.2 \si{ft \per hr}$. How fast is the third side of the triangle changing?
-        \item Find the rate of change of the surface area [Hint: Use the Law of Sines]. Indicate the units.
+        \item Find the rate of change of the surface area. [Hint: Use the Law of Sines.] Indicate the units.
     \end{enumerate} \vspace{11pt}
 \end{minipage}
+
+\onequestion{22. A circle is inscribed in a square as shown. The circumference of the circle is increasing at a constant rate of $4$ inches per second. As the circle expands, the square expands to maintain the condition of tangency.}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{\graphicsdir Chapter 1 Graphics/1.8-Graphic7.png}
+\end{center}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, itemsep=1em]
+    \item Find the rate of change of the perimeter of the square.
+    \item At the instant when the area of the circle is $16\pi$ square inches, find the rate at which the area \textit{between the square and the circle} is increasing.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{23. An equilateral triangle is inscribed in a circle. The circle's circumference is expanding at $6\pi \si{in \per sec}$ and the triangle maintains the contact of its corners with the circle.}
+\begin{center}
+    \begin{tikzpicture}[scale=0.75]
+        \draw[thick] (0, 0) circle (3cm);
+        \draw[thick] (0.623, 2.934) -- (-2.853, -0.927) -- (2.229, -2.007) -- cycle;
+        \fill[WildStrawberry!40] (0.623, 2.934) -- (-2.853, -0.927) -- (2.229, -2.007) -- cycle;
+        \draw[thick, <->] (0.05, 0.017) -- (1.427, 0.464)
+            node[midway, above] {$a$};
+        \draw[thick, <->] (0.05, -0.045) -- (2.22, -1.999)
+            node[midway, below] {$r$};
+
+        \node[circle, fill=black, inner sep=1.5pt] at (0, 0) {};
+    \end{tikzpicture}
+\end{center}
+Given that the area of an equilateral triangle is equal to half the apothem $a$ times the perimeter $p$, find out how fast the area inside the circle but outside the triangle is expanding when the area of the circle is $64\pi \si{in}$. [Hint: Find $p$ and $a$ in terms of $r$.] \\[11pt]
+
+\textbf{\large{1.8 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question The width of a square is increasing at a constant rate of $0.5 \si{cm \per sec}$. In terms of the perimeter $P$, what is the rate of change of the area of the square in centimeters squared per second? \\
+
+    \begin{oneparchoices}
+        \choice $-\dfrac{1}{2}P$
+        \choice $-P$
+        \choice $\dfrac{1}{4}P$
+        \choice $\dfrac{1}{2}$
+        \choice $P$
+    \end{oneparchoices} \par \horizontalline
+
+    \question When $x = 18$, the rate at which $y = \sqrt{0.5x}$ is increasing is $k$ times the rate at which $x$ is increasing. What is the value of $\dfrac{1}{k} \forcespace$? \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{1}{12}$
+        \choice $\dfrac{1}{6}$
+        \choice $1$
+        \choice $6$
+        \choice $12$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The side of a cube is expanding at a constant rate of $6$ inches per second. What is the rate of change of the volume, in cubic inches per second, when the total surface area of the cube is $54 \si{in^2 \per sec}$? \\
+
+    \begin{oneparchoices}
+        \choice $324$
+        \choice $108$
+        \choice $18$
+        \choice $162$
+        \choice $54$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If the volume of a cube is increasing at 20 cubic inches per second when each edge is $10$ inches long, how fast is the surface area increasing? \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{4}{3}$
+        \choice $2$
+        \choice $4$
+        \choice $6$
+        \choice $8$
+    \end{oneparchoices} \par \horizontalline
+
+    \question When the height of a cylinder is $12 \si{cm}$ and the radius is $4 \si{cm}$, the circumference is increasing at a rate of $\dfrac{\pi}{4} \forcespace$ \\
+
+    \begin{oneparchoices}
+        \choice $4\pi$
+        \choice $12\pi$
+        \choice $20\pi$
+        \choice $80\pi$
+        \choice $100\pi$
+    \end{oneparchoices} \par \horizontalline
+
+    \question At what approximate rate (in cubic meters per minute) is the volume of a sphere changing at the instant when the surface area is $3$ square meters and the radius is increasing at the rate of $\dfrac{1}{5} \forcespace$ meters per minute? \\
+
+    \begin{oneparchoices}
+        \choice $1.228$
+        \choice $1.905$
+        \choice $0.649$
+        \choice $0.600$
+        \choice $0.620$
+    \end{oneparchoices} \par \horizontalline 
+
+    \question The radius of a sphere is decreasing at a rate of $2$ centimeters per second. At the instant when the radius of the sphere is $3$ cm, what is the rate of change, in square centimeters per second, of the surface area of the sphere? [Hint: The surface area $S$ of a sphere with radius $r$ is $4\pi r^2$.] \\
+
+    \begin{oneparchoices}
+        \choice $-108\pi$
+        \choice $-72\pi$
+        \choice $-48\pi$
+        \choice $-24\pi$
+        \choice $-16\pi$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Water is flowing into a spherical tank with a $6$-foot radius at the constant rate of $30\pi \si{ft^3 \per hour}$. When the water is $h$ feet deep, the volume of the water in the tank is given by the equation \begin{align*}
+        V = \dfrac{\pi h^2}{3}(18 - h).
+    \end{align*}
+    What is the rate at which the depth of the water in the tank is increasing the moment when the water is $2$ feet deep? \\
+
+    \begin{oneparchoices}
+        \choice $0.5 \si{ft \per hour}$
+        \choice $1.0 \si{ft \per hour}$
+        \choice $1.5 \si{ft \per hour}$
+        \choice $2.0 \si{ft \per hour}$
+        \choice $2.5 \si{ft \per hour}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The radius of a circle is in increasing at a constant rate of $0.2$ meters per second. What is the rate of increase in the area of the circle at the instant when the circumference of the circle is $20\pi$ meters? \\
+
+    \begin{oneparchoices}
+        \choice $0.04\pi \si{m^2 \per sec}$
+        \choice $0.4\pi \si{m^2 \per sec}$
+        \choice $4\pi \si{m^2 \per sec}$
+        \choice $40\pi \si{m^2 \per sec}$
+        \choice $100\pi \si{m^2 \per sec}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If the rate of change of a number $x$ with respect to time $t$, is $x$, what is the rate of change of the reciprocal of the number when $x = -\dfrac{1}{4} \forcespace$? \\
+
+    \begin{oneparchoices}
+        \choice $-16$
+        \choice $-4$
+        \choice $-\dfrac{1}{48}$
+        \choice $\dfrac{1}{48}$
+        \choice $4$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Gravel is being dumped from a conveyor belt at a rate of $35 \si{ft^3 \per min}$ and its coarseness is such that it forms a pile in the shape of a cone whose base diameter and height are always equal. How fast is the height of the pile increasing when the pile is $15 \si{ft}$ high? \\
+
+    \begin{oneparchoices}
+        \choice $0.27 \si{ft \per min}$
+        \choice $1.24 \si{ft \per min}$
+        \choice $0.14 \si{ft \per min}$
+        \choice $0.20 \si{ft \per min}$
+        \choice $0.60 \si{ft \per min}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Two cars start moving from the same point. One travels south at $28 \si{mi \per h}$ and the other travels west at 70 $\si{mi \per h}$. At what rate is the distance between the cars increasing $5$ hours later? \\
+
+    \begin{oneparchoices}
+        \choice $75.42 \si{mi \per h}$
+        \choice $75.49 \si{mi \per h}$
+        \choice $76.40 \si{mi \per h}$
+        \choice $75.39 \si{mi \per h}$
+        \choice $75.38 \si{mi \per h}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question A Golden Rectangle is one where the ratio (called $\phi$) of the length of the short side $w$ to the long side $l$ is equal to the ratio of the long side to the sum of the two sides. In other words, $l = 1.618w$. If a Golden Rectangle changes such that $w$ is growing at $2 \si{in \per min}$, how fast is the area changing when $w$ is $5$ inches? \\
+
+    \begin{oneparchoices}
+        \choice $1.618 \si{in^2 \per min}$
+        \choice $16.18 \si{in^2 \per min}$
+        \choice $3.236 \si{in^2 \per min}$ \\[11pt]
+        \makebox[0.23\textwidth] \choice $32.36 \si{in^2 \per min}$
+        \makebox[0.23\textwidth] \choice $37.78 \si{in^2 \per min}$
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
