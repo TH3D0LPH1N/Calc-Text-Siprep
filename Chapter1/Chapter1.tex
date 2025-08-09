@@ -59,11 +59,21 @@
 \stepcounter{sectioncount}
 \input{\inputpathChapterOne Chapter1Section7.tex}
 
-\ifdefined\mainfile
-\else
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section8.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1Section9.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterOne Chapter1PracticeTest.tex}
+
+\ifx\mainfile\undefined
   \end{document}
 \fi
-
-
-
-

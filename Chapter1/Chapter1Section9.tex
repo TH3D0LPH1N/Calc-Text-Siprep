@@ -1,0 +1,103 @@
+\textbf{\underline{\large{1.9: Logarithmic Differentiation}}} \par
+
+With implicit differentiation and the Chain Rule, we learned some powerful tools for differentiating functions and relations. The Product and Quotient Rules also allowed us to take derivatives of certain functions that would otherwise be impossible to differentiate. Sometimes, however, with very complex functions, it becomes easier to manipulate an equation so that it is easier to take the derivative. This is where logarithmic differentiation comes in. \par
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Determine When It Is Appropriate to Use Logarithmic Differentiation. \\
+    Use Logarithmic Differentiation to Take The Derivatives of Complicated Functions.
+\end{tcolorbox}
+
+Before we begin, it would be helpful to look at a few exponent and logarithm rules that we should recall from algebra and precalculus. 
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \begin{align*}
+            & a^xa^y = a^{x + y} && \log_a{x} + \log_a{y} = \log_a{xy} \\[11pt]
+            & \dfrac{a^x}{a^y} = a^{x - y} && \log_a{x} - \log_a{y} = \log_a{\dfrac{x}{y}} \\[11pt]
+            & \left(a^x\right)^y = a^{xy} && \log_a{x^n} = n\log_a{x} \\
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+Since logarithms are exponents expressed in a different form, all of the above rules are derived from those of exponents.and you can see the corresponding exponential rule. Because of our algebraic rules, we can do whatever we want to both sides of an equation. In algebra, we usually used this to solve for a variable. In calculus, we can use this principle to make many derivative problems significantly easier. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.9.1: } Find the derivative of $y = \left(x^2 + 7x - 3\right)(\sin (x))$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.9.1: } Traditionally, we would use the Product Rule to take the derivative of this function. \begin{align*}
+        & \diff \left[y = \left(x^2 + 7x - 3\right)(\sin (x))\right] \\[11pt]
+        & \deriv = \boxed{\left(x^2 + 7x - 3\right)\cos (x) + (2x + 7)(\sin (x))}
+    \end{align*} 
+    Obviously, this is a straightforward problem that can be easily done using the product rule. If, however, I took the natural log of both sides of the equation, I can achieve the same results, and never use the product rule. \begin{align*}
+        & \ln y = \ln \left[\left(x^2 + 7x - 3\right)(\sin (x))\right] 
+    \end{align*}
+    Let's simplify using our log rules. \begin{align*}
+        & \ln y = \ln \left(x^2 + 7x - 3\right) + \ln \left(\sin (x)\right) \\[11pt]
+        & \diff \left[\ln (y) = \ln \left(x^2 + 7x - 3\right) + \ln \left(\sin (x)\right) \right] \\[11pt]
+        & \dfrac{1}{y}\left(\deriv\right) = \dfrac{2x + 7}{x^2 + 7x - 3} + \dfrac{\cos (x)}{\sin (x)} \\[11pt]
+        & \deriv = \left(\dfrac{2x + 7}{x^2 + 7x - 3} + \dfrac{\cos (x)}{\sin (x)} \right)(y) 
+    \end{align*}
+    Now just substitute $y$ back in and simplify. \begin{align*}
+        & \deriv = \left(\dfrac{2x + 7}{x^2 + 7x - 3} + \dfrac{\cos (x)}{\sin (x)} \right)\left( \left(x^2 + 7x - 3\right)(\sin (x))\right) \\[11pt]
+        & \deriv = \boxed{ \left(x^2 + 7x - 3\right)\cos (x) + (2x + 7)(\sin (x))}
+    \end{align*}
+    Clearly, we got the same answer that we got from the product rule, but with significantly more effort.
+\end{tcolorbox}
+
+Logarithmic differentiation is a tool we can use, but we have to use it judiciously, as we don't want to make problems more difficult than they have to be. Where logarithmic differentiation has the potential to be really useful is with functions that are excessively painful to work with (or impossible to take the derivative of any other way) because of multiple operations. Consider the following example: \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.9.2: } Find $\deriv$ for $y = \dfrac{\left(x^2 + 5\right)\sin \left(3x^3\right)}{\tan (5x + 2)}$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.9.2: } We could take the derivative by applying the Chain Rule, Quotient Rule, and Product Rule, but that would be a time-consuming and tedious process. It's much easier to take the natural log of both sides, simplify and then take the derivative. \begin{align*}
+        & \ln y = \ln\left[\dfrac{\left(x^2 + 5\right)\sin \left(3x^3\right)}{\tan (5x + 2)}\right] \\[11pt]
+        & \ln y = \ln \left(x^2 + 5\right) + \ln \left(\sin \left(3x^3\right)\right) - \ln (\tan (5x + 4)) \\[11pt]
+        & \diff \left[\ln y = \ln \left(x^2 + 5\right) + \ln \left(\sin \left(3x^3\right)\right) - \ln (\tan (5x + 4))\right] \\[11pt]
+        & \dfrac{1}{y}\left(\deriv\right) = \dfrac{2x}{x^2 + 5} + \dfrac{9x^2\cos \left(3x^3\right)}{\sin \left(3x^3\right)} - \dfrac{5\sec^2 (5x + 2)}{\tan (5x + 2)} \\[11pt]
+        & \deriv = \left(\dfrac{2x}{x^2 + 5} + \dfrac{9x^2\cos \left(3x^3\right)}{\sin \left(3x^3\right)} - \dfrac{5\sec^2 (5x + 2)}{\tan (5x + 2)}\right)(y) \\[11pt]
+        & \deriv = \boxed{\left(\dfrac{2x}{x^2 + 5} + \dfrac{9x^2\cos \left(3x^3\right)}{\sin \left(3x^3\right)} - \dfrac{5\sec^2 (5x + 2)}{\tan (5x + 2)}\right)\left(\dfrac{\left(x^2 + 5\right)\sin \left(3x^3\right)}{\tan (5x + 2)}\right)}
+    \end{align*}
+\end{tcolorbox} 
+
+Now that may seem long and messy, but try it any other way, and you might end up taking a lot more time, with a lot more algebra and a lot more potential spots to make mistakes. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 1.9.3: } Find $f'(\pi)$ for $f(z) = z^{\cos (z)}$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 1.9.3: } \begin{align*}
+        &\ln (f(z)) = \ln \left(z^{\cos (z)}\right) \\[11pt]
+        & \dfrac{d}{dz} = \left[\ln (f(z)) = \ln \left(z^{\cos (z)}\right)\right] \\[11pt]
+        & \dfrac{f'(z)}{f(z)} = \dfrac{\cos (z)}{z} - (\ln z)(\sin (z)) \\[11pt]
+        & f'(z) = \left(\dfrac{\cos (z)}{z} - (\ln z)(\sin (z))\right)\left(f(z)\right) \\[11pt]
+        & f'(z) = \left(\dfrac{\cos (z)}{z} - (\ln z)(\sin (z))\right)\left(z^{\cos (z)}\right) \\[11pt]
+        & f'(\pi) = \left(\dfrac{\cos (\pi)}{\pi} - (\ln \pi)(\sin (\pi))\right)\left(\pi^{\cos (\pi)}\right) = \boxed{-\dfrac{1}{\pi^2}}
+    \end{align*}
+    We could have also done this problem using the change of base property that we learned in precalculus, and we would get the same answer in roughly the same number of steps.
+\end{tcolorbox}
+
+Again, there are often more than one way to do a specific problem, and part of what we do as mathematicians is decide on the simplest \textbf{correct} method to solving a problem. The issue many people have when learning more difficult mathematical concepts is that they try to oversimplify a problem and end up getting it wrong as a result. \par
+
+\textbf{\large{1.9 Free Response Homework}} \par
+
+Find the derivatives of the following functions. Only use logarithmic differentiation \textbf{when appropriate}. \par
+
+\twoquestion{1. $y = (2x + 1)^4\left(x^3 - 3\right)^5$}{2. $z = \left(y^3 - 3\right)e^{(2y + 1)}$} \\[11pt]
+\twoquestion{3. $y = \dfrac{\sin^2 (x)\tan^4 (x)}{\left(x^2 + 5\right)^2}$}{4. $g(t) = t\ln t$} \\[11pt]
+\twoquestion{5. $y = \ln^x x$}{6. $p(v) = v^{e^v}$} \\[11pt]
+
+Complete the following \par
+
+\onequestion{7. Find $\dfrac{dt}{dt}$ if $t^u = u^t$.} \\[11pt]
+\onequestion{8. Find $\deriv$ for the function $y = \left(e^{17x^4}\right)\left(\sin^7 (x)\right)(5x - 17)^{12}(\cot (5x))$.} \\[11pt]
+\onequestion{9. Use logarithmic differentation to find $\dfrac{dq}{dt}$ if $q = \dfrac{e^{t^4 - 15}\sin^5 (3t)}{(\ln t)^{10}}$.} \\[11pt]
+\onequestion{10. Use logarithmic differentation to find $\deriv$ if $y = e^{150x - 19}\ln^{100} (\sin (x))\sqrt{x^2 - 1}$.} \\[11pt]
+\onequestion{11. Use logarithmic differentiation to prove the Product Rule.} \\[11pt]
+\onequestion{12. Use logarithmic differentiation to prove the Quotient Rule.} \\[11pt]
+
+% There is no multiple choice for this section!

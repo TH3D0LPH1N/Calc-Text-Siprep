@@ -20,7 +20,7 @@ In Precalculus we developed the idea of the derivative geometrically. That is, t
         \begin{center}
             Symbols for the Derivative
             \\[11pt]
-            $\hfill \dfrac{dy}{dx} = \text{``d - y - d - x''} \hfill f'(x) = \text{``f prime of x''} \hfill y' = \text{``y prime''} \hfill$ \\[11pt] 
+            $\hfill \deriv = \text{``d - y - d - x''} \hfill f'(x) = \text{``f prime of x''} \hfill y' = \text{``y prime''} \hfill$ \\[11pt] 
             $\hfill \diff = \text{``d - d - x''} \hfill D_{x} = \text{``d sub x''} \hfill$
         \end{center} 
         \vspace{11pt}
@@ -81,11 +81,11 @@ There are a few other basic rules that we need to remember.
 These rules allow us to easily differentiate a polynomial term by term.
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.2: } $y = 3x^2 + 5x + 1$; find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.2: } $y = 3x^2 + 5x + 1$; find $\deriv$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.1.2: } \begin{align*}
-        \dfrac{dy}{dx} & = \diff \left[3x^2 + 5x + 1\right] \\[11pt]
+        \deriv & = \diff \left[3x^2 + 5x + 1\right] \\[11pt]
         & = (3 \cdot 2)x^{2 - 1} + (5 \cdot 1)x^{1 - 1} + 0 \\[11pt]
         & = \boxed{6x + 5} 
     \end{align*}
@@ -103,7 +103,7 @@ These rules allow us to easily differentiate a polynomial term by term.
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.4: } $y = \sqrt{x^3} + \dfrac{4}{\sqrt{x}} - \sqrt[4]{x^3} + e^4$; find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.4: } $y = \sqrt{x^3} + \dfrac{4}{\sqrt{x}} - \sqrt[4]{x^3} + e^4$; find $\deriv$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.1.4: } \begin{align*}
@@ -125,7 +125,7 @@ As we have seen, when the variable was in the exponent, we use the Exponential R
 \end{align*} but we will need the \hyperlink{Product Rule}{Product Rule} for this derivative. Therefore, we will save this for later.
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.5: } If $y = (x^2 + 1)(x^3 - 4x)$, find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.5: } If $y = (x^2 + 1)(x^3 - 4x)$, find $\deriv$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.1.5: } \begin{align*}
@@ -134,7 +134,7 @@ As we have seen, when the variable was in the exponent, we use the Exponential R
             & = x^5 - 4x^3 + x^3 - 4x \\[11pt]
             & = x^5 - 3x^3 - 4x
         \end{aligned} \\[11pt]
-        & \dfrac{dy}{dx} \begin{aligned}[t]
+        & \deriv \begin{aligned}[t]
             & = \frac{d}{dx}\left[x^5 - 3x^3 - 4x\right] \\[11pt]
             & = \boxed{5x^4 - 9x^2 - 4} \\
         \end{aligned}
@@ -142,7 +142,7 @@ As we have seen, when the variable was in the exponent, we use the Exponential R
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.6: } If $y = \dfrac{x^2 - 4x + 6}{\sqrt[3]{x}}$, find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.6: } If $y = \dfrac{x^2 - 4x + 6}{\sqrt[3]{x}}$, find $\deriv$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.1.6: } \begin{align*}
@@ -151,7 +151,7 @@ As we have seen, when the variable was in the exponent, we use the Exponential R
             & = \dfrac{x^2 - 4x + 6}{x^{\frac{1}{3}}} \\[11pt]
             & = x^{\frac{5}{3}} - 4x^{\frac{2}{3}} + 6x^{-\frac{1}{3}}
         \end{aligned} \\[11pt]
-        & \dfrac{dy}{dx} \begin{aligned}[t]
+        & \deriv \begin{aligned}[t]
             & = \diff \left[x^{\frac{5}{3}} - 4x^{\frac{2}{3}} + 6x^{-\frac{1}{3}}\right] \\[11pt]
             & = \boxed{\dfrac{5}{3}x^{\frac{2}{3}} - \dfrac{8}{3}x^{-\frac{1}{3}} - 2x^{-\frac{4}{3}}}
         \end{aligned}
@@ -242,12 +242,12 @@ The Chain Rule is one of the cornerstones of Calculus. It can be embedded within
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.1.10: } If $y = \sqrt{16 - x^3}$, find $\dfrac{dy}{dx}$. 
+    \textbf{Ex 1.1.10: } If $y = \sqrt{16 - x^3}$, find $\deriv$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.1.10: } \begin{align*}
         & u = 16 - x^3 \text{ and } f(u) = \sqrt{u} \\[11pt]
-        & \dfrac{dy}{dx} \begin{aligned}[t]
+        & \deriv \begin{aligned}[t]
             & = \diff \left[f(u)\right] = f'(u) \cdot \dfrac{du}{dx} \\[11pt] 
             & = \dfrac{1}{2\sqrt{u}} \cdot -3x^2 \\[11pt]
             & = \boxed{\dfrac{-3x^2}{2\sqrt{16 - x^3}}}
@@ -292,7 +292,7 @@ Complete the following. \par
 \twoquestion{23. $\dfrac{d}{dw}\left[\dfrac{7w^2 - 4w + 1}{5w^3}\right]$}{24. $\dfrac{d}{dw}\left[\dfrac{5w^2 - 3w - 4}{7w^2}\right]$} \\[11pt]
 \twoquestion{25. $f(x) = \sqrt[4]{1 + 2x + x^3}$, find $f'(x)$}{26. $f(x) = \sqrt[5]{\left(\dfrac{1}{x} + 2x + e^x\right)^3}$, find $f'(x)$} \\[11pt]
 \twoquestion{27. $f(x) = \left(x^3 + 2x\right)^{37}$, find $f'(x)$}{28. $f(x) = 3x^5 - 5x^3 + 3$, find $f'(x)$} \\[11pt]
-\twoquestion{29. $g(2) = 3, \; g'(2) = -4, \; f(x) = e^{g(x)}$, find $f'(2)$}{30. $y = e^{\sqrt x}$, find $\dfrac{dy}{dx}$} \\[11pt]
+\twoquestion{29. $g(2) = 3, \; g'(2) = -4, \; f(x) = e^{g(x)}$, find $f'(2)$}{30. $y = e^{\sqrt x}$, find $\deriv$} \\[11pt]
 \twoquestion{31. $f(x) = \sqrt{4 - \dfrac{4}{9}x^2}$, find $f'\left(\sqrt 5\right)$}{32. $f(x) = e^{\sqrt{9 - x^2}}$, find $f'(x)$} \\[11pt]
 \twoquestion{33. $v(t) = \sqrt{\left(\dfrac{E(t)}{3} + 3t\right)^{\frac{3}{7}} - 4}$, find $v'(t)$}{34. $v(t) = \sqrt[3]{\left(\dfrac{C(t)}{7} + 4t^2\right)^{\frac{5}{7}} - 1}$, find $v'(t)$} \\[11pt]
 
@@ -350,7 +350,7 @@ Complete the following. \par
         \choice 8
     \end{oneparchoices} \par \horizontalline
 
-    \question If $y = \left(x^4 + 4\right)^2$, then $\dfrac{dy}{dx} = $ \\
+    \question If $y = \left(x^4 + 4\right)^2$, then $\deriv = $ \\
 
     \begin{oneparchoices}
         \choice $2\left(x^4 + 4\right)$

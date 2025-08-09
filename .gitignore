@@ -17,3 +17,6 @@
 
 # VSCode settings (optional)
 .vscode/
+
+# MacOS Aux File
+.DS_Store
