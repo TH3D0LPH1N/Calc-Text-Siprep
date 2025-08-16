@@ -1,0 +1,32 @@
+\ifx\mainfile\undefined
+  \documentclass[11pt]{exam}
+  \input{../Support/Settings.tex}
+  \def\graphicsdir{../Support/}
+  \def\inputpathChapterTwo{}
+  \begin{document}
+\fi
+
+% Title Page
+
+\vspace*{2.5cm}
+\begin{center}
+    {\fontsize{48}{48}\selectfont \textbf{Chapter 2:}} \\
+    \vspace{72pt}
+    {\fontsize{48}{48}\selectfont \textbf{Intro To}} \\
+    \vspace{24pt}
+    {\fontsize{48}{48}\selectfont \textbf{Anti-Derivatives}}
+\end{center}
+
+\setcounter{sectioncount}{0}
+\stepcounter{chaptercount}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterTwo Chapter2Overview.tex}
+
+\newpage
+
+\ifx\mainfile\undefined
+  \end{document}
+\fi 
