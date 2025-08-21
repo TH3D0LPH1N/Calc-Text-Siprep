@@ -1,0 +1,27 @@
+\textbf{\underline{\large{2.1: The Anti-Power Rule }}} \par
+
+As we have seen, we can deduce things about a function if its derivative is known. It would be valuable to have a formal process to determine the original function from its derivative accurately. The process is called antidifferentiation, or integration. \par
+
+\begin{center}  
+    \fbox{\fbox{\begin{minipage}{0.96 \textwidth}
+        \vspace{11pt}
+        \begin{center}
+            Symbol for the Integral
+            \\[11pt]
+            $\hfill \int f(x) \, dx \hfill \text{``the integral of f of x, d-x''} \hfill$ \\[11pt] 
+        \end{center} 
+        \vspace{11pt}
+    \end{minipage}}}
+\end{center}
+
+The $dx$ is called the differential. For now, we will treat it as part of the integral symbol. It tells us the independent variable of the function [usually, but not always, $x$]. It does have a meaning on its own, but we will explore that later. \par
+
+Looking at the integral as an antiderivative, we should be able to figure out the basic process. Remember: \begin{center}
+    $\diff \left[x^n\right] = nx^{n - 1}$ \\[11pt]
+    $\text{ and }$ \\[11pt]
+   $ \diff [\text{constant}] = 0$ \\[11pt]
+\end{center}
+
+It follows that if we are starting with the derivative and want to reverse the process, the power must increase by one and we should divide by this new power. Formally, \begin{align*}
+    \int x^n \, dx = \dfrac{x^{n + 1}}{n + 1} + C \text{ for } n \neq -1
+\end{align*}
