@@ -233,4 +233,115 @@ Now, let's take a look at some more complex integrals that yield inverse trig fu
     \end{minipage}}}
 \end{center}
 
- 
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.10: } Find $\int \dfrac{1}{x^2 + 4} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.10:} All we need to do is apply our formula above. \begin{align*}
+        \int \dfrac{1}{x^2 + 4} \, dx = \boxed{\dfrac{1}{2}\tan^{-1} \left(\dfrac{x}{2}\right) + C}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.11: } If $\deriv = \sec (x)(\sec (x)\tan (x))$, find $y(x)$ if $y(0) = 0$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.11: } \begin{align*}
+        & y \begin{aligned}[t]
+            & = \int (\sec (x)(\sec (x)\tan (x))) \, dx \\[11pt]
+            & = \int \left(\sec^2 (x)\right) \, dx + \int (\sec (x)\tan (x)) \, dx \\[11pt]
+            & = \tan (x) + \sec (x) + C  
+        \end{aligned} \\[11pt]
+        & 0 = \tan (0) + \sec (0) + C \\[11pt]
+        & 0 = 0 + 1 + C \therefore C = -1 \\[11pt]
+        & \boxed{y = \tan (x) + \sec (x) - 1}
+    \end{align*}
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{2.1 Free Response Homework}} \par
+
+Perform the antidifferentiation. \par
+
+\twoquestion{1. $\int \left(6x^2 - 2x + 3\right) \, dx$}{2. $\int \left(x^3 + 3x^2 - 2x + 4\right) \, dx$} \\[11pt]
+\twoquestion{3. $\int \dfrac{2}{\sqrt[3]{x}} \, dx$}{4. $\int \left(8x^4 - 4x^3 + 9x^2 + 2x + 1\right) \, dx$} \\[11pt]
+\twoquestion{5. $\int x^3\left(4x^2 + 5\right) \, dx$}{6. $\int (4x - 1)(3x + 8) \, dx$} \\[11pt]
+\twoquestion{7. $\int \left(\sqrt{x} - \dfrac{6}{\sqrt{x}}\right) \, dx$}{8. $\int \dfrac{x^2 + \sqrt{x} + 3}{x} \, dx$} \\[11pt]
+\twoquestion{9. $\int (x + 1)^3 \, dx$}{10. $\int (4x - 3)^2 \, dx$} \\[11pt]
+\twoquestion{11. $\int \left(\sqrt{x} + 3\sqrt{3} - \dfrac{6}{\sqrt{x}}\right) \, dx$}{12. $\int \dfrac{4x^3 + \sqrt{x} + 3}{x^2} \, dx$} \\[11pt]
+\twoquestion{13. $\int \left(x^2 + 5x + 6\right) \, dx$}{14. $\int \dfrac{x^2 - 4x + 7}{x} \, dx$} \\[11pt]
+\twoquestion{15. $\int \dfrac{x^5 - 7x^3 + 2x - 9}{2x} \, dx$}{16. $\int \dfrac{x^3 + 3x^2 + 3x + 1}{x + 1} \, dx$} \\[11pt]
+\twoquestion{17. $\int \left(y^2 + 5\right)^2 \, dy$}{18. $\int \left(4t^2 + 1\right)\left(3t^3 + 7\right) \, dt$} \\[11pt]
+
+Complete the following problems. \par
+
+\onequestion{19. $f'(x) = 3x^2 - 6x + 3$. Find $f(x)$ if $f(0) = 2$.} \\[11pt]
+\onequestion{20. $f'(x) = x^3 + x^2 - x + 3$. Find $f(x)$ if $f(1) = 0$.} \\[11pt]
+\onequestion{21. $f'(x) = (\sqrt{x} - 2)(3\sqrt{x} + 1)$. Find $f(x)$ if $f(4) = 1$.} \\[11pt]
+\onequestion{22. The acceleration of a particle is described by $a(t) = 36t^2 - 12t + 8$. Find the distance equation for $x(t)$ if $v(1) = 1$ and $x(1) = 3$.} \\[11pt]
+\onequestion{23. The acceleration of a particle is described by $a(t) = t^2 - 2t + 4$. Find the distance equation for $x(t)$ if $v(0) = 2$ and $x(0) = 4$.} \\[11pt]
+
+\textbf{\large{2.1 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question $\int \dfrac{1}{x^2} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\ln \left(x^2\right) + C$
+        \choice $-\ln \left(x^2\right) + C$
+        \choice $\dfrac{1}{x} + C$
+        \choice $-\dfrac{1}{x} + C$
+        \choice $-\dfrac{2}{x^3} + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int x\left(10 + 8x^4\right) \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $5x^2 + \dfrac{4}{3}x^6 + C$ 
+        \choice $5x^2 + \dfrac{8}{5}x^5 + C$
+        \choice $10x + \dfrac{4}{3}x^6 + C$ \\[11pt]
+        \makebox[0.22 \textwidth] \choice $5x^2 + 8x^6 + C$ 
+        \makebox[0.24 \textwidth] \choice $5x^2 + \dfrac{8}{7}x^6 + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int x\sqrt{3x} \, dx$ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{2\sqrt{3}}{5}x^{\frac{5}{2}} + C$ 
+        \choice $\dfrac{5\sqrt{3}}{2}x^{\frac{5}{2}} + C$ 
+        \choice $\dfrac{\sqrt{3}}{2}x^{\frac{1}{2}} + C$ 
+        \choice $2\sqrt{3x} + C$
+        \choice $\dfrac{5\sqrt{3}}{2}x^{\frac{3}{2}} + C$ 
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int (x - 1)\sqrt{x} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{3}{2}\sqrt{x} - \dfrac{1}{\sqrt{x}} + C$
+        \choice $\dfrac{2}{3}x^{\frac{2}{3}} + \dfrac{1}{2}x^{\frac{1}{2}} + C$
+        \choice $\dfrac{1}{2}x^2 - x + C$ \\[11pt]
+        \makebox[0.24\textwidth] \choice $\dfrac{2}{5}x^{\frac{5}{2}} - \dfrac{2}{3}x^{\frac{3}{2}} + C$
+        \makebox[0.22\textwidth] \choice $\dfrac{1}{2}x^2 + 2x^{\frac{2}{3}} + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question A particle is moving upward along the $y$-axis until it reaches the origin and then it moves downward such that $v(t) = 8 - 2t$ for $t \geq 0$. The position of the particle at time $t$ is given by \\
+
+    \begin{oneparchoices}
+        \choice $y(t) = -t^2 + 8t - 16$ 
+        \choice $y(t) = -t^2 + 8t + 16$
+        \choice $y(t) = 2t^2 - 8t - 16$ \\[11pt]
+        \makebox[0.27\textwidth] \choice $8t - t^2$
+        \makebox[0.28\textwidth] \choice $8t - 2t^2$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If a particle's acceleration is given by $a(t) = 12t + 4$, and $v(1) = 5$ and $y(0) = 2$, then $y(2) = $ \\
+
+    \begin{oneparchoices}
+        \choice $20$
+        \choice $10$
+        \choice $4$
+        \choice $16$
+        \choice $12$
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
