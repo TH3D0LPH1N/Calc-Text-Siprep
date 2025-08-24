@@ -62,4 +62,175 @@ These allow us to integrate a polynomial by integrating each term separately. \p
     Find the Anti-Derivative of a Polynomial. \\
     Integrate Functions Using Transcendental Operations \\
     Use Integration to Solve Rectilinear Motion Problems 
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.1: } $\int \left(3x^2 + 4x + 5\right) \, dx$
 \end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.1: } \begin{align*}
+        \int \left(3x^2 + 4x + 5\right) \, dx &= 3\dfrac{x^{2 + 1}}{2 + 1} + 4\dfrac{x^{1 + 1}}{1 + 1} + 5\dfrac{x^{0 + 1}}{0 + 1} + C \\[11pt]
+        & = \dfrac{3x^3}{3} + \dfrac{4x^2}{2} + \dfrac{5x^1}{1} + C \\[11pt]
+        & = \boxed{x^3 + 2x^2 + 5x + C}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.2: } $\int \left(x^4 + 4x^2 + 5 + \dfrac{1}{x} - \dfrac{1}{x^5}\right) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.2: } \begin{align*}
+        \int \left(x^4 + 4x^2 + 5 + \dfrac{1}{x} - \dfrac{1}{x^5}\right) \, dx &= \dfrac{x^{4 + 1}}{4 + 1} + \dfrac{4x^{2 + 1}}{2 + 1} + \dfrac{5x^{0 + 1}}{0 + 1} + \ln |x| - \dfrac{x^{-5 + 1}}{-5 + 1} + C \\[11pt]
+        & = \boxed{\dfrac{1}{5}x^5 + \dfrac{4}{3}x^3 + 5x + \ln |x| + \dfrac{1}{4x^4} + C}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.3: } $\int \left(x^2 + \sqrt[3]{x} - \dfrac{4}{x}\right) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.3: } \begin{align*}
+        \int \left(x^2 + \sqrt[3]x - \dfrac{4}{x}\right) \, dx &= \int \left(x^2 + x^{\frac{1}{3}} - \dfrac{4}{x}\right) \, dx \\[11pt]
+        & = \dfrac{x^{2 + 1}}{2 + 1} + \dfrac{x^{\frac{1}{3} + 1}}{\frac{1}{3} + 1 } - 4\ln |x| + C \\[11pt]
+        & = \boxed{\dfrac{1}{3}x^3 - \dfrac{3}{4}x^{\frac{4}{3}} + 4\ln |x| + C}
+    \end{align*}
+\end{tcolorbox} 
+
+Integrals of products and quotients can be done easily IF they can be turned into a polynomial. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.4: } $\int \left(x^2 + \sqrt[3]{x}\right)(2x + 1) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.4: } \begin{align*}
+        \int \left(x^2 + \sqrt[3]{x}\right)(2x + 1) \, dx &= \int \left(2x^3 + 2x^{\frac{4}{3}} + x^2 + x^{\frac{1}{3}}\right) \, dx \\[11pt]
+        & = \dfrac{2x^4}{4} + \dfrac{2x^{\frac{7}{3}}}{\frac{7}{3}} + \dfrac{x^3}{3} + \dfrac{x^{\frac{4}{3}}}{\frac{4}{3}} \\[11pt]
+        & = \boxed{\dfrac{1}{2}x^4 + \dfrac{6}{7}x^{\frac{7}{3}} + \dfrac{1}{3}x^3 + \dfrac{3}{4}x^{\frac{4}{3}} + C}
+    \end{align*}
+\end{tcolorbox}
+
+The next example is called an initial value problem. It has an ordered pair (or initial value pair) that allows us to solve for $C$. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.5: } $f'(x) = 4x^3 - 6x + 3$. Find $f(x)$ if $f(0) = 13$.
+\end{tcolorbox} 
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.5: } \begin{align*}
+        & f(x) \begin{aligned}[t]
+            & = \int \left(4x^3 - 6x + 3\right) \, dx \\[11pt]
+            & = x^4 - 3x^2 + 3x + C 
+        \end{aligned} \\[11pt]
+        & f(0) \begin{aligned}[t]
+            & = 0^4 - 3(0)^2 + 3(0) + C \\[11pt]
+            & = 13 \therefore C = 13 
+        \end{aligned} \\[11pt]
+        & \therefore \boxed{f(x) = x^4 - 3x^2 + 3x + 13}
+    \end{align*}
+\end{tcolorbox}
+
+Now, let's take a look at a type of problem called a \textit{rectilinear motion} problem. In these problems, we study the motion of an object moving along a straight line—its position, velocity, and acceleration. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.6: } The acceleration of particle is described by $a(t) = 3t^2 + 8t + 1$. Find the distance equation for $x(t)$ if $v(0) = 3$ and $a(0) = 1$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.6: } \begin{align*}
+        & v(t) \begin{aligned}[t]
+            & = \int a(t) \, dt \\[11pt]
+            & = \int \left(3t^2 + 8t + 1\right) \, dt \\[11pt]
+            & = t^3 + 4t^2 + t + C_1 
+        \end{aligned} \\[11pt]
+        & 3 = (0)^3 + 4(0)^2 + (0) + C_1 \therefore 3 = C_1 \\[11pt]
+        & v(t) = t^3 + 4t^2 + t + 3 \\[11pt]
+        & x(t) \begin{aligned}[t]
+            & = \int v(t) \, dt \\[11pt]
+            & = \int \left(t^3 + 4t^2 + t + 3\right) \, dt \\[11pt]
+            & = \dfrac{1}{4}t^4 + \dfrac{4}{3}t^3 + \dfrac{1}{2}t^2 + 3t + C_2 \\[11pt]
+        \end{aligned} \\[11pt]
+        & 1 = \dfrac{1}{4}(0)^4 + \dfrac{4}{3}(0)^3 + \dfrac{1}{2}(0)^2 + 3(0) + C_2 \therefore 1 = C_2 \\[11pt]
+        & \boxed{x(t) = \dfrac{1}{4}t^4 + \dfrac{4}{3}t^3 + \dfrac{1}{2}t^2 + 3t + 1}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.7: } The acceleration of a particle is described by $a(t) = 12t^2 - 6t + 4$. Find the distance equation for $x(t)$ if $v(1) = 0$ and $x(1) = 3$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.7: } \begin{align*}
+        & v(t) \begin{aligned}[t]
+            & = \int a(t) \, dt \\[11pt]
+            & = \int \left(12t^2 - 6t + 4\right) \\[11pt]
+            & = 4t^3 - 3t^2 - 4t + C_1 
+        \end{aligned} \\[11pt]
+        & 0 = 4(1)^3 - 3(1)^2 + 4(1) + C_1 \therefore -5 = C_1 \\[11pt]
+        & v(t) = 4t^3 - 3t^2 - 4t - 5 \\[11pt]
+        & x(t) \begin{aligned}[t]
+            & = \int v(t) \, dt \\[11pt]
+            & = \int \left(4t^3 - 3t^2 - 4t - 5\right) \, dt \\[11pt]
+            & = t^4 - t^3 - 2t^2 - 5t + C_2
+        \end{aligned} \\[11pt]
+        & 3 = (1)^4 - (1)^3 - 2(1)^2 - 5(1) + C_2 \therefore 6 = C_2 \\[11pt]
+        & \boxed{x(t) = t^4 - t^3 - 2t^2 - 5t + 6}
+    \end{align*}
+\end{tcolorbox}
+
+The proof of all the transcendental integral rules can be left to a more formal Calculus course. But, since the integral is the inverse of the derivative, the discovery of the rules should be obvious from looking at the comparable derivative rules. \par
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            \textbf{Transcendental Integral Rules}
+        \end{center}
+        \vspace{11pt}
+        \begin{align*}
+            & \int \cos (u) \, du = \sin (u) + C && \int \csc (u)\cot (u) \, du = -\csc (u) + C \\[11pt]
+            & \int \sin (u) \, du = -\cos (u) + C && \int \sec (u)\tan (u) \, du = \sec (u) + C \\[11pt]
+            & \int \sec^2 (u) \, du = \tan (u) + C && \int \csc^2 (u) \, du = -\cot (u) + C \\[11pt]
+            & \int e^u \, du = e^u + C && \int \dfrac{1}{u} \, du  = \ln |u| + C \\[11pt]
+            & \int a^u \, du = \dfrac{a^u}{\ln |a|} + C && \int \dfrac{1}{\sqrt{1 - u^2}} \, du = \sin^{-1} (u) + C \\[11pt]
+            & \int \dfrac{1}{1 + u^2} \, du = \tan^{-1} (u) + C && \int \dfrac{1}{u\sqrt{u^2 - 1}} \, du = sec^{-1} + C \\[11pt]
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+Note that there are only three integrals that yield inverse trig functions, but there were six inverse trig derivatives. This is because the other three derivative rules are just the negatives of the first three. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.1.8: } $\int \left(\sin (x) + 3\cos (x)\right) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.8: } \begin{align*}
+        \int \left(\sin (x) + 3\cos (x)\right) \, dx &= \int \sin (x) \, dx + 3\int \cos (x) \, dx \\[11pt]
+        & = \boxed{-\cos (x) + 3\sin (x) + C}
+    \end{align*}
+ \end{tcolorbox} \vspace{11pt}
+
+ \begin{tcolorbox}[example]
+    \textbf{Ex 2.1.9: } $\int \left(e^x + 4 + 3\csc^2 (x)\right) \, dx$
+ \end{tcolorbox}
+ \begin{tcolorbox}[solution]
+    \textbf{Sol 2.1.9: } \begin{align*}
+        \int \left(e^x + 4 + 3\csc^2 (x)\right) \, dx &= \int e^x \, dx + 4\int \, dx + 3\int \csc^2 (x) \, dx \\[11pt]
+        & = \boxed{e^x + 4x - 3\cot (x) + C}
+    \end{align*}
+ \end{tcolorbox} 
+
+Now, let's take a look at some more complex integrals that yield inverse trig functions. These more general forms extend the earlier rules by introducing a constant $a$, and they are especially useful when working with substitutions or integrals that don't simplify neatly to the unit case. \par
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            \textbf{Trig Inverse Integral Rules}
+        \end{center}
+        \vspace{11pt}
+        \begin{align*}
+            & \int \dfrac{1}{\sqrt{a^2 - u^2}} \, du = \sin^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
+            & \int \dfrac{1}{u^2 + a^2} \, du = \dfrac{1}{a}\tan^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
+            & \int \dfrac{1}{u\sqrt{u^2 - a^2}} \, du = \dfrac{1}{a}\sec^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
+        \end{align*}
+    \end{minipage}}}
+\end{center}
+
+ 
