@@ -1,0 +1,282 @@
+\textbf{\underline{\large{2.2: Integration by U-Substitution }}} \par
+
+Reversing the Power Rule was fairly easy. The other three core derivative rules---the Product Rule, the Quotient Rule, and the Chain Rule---are a little more complicated to undo. This is because they yield a more complicated function as a derivative, one which has several algebraic simplification steps. The integral of a rational function is particularly difficult to unravel because, as we have seen, rational derivatives can be obtained by differentiating a composite function with a log or a radical, or by differentiating another rational function. The same goes for reversing the Product Rule. \par
+
+\textbf{Key Idea:} There is no single Product or Quotient Rule for integrals. \par
+
+Instead, there are several techniques that apply in different situations, and it is not always obvious at the outset which one will be most effective. The choice depends on the algebraic manipulations that produced the product or quotient in the first place. \par
+
+\begin{center} % Generated with ChatGPT
+    \begin{table}[h!]
+        \centering
+        \setlength{\extrarowheight}{2pt} % adds a little spacing
+        \begin{tabular}{|>{\raggedright\arraybackslash}p{0.44\textwidth}|
+                        >{\raggedright\arraybackslash}p{0.44\textwidth}|}
+        \hline
+        \rowcolor{gray!20}\centering\textbf{Products can be a result of:} &
+        \centering\textbf{Quotients can be the result of:} \tabularnewline
+        \hline
+        \begin{itemize}[leftmargin=*]
+            \item The Chain Rule
+            \item Differentiating a product
+            \item Differentiating some trig functions
+        \end{itemize}
+        &
+        \begin{itemize}[leftmargin=*]
+            \item Common denominators
+            \item Differentiating a quotient
+            \item Differentiating a log with a composite function
+            \item Differentiating some trig inverse functions
+        \end{itemize}
+        \tabularnewline
+        \hline
+        \end{tabular}
+        \end{table}
+\end{center}
+
+Composite functions are among the most pervasive functions in math. Therefore, we will start with undoing products and quotients that involve composites. \par
+
+Remember: \par
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96 \textwidth}
+        \vspace{11pt}
+        \begin{center}
+            The Chain Rule: $\diff \left[f(g(x))\right] = f'(g(x)) \cdot g'(x)$
+        \end{center}
+        \vspace{11pt}
+    \end{minipage}}}
+\end{center}
+
+The derivative of a composite function often becomes a product of two functions: one part still composite and the other not. So, when we see a product in an integral, it may have originated from the Chain Rule. Unlike differentiation, however, integration in this case does not follow a fixed formula. Instead, it involves a process of substitution that sometimes works and sometimes does not. We make an informed guess and check whether it simplifies the integral. In later parts of Calculus, you will learn additional techniques to use when this approach is not successful. \par
+
+\textbf{Steps to Integration by U-Substitution} \par
+
+\begin{enumerate}
+    \item Make sure that you are integrating a product or quotient.
+    \item Identify the inner function of the composite and set $u$ equal to it.
+    \item Differentiate $u$ to find $du$ in terms of $dx$.
+    \item Adjust the integral by multiplying and dividing by a constant if needed so a factor matches $du$. [See \textbf{Ex 2.2.2}]
+    \item Rewrite the integral entirely in terms of $u$ and $du$.
+    \item Integrate using the power rule or other appropriate rules.
+    \item Substitute back the original $x$-expression for $u$.
+\end{enumerate}
+
+This is one of those mathematical processes that makes little sense when first seen. But, after seeing several examples, the meaning should become clear. \textit{Be patient!} \par
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Use U-Substitution to Integrate Composite Expressions 
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.1: } $\int 3x^2\left(x^3 + 5\right)^{10} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.1: } \begin{align*}
+        & \left(x^3 + 5\right) \text{ is the inner function.} \\[11pt]
+        & \curvedarrow u = x^3 + 5 \\[5.5pt]
+        & \curvedarrow du = 3x^2 \, dx \\[11pt]
+        & \int 3x^2\left(x^3 + 5\right)^{10} \, dx \begin{aligned}[t]
+            & = \int u^{10} \, du \\[11pt]
+            & = \dfrac{u^{11}}{11} + C \\[11pt]
+            & = \boxed{\dfrac{1}{11}\left(x^3 + 5\right)^{11}}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.2: } $\int x\left(x^2 + 5\right)^3 \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.2: } \begin{align*}
+        & \left(x^2 + 5\right) \text{ is the inner function.} \\[11pt]
+        & \curvedarrow u = x^2 + 5 \\[5.5pt]
+        & \curvedarrow du = 2x \, dx \\[11pt]
+        & \int x\left(x^2 + 5\right)^3 \, dx \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)\left(x^2 + 5\right)^3 \, dx \\[11pt]
+            & = \dfrac{1}{2}\int u^3 \, du \\[11pt]
+            & = \dfrac{1}{2} \cdot \dfrac{u^4}{4} + C \\[11pt]
+            & = \boxed{\dfrac{1}{8}\left(x^2 + 5\right)^4 + C}
+        \end{aligned}
+    \end{align*}
+    Notice how the factor of $2$ from $du = 2x\,dx$ is accounted for by multiplying by $\frac{1}{2}$ when substituting. This ensures the integral is correctly expressed in terms of $u$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.3: } $\int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.3: } \begin{align*}
+        & \sqrt[4]{x^4 + 2x^2 - 5} \text{ is the inner function.} \\[11pt]
+        & \curvedarrow u = x^4 + 2x^2 - 5 \\[5.5pt]
+        & \curvedarrow du = \left(4x^3 + 4x\right)\, dx = 4\left(x^3 + x\right) \, dx \\[11pt]
+        & \int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \, dx \begin{aligned}[t]
+            & = \dfrac{1}{4}\int 4\left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \, dx \\[11pt]
+            & = \dfrac{1}{4}\int \sqrt[4]{u} \, du \\[11pt]
+            & = \dfrac{1}{4} \cdot \dfrac{4u^{\frac{5}{4}}}{5} + C \\[11pt]
+            & = \boxed{\dfrac{1}{5}\left(x^4 + 2x^2 - 5\right)^{\frac{5}{4}} + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.4: } $\int \dfrac{3x^2 + 4x - 5}{\left(x^3 + 2x^2 - 5x + 2\right)^3} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.4: } \begin{align*}
+        & x^3 + 2x^2 - 5x + 2 \text{ is the inner function.} \\[11pt]
+        & \curvedarrow u = x^3 + 2x^2 - 5x + 2 \\[5.5pt]
+        & \curvedarrow du = \left(3x^2 + 4x - 5\right) \, dx \\[11pt]
+        & \int \dfrac{3x^2 + 4x - 5}{\left(x^3 + 2x^2 - 5x + 2\right)^3} \, dx \begin{aligned}[t]
+            & = \int \dfrac{1}{u^3} \, du \\[11pt]
+            & = -\dfrac{1}{2}u^{-2} + C \\[11pt]
+            & = \boxed{-\dfrac{1}{2}\left(x^3 + 2x^2 - 5x + 2\right)^{-2} + C}
+        \end{aligned} 
+    \end{align*}
+\end{tcolorbox}
+
+Of course, u-substitution will apply to the transcendental functions as well. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.5: } $\int \sin (5x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.5: } \begin{align*}
+        & \curvedarrow u = 5x \\[5.5pt]
+        & \curvedarrow du = 5 \, dx \\[11pt]
+        & \int \sin (5x) \, dx \begin{aligned}[t]
+            & = \dfrac{1}{5}\int 5\sin (5x) \, dx \\[11pt]
+            & = \dfrac{1}{5}\int \sin (u) \, du \\[11pt]
+            & = \dfrac{1}{5} \cdot (-\cos (u)) + C \\[11pt]
+            & = \boxed{-\dfrac{1}{5}\cos (5x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.6: } $\int \sin^6 (x)\cos (x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.6: }\begin{align*}
+        & \curvedarrow u = \sin (x) \\[5.5pt]
+        & \curvedarrow du = \cos (x) \, dx \\[11pt]
+        & \int \sin^6 (x)\cos (x) \, dx \begin{aligned}[t]
+            & = \int u^6 \, du \\[11pt]
+            & = \dfrac{1}{7}u^7 + C \\[11pt]
+            & = \boxed{\dfrac{1}{7}\sin^7 (x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.7: } $\int x^5\sin \left(x^6\right) \, dx$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.7: } \begin{align*}
+        & \curvedarrow u = x^6 \\[5.5pt]
+        & \curvedarrow du = 6x^5 \, dx \\[11pt]
+        & \int x^5\sin \left(x^6\right) \, dx \begin{aligned}[t]
+            & = \dfrac{1}{6}\int 6x^5\sin \left(x^6\right) \, dx \\[11pt]
+            & = \dfrac{1}{6}\int \sin (u) \, du \\[11pt]
+            & = -\dfrac{1}{6}\cos (u) + C \\[11pt]
+            & = \boxed{-\dfrac{1}{6}\cos \left(x^6\right) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.8: } $\int \cot^3 (x)\csc^2 (x) \, dx$ 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.8 } \begin{align*}
+        & \curvedarrow u = \cot (x) \\[5.5pt]
+        & \curvedarrow du = -\csc^2 (x) \, dx \\[11pt]
+        & \int \cot^3 (x)\csc^2 (x) \, dx \begin{aligned}[t]
+            & = -\int \cot^3 (x)\left(-\csc^2 (x)\right) \, dx \\[11pt]
+            & = -\int u^3 \, du \\[11pt]
+            & = -\dfrac{1}{4}u^4 \, du + C \\[11pt]
+            & = \boxed{-\dfrac{1}{4}\cot^4 (x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.9: } $\int \dfrac{\cos (\sqrt{x})}{\sqrt{x}} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Ex 2.2.9: } \begin{align*}
+        & \curvedarrow u = \sqrt{x} \\[5.5pt]
+        & \curvedarrow du = \dfrac{1}{2}x^{-\frac{1}{2}} \\[11pt]
+        & \int \dfrac{\cos (\sqrt{x})}{\sqrt{x}} \, dx \begin{aligned}[t]
+            & = 2\int (\cos (\sqrt{x}))\left(\dfrac{1}{2}x^{-\frac{1}{2}}\right) \, dx \\[11pt]
+            & = 2\int \cos (u) \, du \\[11pt]
+            & = 2\sin (u) + C \\[11pt]
+            & = \boxed{2\sin (\sqrt{x}) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.10: } $\int xe^{x^2 + 1} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.10: } \begin{align*}
+        & \curvedarrow u = x^2 + 1 \\[5.5pt]
+        & \curvedarrow du = 2x \, dx \\[11pt]
+        & \int xe^{x^2 + 1} \, dx \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)e^{x^2 + 1} \, dx \\[11pt]
+            & = \dfrac{1}{2}\int e^u \, du \\[11pt]
+            & = \dfrac{1}{2}e^u + C \\[11pt]
+            & = \boxed{\dfrac{1}{2}e^{x^2 + 1} + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.11: } $\int \dfrac{x}{\sqrt{1 - x^4}} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.2.11: } \begin{align*}
+        & \curvedarrow u = x^2 \\[5.5pt]
+        & \curvedarrow du = 2x \, dx \\[11pt]
+        & \int \dfrac{x}{\sqrt{1 - x^4}} \, dx \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)\dfrac{1}{\sqrt{1 - \left(x^2\right)^2}} \, dx \\[11pt]
+            & = \dfrac{1}{2} \int \dfrac{1}{\sqrt{1 - u^2}} \, du \\[11pt]
+            & = \dfrac{1}{2}\sin^{-1} (u) + C \\[11pt]
+            & = \boxed{\dfrac{1}{2}\sin^{-1} \left(x^2\right) + C} 
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.2.12: } $\int \left(xe^{x^2} + 4x^2 - 3\sin (5x)\right) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Ex 2.2.12: } \begin{align*}
+        \int \left(xe^{x^2} + 4x^2 - 3\sin (5x)\right) \, dx = \int xe^{x^2} \,dx + \int 4x^2 \, dx - \int 3\sin (5x) \,dx
+    \end{align*} \vspace{-11pt} \begin{align*}
+        &\curvedarrow u_1 = x^2 && \curvedarrow u_2 = 5x \\[5.5pt]
+        &\curvedarrow du_1 = 2x \, dx && \curvedarrow du_2 = 5 \, dx
+    \end{align*} \vspace{-11pt} \begin{align*}
+        \int xe^{x^2} \, dx + \int 4x^2 \, dx - \int 3\sin (5x) \, dx \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)e^{x^2} \, dx + 4\int x^2 \, dx - \dfrac{3}{5}\int 5\sin(5x) \, dx \\[11pt]
+            & = \dfrac{1}{2}\int e^{u_1} \, du_1 + 4\int x^2 \, dx - \dfrac{3}{5}\int \sin \left(u_2\right) \, du_2 \\[11pt]
+            & = \dfrac{1}{2}e^{u_1} + 4\dfrac{x^3}{3} - \dfrac{3}{5}(-\cos (u_2)) + C \\[11pt]
+            & = \boxed{\dfrac{1}{2}e^{x^2} + \dfrac{4}{3}x^3 + \dfrac{3}{5}\cos (5x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} 
+
+\newpage
+
+\textbf{\large{2.2 Free Response Homework Set A}} \par
+
+Perform the anti-differentiation. \par
+
+\twoquestion{1. $\int \left(5x + 3\right)^3 \, dx$}{2. $\int \left(x^3\left(x^4 + 5\right)\right)^{24} \, dx$} \\[11pt]
+\twoquestion{3. $\int \left(1 + x^3\right)^2 \, dx$}{4. $\int (2 - x)^{\frac{2}{3}} \, dx$} \\[11pt]
+\twoquestion{5. $x\sqrt{2x^2 + 3} \, dx$}{6. $\int \dfrac{1}{(5x + 2)^3} \, dx$}
+
