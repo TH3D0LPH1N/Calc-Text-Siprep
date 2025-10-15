@@ -1,0 +1,221 @@
+\textbf{\underline{\large{2.3 Separable Differential Equations}}} \par
+
+\begin{tcolorbox}[definition]
+    \begin{tabbing}
+        \textit{Differential Equation} $\rightarrow$ \= Definition: An equation that contains a derivative. 
+    \end{tabbing} \vspace{11pt}
+    \begin{tabbing}
+        \textit{General Solution} $\rightarrow$ \= Definition: All of the $y$-equations that would have the given \\
+        \> equation as their derivative. Note the $+C$ which gives multiple \\
+        \> equations.
+    \end{tabbing} \vspace{11pt}
+    \begin{tabbing}
+        \textit{Initial Condition} $\rightarrow$ \= Definition: Constraint placed on a differential equation; \\
+        \> sometimes called an initial value. 
+    \end{tabbing} \vspace{11pt}
+    \begin{tabbing}
+        \textit{Particular Solution} $\rightarrow$ \= Definition: Solution obtained from solving a differential \\
+        \> equation when an initial condition allows you to solve for $C$.
+    \end{tabbing} \vspace{11pt}
+    \begin{tabbing}
+        \textit{Separable Differential Equation} $\rightarrow$ \= Definition: A differential equation in which all \\
+        \> terms with $y$'s can be moved to the left side of an \\
+        \> equals sign ($=$), and in which all terms with $x$'s can \\
+        \> be moved to the right side of an equals sign ($=$), by \\
+        \> multiplication and division only.
+    \end{tabbing}
+\end{tcolorbox}
+
+Let's take a look at some examples of separable differential equations.
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.3.1: } Separate the variables in the following differential equations: \begin{align*}
+        & \text{a) } \deriv = -\dfrac{x}{y} \\[11pt]
+        & \text{b) } \deriv = x\sec (y) \\[11pt]
+        & \text{c) } y' = 2xy - 3y
+    \end{align*}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.3.1: } \par
+    a) \begin{align*}
+        (y)\deriv &= -\dfrac{x}{y}(y) \\[11pt]
+        (dx)\dfrac{y \, dy}{dx} &= -x(dx) \\[11pt]
+        \Aboxed{y \, dy &= -x \, dx}
+    \end{align*}
+    b) \begin{align*}
+        \left(\dfrac{1}{\sec (y)}\right)\deriv &= x\sec (y)\left(\dfrac{1}{\sec (y)}\right) \\[11pt]
+        (dx)\cos (y)\deriv &= x(dx) \\[11pt]
+        \Aboxed{\cos (y) \, dy &= x \, dx}
+    \end{align*}
+    c) \begin{align*}
+        \deriv &= (2x - 3)y \\[11pt]
+        \left(\dfrac{1}{y}\right)\deriv &= (2x - 3)y\left(\dfrac{1}{y}\right) \\[11pt]
+        (dx)\left(\dfrac{1}{y}\right)\deriv &= (2x - 3)(dx) \\[11pt]
+        \Aboxed{\dfrac{1}{y} \, dy &= (2x - 3) \, dx}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Given a Separable Differential Equation, Find the General Solution. \\
+    Given a Separable Differential Equation and an Initial Condition, Find a Particular Solution. 
+\end{tcolorbox} \vspace{11pt}
+
+\textbf{Steps to Solving Differential Equations} \par
+
+\begin{enumerate}
+    \item Separate the variables. Move all terms involving $y$ (and $dy$) to one side and all terms involving $x$ (and $dx$) to the other. Keep any constants on the right side of the equation.
+    \item Integrate both sides. Keep $+C$ only on the right side of the equation.
+    \item Solve for $y$, if possible. If the integration produces a natural log, isolate $y$. If not, solve for $C$. Note: $e^{\ln |y|} = y$, as $e$ raised to any power is positive.
+    \item Apply initial conditions (if given). Substitute initial values to solve for $C$.
+\end{enumerate} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.3.2: } Find the general solution to the differential equation $\deriv = -\dfrac{x}{y}$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.3.2: } \vspace{11pt} \begin{alignat*}{2}
+        & \deriv = -\frac{x}{y} &\qquad& \text{Start here.} \\[11pt]
+        & y \, dy = -x \, dx &\qquad& \text{Separate all the $y$ terms to the left side of the equation} \\
+        &  &\qquad& \text{and all of the $x$ terms to the right side.} \\[11pt]
+        & \int y \, dy = \int -x \, dx &\qquad& \text{Integrate both sides.} \\[11pt]
+        & \frac{1}{2}y^2 = -\frac{1}{2}x^2 + C &\qquad& \text{You only need $C$ on one side of the equation.} \\[11pt]
+        & y^2 = -x^2 + C &\qquad& \text{Multiply both sides by 2. Note that $2C$ is still a constant,} \\
+        &  &\qquad& \text{so we'll continue to denote it as $C$.} \\[11pt]
+        & x^2 + y^2 = C &\qquad& \text{This is the family of circles with radius $\sqrt{C}$ centered at the} \\
+        &  &\qquad& \text{origin.} \\[11pt]
+        & y = \pm\sqrt{C - x^2} &\qquad& \text{Isolate $y$.}
+    \end{alignat*}
+
+    Since we usually solve our equation for y, our solution will be $\boxed{y = \pm\sqrt{C - x^2}}$. \par
+    \vspace{11pt}
+    Also, note that we can check our solution by taking its derivative. \begin{align*}
+        x^2 + y^2 &= C \\[11pt]
+        \diff \left[x^2 + y^2\right] &= \diff [C] \\[11pt]
+        2x + 2y\deriv &= 0 \\[11pt]
+        \deriv &= -\dfrac{x}{y} \quad \checkmark
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.3.3: } Find the general solution to the differential equation $\dfrac{dm}{dt} = mt$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.3.2: } \vspace{11pt} \begin{alignat*}{2}
+        & \dfrac{dm}{dt} = mt &\qquad& \text{Start here.} \\[11pt]
+        & \dfrac{1}{m} \, dm = t \, dt &\qquad& \text{Separate all the $m$ terms to the left side of the equation} \\
+        & &\qquad& \text{and all of the $t$ terms to the right side of the equation.} \\[11pt]
+        & \int \dfrac{1}{m} \, dm = \int t \, dt &\qquad& \text{Integrate both sides.} \\[11pt]
+        & \ln |m| = \dfrac{1}{2}t^2 + C &\qquad& \text{You only need $C$ on one side of the equation.} \\[11pt]
+        & e^{\ln |m|} = e^{\frac{1}{2}t^2 + C} &\qquad& \text{$e$ both sides of the equation to solve for $y$.} \\[11pt]
+        & m = e^{\frac{1}{2}t^2}e^C &\qquad& \text{Pull out the constants from the equation.} \\[11pt]
+        & m = Ke^{\frac{1}{2}t^2} &\qquad& \text{$e^C$ is still a constant, which we will just denote as $K$.}
+    \end{alignat*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.3.4: } Find the particular solution to $y' = 2xy - 3y$, given $y(3) = 2$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.3.4: } To find the particular solution, recall that we first need to find the general solution. \begin{align*}
+        \deriv &= (2x - 3)y \\[11pt]
+        \int \dfrac{1}{y} \, dy &= \int (2x - 3) \, dx \\[11pt]
+        \ln |y| &= x^2 - 3x + C \\[11pt]
+        y &\begin{aligned}[t]
+            & = e^{x^2 - 3x + C} \\[11pt]
+            & = e^{x^2 - 3x}e^C \\[11pt]
+            & = Ke^{x^2 - 3x}
+        \end{aligned}
+    \end{align*}
+    Now, let's plug in our initial value to solve for $K$. \begin{align*}
+        y(3) = 2 \therefore Ke^{3^2 - 3(3)} = 2 \therefore Ke^0 = 2 \therefore K = 2
+    \end{align*}
+    So, our particular solution is $\boxed{y = 2e^{x^2 - 3x}}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.3.5: } Find the particular solution to $\deriv = x^2y$, given $y(0) = -2$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.3.5: } Once again, let's find the general solution first. \begin{align*}
+        \deriv &= x^2y \\[11pt]
+        \int \dfrac{1}{y} &= \int x^2 \,dx \\[11pt]
+        \ln |y| &= \dfrac{1}{3}x^3 + C \\[11pt]
+        y &\begin{aligned}[t]
+            & = e^{\frac{1}{3}x^3 + C} \\[11pt]
+            & = e^{\frac{1}{3}}x^3e^C \\[11pt]
+            & = Ke^{\frac{1}{3}}
+        \end{aligned}
+    \end{align*}
+    Now, let's find $K$. \begin{align*}
+        y(0) = -2 \therefore Ke^{\frac{1}{3}(0)} = -2 \therefore Ke^0 = -2 \therefore K = -2
+    \end{align*}
+    So, our particular solution is $\boxed{y = -2e^{\frac{1}{3}x^3}}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.3.6: } Find the particular solution to $\deriv = x^2y^3$, given $y(0) = 1$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.3.6: } \begin{align*}
+        \deriv &= x^2y^3 \\[11pt]
+        \int \dfrac{1}{y^3} \, dy &= \int x^2 \, dx \\[11pt]
+        -\dfrac{1}{2y^2} &= \dfrac{x^2}{2} + C
+    \end{align*}
+    Usually, at this step, we would isolate $y$ to find the general solution. However, notice that it's easier to solve for $C$ here, because solving for $y$ will likely result in nested fractions, which can be difficult to work with. \begin{align*}
+        y(0) = 1 \therefore -\dfrac{1}{2(1)^2} = \dfrac{0^2}{2} + C \therefore C = -\dfrac{1}{2}
+    \end{align*}
+    Now, we can continue solving for the particular solution. \begin{align*}
+        -\dfrac{1}{2y^2} &= \dfrac{x^2}{2} - \dfrac{1}{2} \\[11pt]
+        \dfrac{1}{y^2} &= -x^2 + 1 \\[11pt]
+        y^2 &= \dfrac{1}{1 - x^2} \\[11pt]
+        y &= \dfrac{1}{\pm\sqrt{1 - x^2}}
+    \end{align*}
+    Since $x = 0$ gave us $y = +1$, our particular solution must be: \begin{align*}
+        \boxed{y = \dfrac{1}{\sqrt{1 - x^2}}}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.3.7: } Let $y = f(x)$ be a differentiable function such that $\deriv = \dfrac{y + 1}{x^2 + 9}$ and suppose the point $(0, -3)$ is on the graph of $y = f(x)$. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item Use implicit differentiation to find $\deriv[2]$. \\
+        \item Determine if the point $(0, -3)$ is at a maximum, a minimum, or neither. \\
+        \item Find the particular solution to $\deriv = \dfrac{y + 1}{x^2 + 9}$ at $(0, -3)$. \\
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.3.7: } \par
+    a) \begin{align*}
+        \deriv[2] &= \diff \left[\dfrac{y + 1}{x^2 + 9}\right] \\[11pt]
+        & = \dfrac{\left(x^2 + 9\right)\deriv - (y + 1)(2x)}{\left(x^2 + 9\right)^2} \\[11pt]
+        & = \dfrac{\left(x^2 + 9\right)\left(\dfrac{y + 1}{x^2 + 9}\right) - (y + 1)(2x)}{\left(x^2 + 9\right)} \\[11pt]
+        & = \dfrac{(y + 1) - (y + 1)(2x)}{\left(x^2 + 9\right)^2} \\[11pt]
+        & = \boxed{\dfrac{(y + 1)(1 - 2x)}{\left(x^2 + 9\right)}}
+    \end{align*}
+    b) \begin{align*}
+        \deriv[2]_{(0, -3)} &= \dfrac{(-3) + 1}{(0)^2 + 9} \\[11pt]
+        & = -\dfrac{2}{9}
+    \end{align*}
+    Because the derivative at the point $(0, \, -3)$ is not equal to zero, the point is $\boxed{\text{neither a maximum nor a minimum}}$. \par
+    \vspace{11pt}
+    c) \begin{align*}
+        \deriv &= \dfrac{y + 1}{x^2 + 9} \\[11pt]
+        \int \dfrac{1}{y + 1} \, dy &= \int \dfrac{1}{x^2 + 9} \, dx \\[11pt]
+        \ln |y + 1| &= \dfrac{1}{3}\tan^{-1} \left(\dfrac{x}{3}\right) + C \\[11pt]
+        y + 1 &= e^{\frac{1}{3}\tan^{-1} \left(\frac{x}{3}\right) + C} \\[11pt]
+        y &= Ke^{\frac{1}{3}\tan^{-1} \left(\frac{x}{3}\right)} - 1 \\[11pt]
+        y(0) = -3 \therefore -3 &= Ke^{\frac{1}{3}\tan^{-1} \left(\frac{(0)}{3}\right)} - 1 \therefore K = -2 \\[11pt]
+        \Aboxed{y &= -2e^{\frac{1}{3}\tan^{-1} \left(\frac{x}{3}\right)} - 1}
+    \end{align*} 
+\end{tcolorbox} 
+
+\newpage
+
+\textbf{\large{2.3 Free Response Homework}} \par
+
+Separate the variables for the following differential equations. \par
+
+\begin
