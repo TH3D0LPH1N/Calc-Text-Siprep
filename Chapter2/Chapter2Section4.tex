@@ -36,5 +36,152 @@ All of this is best understood with some examples.
     \textbf{Ex 2.4.2: } $\int (x + 1)\sqrt{x - 1} \, dx$
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
-    \textbf{Sol 2.4.2: }
+    \textbf{Sol 2.4.2: } \begin{align*}
+        & \curvedarrow u = x - 1 \therefore x = u + 1 \\[5.5pt]
+        & \curvedarrow du = dx \\[11pt]
+        & \int (x + 1)\sqrt{x - 1} \, dx \begin{aligned}[t]
+            & = \int ((u + 1) + 1)\sqrt{u} \, du \\[11pt]
+            & = \int (u + 2)\sqrt{u} \, du \\[11pt]
+            & = \left(u^{\frac{3}{2}} + 2u^{\frac{1}{2}}\right) \, du \\[11pt]
+            & = \dfrac{2}{5}u^{\frac{5}{2}} + \dfrac{4}{3}u^{\frac{3}{2}} + C \\[11pt]
+            & = \boxed{\frac{2}{5}(x - 1)^{\frac{5}{2}} + \dfrac{4}{3}(x - 1)^{\frac{3}{2}} + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.4.3: } $\int (x + 2)(x - 3)^4 \, dx$ 
 \end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Ex 2.4.3: } \begin{align*}
+        & \curvedarrow u = x - 3 \therefore x = u + 3 \\[5.5pt]
+        & \curvedarrow du = dx \\[11pt]
+        & \int (x + 2)(x - 3)^4 \, dx \begin{aligned}[t]
+            & = ((u + 3) + 2)u^4 \, du \\[11pt]
+            & = \int (u + 5)u^4 \, du \\[11pt]
+            & = \int u^5 + 5u^4 \, du \\[11pt]
+            & = \dfrac{1}{6}u^6 + u^5 + C \\[11pt]
+            & = \boxed{\dfrac{1}{6}(x - 3)^6 + (x - 3)^5 + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.4.4: } $\int \dfrac{x^2 + 4}{x + 2} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.4.4: } There are two ways to approach this problem. One could use polynomial long division to simplify before integrating: \begin{align*}
+        \int \dfrac{x^2 + 4}{x + 2} \, dx = \int \left(x - 2 + \dfrac{8}{x + 2}\right) \, dx
+    \end{align*}
+    Then \begin{align*}
+        & \curvedarrow u = x + 2 \\[5.5pt]
+        & \curvedarrow du = dx \\[11pt]
+        & \int \left(x - 2 + \dfrac{8}{x + 2}\right) \, dx \begin{aligned}[t]
+            & = \int (x - 2) \, dx + 8\int \dfrac{1}{u} \, du \\[11pt]
+            & = \dfrac{1}{2}x^2 - 2x + 8\ln |u| + C \\[11pt]
+            & = \boxed{\dfrac{1}{2}x^2 - 2x + 8\ln |x + 2| + C}
+        \end{aligned}
+    \end{align*}
+    An alternative method to solving this problem would be to make the denominator $u$ and use back-substitution: \begin{align*}
+        & \curvedarrow u = x + 2 \therefore x = u = 2 \\[5.5pt]
+        & \curvedarrow du = dx \\[11pt]
+        & \int \dfrac{x^2 + 4}{x + 2} \, dx \begin{aligned}[t]
+            & = \int \dfrac{(u - 2)^2 + 4}{u} \, du \\[11pt]
+            & = \int \dfrac{u^2 - 4u + 4 + 4}{u} \, du \\[11pt]
+            & = \int \dfrac{u^2 - 4u + 8}{u} \, du \\[11pt]
+            & = \int \left(u - 4 + \dfrac{8}{u}\right) \, du \\[11pt]
+            & = \dfrac{1}{2}u^2 - 4u + 8\ln |u| + C \\[11pt]
+            & = \boxed{\dfrac{1}{2}(x + 2)^2 - 4(x + 2) + 8\ln |x + 2| + C}
+        \end{aligned}
+    \end{align*}
+    From visual inspection, these answers may appear different. However, with FOILing and adding like terms, it can be shown that these are in fact the same answers. \par
+    \vspace{11pt}
+    As a rule of thumb, doing algebraic simplification before calculus will generally make the problem shorter and simpler. In this case, polynomial long division made the problem easier than back-substitution.
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{2.4 Free Response Homework}} \par
+
+\twoquestion{1. $\int x\sqrt{4 - x} \, dx$}{2. $\int x^5\sqrt{x^3 + 4} \, dx$} \\[11pt]
+\twoquestion{3. $\int \dfrac{x + 5}{2x + 3} \, dx$}{4. $\int x^3\left(x^2 + 1\right)^{12}$} \\[11pt]
+\twoquestion{5. $\int \dfrac{(3 + \ln x)^2(2 - \ln x)}{x} \, dx$}{6. $\int \sqrt{4 - \sqrt{x}} \, dx$} \\[11pt]
+\twoquestion{7. $\int x^5\left(x^2 + 4\right)^2 \, dx$}{8. $\int \sqrt{x + 3}(x + 1)^2 \, dx$} \\[11pt]
+\twoquestion{9. $\int (t - 1)(2t + 4)^5 \, dt$}{10. $\int (z - 3)(3z - 1)^3 \, dz$} \\[11pt]
+\twoquestion{11. $\int \dfrac{y^5}{\sqrt{y^3 + 5}} \, dy$}{12. $\int \dfrac{w^5}{w^2 + 4} \, dw$} \\[11pt]
+\twoquestion{13. $\int \dfrac{x^5}{\left(x^2 - 1\right)^{\frac{5}{2}}} \, dx$}{14. $\int \dfrac{x^7}{\left(x^4 + 4\right)^{\frac{3}{2}}} \, dx$} \\[11pt]
+\twoquestion{15. $\int (x + 2)\sqrt[3]{x - 1} \, dx$}{16. $\int \sqrt{4 - x}(2x + 5) \, dx$} \\[11pt]
+
+\textbf{\large{2.4 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question $\int x^3\sqrt{1 + x^2} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{x^4}{2} \cdot \dfrac{\left(1 + x^2\right)^{\frac{3}{2}}}{3} + C$
+        \choice $\dfrac{1}{2}\left(1 + x^2\right)^{\frac{1}{2}} + \dfrac{1}{3}\left(1 + x^2\right)^{\frac{3}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $-\dfrac{1}{3}\left(1 + x^2\right)^{\frac{3}{2}} + \dfrac{1}{5}\left(1 + x^2\right)^{\frac{5}{2}} + C$
+        \choice $\dfrac{1}{3}\left(1 + x^2\right)^{\frac{3}{2}} - \dfrac{1}{5}\left(1 + x^2\right)^{\frac{5}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{3}\left(1 + x^2\right)^{\frac{3}{2}} + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int x^5\sqrt{1 + x^2} \, dx = $ \\
+    
+    \begin{oneparchoices}
+        \choice $\dfrac{x^6\left(1 + x^2\right)^{\frac{3}{2}}}{18} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{3}\left(1 + x^2\right)^{\frac{3}{2}} + \dfrac{2}{7}\left(1 + x^2\right)^{\frac{7}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{7}\left(1 + x^2\right)^{\frac{7}{2}} - \dfrac{2}{5}\left(1 + x^2\right)^{\frac{5}{2}} + \dfrac{1}{3}\left(1 + x^2\right)^{\frac{3}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{2}{7}\left(1 + x^2\right)^{\frac{7}{2}} - \dfrac{4}{5}\left(1 + x^2\right)^{\frac{5}{2}} + \dfrac{2}{3}\left(1 + x^2\right)^{\frac{3}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{7}\left(1 + x^2\right)^{\frac{7}{2}} + \dfrac{2}{5}\left(1 + x^2\right)^{\frac{5}{2}} + \dfrac{1}{3}\left(1 + x^2\right)^{\frac{3}{2}} + C$ 
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int \dfrac{x^3}{9 - x^2} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{x^3}{3} \cdot \dfrac{\left(9 - x^2\right)^{\frac{3}{2}}}{9} + C$
+        \choice $\dfrac{9}{2}\ln |9 - x^2| + \dfrac{1}{2}\left(9 - x^2\right) + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{9}{2}\left(9 - x^2\right)^2 - \dfrac{1}{2}\left(9 - x^2\right) + C$
+        \choice $\dfrac{9}{2}\left(9 - x^2\right) + \dfrac{1}{2}\left(9 - x^2\right)^2 + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{x^4}{36} - \dfrac{x^2}{2} + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int \dfrac{x^5}{x^2 + 5} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{1}{4}\left(x^2 + 5\right)^2 - 5\left(x^2 + 5\right) + \dfrac{25}{2}\ln |x^2 + 5| + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{4}\left(x^2 + 5\right)^2 - 5\left(x^2 + 5\right) + \dfrac{25}{2}\tan^{-1} \left(x^2 + 5\right) + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{4}\left(x^2 + 5\right)^2 + 5\left(x^2 + 5\right) + \dfrac{25}{2}\ln |x^2 + 5| + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{4}\left(x^2 + 5\right)^2 + 5\left(x^2 + 5\right) + \dfrac{25}{2}\tan^{-1} \left(x^2 + 5\right) + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice None of the above
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int e^{2x}\sqrt{e^x + 1} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $e^{2x}\left(e^x + 1\right)^{\frac{3}{2}} + C$
+        \choice $\dfrac{2}{5}\left(e^x + 1\right)^{\frac{5}{2}} - 3\left(e^x + 1\right)^{\frac{3}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{2}{5}\left(e^x + 1\right)^{\frac{5}{2}} - \dfrac{2}{3}\left(e^x + 1\right)^{\frac{3}{2}} + C$ 
+        \choice $\dfrac{2}{5}\left(e^x + 1\right)^{\frac{5}{2}} + 3\left(e^x + 1\right)^{\frac{3}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{2}{5}e^{\frac{5x}{2}} - 5e^{\frac{3x}{2}} + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\dfrac{x^3}{\sqrt{4 - x^2}} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\dfrac{1}{3}\left(4 - x^2\right)^{\frac{3}{2}} - 4\left(4 - x^2\right)^{\frac{1}{2}} + C$ 
+        \choice $\dfrac{2}{3}\left(4 - x^2\right)^{\frac{3}{2}} - 2\left(4 - x^2\right)^{\frac{1}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{3}\left(4 - x^2\right)^{\frac{3}{2}} - 4\sin^{-1} \left(\dfrac{x}{2}\right) + C$
+        \choice $\dfrac{2}{3}\left(4 - x^2\right)^{\frac{3}{2}} - 2\sin^{-1} \left(\dfrac{x}{2}\right) + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{1}{3}\left(4 - x^2\right)^{\frac{3}{2}} - \sin^{-1} \left(\dfrac{x}{2}\right) + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\dfrac{4 - x}{\sqrt{4 - x^2}} \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $4\sin^{-1} \left(\dfrac{x}{2}\right) + \left(4 - x^2\right)^{\frac{1}{2}} + C$
+        \choice $2\sin^{-1} \left(\dfrac{x}{2}\right) + \left(4 - x^2\right)^{\frac{1}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $4\left(4 - x^2\right)^{\frac{1}{2}} + C$
+        \makebox[0.42\textwidth] \choice $\sin^{-1} \left(\dfrac{x}{2}\right) - \left(4 - x^2\right)^{\frac{1}{2}} + C$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\dfrac{2}{3}\left(4 - x^2\right)^{\frac{3}{2}} + C$
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
