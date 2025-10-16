@@ -1,0 +1,40 @@
+\textbf{\underline{\large{2.4 Integration by Back-Substitution}}} \par
+
+Sometimes when applying the Chain Rule, the other factor is not the $du$, or there are extra $x's$ that must be replaced with some form of $u$. The method of choosing $u$ to equal the inside of the composite function remains the same, but there is more substitution necessary. \par
+
+\textbf{Steps to Integration by Back-Substitution} \par
+
+\begin{enumerate}
+    \item Find $u$ and $du$, just as with u-substitution.
+    \item Handle extra $x$'s. Identify any remaining ``extra'' $x$ terms, and express $x$ in terms of $u$.
+    \item Replace all $x$-expressions in the integral with $u$ and $du$.
+    \item Integrate appropriately, and replace $u$ with the original $x$-expression to get the final answer
+\end{enumerate} \vspace{11pt}
+
+All of this is best understood with some examples.
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.4.1: } $\int x^3\left(x^2 + 4\right)^{\frac{3}{2}} \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.4.1: } \begin{align*}
+        & \curvedarrow u = x^2 + 4 \therefore x^2 = u - 4 \\[5.5pt]
+        & \curvedarrow du = 2x \, dx \\[11pt]
+        & \int x^3\left(x^2 + 4\right)^{\frac{3}{2}} \, dx \begin{aligned}[t]
+            & = \dfrac{1}{2} \int (2x)x^2\left(x^2 + 4\right)^{\frac{3}{2}} \, dx \\[11pt]
+            & = \dfrac{1}{2} \int (u - 4)u^{\frac{3}{2}} \, du \\[11pt]
+            & = \dfrac{1}{2} \int \left(u^{\frac{5}{2}} - 4u^{\frac{3}{2}}\right) \, du \\[11pt]
+            & = \dfrac{1}{2} \left(\dfrac{2}{7}u^{\frac{7}{2}} - \dfrac{8}{5}u^{\frac{5}{2}}\right) + C \\[11pt]
+            & = \boxed{\dfrac{1}{7}\left(x^2 + 4\right)^{\frac{7}{2}} - \dfrac{4}{5}\left(x^2 + 4\right)^{\frac{5}{2}} + C}
+        \end{aligned}
+    \end{align*}
+
+    Notice how when we attempted u-substitution, an $x^2$ remained in the equation. That is the reason why we expressed $x^2$ in terms of $u$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.4.2: } $\int (x + 1)\sqrt{x - 1} \, dx$
+\end{tcolorbox} 
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.4.2: }
+\end{tcolorbox}

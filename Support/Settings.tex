@@ -1,4 +1,4 @@
-% Package Imports + Setup
+% Package Imports + Core Setup
 
 \usepackage{graphicx} % Required for inserting images
 \usepackage{setspace} 
@@ -25,11 +25,12 @@
 \usepackage{refcount}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
+
 \everymath{\displaystyle}
 \pagestyle{plain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Commands, Macros, and Fixes
+% Commands and Macros
 
 \let \templim \lim
 \renewcommand{\lim}{\templim\limits}
@@ -65,15 +66,9 @@
     } \hspace{5.5pt}% <-- braces close
 }
 
+% Fixes
 
 \DeclareMathOperator{\sgn}{sgn}
-
-\tcbset{example/.style={colback=Cyan!25, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
-\tcbset{solution/.style={colback=Green!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
-\tcbset{objective/.style={colback=Gray!20, colframe=Black, arc=0.5mm, boxrule=0.5pt}}
-\tcbset{definition/.style={colback=Goldenrod!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
-\tcbset{interesting/.style={colback=WildStrawberry!40, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
-\tcbset{default/.style={colback=White, colframe=Black, arc=0.5mm}}
 
 \bigskipamount = 154pt
 \setlength{\tabcolsep}{11pt}
@@ -92,10 +87,20 @@
     {}{}
 \makeatother
 
+% Page Numbering Settings
 
 \newcounter{sectioncount}
 \newcounter{chaptercount}
 \setcounter{page}{0}
+
+% Tcolorbox Presets
+
+\tcbset{example/.style={colback=Cyan!25, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+\tcbset{solution/.style={colback=Green!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+\tcbset{objective/.style={colback=Gray!20, colframe=Black, arc=0.5mm, boxrule=0.5pt}}
+\tcbset{definition/.style={colback=Goldenrod!20, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+\tcbset{interesting/.style={colback=WildStrawberry!40, colframe=Gray!70, breakable, enhanced jigsaw, arc=0.5mm}}
+\tcbset{default/.style={colback=White, colframe=Black, arc=0.5mm}}
 
 % TikzImage Settings
 
