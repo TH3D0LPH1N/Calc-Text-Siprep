@@ -12,14 +12,14 @@ The purpose of this chapter is to review the "how" of differentiation. We will r
             & \text{The Chain Rule: } \diff \left[f(g(x))\right] = f'(g(x)) \cdot g'(x)
         \end{align*}
         \begin{align*}
-            & \diff[\sin u] = (\cos u) \dfrac{du}{dx} && \diff[\csc u] = (-\csc u \cot u) \dfrac{du}{dx} \\[11pt] % Line 1
-            & \diff[\cos u] = (-\sin u) \dfrac{du}{dx} && \diff[\sec u] = (\sec u \tan u) \dfrac{du}{dx} \\[11pt] % Line 2
-            & \diff[\tan u] = \left(\sec^2 u\right) \dfrac{du}{dx} && \diff[\cot u] = \left(-\csc^2 u\right) \dfrac{du}{dx} \\[11pt] % Line 3
+            & \diff[\sin (u)] = (\cos (u)) \dfrac{du}{dx} && \diff[\csc (u)] = (-\csc (u)\cot (u)) \dfrac{du}{dx} \\[11pt] % Line 1
+            & \diff[\cos (u)] = (-\sin (u)) \dfrac{du}{dx} && \diff[\sec (u)] = (\sec (u)\tan (u)) \dfrac{du}{dx} \\[11pt] % Line 2
+            & \diff[\tan u] = \left(\sec^2 (u)\right) \dfrac{du}{dx} && \diff[\cot (u)] = \left(-\csc^2 (u)\right) \dfrac{du}{dx} \\[11pt] % Line 3
             & \diff\left[e^u\right] = \left(e^u\right) \dfrac{du}{dx} && \diff[\ln{u}] = \left(\dfrac{1}{u}\right) \dfrac{du}{dx}\\[11pt] % Line 4
             & \diff\left[a^u\right] = \left(a^u \cdot \ln{u}\right) \dfrac{du}{dx} && \diff\left[\log_a{u}\right] = \left(\dfrac{1}{u \cdot \ln{a}}\right) \dfrac{du}{dx} \\[11pt] % Line 5
-            & \diff\left[\sin^{-1} u\right] = \left(\dfrac{1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\csc^{-1} u\right] = \left(\dfrac{-1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] % Line 6
-            & \diff\left[\cos^{-1} u\right] = \left(\dfrac{-1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\sec^{-1} u\right] = \left(\dfrac{1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] % Line 7 
-            & \diff\left[\tan^{-1} u\right] = \left(\dfrac{1}{u^2+ 1} \right) \dfrac{du}{dx} && \diff\left[\cot^{-1} u\right] = \left(\dfrac{-1}{u^2 + 1}\right) \dfrac{du}{dx} \\[11pt] % Line 8
+            & \diff\left[\sin^{-1} (u)\right] = \left(\dfrac{1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\csc^{-1} (u)\right] = \left(\dfrac{-1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] % Line 6
+            & \diff\left[\cos^{-1} (u)\right] = \left(\dfrac{-1}{\sqrt{1 - u^2}} \right) \dfrac{du}{dx} && \diff\left[\sec^{-1} (u)\right] = \left(\dfrac{1}{|u|\sqrt{u^2 - 1}}\right) \dfrac{du}{dx} \\[11pt] % Line 7 
+            & \diff\left[\tan^{-1} (u)\right] = \left(\dfrac{1}{u^2+ 1} \right) \dfrac{du}{dx} && \diff\left[\cot^{-1} (u)\right] = \left(\dfrac{-1}{u^2 + 1}\right) \dfrac{du}{dx} \\[11pt] % Line 8
         \end{align*}
     \end{minipage}}}
 \end{center}
@@ -32,9 +32,9 @@ Here is a quick review from last year: \par
     \fbox{\fbox{\begin{minipage}{0.96\textwidth}
         \vspace{11pt}
         \begin{center}
-            $\hfill \tan x = \dfrac{\sin x}{\cos x}; \hfill \cot x = \dfrac{\cos x}{\sin x}; \hfill \sec x = \dfrac{1}{\cos x}; \hfill \csc x = \dfrac{1}{\sin x} \hfill$ \\[11pt]
-            $\hfill \sin^2 x + \cos^2 x = 1; \hfill \tan^2 x + 1 = \sec^2 x; \hfill \cot^2 x + 1 = \csc^2 x \hfill$ \\[11pt]
-            $\hfill \sin 2x = 2\sin x \cos x; \hfill \cos 2x = \cos^2 x - \sin^2 x \hfill$ \\
+            $\hfill \tan (x) = \dfrac{\sin (x)}{\cos (x)}; \hfill \cot (x) = \dfrac{\cos (x)}{\sin (x)}; \hfill \sec (x) = \dfrac{1}{\cos (x)} = \dfrac{1}{\sin (x)} \hfill$ \\[11pt]
+            $\hfill \sin^2 (x) + \cos^2 (x) = 1; \hfill \tan^2 (x) + 1 = \sec^2 (x); \hfill \cot^2 (x) + 1 = \csc^2 (x) \hfill$ \\[11pt]
+            $\hfill \sin (2x) = 2\sin (x)\cos (x); \hfill \cos (2x) = \cos^2 (x) - \sin^2 (x) \hfill$ \\
         \end{center}
         \vspace{11pt}
     \end{minipage}}}
@@ -46,14 +46,14 @@ Here is a quick review from last year: \par
     \fbox{\fbox{\begin{minipage}{0.96\textwidth}
         \vspace{11pt}
         \begin{center}
-            $\hfill \cos^{-1} x = \left\{ \begin{array}{l}
+            $\hfill \cos^{-1} (x) = \left\{ \begin{array}{l}
             \textit{calculator } \pm 2\pi n \\
             -\textit{calculator } \pm 2\pi n
-        \end{array} \right\} \hfill \sin^{-1} x = \left\{ \begin{array}{l}
+        \end{array} \right\} \hfill \sin^{-1} (x) = \left\{ \begin{array}{l}
             \textit{calculator } \pm 2\pi n \\
             \pi - \textit{calculator } \pm 2\pi n
         \end{array} \right\} \hfill$ \\[11pt]
-        $\tan^{-1} x = \left\{ \begin{array}{l}
+        $\tan^{-1} (x) = \left\{ \begin{array}{l}
             \textit{calculator } \pm 2\pi n \\
             \pi + \textit{calculator } \pm 2\pi n
         \end{array} \right\} = \textit{calculator } \pm \pi n$

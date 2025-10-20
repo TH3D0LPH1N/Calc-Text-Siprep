@@ -1,0 +1,265 @@
+\textbf{\large{2.5 Powers of Trig Functions: Sine and Cosine}} \par
+
+Another instance of back-substitution involves the trig functions and the Pythagorean Identities. As we saw in the previous section, since \begin{align*}
+    \diff [\cos (x)] = -\sin (x) \text{ and } \diff [\sin (x)] = \cos (x),
+\end{align*}
+one of these functions can serve as the $du$ while the other serves as $u$. But, what about when higher exponents are involved? In general, what about integrals in the form \begin{align*}
+    \int \sin^m (x)\cos^n (x) \, dx?
+\end{align*}
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Use Integration by Substitution to Integrate Integrands Involving Sine and Cosine.
+\end{tcolorbox}
+
+There are two cases of integration of this kind of integrand, depending on the powers $m$ and $n$. \par
+
+\textbf{Case 1} \par
+
+The simpler (and more common on the AP Test) case is when either $m$, $n$, or both $m$ and $n$ are odd numbers. One of whichever function has the odd power will be the $du$ and the rest of those functions can convert to the other trig function by means of the Pythagorean Identities. \par
+
+Remember: \par
+
+\fbox{\fbox{\begin{minipage}{0.96\textwidth}
+    \vspace{11pt}
+    \begin{center}
+        $\hfill \sin^2 (\theta) + \cos^2 (\theta) = 1 \hfill \tan^2 (\theta) + 1 = \sec^2 (\theta) \hfill \cot^2 (\theta) + 1 = \csc^2 (\theta) \hfill$ \\
+    \end{center}
+    \vspace{11pt}
+\end{minipage}}}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.5.1: } $\int \sin^4 (x)\cos^3 (x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.5.1: } Since $\cos (x)$ has the odd power, we will make that our $du$. \begin{align*}
+        & \curvedarrow u = \sin (x) \\[5.5pt]
+        & \curvedarrow du = \cos (x) \, dx \\[11pt]
+        & \int \sin^4 (x)\cos^3 (x) \, dx \begin{aligned}[t]
+            & = \int \sin^4 (x)\cos^2 (x)\cos (x) \, dx \\[11pt]
+            & = \int \sin^4 (x)\left(1 - \sin^2 (x)\right)\cos (x) \, dx \\[11pt]
+            & = \int u^4\left(1 - u^2\right) \, du \\[11pt]
+            & = \int \left(u^4 - u^6\right) \, du \\[11pt]
+            & = \dfrac{1}{5}u^5 - \dfrac{1}{7}u^7 + C \\[11pt]
+            & = \boxed{\dfrac{1}{5}\sin^5 (x) - \dfrac{1}{7}\sin^7 (x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.5.2: } $\int \sin^5 (x)\cos^2 (x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.5.2: } Since $\sin (x)$ has the odd power, we will make that our $du$. \begin{align*}
+        & \curvedarrow u = \cos (x) \\[5.5pt]
+        & \curvedarrow du = -\sin (x) \, dx \\[11pt]
+        & \int \sin^5 (x)\cos^2 (x) \begin{aligned}[t]
+            & = -\int \sin^4 (x)(-\sin (x))\cos^2 (x) \, dx \\[11pt]
+            & = -\int \left(\sin^2 (x)\right)^2(-\sin (x))\cos^2 (x) \, dx \\[11pt]
+            & = -\int \left(1 - \cos^2 (x)\right)^2(-\sin (x))\cos^2 (x) \, dx \\[11pt]
+            & = -\int \left(1 - u^2\right)^2u^2 \, du \\[11pt]
+            & = -\int \left(1 - 2u^2 + u^4\right)u^2 \, du \\[11pt]
+            & = -\int \left(u^2 - 2u^4 + u^6\right) \, du \\[11pt]
+            & = -\left(\dfrac{1}{3}u^3 - \dfrac{2}{5}u^5 + \dfrac{1}{7}u^7\right) + C \\[11pt]
+            & = \boxed{-\dfrac{1}{3}\cos^3 (x) + \dfrac{2}{5}\cos^5 (x) - \dfrac{1}{7}\cos^7 (x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox}
+
+If both powers are odd, either function can serve as the $u$. However, it is generally easier to choose $u = \sin (x)$ as there is no negative sign to deal with. \par 
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.5.3: } $\int \tan (x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.5.3: } At first, this does not appear to be a sine or cosine integral, but a basic substitution reveals that it is. \begin{align*}
+        & \int \tan (x) \, dx = \int \dfrac{\sin (x)}{\cos (x)} \, dx \\[11pt]
+        & \curvedarrow u = \cos (x) \\[5.5pt]
+        & \curvedarrow du = -\sin (x) \, dx \\[11pt]
+        & \int \dfrac{\sin (x)}{\cos (x)} \, dx \begin{aligned}[t]
+            & = -\int (-\sin(x))\dfrac{1}{\cos (x)} \, dx \\[11pt]
+            & = -\int \dfrac{1}{u} \, du \\[11pt]
+            & = -\ln |u| + C \\[11pt]
+            & = -\ln |\cos (x)| + C \\[11pt]
+            & = \boxed{\ln |\sec (x)| + C}
+        \end{aligned}
+    \end{align*}
+    \begin{tcolorbox}[interesting]
+        It may not be immediately apparent why $-\ln |\cos (x)|$ can be rewritten as $\ln |\sec (x)|$. The reason lies within the log rule $\log \left(a^b\right) = b\log a$: \begin{align*}
+            -\ln |\cos (x)| &= -\ln \bigg|\left(\dfrac{1}{\cos (x)}\right)^{-1}\bigg| \\[11pt]
+            & = -1 \cdot -\ln \bigg|\dfrac{1}{\cos (x)}\bigg| \\[11pt]
+            & = \ln \bigg|\dfrac{1}{\cos (x)}\bigg| \\[11pt]
+            & = \ln |\sec (x)|
+        \end{align*}
+    \end{tcolorbox}
+\end{tcolorbox}
+
+This gives us two more integral rules: \par
+
+\fbox{\fbox{\begin{minipage}{0.96\textwidth}
+    \vspace{11pt}
+    \begin{center}
+        $\hfill \int \tan (u) \, du = \ln |\sec (u)| + C \hfill \int \cot (u) \, du = \ln |\sin (u)| + C \hfill$ \\
+    \end{center}
+    \vspace{11pt}
+\end{minipage}}}
+
+\textbf{Case 2} \par
+
+The more difficult situation is when both powers are even. In this case, variations on the half angle argument rules come into play. \par
+
+Remember: \par
+
+\fbox{\fbox{\begin{minipage}{0.96\textwidth}
+    \vspace{11pt}
+    \begin{center}
+        $\hfill \sin^2 (x) = \dfrac{1}{2}(1 - \cos (2x)) \hfill \cos^2 (x) = \dfrac{1}{2}(1 + \cos (2x)) \hfill$ \\
+    \end{center}
+    \vspace{11pt}
+\end{minipage}}}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.5.4: } $\int \cos^2 (x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.5.4: } \begin{align*}
+        & \int \cos^2 (x) = \int \dfrac{1}{2}(1 + \cos (x)) \, dx \\[11pt]
+        & \curvedarrow u = 2x \\[5.5pt]
+        & \curvedarrow du = 2 \, dx \\[11pt]
+        & \int \dfrac{1}{2}(1 + \cos (x)) \, dx \begin{aligned}[t]
+            & = \dfrac{1}{2} \cdot \dfrac{1}{2}\int (1 + \cos (x)) 2 \, dx \\[11pt]
+            & = \dfrac{1}{4} \cdot (1 + \cos (u)) \, du \\[11pt]
+            & = \dfrac{1}{4}u + \dfrac{1}{4}\sin (u) + C \\[11pt]
+            & = \boxed{\dfrac{1}{2}x + \dfrac{1}{4}\sin (2x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox}
+
+This example alludes to two more integral equations that are helpful to know: \par
+
+\fbox{\fbox{\begin{minipage}{0.96\textwidth}
+    \vspace{11pt}
+    \begin{center}
+        $\hfill \int \cos^2 (u) \, du = \dfrac{1}{2}u + \dfrac{1}{4}\sin (2u) + C \hfill \int \sin^2 (u) \, du = \dfrac{1}{2}u - \dfrac{1}{4}\sin (2u) + C \hfill$ \\
+    \end{center}
+    \vspace{11pt}
+\end{minipage}}}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.5.5: } $\int \sin^4 (x)\cos^2 (x) \, dx$
+\end{tcolorbox} 
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.5.5: } \begin{align*}
+        \int \sin^4 (x)\cos^2 (x) \, dx &= \int \left(\dfrac{1}{2}(1 - \cos (2x))\right)^2\left(\dfrac{1}{2}(1 + \cos (2x))\right) \, dx \\[11pt]
+        & = \dfrac{1}{8} \int \left(1 - 2\cos (2x) + \cos^2 (2x)\right)(1 + \cos (2x)) \, dx \\[11pt]
+        & = \dfrac{1}{8} \int \left(1 - \cos (2x) - \cos^2 (2x) + \cos^3 (2x)\right) \, dx \\[11pt]
+        & \qquad \curvedarrow u = 2x \\[5.5pt]
+        & \qquad \curvedarrow du = 2 \, dx \\[11pt]
+        & = \dfrac{1}{2} \cdot \dfrac{1}{8} \int \left(1 - \cos (2x) - \cos^2 (2x) + \cos^3 (2x)\right) 2 \, dx \\[11pt]
+        & = \dfrac{1}{16} \int \left(1 - \cos (u) - \cos^2 (u) + \cos^3 (u)\right) \, du \\[11pt]
+        & = \dfrac{1}{16}\int \, du - \dfrac{1}{16}\int \cos (u) \, du - \dfrac{1}{16}\int \cos^2 (u) \, du + \dfrac{1}{16}\int \cos^3 (u) \, du \\[11pt]
+        & = \dfrac{1}{16}u - \dfrac{1}{16}\sin (u) - \dfrac{1}{16}\left(\dfrac{1}{2}u - \dfrac{1}{4}\sin (2u)\right) \\[5.5pt]
+        & \quad + \dfrac{1}{16}\int \cos^2 (u)\cos (u) \, du + C \\[11pt]
+        & \qquad \curvedarrow v = \sin (u) \\[5.5pt]
+        & \qquad \curvedarrow dv = \cos (u) \, dx \\[11pt]
+        & = \dfrac{1}{16}u - \dfrac{1}{16}\sin (u) - \dfrac{1}{16}\left(\dfrac{1}{2}u - \dfrac{1}{4}\sin (2u)\right) \\[5.5pt]
+        & \quad + \dfrac{1}{16}\int \left(1 - \sin^2 (u)\right)\cos (u) \, du + C \\[11pt]
+        & = \dfrac{1}{16}u - \dfrac{1}{16}\sin (u) - \dfrac{1}{32}u + \dfrac{1}{64}\sin (2u) + \dfrac{1}{16}\int \left(1 - v^2\right) \, du + C \\[11pt]
+        & = \dfrac{1}{16}u - \dfrac{1}{16}\sin (u) - \dfrac{1}{32}u + \dfrac{1}{64}\sin (2u) + \dfrac{1}{16}\left(v - \dfrac{1}{3}v^3\right) + C \\[11pt]
+        & = \dfrac{1}{16}(2x) - \dfrac{1}{16}\sin (2x) - \dfrac{1}{32}(2x) + \dfrac{1}{64}\sin (2(2x)) \\[5.5pt]
+        & \quad + \dfrac{1}{16}\left(\sin(2x) - \dfrac{1}{3}\sin^3 (2x)\right) + C \\[11pt]
+        & = \dfrac{1}{8}x - \dfrac{1}{16}\sin (2x) - \dfrac{1}{16}x + \dfrac{1}{64}\sin (4x) + \dfrac{1}{16}\sin (2x) \\[5.5pt]
+        & \quad - \dfrac{1}{48}\sin^3 (2x) + C \\[11pt]
+        & = \boxed{\dfrac{1}{16}x + \dfrac{1}{64}\sin (4x) - \dfrac{1}{48}\sin^3 (2x) + C}
+    \end{align*}
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{2.5 Free Response Homework}} \par
+
+Perform the antidifferentiation. \par
+
+\twoquestion{1. $\int \sin^3 (x)\cos^2 (x) \, dx$}{2. $\int \sin^4 (x)\cos^5 (x) \, dx$} \\[11pt]
+\twoquestion{3. $\int \sin^2(x)\cos^7 (x) \, dx$}{4. $\int \sin^5 (x)\cos^6 (x) \, dx$} \\[11pt]
+\twoquestion{5. $\int \sin (x)\cos^5 (x) \, dx$}{6. $\int \sin^5 (x)\cos^5 (x) \, dx$} \\[11pt]
+\twoquestion{7. $\int \sin^2 (x)\cos^2 (x) \, dx$}{8. $\int \sin^2 (x)\cos^4 (x) \, dx$} \\[11pt]
+
+\textbf{\large{2.5 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question For $\int \sin^3 (x)\cos^5 (x) \, dx$, the correct u-substitution is \\
+
+    \begin{oneparchoices}
+        \choice $u = \sin (x)$ 
+        \choice $u = \cos (x)$
+        \choice either (a) or (b)
+        \choice neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question For $\int \sin^3 (5x)\cos^2 (5x) \, dx$, the correct u-substitution is \\
+
+    \begin{oneparchoices}
+        \choice $u = \sin (x)$ 
+        \choice $u = \cos (x)$
+        \choice either (a) or (b)
+        \choice neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question For $\int \sin^4 (4x)\cos^5 (4x) \, dx$, the correct u-substitution is \\
+
+    \begin{oneparchoices}
+        \choice $u = \sin (x)$ 
+        \choice $u = \cos (x)$
+        \choice either (a) or (b)
+        \choice neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question For $\int \sin^2 (x)\cos^4 (x) \, dx$, the correct u-substitution is \\
+
+    \begin{oneparchoices}
+        \choice $u = \sin (x)$ 
+        \choice $u = \cos (x)$
+        \choice either (a) or (b)
+        \choice neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int \cos^2 (2x) \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\sin (4x) + C$
+        \choice $\dfrac{1}{2}x + \dfrac{1}{8}\sin (4x) + C$
+        \choice $\dfrac{1}{2}x - \dfrac{1}{8}\sin (4x) + C$ \\[11pt]
+        \makebox[0.18\textwidth] \choice $x + \dfrac{1}{4}\sin (4x) + C$
+        \makebox[0.22\textwidth] \choice $x + \dfrac{1}{8}\cos (4x) + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question $\int \cos^2 \left(\dfrac{1}{2}x\right) \, dx = $ \\
+
+    \begin{oneparchoices}
+        \choice $\sin (4x) + C$
+        \choice $\dfrac{1}{2}x + \dfrac{1}{4}\sin (x) + C$
+        \choice $\dfrac{1}{2}x - \dfrac{1}{4}\sin (x) + C$ \\[11pt]
+        \makebox[0.18\textwidth]\choice $\dfrac{1}{4}x + \dfrac{1}{2}\sin (x) + C$
+        \makebox[0.22\textwidth] \choice $\dfrac{1}{4}x + \dfrac{1}{2}\cos (x) + C$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Identify the first mistake (if any) in this process: \begin{align*}
+        & \textbf{Problem:} && \int \sin^3 (2x)\cos^4 (2x) = \\[11pt]
+        & \text{Step 1:} && = -\dfrac{1}{2}\int \sin^2 (2x)\cos^4 (2x)(-\sin (2x))2 \, dx \\[5.5pt]
+        & \text{Step 2:} && = -\dfrac{1}{2}\int \left(1 - u^2\right)u^4 \, du \\[5.5pt]
+        & \text{Step 3:} && = -\dfrac{1}{2}\int \left(u^4 - u^6\right) \, du \\[5.5pt]
+        & \text{Step 4:} && = -\dfrac{1}{2}\left(\dfrac{1}{5}u^5 - \dfrac{1}{7}u^7 + C\right) \\[5.5pt]
+        & \text{Step 5:} && = -\dfrac{1}{10}\sin^5 (4x) + \dfrac{1}{14}\sin^7 (4x) + C
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice Step 1
+        \choice Step 2
+        \choice Step 3
+        \choice Step 4
+        \choice No mistake
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
