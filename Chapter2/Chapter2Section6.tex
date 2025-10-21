@@ -1,0 +1,199 @@
+\textbf{\underline{\large{2.6 Powers of Trig Functions: Secant, Tangent, and Beyond}}} \par
+
+As with sine and cosine, secant and tangent work together in a Pythagorean Identity, as well as cosecant and cotangent. So, we will be considering integrals of the form \begin{align*}
+    \int \sec^m (x)\tan^n (x) \, dx \quad \text{and} \quad \int \csc^m (x)\cot^n (x) \, dx
+\end{align*}
+to be cases of integration by u-substitution. \par
+
+Remember: \par
+
+\fbox{\fbox{\begin{minipage}{0.96\textwidth}
+    \vspace{11pt}
+    \begin{center}
+        $\hfill \tan^2 (\theta) + 1 = \sec^2 (\theta) \hfill \cot^2 (\theta) + 1 = \csc^2 (\theta) \hfill$ \\[11pt]
+        $\hfill \diff [\tan (u)] = \left(\sec^2 (u)\right)\dfrac{du}{dx} \hfill \diff [\sec (u)] = \left(\sec (u)\tan (u)\right)\dfrac{du}{dx} \hfill$ \\[11pt]
+        $\hfill \diff [\cot (u)] = \left(-\csc^2 (u)\right)\dfrac{du}{dx} \hfill \diff [\csc (u)] = \left(-\csc (u)\cot (u)\right)\dfrac{du}{dx} \hfill$
+    \end{center}
+    \vspace{11pt}
+\end{minipage}}}
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Use Integration by Substitution to Integrate Integrands Involving Secant, Tangent, Cosecant, and Cotangent.
+\end{tcolorbox}
+
+There are three cases of integration of this kind of integrand, depending on the powers $m$ and $n$. \par
+
+\textbf{Case 1} \par
+
+The first case is when the secant's (or cosecant's) power is even. In this case, our $u$ would be $\tan (x)$ or $\cot (x)$ and our $du$ would be $\sec^2 (x) \, dx$ or $-\csc^2 (x) \, dx$. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.6.1: } $\int \sec^4 (x)\tan^2 (x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.6.1: } \begin{align*}
+        & \curvedarrow u = \tan (x) \\[5.5pt]
+        & \curvedarrow du = \sec^2 (x) \\[11pt]
+        & \int \sec^4 (x)\tan^2 (x) \begin{aligned}[t]
+            & = \int \sec^2 (x)\tan^2 (x)\sec^2 (x) \, dx \\[11pt]
+            & = \int \left(1 + \tan^2 (x)\right)\tan^2 (x)\sec^2 (x) \, dx \\[11pt]
+            & = \int \left(1 + u^2\right)u^2 \, du \\[11pt]
+            & = \int \left(u^2 + u^4\right) \, du \\[11pt]
+            & = \dfrac{1}{3}u^3 + \dfrac{1}{5}u^5 + C \\[11pt]
+            & = \boxed{\dfrac{1}{3}\tan^3 (x) + \dfrac{1}{5}\tan^5 (x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox} \vspace{11pt}
+
+\textbf{Case 2} \par
+
+The second case is when the tangent's (or cotangent's) power is odd. In this case, our $u$ would be $\sec(x)$ or $\csc(x)$ and our $du$ would be $\sec (x)\tan (x) \, dx$ or $-\csc (x)\cot (x) \, dx$. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.6.2: } $\int \csc^3 (x)\cot^3 (x) \, dx$
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.6.2: } \begin{align*}
+        & \curvedarrow u = \csc (x) \\[5.5pt]
+        & \curvedarrow du = -\csc (x)\cot (x) \, dx \\[11pt]
+        & \int \csc^3 (x)\cot^3 (x) \, dx \begin{aligned}[t]
+            & = -\int \csc^2 (x)\cot^2 (x)(-\csc (x)\cot (x)) \, dx \\[11pt]
+            & = -\int u^2\left(u^2 - 1\right) \, du \\[11pt]
+            & = -\int \left(u^4 - u^2\right) \, du \\[11pt]
+            & = -\dfrac{1}{5}u^5 + \dfrac{1}{3}u^3 + C \\[11pt]
+            & = \boxed{-\dfrac{1}{5}\csc^5 (x) + \dfrac{1}{3}\csc^3 (x) + C}
+        \end{aligned}
+    \end{align*}
+\end{tcolorbox}
+
+If both cases are present (that is, the tangent's/cotangent's power is odd AND the secant's/cosecant's power is even), then any of the functions can serve as $u$. \par
+
+\textbf{Case 3} \par
+
+The third and final case is when the tangent's/cotangent's power is even AND the secant's/cosecant's power is odd. This case is no longer doable by integration by substitution, and requires a technique known as \textit{integration by parts}. We will need to wait until Chapter 8 to approach this case.
+
+\bigskip
+
+\textbf{\large{Quick Summary of 2.5-2.6:}} \par
+
+\fbox{\fbox{\begin{minipage}{0.96\textwidth}
+    \vspace{11pt}
+    \begin{center}
+        \begin{enumerate}[label=\Roman*.] % Roman numerals
+            \item $\int \sin^m (x)\cos^n (x) \, dx$ \\[11pt]
+            \begin{enumerate}[label=\alph*)] % letters for sublist
+                \item The odd power determines $du$. The other function is $u$. \\[11pt]
+                \item If both powers are even, use the half-angle formulas and simplify. \\[11pt]
+            \end{enumerate}
+            \item $\int \sec^m (x)\tan^n (x) \, dx$ or $\int \csc^n (x)\cot^m (x) \, dx$ \\[11pt]
+            \begin{enumerate}[label=\alph*)] % letters for sublist
+                \item If both powers are even, $u = \tan (x)$ or $\cot (x)$ and $du = \sec^2 (x) \, dx$ or $-\csc^2 (x) \, dx$. \\[11pt]
+                \item If both powers are odd, $u = \sec (x)$ or $\csc (x)$ and $du = \sec (x)\tan (x) \, dx$ or $-\csc (x)\cot (x) \, dx$. \\[11pt]
+                \item If $n$ is even and $m$ is odd, either (a) or (b) will work. \\[11pt]
+                \item If $n$ is odd and $m$ is even, neither (a) nor (b) will work. \\[11pt]
+            \end{enumerate}
+            \item For any other mix of trig functions, convert all to sine and cosine and use I. above.
+        \end{enumerate}
+    \end{center}
+    \vspace{11pt}
+\end{minipage}}}
+
+\newpage
+
+\textbf{\large{2.6 Free Response Homework}} \par
+
+Perform the antidifferentiation. \par
+
+\twoquestion{1. $\int \sec^2 (x)\tan^5 (x) \, dx$}{2. $\int \sec^6 (x)\tan^4 (x) \, dx$} \\[11pt]
+\twoquestion{3. $\int \sec^5 (x)\tan^7 (x) \, dx$}{4. $\int \sec^2 (x)\tan^6 (x) \, dx$} \\[11pt]
+\twoquestion{5. $\int \sec^6 (x)\tan^3 (x) \, dx$}{6. $\int \csc^2 (x)\cot^5 (x) \, dx$} \\[11pt]
+\twoquestion{7. $\int \csc^4 (x)\cot (x) \, dx$}{8. $\int \csc^7 (x)\cot^5 (x) \, dx$} \\[11pt]
+
+
+\textbf{\large{2.6. Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question For $\int \csc^3 (x)\cot^5 (x) \, dx$, the correct u-substitution is \\
+
+    \begin{oneparchoices}
+        \choice $u = \csc (x)$
+        \choice $u = \cot (x)$
+        \choice Either (a) or (b) 
+        \choice Neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question For $\int \csc^4 (x)\cot^4 (x) \, dx$, the correct u-substitution is \\
+
+    \begin{oneparchoices}
+        \choice $u = \sin (x)$ 
+        \choice $u = \cos (x)$
+        \choice Either (a) or (b)
+        \choice Neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question For $\int \sec^4 (x)\tan^5 (x) \, dx$, the correct u-substitution is \\
+
+    \begin{oneparchoices}
+        \choice $u = \sin (x)$ 
+        \choice $u = \cos (x)$
+        \choice Either (a) or (b)
+        \choice Neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question For $\int \sec^5 (x)\tan^4 (x) \, dx$, the correct u-substitution is \\
+    
+    \begin{oneparchoices}
+        \choice $u = \sin (x)$ 
+        \choice $u = \cos (x)$
+        \choice Either (a) or (b)
+        \choice Neither (a) nor (b)
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following statements are true? \begin{align*}
+        & \text{I. } \int \sec (x) \, dx = \ln |\sec (x) + \tan (x)| + C \\[11pt]
+        & \text{II. } \int \tan (x) \, dx = \sec^2 (x) + C \\[11pt]
+        & \text{III. } \int x^2\cot \left(x^3\right) \, dx = \dfrac{1}{3}\ln \bigg|\sin \left(x^3\right)\bigg| + C
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice I only 
+        \choice II only
+        \choice III only 
+        \choice I and II only
+        \choice I and III only
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following statements are \textbf{false}? \begin{align*}
+        & \text{I. } \int x^5\sec \left(x^6\right) = \dfrac{1}{6}\ln \bigg|\sec \left(x^6\right) + \tan \left(x^6\right)\bigg| + C \\[11pt]
+        & \text{II. } \int \cot (x) \, dx = -\csc^2 (x) + C \\[11pt]
+        & \text{III. } \int \csc (x) \, dx = \ln |\csc (x) - \cot (x)| + C
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice I only 
+        \choice II only
+        \choice III only 
+        \choice I and II only
+        \choice I and III only
+    \end{oneparchoices} \par \horizontalline
+
+    \question Identify the first mistake (if any) in this process: \begin{align*}
+        & \textbf{Problem:} && \int \sec^4 (2x)\tan^3 (2x) = \\[11pt]
+        & \text{Step 1:} && = \dfrac{1}{2}\int \sec^2 (2x)\tan^3 (2x)\sec^2 (2x)2 \, dx \\[5.5pt]
+        & \text{Step 2:} && = \dfrac{1}{2}\int \left(1 - u^2\right)u^3 \, du \\[5.5pt]
+        & \text{Step 3:} && = \dfrac{1}{2}\int \left(u^3 - u^5\right) \, du \\[5.5pt]
+        & \text{Step 4:} && = \dfrac{1}{2}\left(\dfrac{1}{4}u^4 - \dfrac{1}{6}u^6 + C\right) \\[5.5pt]
+        & \text{Step 5:} && = -\dfrac{1}{8}\tan^4 (2x) - \dfrac{1}{12}\tan^6 (2x) + C
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice Step 1
+        \choice Step 2
+        \choice Step 3
+        \choice Step 4
+        \choice No mistake
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
