@@ -1,0 +1,2418 @@
+\textbf{\underline{\large{2.7 Intro to AP: Slope Fields}}} \par
+
+This section is very much an AP-driven section. Recall that one of the big emphasis of CollegeBoard regarding calculus was that it should be understood and explained in many different modes. The topic of differential equations fits nicely into this paradigm in that the visual is a graphical representation and the connection between the equation and the slopes is a numerical process. \par
+
+\begin{tcolorbox}[definition]
+    \begin{tabbing}
+        \textit{Slope Field} $\rightarrow$ \= Definition: Given any function $f$, a slope field is drawn by taking evenly \\
+        \> spaced points on the Cartesian coordinate system (usually points of \\
+        \> integer coordinates) and, at each point, drawing a small line with the \\
+        \> slope of $f$.
+    \end{tabbing}
+\end{tcolorbox}
+
+\textbf{IMPORTANT: For this section, assume the grids of all graphs are 1 unit in length and height}
+
+Here is an example of a slope field of the differential equation $\deriv = \dfrac{x}{y}$: \par
+
+\begin{center}
+    \begin{tikzpicture}[declare function={f(\x,\y)=-\x/\y ;},scale=1] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+        \def\ymin{-3.001}    \def\ymax{3.001} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{2} % resolution of the slope field
+        \def\size{1mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Given a Differential Equation, Sketch its Slope Field. \\
+    Given a Slope Field, Sketch a Particular Solution Curve. \\
+    Given a Slope Field, Determine the Family of Functions to Which the Solution Curves Belong. \\
+    Given a Slope Field, Determine the Differential Equation that it Represents.
+\end{tcolorbox}
+
+The are four ways that the AP Exam usually approaches slope fields: \begin{enumerate}
+    \item Draw a slope field (free response). 
+    \item Sketch the solution to a slope field (free response).
+    \item Identify the differential equation for a slope field (multiple choice).
+    \item Identify the solution equation to a slope field (multiple choice).
+\end{enumerate}
+
+Two of these types of questions (items one and three) are numerically based and two (items two and four) are graphically oriented. \par
+
+\bigskip
+
+\textbf{\large{Slope Fields Numerically (FRQs)}} \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.1: } Sketch the slope field for $\deriv = \dfrac{1 - y}{x}$ at the points indicated. \par
+    \vspace{11pt}
+    \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=0;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-3}       \def\xmax{3}    % Set domain and range for
+            \def\ymin{-3.001}    \def\ymax{3.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{0mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            \foreach \x in {-2,-1,0,1,2}{
+                \foreach \y in {-2,-1,0,1,2}{
+                \filldraw[Mulberry] (\x,\y) circle (2pt);
+                }
+            }
+        
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.1: } Note that wherever $y = 1$, $\deriv = 0$. So, the segments at $y = 1$ will be horizontal. Also, where $x = 0$, the derivative does not exist (due to division by zero). So, there will be no segments on the $x$-axis. \par
+    \vspace{11pt}
+    \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=(1-\y)/\x;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-3.001}       \def\xmax{3.001}    % Set domain and range for
+            \def\ymin{-3.001}    \def\ymax{3.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \x in {-2,-1,0,1,2}{
+                \foreach \y in {-2,-1,0,1,2}{
+                \filldraw[Mulberry] (\x,\y) circle (2pt);
+                }
+            }
+            \foreach \i in {1, 2, 4, 5}
+            \foreach \j in {4}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center}
+
+    To find the slant of the rest of the line segments, we can plug the numerical values of the points into $\deriv = \dfrac{1 - y}{x}$. \begin{align*}
+        \resizebox{\textwidth}{!}{$
+            \renewcommand{\arraystretch}{1.8}
+            \begin{array}{c|c|c|c}
+            (-2, 2) \rightarrow \deriv = \dfrac{1}{2} & (-1, 2) \rightarrow \deriv = 1 & (1, 2) \rightarrow \deriv = -1 & (2, 2) \rightarrow \deriv = -\dfrac{1}{2} \\[5pt] \hline
+            (-2, 0) \rightarrow \deriv = -\dfrac{1}{2} & (-1, 0) \rightarrow \deriv = -1 & (1, 0) \rightarrow \deriv = 1 & (2, 0) \rightarrow \deriv = \dfrac{1}{2} \\[5pt] \hline
+            (-2, -1) \rightarrow \deriv = -1 & (-1, -1) \rightarrow \deriv = -2 & (1, -1) \rightarrow \deriv = 2 & (2, -1) \rightarrow \deriv = 1 \\[5pt] \hline
+            (-2, -2) \rightarrow \deriv = -\dfrac{3}{2} & (-1, -2) \rightarrow \deriv = -3 & (1, -2) \rightarrow \deriv = 3 & (2, -2) \rightarrow \deriv = \dfrac{3}{2}
+            \end{array}
+        $}
+    \end{align*}
+    \vspace{11pt}
+    These values give us our final slope field: \begin{center}
+        \boxed{\begin{tikzpicture}[declare function={f(\x,\y)=(1-\y)/\x;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-3.001}       \def\xmax{3.001}    % Set domain and range for
+            \def\ymin{-3.001}    \def\ymax{3.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \x in {-2,-1,0,1,2}{
+                \foreach \y in {-2,-1,0,1,2}{
+                \filldraw[Mulberry] (\x,\y) circle (2pt);
+                }
+            }
+            \foreach \i in {1, 2, 4, 5}
+            \foreach \j in {1,...,5}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);    
+        \end{tikzpicture}}
+    \end{center}
+\end{tcolorbox}
+
+We can use the steps we took in this example to generalize some steps to sketching slope fields: \par
+
+\textbf{Steps to Sketching a Slope Field:} \par
+
+\begin{enumerate}
+    \item Determine the grid of points for which you need to sketch (generally, the points are given).
+    \item Pick your first point. note its $x$ and $y$ coordinate. Plug these numbers into the differential equation; the output represents the slope at that point.
+    \item Find the point on the graph. Make a little line/dash at that point whose slope represents the slope that you found in Step 2.
+    \item Repeat this process for all the points needed.
+\end{enumerate} 
+
+\bigskip
+
+\textbf{\large{Slope Fields Graphically (FRQ)}} \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.2: } Given the slope field for $\deriv = x$ below, sketch the particular solution given the initial condition of (3, 2). \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=\x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red,ultra thick] plot ({\x}, {1/2 * \x * \x - 5/2});
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.2: } To find the particular solution, we simply need to start at (3, 2) and follow the slope segments: \begin{center}
+        \boxed{\begin{tikzpicture}[declare function={f(\x,\y)=\x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            \draw[domain=\xmin:\xmax, smooth, variable=\x, red,ultra thick] plot ({\x}, {1/2 * \x * \x - 5/2});
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            \filldraw (3, 2) circle (0.1);
+        \end{tikzpicture}}
+    \end{center}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.3: } Given the slope field for $x\deriv = 1$ below, sketch the particular solution given the initial condition of (1, 3). \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=1/\x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,3, 5, 6, 7, 8}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,ultra thick] plot ({\x}, {FUNCTION});
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.3: } Once again, we simply need to start at (1, 3) and follow the slope segments: \begin{center}
+        \boxed{\begin{tikzpicture}[declare function={f(\x,\y)=1/\x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,3, 5, 6, 7, 8}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            \draw[domain=0.001:\xmax, smooth, variable=\x, red,ultra thick] plot ({\x}, {ln(abs(\x)) + 3});
+            \draw[domain=\xmin:-0.001, smooth, variable=\x, red,ultra thick] plot ({\x}, {ln(abs(\x)) + 3});
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            \filldraw (1, 3) circle (0.1);
+        \end{tikzpicture}}
+    \end{center} \vspace{11pt}
+
+    Note that there appears to be a vertical asymptote at $y = 0$.
+\end{tcolorbox}
+
+\bigskip
+
+\textbf{\large{Slope Fields Numerically (MCQ)}} \par
+
+Let's summarize what we know about slopes of lines in terms of numbers. \begin{enumerate}
+    \item Horizontal lines have $\deriv = 0$. \\
+    \item Vertical lines have an undefined derivative. \\
+    \item Lines with positive slopes go up from left to right. \\
+    \item Lines with negative slopes go down from left to right.
+\end{enumerate}
+Two other facts are obvious from viewing a slope field and its associated differential equation: \begin{enumerate}
+    \setcounter{enumi}{4}
+    \item If all dashes in each \textbf{column} are parallel to each other, then $\deriv$ has \textbf{no $y$}. \\
+    \item If all dashes in each \textbf{row} are parallel to each other, then $\deriv$ has \textbf{no $x$}.
+\end{enumerate}
+To make points five and six clearer, take a look at the following slope field: \begin{center}
+    \begin{tikzpicture}[declare function={f(\x,\y)=cos(deg(\x)) ;},scale=0.6] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+        \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{1} % resolution of the slope field
+        \def\size{3mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture}
+\end{center}
+The differential equation that represents this slope field would not have a $y$ in the equation, because the segments in each column are parallel with each other. \par
+
+\begin{tcolorbox}[interesting]
+    For those curious, the equation for this slope field is $\deriv = \cos (x)$, which in fact does not contain a $y$!
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.4: } Which of the following slope fields matches $\deriv = 3y - 4x$? \par
+    \vspace{11pt}
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=e^(-1*(\x)^2) ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=\x/\y ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,1,2,3,5,6,7,8}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[declare function={f(\x,\y)=cos(deg(\x)) ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=3*\y - 4*\x ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{oneparchoices}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.4: } These types of problems are best done by a combination of process of elimination and substituting numbers. Options (a) and (c) all have slopes parallel to one another in each column. Therefore, they cannot be the slope field for the given differential equation, since the given equation has both $x$ and $y$. \par
+    \vspace{11pt}
+    Now, since we cannot eliminate any other obvious choices, we can move to substitution. Option (b) appears to have horizontal slopes when $x = 0$, so let's plug in a point on the $y$ axis into our differential equation to see if it is equal to zero. \begin{align*}
+        \dfrac{dy}{dx} \eval_{(0, \, 3)} = 3(3) - 4(0) = 9 \neq 0
+    \end{align*}
+    Clearly, option (b) is not our desired slope field. Therefore, the correct answer is option $\boxed{\text{(d)}}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.5: } Which of the following slope fields matches $\deriv = e^{-x^2}$? \par
+    \vspace{11pt}
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=e^(-1*(\x)^2) ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=\x/\y ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,1,2,3,5,6,7,8}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[declare function={f(\x,\y)=cos(deg(\x)) ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=3*\y - 4*\x ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{oneparchoices}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.5:} Once again, let's begin with elimination. Since our differential equation only has one variable, we know that our slope field must consist of columns of parallel dashes. This eliminates options (b) and (d). \par
+    \vspace{11pt}
+    Now, lets look at the equation. We know that raising $e$ to the power of anything will produce a positive number, so all our slopes must go up from left to right. Therefore, it's obvious that our answer is option $\boxed{\text{(a)}}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.6: } Which of the following slope fields matches $\deriv = \dfrac{x}{y}$? \par
+    \vspace{11pt}
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=e^(-1*(\x)^2) ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=\x/\y ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,1,2,3,5,6,7,8}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[declare function={f(\x,\y)=cos(deg(\x)) ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=3*\y - 4*\x ;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{1} % resolution of the slope field
+            \def\size{3mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{oneparchoices}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.6:} Using the techniques in $\textbf{Ex 2.7.4}$ and $\textbf{Ex 2.7.5}$, we can directly eliminate options (a) and (c). \par
+    \vspace{11pt}
+    Now, yet again, we look at the equation. Specifically, we look at what happens when $x = 0$: \begin{align*}
+        \deriv \eval_{(0, \, c)} = \dfrac{0}{c} = 0
+    \end{align*}
+    So, our slope field must have a slope of zero when $x = 0$. This means that option $\boxed{\text{(b)}}$ is the correct slope field for this differential equation.
+\end{tcolorbox} 
+
+\bigskip
+
+\textbf{\large{Slope Fields Graphically (FRQ)}} \par
+
+For these types of problems, one would typically sketch a solution and decide from among the options based on what was learned about families of functions in precalculus. For a refresher on families of functions, please see Chapter 0. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.7: } Which of the following equations might be the solution to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=4 * (\x)^3 - 8 * \x;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+            \def\ymin{-4}    \def\ymax{4} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $y = x^4 - 4x^2$
+        \choice $y = 4x - x^3$
+        \choice $y = -\cos (x)$
+        \choice $y = -\sec (x)$
+    \end{oneparchoices}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.7: } To find the solution, let's trace along the slope field. \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=4 * (\x)^3 - 8 * \x;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+            \def\ymin{-4}    \def\ymax{4} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {(\x)^4 - 4 * (\x)^2 });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    This is a quartic function, so our answer is option $\boxed{\text{a) } y = x^4 - 4x^2}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.8: } Which of the following equations might be the solution to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=-1 * sec(deg(\x)) * tan(deg(\x)) ;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+            \def\ymin{-4}    \def\ymax{4} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $y = x^4 - 4x^2$
+        \choice $y = 4x - x^3$
+        \choice $y = -\cos (x)$
+        \choice $y = -\sec (x)$
+    \end{oneparchoices}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.8: } To find the solution, let's trace along the slope field. \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=-1 * sec(deg(\x)) * tan(deg(\x));},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+            \def\ymin{-4}    \def\ymax{4} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            \draw[domain=\xmin:-1.6, smooth, variable=\x, red, ultra thick] plot ({\x}, {-sec(deg(\x)) });
+            \draw[domain=-1.53:1.53, smooth, variable=\x, red, ultra thick] plot ({\x}, {-sec(deg(\x)) });
+            \draw[domain=1.6:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-sec(deg(\x)) });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    This is very clearly a secant function, so our answer is option $\boxed{\text{d) } y = -\sec(x)}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 2.7.9: } Which of the following equations might be the solution to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=sin(deg(\x)) ;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+            \def\ymin{-4}    \def\ymax{4} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            %\clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            %\draw[domain=\xmin:\xmax, smooth, variable=\x, red,thick] plot ({\x}, { FUNCTION \x });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $y = x^4 - 4x^2$
+        \choice $y = 4x - x^3$
+        \choice $y = -\cos (x)$
+        \choice $y = -\sec (x)$
+    \end{oneparchoices}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 2.7.9: } To find the solution, let's trace along the slope field. \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=sin(deg(\x));},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+            \def\ymin{-4}    \def\ymax{4} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    This appears to be some sort of trig function. By noting that $y$ appears to be $-1$ when $x = 0$, we can deduce that this is a negative cosine function. Therefore, our answer is option $\boxed{\text{c) } y = -\cos (x)}$. 
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{2.7 Free Response Homework}} \par
+
+\onequestion{1. A slope field for the differential equation $y' = y\left(1 - \dfrac{1}{4}y^2\right)$ is shown.} \begin{center}
+    \begin{tikzpicture}[declare function={f(\x,\y)=\y * 1 - \y * 1/4 * \y * \y;},scale=0.8] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+        \def\ymin{-4}    \def\ymax{4} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{1} % resolution of the slope field
+        \def\size{3mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture} 
+\end{center}
+
+Sketch the graphs of the solutions that satisfy the given initial conditions: 
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item $y(0) = 1$
+    \item $y(0) = -1$
+    \item $y(0) = -3$
+    \item $y(0) = 3$
+\end{enumerate} \vspace{11pt}
+
+Match each differential equation with its slope field (labeled I-IV). Give reasons for your answer. \par
+
+\onequestion{2. $\deriv = y - 1 \hfill \text{3. } \deriv = y - x \hfill \text{4. } \deriv = y^2 - x^2 \hfill \text{5. } \deriv  = y^3 - x^3$} \\[11pt]
+
+\begin{center}
+    \phantom{II}I. \begin{tikzpicture}[declare function={f(\x,\y)=\y - \x;},scale=0.7] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+        \def\ymin{-4}    \def\ymax{4} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{2} % resolution of the slope field
+        \def\size{2mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture} $\hfill$ II. \begin{tikzpicture}[declare function={f(\x,\y)=(\y)^3 - (\x)^3;},scale=0.7] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+        \def\ymin{-4}    \def\ymax{4} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{2} % resolution of the slope field
+        \def\size{2mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture} \\[11pt]
+    III. \begin{tikzpicture}[declare function={f(\x,\y)=\y * \y - \x * \x;},scale=0.7] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+        \def\ymin{-4}    \def\ymax{4} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{2} % resolution of the slope field
+        \def\size{2mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture} $\hfill$ IV. \begin{tikzpicture}[declare function={f(\x,\y)=\y - 1;},scale=0.7] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+        \def\ymin{-4}    \def\ymax{4} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{2} % resolution of the slope field
+        \def\size{2mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture} 
+\end{center} \vspace{11pt}
+
+\onequestion{6. Use the slope field labeled I. above to sketch the graph of the solutions that satisfy the given initial conditions.} 
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item $y(0) = 1$
+    \item $y(0) = 0$
+    \item $y(0) = -1$
+\end{enumerate} \vspace{11pt}
+
+\onequestion{7. Sketch a slope field for the differential equation below. Then, use it to sketch three different solution curves.} \begin{align*}
+    y' = 1 + y
+\end{align*}
+
+\onequestion{8. Sketch a slope field for the differential equation below. Then, use it to sketch a solution curve that passes through the point $(1, 0)$.} \begin{align*}
+    y' = y - 2x
+\end{align*}
+
+\onequestion{9. A slope field for the differential equation $y'= y(y - 2)(y - 4)$ is shown.} \begin{center}
+    \begin{tikzpicture}[declare function={f(\x,\y)=\y * (\y - 2) * (\y - 4);},scale=0.8] 
+        %                       Function goes here ^^^^^ Use \x and \y.
+        %                       Change scale to make bigger or smaller.
+        \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+        \def\ymin{-4}    \def\ymax{4} % the slopes.  
+        % ymin and ymax being non-integer can help with division by zero errors.
+        \def\res{1} % resolution of the slope field
+        \def\size{3mm} % size of each slope in mm
+        %%%%%%%%%% do not change anything below this %%%%%%%%%%
+        \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+        \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+        \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+        \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+        \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+        \foreach \i in {0,...,\nx}
+        \foreach \j in {0,...,\ny}{
+                \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+            }
+        \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+        \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+        %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+        %
+        % Uncomment below two lines to include a solution.
+        % The function is where FUNCTION goes and is in terms of \x.
+        % e.g. "(\x)^2/(\x+1)" 
+        % if you want to use trig functions, wrap your argument in "deg".
+        % e.g. "sin(deg(\x))%
+        %
+        % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+        % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+        %
+        % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+        %
+        %\filldraw (POINT) circle (0.1);
+    \end{tikzpicture} 
+\end{center}
+
+For parts (a) through (d), sketch the graphs of the solutions that satisfy the given initial conditions.
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item $y(0) = -0.3$
+    \item $y(0) = 1$
+    \item $y(0) = 3$
+    \item $y(0) = 4.3$
+\end{enumerate} \vspace{11pt}
+
+\onequestion{(e) If the initial condition is $y(0) = c$, for what values of $c$ is $\lim_{t \to \infty} y(t)$ finite?} \\[11pt]
+
+\textbf{\large{2.7 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question Which of the following differential equations corresponds to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)=1 - (\y/\x);},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,1,2,3,4,5,6,7,9,10,11,12,13,14,15,16}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $\deriv = -\dfrac{y^2}{x}$
+        \choice $\deriv = 1 - \dfrac{y}{x}$
+        \choice $\deriv = y^3$
+        \choice $\deriv = x - \dfrac{1}{2}x^3$
+        \choice $\deriv = x + y$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following differential equations corresponds to the slope field shown below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)= (\x/\y);},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,1,2,3,4,5,6,7,9,10,11,12,13,14,15,16}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $\deriv = -\dfrac{y}{x}$
+        \choice $\deriv = 5xy$
+        \choice $\deriv = \dfrac{xy}{10}$
+        \choice $\deriv = \dfrac{y}{x}$
+        \choice $\deriv = \dfrac{x}{y}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following differential equations corresponds to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)= (\x * \y)/10;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $\deriv = -\dfrac{y}{x}$
+        \choice $\deriv = 5xy$
+        \choice $\deriv = \dfrac{xy}{10}$
+        \choice $\deriv = \dfrac{y}{x}$
+        \choice $\deriv = \dfrac{x}{y}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following equations might be the solution to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)= -1 * (\y)^2;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $y = 12x - x^3$
+        \choice $-\cos (x)$
+        \choice $\sec (x)$
+        \choice $x = -y^2$
+        \choice $x = -y^3$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following differential equations corresponds to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)= 1 - (\y)^3;},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $\deriv = 1 - y^3$
+        \choice $\deriv = y^2 - 1$
+        \choice $\deriv = -\dfrac{x^2}{y^2}$
+        \choice $\deriv = x^2y$
+        \choice $\deriv = x + y$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following differential equations corresponds to the slope field shown in the figure below? \begin{center}
+        \begin{tikzpicture}[declare function={f(\x,\y)= sin(deg(\x));},scale=0.8] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $y = 4x - x^3$
+        \choice $y = -\cos (x)$
+        \choice $y = \sec (x)$
+        \choice $x = -y^2$
+        \choice $x = -y^3$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the slope fields shown below corresponds to $\deriv = -\dfrac{y}{x}$? \\
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= -1 * \y/\x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,1,2,3,4,5,6,7,9,10,11,12,13,14,15,16}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= \x/\y;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,1,2,3,4,5,6,7,9,10,11,12,13,14,15,16}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[declare function={f(\x,\y)=\y/\x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,1,2,3,4,5,6,7,9,10,11,12,13,14,15,16}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=-\x/\y;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,1,2,3,4,5,6,7,9,10,11,12,13,14,15,16}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the slope fields shown below corresponds to $\deriv = xy$? \\
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= -1 * \x * \y;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= \x * (\y)^2;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[declare function={f(\x,\y)=0.5 * \x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=\x * \y;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the slope fields shown below corresponds to $|y| = e^{x^3}$? \\
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= 3 * (\x)^2 * \y;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= 2 * cos(deg(\x));},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[declare function={f(\x,\y)=1.5 * \x;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=e^(\x);},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the slope fields shown below corresponds to $y = \sec (x)$? \\
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= cos(deg(\x));},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)= sin(deg(\x));},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[declare function={f(\x,\y)=3.1415;},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4.001}       \def\xmax{4.001}    % Set domain and range for
+            \def\ymin{-4.001}    \def\ymax{4.001} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            % 
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture} 
+        \choice \begin{tikzpicture}[declare function={f(\x,\y)=-1 * sec(deg(\x)) * tan(deg(\x));},scale=0.6] 
+            %                       Function goes here ^^^^^ Use \x and \y.
+            %                       Change scale to make bigger or smaller.
+            \def\xmin{-4}       \def\xmax{4}    % Set domain and range for
+            \def\ymin{-4}    \def\ymax{4} % the slopes.  
+            % ymin and ymax being non-integer can help with division by zero errors.
+            \def\res{2} % resolution of the slope field
+            \def\size{2mm} % size of each slope in mm
+            %%%%%%%%%% do not change anything below this %%%%%%%%%%
+            \pgfmathsetmacro{\nx}{(\xmax-\xmin) * \res} 
+            \pgfmathsetmacro{\ny}{(\ymax-\ymin) * \res} 
+            \draw[help lines, color=gray!50] (\xmin -.5,\ymin -.5) grid (\xmax +.5,\ymax +.5);
+            \pgfmathsetmacro{\hx}{(\xmax-\xmin)/\nx}
+            \pgfmathsetmacro{\hy}{(\ymax-\ymin)/\ny}
+            \foreach \i in {0,...,\nx}
+            \foreach \j in {0,...,\ny}{
+                    \pgfmathsetmacro{\yprime}{f({\xmin+\i*\hx},{\ymin+\j*\hy})}
+                    \draw[thick, shift={({\xmin+\i*(\xmax-\xmin)/\nx},{\ymin+\j*(\ymax-\ymin)/\ny})}]
+                    ($(0,0)!\size!(-.1,-.1*\yprime)$)--($(0,0)!\size!(.1,.1*\yprime)$);
+                }
+            \draw[->] (\xmin-.5,0)--(\xmax+.5,0) node[below right] {\(x\)};
+            \draw[->] (0,\ymin-.5)--(0,\ymax+.5) node[above left] {\(y\)};
+            %%%%%%%%%%%%% and above this %%%%%%%%%%%%%%%%
+            %
+            % Uncomment below two lines to include a solution.
+            % The function is where FUNCTION goes and is in terms of \x.
+            % e.g. "(\x)^2/(\x+1)" 
+            % if you want to use trig functions, wrap your argument in "deg".
+            % e.g. "sin(deg(\x))%
+            %
+            % \clip (\xmin -.5,\ymin -.5) rectangle (\xmax +.5,\ymax +.5);
+            % \draw[domain=\xmin:\xmax, smooth, variable=\x, red, ultra thick] plot ({\x}, {-cos(deg(\x)) });
+            %
+            % Uncomment below line to draw a point at (POINT) e,g, (2,1)
+            %
+            %\filldraw (POINT) circle (0.1);
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+\end{questions} 
