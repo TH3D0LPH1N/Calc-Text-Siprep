@@ -1,0 +1,31 @@
+\ifx\mainfile\undefined
+  \documentclass[11pt]{exam}
+  \input{../Support/Settings.tex}
+  \def\graphicsdir{../Support/}
+  \def\inputpathChapterThree{}
+  \begin{document}
+
+  \externaldocument{../Chapter2/Chapter2}
+  \setcounter{page}{\getpagerefnumber{ChapterTwoEndPage} + 1}
+\fi
+
+\vspace*{2.5cm}
+\begin{center}
+    {\fontsize{48}{48}\selectfont \textbf{Chapter 3:}} \\
+    \vspace{72pt}
+    {\fontsize{48}{48}\selectfont \textbf{Integrals}}
+\end{center}
+
+\setcounter{sectioncount}{0}
+\setcounter{chaptercount}{2}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterThree Chapter3Overview.tex}
+
+\newpage
+
+\ifx\mainfile\undefined
+  \end{document}
+\fi 

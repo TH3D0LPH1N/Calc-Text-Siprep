@@ -1,0 +1,41 @@
+\textbf{\underline{\large{Chapter 3 Overview: Definite Integrals}}} \par
+
+In this chapter, we will study the Fundamental Theorem of Calculus, which establishes the link between the algebra and the geometry, with an emphasis on mechanics of how to find the definite integral. We will consider the differences implied between the context of the definite integral as an operation and as an area accumulator. We will learn some approximation techniques for definite integrals and see how they provide theoretical foundation for the integral. We will revisit graphical analysis in terms of the definite integral and view another typical AP context for it. Finally, we will consider what happens when trying to integrate at or near an asymptote. \par
+
+As noted in the overview of the last chapter, antiderivatives are known as indefinite integrals because the answer is a function, not a definite number. But there is a time when the integral represents a number. That is when the integral is used in an analytic-geometrical context of area. Though it is not necessary to know the theory behind this in order to calculate the integral, the theory is a major subject of integral calculus, so we will explore it briefly in \textbf{Section 3.0}.
+
+\newpage
+
+\textbf{\underline{\large{3.0: The Limit Definition of the Definite Integral}}} \par
+
+We know, from geometry, how to find the exact area of various polygons, but we never considered figures where one side is not made of a line segment. Here we want to consider an area bounded by some curve $y = f(x)$ on the top, the $x$-axis on the bottom, some arbitrary $x = a$ on the left, and $x = b$ on the right. \\
+
+\begin{center}
+    \includegraphics*[width = 0.7\textwidth]{\graphicsdir Chapter 3 Graphics/3.Overview-Graphic1.png}
+\end{center}
+
+As we can see above, the area approximated by rectangles whose height is the $y$-value of the equation and whose width we will call $\Delta x$. The more rectangles we make, the better the approximation. For a good animation of this concept, consider the following video: \begin{align*}
+    \href{https://drive.google.com/file/d/1crvzQDtfWvejnQORFoftpIGsXtmxr3jb/view?usp=sharing}{\text{\textcolor{blue}{Riemann sum approximation animation}}}
+\end{align*}
+
+The area of each rectangle would be $f(x) \cdot \Delta x$, and the total area of $n$ rectangles would be \begin{align*}
+    A = \sum_{i = 1}^n f\left(x_i\right) \cdot \Delta x.
+\end{align*}
+This equation is known as the $\textbf{Riemann summation}$. Although this equation looks complicated, it represents a rather simple idea. We are adding up the areas of many thin rectangles to approximate the total area under the curve $y = f(x)$ between two points. As we increase the number of rectangles $n$, each rectangle becomes narrower, and thus our approximation becomes more accurate. \par
+
+But, how can we find the exact area? With the Riemann sum, we are only coming up with better and better approximations right now. If we could make an infinite number of rectangles (which would be infinitely thin), we could potentially find the exact area under this curve. Luckily, we just so happen to have the mathematical tools to do this: we can take the limit as $n$ approaches infinity. \begin{align*}
+    \lim_{n \to \infty} \sum_{i = 1}^n f\left(x_i\right) \cdot \Delta x
+\end{align*}
+
+This is where the definite integral comes in. The definite integral provides a precise way to calculate the exact area under a curve by taking the limit of the Riemann sum as the number of rectangles approaches infinity. In other words, instead of merely approximating the area with a finite number of rectangles, the definite integral captures what happens when the width of each rectangle becomes infinitesimally small. We write this limit in a compact form as: \begin{align*}
+    \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i = 1}^n f\left(x_i\right) \cdot \Delta x,
+\end{align*}
+where $a$ is the "lower bound" and $b$ is the "upper bound." Mathematicians sometimes nuance this statement as \par
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \begin{align*}
+            \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{k = 1}^n f(a + k\Delta x) \cdot \Delta x \text{, where } \Delta x = \dfrac{b - a}{n} \\
+        \end{align*}
+    \end{minipage}}}
+\end{center}
