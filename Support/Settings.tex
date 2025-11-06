@@ -60,6 +60,11 @@
         #1
     \end{minipage}\vspace{2pt}
 }
+\newcommand{\longchoice}[1]{%
+    \choice \parbox[t]{\dimexpr\linewidth-\labelwidth-\itemindent-\labelsep}{%
+        \raggedright #1%
+    }%
+}
 \newcommand{\curvedarrow}{%
     \tikz[baseline=-0.5ex]{% <-- braces open
         \draw[->, rounded corners=1.5pt, line width=0.8pt]
@@ -79,6 +84,7 @@
 \allowdisplaybreaks
 
 \hbadness = 10000 %Hotfix
+\setlength{\hfuzz}{11pt}
 \xpatchcmd{\oneparchoices}{\penalty -50\hskip 1em plus 1em\relax}{\hfill}{}{}
 
 \makeatletter

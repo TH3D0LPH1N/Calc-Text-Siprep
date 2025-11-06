@@ -1,0 +1,537 @@
+\textbf{\underline{\large{3.4: Accumulation of Rates}}} \par
+
+As we saw with the Riemann sums, in $\int f(x) \, dx$, $f(x_i) \cdot \, dx$ is the area of a rectangle (height times base). The $\int \forcespace$ is the sum of the areas. The main concept in these ``accumulation of rates'' problem is that since a definite integral is a sum of values, the integral of a rate of change over some time $t$ equals the total change over that time $t$. \par
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Analyze the Relationship Between Rates of Change and Integrals. \\
+\end{tcolorbox} \vspace{11pt}
+
+Beginning in 2002, CollegeBoard shifted emphasis on understanding of the accumulation aspect of the Fundamental Theorem to a new kind of rate problem. Previously, accumulation of rates problems were mostly in context of velocity and distance, though the \href{https://al048.k12.sd.us/2nd%20semester/End%20of%20the%20year%20review/AP%20Cola%20Problem.pdf}{\text{\textcolor{blue}{1996 Cola Consumption problem}}} hinted at a new direction that these problems would take. The \href{https://maththewongway.weebly.com/uploads/5/1/2/6/5126774/accumulations-net_change_hw.pdf}{\text{\textcolor{blue}{2002 Amusement Park problem}}} caught many students and teachers off guard, though. Almost every year since then, the test has included this kind of problem. Here is an example similar to the 2002 Amusement Park problem: \par
+
+\begin{tcolorbox}[example]
+    \hypertarget{2002 Amusement Park Problem}{} \textbf{Ex 3.4.1: } \begin{center}
+        \underline{The Amusement Park Problem (AP 2002)}
+    \end{center} \vspace{11pt}
+    The rate at which people enter a park is given by the function \begin{align*}
+        E(t) = \dfrac{15600}{t^2 - 24t + 160},
+    \end{align*} and the rate at which they are leaving is given by \begin{align*}
+        L(t) = \dfrac{9890}{t^2 - 38t + 370} - 76.
+    \end{align*} Both $E(t)$ and $L(t)$ are measured in people per hour where $t$ is the number of hours past midnight. The functions are valid for when the park is open, $8 \leq t \leq 24$. At $t = 8$ there are no people in the park. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item How many people have entered the park at $4$ pm ($t = 16$)? Round your answer to the nearest whole number. \\
+        \item The price of admission is $\$36$ until $4$ pm ($t = 16$). After that, the price drops to $\$20$. How much money is collected from admissions that day? Round your answer to the nearest whole number. \\
+        \item Let $H(t) = \int_8^t E(x) - L(x) \, dx$ for $8 \leq t \leq 24$. The value of $H(16)$ to the nearest whole number is $5023$. Find the value of $H'(16)$ and explain the meaning of $H(16)$ and $H'(16)$ in the context of the amusement park. \\
+        \item At what time $t$, for $8 \leq t \leq 24$, does the model predict the number of people in the park is at at maximum?
+    \end{enumerate}
+\end{tcolorbox}
+
+Now, before we attempt this problem, there are many key phrases and concepts that we must understand. Take a look at the following table. \par
+
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            \textbf{Key Phrases for Interpreting Accumulation of Rates Problems}
+        \end{center}
+        \begin{alignat*}{2}
+            & \text{Total change:} &\qquad& \int_a^b R(t) \, dt \text{ or } \int_a^t (\text{incoming rate} - \text{outgoing rate}) \, dx \\[11pt]
+            & \text{Total rate of change:} &\qquad& \text{incoming rate} - \text{outgoing rate} \\[11pt]
+            & \text{Total amount:} &\qquad& \text{initial value} + \int_a^t (\text{incoming rate} - \text{outgoing rate}) \, dx \\[11pt]
+            & \text{Instantaneous rate of change:} &\qquad& \dfrac{dx}{dt} \text{ or } R(t) \\[11pt]
+            & \text{Average rate of change:} &\qquad& \dfrac{f(b) - f(a)}{b - a} \\[11pt]
+            & \text{Average value of $f(x)$:} &\qquad& \dfrac{1}{b - a}\int_a^b f(x) \, dx \\[11pt]
+            & \text{Amount increase/decrease:} &\qquad& \text{rate of change positive/negative} \\[11pt]
+            & \text{Rate of change inc/dec:} &\qquad& \dfrac{d}{dt}\text{[rate of change] positive/negative} \\
+        \end{alignat*}
+    \end{minipage}}}
+\end{center}
+
+Note that there is a difference between a function that is increasing or decreasing and its derivative that is increasing or decreasing. \par
+
+One technique that is super useful in accumulation of rates problem is unit analysis. By analyzing the units of the problem, we are able to interpret what the question is asking, and provide an appropriate answer. For instance, if $R(t)$ is measured in miles per hour, \begin{align*}
+    \int_a^b R(t) \, dt = \int_a^b \dfrac{\text{miles}}{\text{hour}}(\text{hours}) = \text{miles}
+\end{align*}
+
+To that end, let's take a look at the above chart, but with the intended units of the answer. \par
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+        \vspace{11pt}
+        \begin{center}
+            \textbf{Units for Accumulation of Rates Problems}
+        \end{center}
+        \begin{alignat*}{2}
+            & \text{Total change:} &\qquad& \text{units of accumulated quantity (e.g., miles, people)} \\[11pt]
+            & \text{Total rate of change:} &\qquad& \dfrac{\text{units of quantity}}{\text{units of time}} \text{ (e.g., miles/hour, people/day)} \\[11pt]
+            & \text{Total amount:} &\qquad& \text{units of quantity (e.g., total miles, total gallons)} \\[11pt]
+            & \text{Instantaneous rate of change:} &\qquad& \dfrac{\text{units of quantity}}{\text{units of time}} \\[11pt]
+            & \text{Average rate of change:} &\qquad& \dfrac{\text{units of quantity}}{\text{units of time}} \\[11pt]
+            & \text{Average value of $f(x)$:} &\qquad& \text{same units as } f(x) \\[11pt]
+            & \text{Amount increase/decrease:} &\qquad& \text{units of quantity (increase or decrease)} \\[11pt]
+            & \text{Rate of change inc/dec:} &\qquad& \dfrac{\text{units of rate}}{\text{units of time}} \text{ (e.g., acceleration: miles/hour}^2\text{)} \\
+        \end{alignat*}
+    \end{minipage}}}
+\end{center}
+
+Finally, let's go through some tips for answering these questions. There are four key parts to a good explanation: \par
+
+\begin{enumerate}
+    \item The meaning of the equation.
+    \item The description of what is being measured.
+    \item The units.
+    \item The time frame involved.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
+    \vspace{11pt}
+    \begin{center}
+        \textbf{Tips for Explaining Answers}
+    \end{center}
+    \vspace{11pt}
+    \begin{enumerate}
+        \item \textbf{Echo the question in your answer.} \\
+            Restate what the problem is asking so your explanation directly addresses it. \\
+        \item \textbf{Reason from the given information.} \\
+            Base your explanation on the data, equations, or graphs provided—not on assumptions. \\
+        \item \textbf{Use and check units.} \\
+            Always include proper units (e.g., miles, hours, people/day) and make sure they match the context. \\
+        \item \textbf{Specify the time frame.} \\
+            When discussing change, clearly state \emph{when} it occurs and include correct time units. \\
+        \item \textbf{Refer to functions, not numbers or graphs.} \\
+            Describe how functions behave—whether they are positive/negative or increasing/decreasing—even if you are using a table or graph. \\
+            \begin{itemize}
+                \item Instead of “the slope is positive,” say “the function is increasing.”
+                \item Instead of “the slope is increasing,” say “the rate is increasing.”
+                \item Avoid mentioning slope, second derivatives, or concavity unless the question specifically asks for them. \\
+            \end{itemize}
+        \item \textbf{Be concise and precise.} \\
+            Express your idea in one clear sentence whenever possible. If your explanation turns into a paragraph, you are probably being unclear or unfocused.
+    \end{enumerate}
+    \vspace{11pt}
+    \end{minipage}}}
+\end{center}
+
+With those instructions out the way, we can finally look at the solution for \textbf{Ex 3.4.1}. \par
+
+\begin{tcolorbox}[solution]
+    \textbf{Sol 3.4.1: } \par
+    a) Since $E(t)$ is a rate in people per hour, the number of people who have entered the park will be an integral from $t = 8$ to $t = 16$. Therefore, \begin{align*}
+        \text{Total entered} &= \int_8^{16} E(t) \, dt \\[11pt]
+        & = 6126.105 \\[11pt]
+        & \approx \boxed{6126 \text{ people}}
+    \end{align*}
+    b) Since there are different entry fees for different times of day, we need to determine how many people paid each fee. So, we will have to do $\int_8^{16} E(t) \, dt$ and $\int_{16}^{24} E(t) \, dt$. Conveniently, we know that $\int_8^{16} E(t) \, dt = 6126$ people from the previous problem, so we can just find $\int_{16}^{24} E(t) \, dt$. \begin{align*}
+        \int_{16}^{24} E(t) \, dt \approx 1808 \text{ people}
+    \end{align*}
+    The total revenue that the park gets from admissions means multiplying the number of people by the admission charge. Therefore, we have \begin{align*}
+        \text{Total revenue} &= \$36 \cdot 6126 + \$20 \cdot 1808 \\[11pt]
+        & = \boxed{\$256696}
+    \end{align*}
+    c) While a graph is not necessary for solving this problem, sometimes it helps to visualize the situation. Below are the graphs of $E(x)$ and $L(x)$ on $8 \leq t \leq 24$: \\
+
+    \begin{center}
+        \includegraphics[width = 0.6\textwidth]{\graphicsdir Chapter 3 Graphics/3.4-Graphic1.png}
+    \end{center}
+
+    Note how each function increases and then decreases. Since $H(t) = \int_8^t E(x) - L(x) \, dx$, we can use the Fundamental Theorem of Calculus to determine the derivative. \begin{align*}
+        H'(t) &= \dfrac{d}{dt}\int_8^t E(x) - L(x) \, dx \\[11pt]
+        & = E(t) - L(t) \\[11pt]
+        & = E(16) - L(16) \\[11pt]
+        & = 14
+    \end{align*}
+
+    Now let's interpret what these numbers mean. We know that $H(16) = 5023$ people. Since the derivative is a rate of change, we know that $H'(16) = 14$ means $14$ people per hour. Because integrating a rate gives a total change, and $H(t)$ represents the integral of the difference between the entry and leaving rates, $H(t)$ tells us the \textit{net number of people in the park} at 4 pm---that is, how many have entered minus how many have left since 8 am. \par
+    \vspace{11pt}
+    Meanwhile, $H'(t)$ represents the \textit{instantaneous rate of change} of the park's population. This $H'(16) = 14$ means that \textbf{at 4 pm, the number of people in the park is increasing at a rate of 14 people per hour}. \par
+    \vspace{11pt}
+    In other words, more people are entering than leaving at that moment. \par
+    \vspace{11pt}
+    d) This question requires a little more advanced technique, so we will return to this problem in Chapter 4.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 3.4.2: } \begin{center}
+        \underline{The Cat Population Problem}
+    \end{center} \vspace{11pt}
+
+    The Peninsula Humane Society (PHS) is dedicated to the care and adoption of as many animals who they receive as possible. Since cats breed seasonally, the number of cats and kittens they receive into their facility in a given year varies roughly sinusoidally with time. The data available from 2019 show the rate $R(t)$, measured in healthy cats per month, varies with time, measured in months after New Years Day, according to the equation \begin{align*}
+        R(t) = 120 - 88\cos \left(\dfrac{\pi}{6}(t - 2)\right).
+    \end{align*}
+    The rate $A(t)$ at which adoption occur, measured in cats per month, varies with time, measured in months after New Year's Day, according to the equation \begin{align*}
+        A(t) = 125 - 85\cos \left(\dfrac{\pi}{6}(t - 3)\right).
+    \end{align*}
+    On New Years' Day ($t = 0$), there were 131 cats in the PHS nursery waiting to be adopted. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item $\int_0^{12} R(t) \, dt = 1440$ cats. Using the correct units, explain the meaning of this result in context of the problem. \\
+        \item Assume $A'(10.3) = -28.008$. Using the correct units, explain the meaning of $A'(10.3)$ in context of the problem. \\
+        \item $C(t) = 131 + \int_0^{12} R(t) - A(t) \, dt = 71$. Using the correct units, explain the meaning of this result in context of the problem. \\
+        \item Using the correct units, explain the meaning of $\dfrac{1}{t}\int_0^t R(x) \, dx$ in the context of the problem. \\
+        \item Suppose $R(7.4) = 185.4$ and $R'(7.4) = -30.8$. Using the correct units, explain the meaning of this information in context of the problem.
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 3.4.2: } \par
+    a) $R(t)$ is the rate at which healthy cats per month are received at PHS. Therefore, $\int_0^{12} R(t) \, dt \forcespace$ would be the total number of cats received over this time period. So, \textbf{1440 healthy cats were received at PHS between $t = 0$ and $t = 12$ (or, during the 12 months of 2019).} \par
+    \vspace{11pt}
+    b) $A(t)$ is the rate at which adoptions occur, measured in cats per month. Therefore, \textbf{the rate at which adoptions are occurring at $t = 10.3$ is decreasing by 28.008 cats per month, per month.} \par
+    \vspace{11pt}
+    c) $C(t) = 131 + \int_0^t R(x) - A(x) \, dx$ represents the total number of cats and kittens sheltered at PHS at any time $t$. So, we can say that \textbf{the number of cats and kittens sheltered at PHS at the end of the 12 months of 2019 is 71 cats and kittens.} \par
+    \vspace{11pt}
+    d) $\dfrac{1}{t}\int_0^t R(x) \, dx$ is the average number of cats and kittens being received at any time $t$. Therefore, \textbf{$\dfrac{1}{t}\int_0^t R(x) \, dx \forcespace$ represents the average number of cats and kittens, in cats and kittens per month, that have been received at PHS during the interval $[0, t]$ of 2019.} \par
+    \vspace{11pt}
+    e) $R(7.4) > 0$ and $R'(7.4) < 0$. So, we can say that \textbf{at $t = 7.4$, the total number of cats and kittens that have been received at PHS is increasing at a decreasing rate of -30.8 cats and kittens per month, per month.} \par
+    \vspace{11pt}
+    Phew, that was a lot of words!! However, notice that each of the problems can be answered simply by looking back at the ``Key Phrases'' chart and matching the expression to the concept.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 3.4.3: } \begin{center}
+        \underline{The Synthetic Oil Problem}
+    \end{center}
+    A certain industrial chemical reaction produces synthetic oil at a rate of \begin{align*}
+        S(t) = \dfrac{15t}{1 + 3t}.
+    \end{align*}
+    At the same time, the oil is removed from the reaction vessel by a skimmer that has a rate of \begin{align*}
+        R(t) = 2 + 5\sin \left(\dfrac{4\pi}{25}t\right).
+    \end{align*}
+    Both functions have units of gallons per hour, and the reaction runs from $t = 0$ to $t = 6$. At time $t = 0$, the reaction vessel contains 2500 gallons of oil. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item How much oil will the skimmer remove from the reaction vessel in this six hour period? Indicate units of measurement. \\
+        \item Write an expression for $P(t)$, the total number of gallons of oil in the reaction vessel at time $t$. \\
+        \item Find the rate at which the total amount of oil is changing at $t = 4$.
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 3.4.3: } \par
+    a) To find the total amount removed over the time interval, we integrate the rate $R(t)$ over $0 \leq t \leq 6$. \begin{align*}
+        \text{Amount removed} &= \int_0^6 \left(2 + 5\sin \left(\dfrac{4\pi}{25}t\right) \right) \, dt \\[11pt]
+        & = \int_0^6 R(t) \, dt \\[11pt]
+        & = \boxed{31.816 \text{ gallons}}
+    \end{align*}
+    b) Let $P(t)$ represent the total amount of oil in the reaction vessel at time $t$. Initially, $P(0) = 2500$ gallons. The net change of oil is production minus removal, which is $S(t) - R(t)$. Since the variable $t$ is the upper boundary, we need to use a dummy variable $x$ in the integrand. This gives us the expression \begin{align*}
+        \boxed{P(t) = 2500 + \int_0^t (S(x) - R(x)) \, dx}.
+    \end{align*}
+    c) The rate of change of $P$ is $P'(t) = S(t) - R(t)$. Therefore, at $t = 4$, \begin{align*}
+        P'(4) &= S(4) - R(4) \\[11pt]
+        & = \boxed{-1.909 \si{gal \per hr}}
+    \end{align*}
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{3.4 Free Response Homework}} \par
+
+\begin{center}
+    \underline{1. The Puffin Problem}
+\end{center}
+
+The puffin population on the Skellig Islands off the coast of County Kerry, Ireland, can be modeled by a differentiable function $P$ in terms of time $t$, where $P(t)$ is the number of puffins and $t$ is measured in years, for $0 \leq t \leq 50$. There are 10,000 puffins on the island at time $t = 0$. The birth rate for the penguins on the island is modeled by \begin{align*}
+    B(t) = 500e^{0.05t} \text{ puffins per year}
+\end{align*}
+and the death rate for the penguins on the island is modeled by \begin{align*}
+    D(t) = 110e^{0.09t} \text{ puffins per year}.
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Using the correct units, explain the meaning of $\int_0^{50} (B(t) - D(t)) \, dt$. 
+    \item Using the correct units, explain the meaning of $\dfrac{1}{25} \int_0^{25} B(t) \, dt$. 
+    \item Using the correct units, explain the meaning of $D'(35)$, 
+    \item Using the correct units, explain the meaning of $\dfrac{B(35) - B(10)}{35 - 10}$. 
+    \item Suppose $D(35) = 2567$ and $D'(35) = 143.8$. Using the correct units, explain the meaning of these data in context of the number of puffin deaths.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{2. The Alcohol Metabolization Problem}
+\end{center}
+
+Metabolism is the body's process of converting ingested substances to other compounds. Alcohol is absorbed into the blood stream, then, through oxidation, it is detoxified and removed from the blood. Research shows that, after consuming three shots of alcohol in rapid succession, an average (180 lb) adult, fasting male has the alcohol metabolized at a rate modeled by $R(t) = 0.04\left(t^2 - 8t + 6\right)e^{-t}$, where $R(t)$ is the measured in percentage of alcohol in the blood stream per hour, $t$ is measured in hours after consuming the third drink and is valid for $0 \leq t \leq 6$. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item $\int_0^{2.5} R(t) \, dt = 0.029$. Using the correct units, explain the meaning of this result. 
+    \item At $t = 2$ hours, $R(t)$ is negative and $R'(2) = 0.011$. Using the correct units, explain the meaning of this result in terms of the amount of alcohol in the blood stream. 
+    \item Using the correct units, explain the meaning of $\dfrac{2}{5}\int_0^{2.5} R(t) \, dt$. 
+    \item Using the correct units, explain the meaning of $\dfrac{R(5) - R(1)}{5 - 1}$.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{3. The Novel-for-November Problem}
+\end{center}
+
+A young novelist enters the Novel-for-November contest, where amateur writers attempt to write a full-length novel over the course of the month. After the months ends, she realizes that the rate at which she wrote varied over the month. She determines that a good model of the daily rate of her writing would be \begin{align*}
+    W(t) = 7.5 + 7.5\cos \left(\dfrac{\pi}{15}(t - 1)\right),
+\end{align*}
+where $t$ is measured in days and $t = 1$ is the morning of November 1st and $t = 31$ is the end of the day on November 30th. Furthermore, let \begin{align*}
+    E(t) = 6 + 8\cos \left(\dfrac{\pi}{30}(t - 10)\right)
+\end{align*} 
+model the rate at which her editor goes through the manuscript, beginning on November 10th ($t = 10$). \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many pages does the writer complete during the month of November? 
+    \item Find the value of $W(17)$ and $W'(17)$. Using the correct units, explain the meaning of both. 
+    \item Find the number of pages which still need to be edited at the end of the day on November 30th. 
+    \item Set up, but do not solve, an integral equation that would determine how many more days would be needed to finish editing the manuscript. 
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{4. The Tombstone Mine Problem}
+\end{center}
+
+In 1881, the silver mines in Tombstone, Arizona, struck the local aquifer at 520 feet and began to flood. The owners of the Grand Central mine bought the Cornish engines from the Comstock mines to pump the water out. On a given day, the water was seeping into the mine at a constant rate of $100 \si{gal \per hr}$, and the pumps could drain the water at a rate described by the equation \begin{align*}
+    D(t) = 414 + 375\sin \left(\dfrac{x^2}{72}\right) \si{gal \per hr}.
+\end{align*}
+When the pumps start, there are 10,000 gallons of water in the mine. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many gallons of water were pumped out of the mine during the time interval $0 \leq t \leq 24$ hours? 
+    \item Is the level of water rising or falling at $t = 6$? Explain your reasoning. 
+    \item How many gallons of water are in the mine at $t = 14$ hours?
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{5. The Ellis Island Problem}
+\end{center}
+
+In 1920, Dr. Quattrin's grandfather Andrea returned to America from Italy after fighting in World War I. He arrived in New York Harbor on the \textit{SS Pannonia} and, despite having established residency in 1913, had to be processed through the Immigration Center at Ellis Island. There were 1123 non-citizen, third-class passengers on the \textit{Pannonia} that had to go through processing. Immigrants entered the processing line at a rate modeled by the function \begin{align*}
+    E(t) = 8843\left(\dfrac{t}{5}\right)^4\left(1 - \dfrac{t}{10}\right)^5.
+\end{align*}
+where $t$, in $0 \leq t \leq 10$, is measured in hours after the ship began offloading immigrants. The new arrivals were processed out a rate of 250 people per hour. The \textit{Pannonia} was the third ship in port, so there were already 2500 people in line when the \textit{Pannonia} passenger got into line. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many passengers from the \textit{Pannonia} had gotten in line for processing in the first 6.2 hours? 
+    \item Is the rate of change of people entering the processing line increasing or decreasing at $t = 6.2$?
+    \item How many people were in line at $t = 6.2$?
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{6. The Trinary Star Problem}
+\end{center}
+
+More than 30\% of observed star systems have multiple stars, and 70\% of those have more than two stars. When stars are closed together, they exchange mass in a process known as accretion. Consider a trinary system where $S_1$ is larger than $S_2$, and $S_2$ is larger than $S_3$. $S_3$ will lose mass to $S_2$, and $S_2$ will lose mass to $S_1$. While scientific readings are not available because of the time scale, let us suppose that $S_2$ loses mass to the larger $S_1$ at a rate of \begin{align*}
+    L(t) = 1 + (0.01t)^2 + 0.23\sin \left(\dfrac{\pi}{25}t\right)
+\end{align*}
+and gains mass from the smaller $S_3$ at a rate of \begin{align*}
+    G(t) = 0.2 + 0.15\sqrt{t}
+\end{align*}
+where $0 \leq t \leq 100$ years. $L(t)$ and $G(t)$ are measured in yottatons per year $\left(\dfrac{Y}{yr}\right)$. (A yottaton is $10^{26}$ tons, or $10^{-7}$ solar masses.) \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How much mass does $S_2$ lose to $S_1$ on $0 \leq t \leq 100$? State the units.
+    \item At $t = 50$, is the mass $S_2$ is gaining from $S_3$ increasing at an increasing rate? Using the correct units, justify your answer.
+    \item At what times on $0 \leq t \leq 100$ is $S_2$ losing as much mass to $S_1$ as it is gaining from $S_3$?
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{7. The Metformin Problem}
+\end{center}
+
+A diabetic patient takes Metformin twice a day to control her blood sugar. The medication enters the bloodstream at a rate expressed by \begin{align*}
+    M(t) = 8 - \dfrac{e^{0.47t}}{t + 6},
+\end{align*}
+where $M(t)$ is measured in centigrams per hour $\si{cg \per hr}$ and $t$ is measured in hours for $0 \leq t \leq 12$. The liver cleans the medication out of the bloodstream at a rate of $L(t) = 7 - 0.46t\cos (t) \si{cg \per hr}$. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How much Metformin enters the bloodstream during this 12-hour time period?
+    \item After 9 hours, how much Metformin is still in her bloodstream?
+    \item Find $L'(6)$ and explain the meaning of the answer, using the correct units.
+    \item Set up, but do not solve, an integral equation that would determine the time when the dose of Metformin has been completely cleaned out of the bloodstream.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{8. The San Francisco Intersection Problem}
+\end{center}
+
+At an intersection in San Francisco, cars turn left at the rate \begin{align*}
+    L(t) = 50\sqrt{t}\sin^2 \left(\dfrac{t}{3}\right)
+\end{align*}
+cars per hour for the time interval $0 \leq t \leq 18$. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item To the nearest whole number, find the total number of cars turning left on the time interval given above. \\
+    \item Traffic engineers will consider turn restrictions if $L(t)$ equals or exceeds 125 cars per hour. Find the time interval where $L(t) \geq 125$, and find the average value of $L(t)$ for this time interval. Indicate units of measurement. \\
+    \item San Francisco will install a traffic light if there is a two-hour time interval in which the product of the number of cars turning left and the number of cars traveling through the intersection exceeds 160,000. In every two-hour interval, 480 cars travel straight through the intersection. Does this intersection need a traffic light? Explain your reasoning.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{9. The Post Office Letter Problem}
+\end{center}
+
+Letters arrive at a post office at a rate of \begin{align*}
+    P(t) = 8 + t\sin \left(\dfrac{t^3}{90}\right)
+\end{align*}
+hundred letters per hour over the course of a workday. The day begins at 9 am ($t = 0$) and ends at 5 pm ($t = 8$). There are three hundred letters in the office at 9 am. Workers send letters out of the office at a constant rate of 5 hundred letters per hour. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Find $P'(2)$. Using correct units, interpret the meaning of $P'(2)$ in the context of this problem.
+    \item Find the total number of letters that arrive at the office between 9 am and noon ($t = 3$). Round to the nearest whole number of letters.
+    \item Write an expression for $L(t)$, the total number of letters in the post office at time $t$.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{10. The Flooded Basement Problem}
+\end{center}
+
+The basement of a house is flooded, and water keeps pouring in at a rate of \begin{align*}
+    w(t) = 95\sqrt{t}\sin^2 \left(\dfrac{t}{6}\right)
+\end{align*}
+gallons per hour. At the same time, water is being pumped out at a rate of \begin{align*}
+    r(t) = 275\sin^2 \left(\dfrac{t}{3}\right).
+\end{align*}
+When the pump is started, at time $t = 0$, there is 1200 gallons of water in the basement. Water continues to pour in and be pumped out for the interval $0 \leq t \leq 18$. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Is the amount of water increasing at $t = 15$? Why or why not?
+    \item To the nearest whole number, how many gallons are in the basement at the time $t = 18$?
+    \item For $t > 18$, the water stops pouring into the basement, but the pump continues to remove water until all of the water is pumped out of the basement. Let $k$ be the time at which the tank becomes empty. Write, but do not solve, an equation involving an integral expression that can be used to find a value of $k$.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{11. The Sewage Processing Problem}
+\end{center}
+
+A tank at a sewage processing plant contains 125 gallons of raw sewage at time $t = 0$. During the time interval $0 \leq t \leq 12$ hours, sewage is pumped into the tank at the rate \begin{align*}
+    E(t) = 2 + \dfrac{10}{1 + \ln(t + 1)}.
+\end{align*}
+During the same time interval, sewage is pumped out at a rate of \begin{align*}
+    L(t) = 12\sin \left(\dfrac{t^2}{47}\right).
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many gallons of sewage are pumped into the tank during the time interval $0 \leq t \leq 12$ hours?
+    \item Is the level of sewage rising or falling at $t = 6$? Explain your reasoning.
+    \item How many gallons of sewage are in the tank at $t = 12$.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{12. The Carbon Sequestration Problem}
+\end{center}
+
+One innovative approach to global warming is to capture carbon dioxide that is created as a byproduct of producing concrete and storing the $\mathrm{CO_2}$ in the sandstone in depleted natural gas fields. At a particular site on a particular day, the $\mathrm{CO_2}$ is injected into the sandstone at a rate of \begin{align*}
+    I(t) = 121\sin \left(\dfrac{\pi}{65}t^2\right).
+\end{align*}
+The $\mathrm{CO_2}$ stabilizes the ground and forces remaining natural gas upward where it can be extracted at a rate of \begin{align*}
+    E(t) = 50 = 50\cos \left(\dfrac{\pi}{8}t\right).
+\end{align*}
+$I(t)$ and $E(t)$ are measured in metric tons per hour and $t$ is measured in hours where $0 \leq t \leq 8$. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many metric tons of $\mathrm{CO_2}$ is injected into the field over $0 \leq t \leq 8$?
+    \item Find the value of $I(4)$ and $I'(4)$. Using the correct units, explain the meaning of both. 
+    \item Find the time if any, when the rate of injection of $\mathrm{CO_2}$ is equal the rate of extraction of natural gas.
+    \item Find the total change of gasses in the sandstone during this 8-hour day. Using the correct units, explain the results.
+\end{enumerate} \vspace{11pt}
+
+\textbf{\large{3.4 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question For $t \geq 0$ hours, $H$ is a differentiable function of $t$ that gives the temperature, in degrees Celsius, at an Arctic weather station. Which of the following is the best interpretation of $H'(24)$? \\
+
+    \begin{oneparchoices}
+        \choice The change in temperature during the first day. \\[11pt]
+        \makebox[0.035\textwidth] \choice The change in temperature during the 24th hour. \\[11pt]
+        \makebox[0.035\textwidth] \choice The average rate at which the temperature changed during the 24th hour. \\[11pt]
+        \makebox[0.035\textwidth] \choice The rate at which the temperature is changing during the first day. \\[11pt]
+        \makebox[0.035\textwidth] \choice The rate at which the temperature is changing at the end of the 24th day.
+    \end{oneparchoices} \par \horizontalline
+
+    \question For $t \geq 0$ hours, $H$ is a differentiable function of $t$ that gives the temperature, in degrees Celsius, at an Arctic weather station. Which of the following is the best interpretation of $\int_0^t H(x) \, dx$. \\
+
+    \begin{oneparchoices}
+        \choice The change in temperature during the first day. \\[11pt]
+        \makebox[0.035\textwidth] \choice The change in temperature during the 24th hour. \\[11pt]
+        \makebox[0.035\textwidth] \choice The average rate at which the temperature changed during the 24th hour. \\[11pt]
+        \makebox[0.035\textwidth] \choice The rate at which the temperature is changing during the first day. \\[11pt]
+        \makebox[0.035\textwidth] \choice The rate at which the temperature is changing at the end of the 24th day.
+    \end{oneparchoices} \par \horizontalline
+
+    \question In the classic \hyperlink{2002 Amusement Park Problem}{2002 Amusement Park Problem}, equations $E(t)$ and $L(t)$ were given, representing the rate at which people were entering and leaving the park respectively, for time $9 \leq t \leq 23$, the hours during which the park was open, with $t = 9$ corresponding to 9 am. Let us assume that $F(t) = E(t) - L(t)$. Which of the following is the best interpretation of $F(16)$? \\
+
+    \begin{oneparchoices}
+        \choice The number of people in the park at 4 pm. \\[11pt]
+        \makebox[0.035\textwidth] \choice The number of people entering and leaving the park before 4 pm. \\[11pt]
+        \makebox[0.035\textwidth] \choice The average number of people in the park between 9 am and 4 pm. \\[11pt]
+        \makebox[0.035\textwidth] \choice The rate at which the number of people in the park is changing at 4pm. \\[11pt]
+        \makebox[0.035\textwidth] \choice \parbox[t]{\dimexpr\linewidth-2\labelwidth-2\itemindent}{\raggedright The rate of change of how quickly the number of people in the park is changing at 4pm.}
+    \end{oneparchoices} \par \horizontalline
+
+    \question The cost, in dollars, to shred the confidential documents of a company is modeled by $C$, a differentiable function of the weights of documents in pounds. Of the following, which is the best interpretation of $C'(500) = 80$? \\
+
+    \begin{oneparchoices}
+        \choice The cost to shred 500 pounds of documents is \$80 \\[11pt]
+        \makebox[0.035\textwidth] \choice The average cost to shred documents is $\dfrac{80}{500}$ dollar per pound. \\[11pt]
+        \makebox[0.035\textwidth] \choice \parbox[t]{\dimexpr\linewidth-2\labelwidth-2\itemindent}{\raggedright Increasing the weight of documents by 500 pounds will increase the cost to shred the documents by approximately \$80.} \\[11pt]
+        \makebox[0.035\textwidth] \choice \parbox[t]{\dimexpr\linewidth-2\labelwidth-2\itemindent}{\raggedright The cost to shred documents is increasing at a rate of \$80 per pound when the weight of the documents is 500 pounds.}
+    \end{oneparchoices} \par \horizontalline
+
+    \question An ice field is melting at the rate $M(t) = 4 - \sin^3 (t)$ acre-feet per day, where $t$ is measured in days. How many acre-feet of this field will melt from the beginning of day 1 ($t = 0$) to the beginning of day 4 ($t = 3$)? \\
+
+    \begin{oneparchoices}
+        \choice $6.846$
+        \choice $10.667$
+        \choice $10.951$
+        \choice $11.544$
+        \choice $11.999$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Let $R(t)$ represent the rate in gal/hr at which water is leaking out of a tank, where $t$ is measured in hours. Which of the following expressions represents the average rate of change of gallons of water per hour that leaks out in the first three hours? \\
+
+    \begin{oneparchoices}
+        \choice $\int_0^3 R(t) \, dt$
+        \choice $\dfrac{1}{3}\int_0^3 R(t) \, dt$
+        \choice $\int_0^3 R'(t) \, dt$
+        \choice $R(3) - R(0)$
+        \choice $\dfrac{R(3) - R(0)}{3 - 0}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The rate of natural gas sales for the year 1993 at a certain gas company is given by $P(t) = t^2 - 400t + 160000$, where $P(t)$ is measured in gallons/day and $t$ is the number of days in 1993 from day 0 to 365. To the nearest gallon, what is the average rate of natural gas sales at this company for the 31 days of January 1993? \\
+    
+    \begin{oneparchoices}
+        \choice $4,777,730$
+        \choice $4,617,930$
+        \choice $154,120$
+        \choice $148,965$
+        \choice $148,561$
+    \end{oneparchoices} \par \horizontalline 
+
+    \question The rate at which ice is melting in a pond is given by $\dfrac{dV}{dt} = \sqrt{1 + 2^t}$, where $V$ is the volume of the ice in cubic feet and $t$ is the time in minutes. The amount of ice which has melted in the first five minutes is \\
+
+    \begin{oneparchoices}
+        \choice $14.49 \si{ft^3}$
+        \choice $14.51 \si{ft^3}$
+        \choice $14.53 \si{ft^3}$
+        \choice $14.55 \si{ft^3}$
+        \choice $14.57 \si{ft^3}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The number of parts per million (ppm), $C(t)$, of chlorine in a pool changes at the rate of $C'(t) = 1 - 3e^{-0.2\sqrt{t}}$ ounces per day, where $t$ is measured in days. There are 10 ppm of chlorine in the pool at time $t = 0$. How many ounces of chlorine are in the pool when $t = 9$? \\
+
+    \begin{oneparchoices}
+        \choice $-0.646$
+        \choice $9.354$
+        \choice $-9.285$
+        \choice $9.285$
+        \choice $0.715$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The amount of money in a bank account is increasing at the rate of $R(t) = 10000e^{0.06t}$ dollars per year, where $t$ is measured in years. If $t = 0$ corresponds to the year 2005, then what is the approximate total amount of increase from 2005 to 2007? \\
+
+    \begin{oneparchoices}
+        \choice $\$21,250$
+        \choice $\$4,500$
+        \choice $\$18,350$
+        \choice $\$32,560$
+        \choice $\$16,250$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The rate at which water is pumped into a tank is $r(t) = 20e^{0.02t}$, where $t$ is in minutes and $r(t)$ in gallons per minute. Approximately how many gallons of water are pumped into the tank during the first five minutes? \\
+
+    \begin{oneparchoices}
+        \choice $20$
+        \choice $22$
+        \choice $85$
+        \choice $105$
+        \choice $150$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Oil is leaking from a tanker at the rate of $R(t) = 2000e^{-0.2t}$ gallons per hour, where $t$ is measured in hours. How much oil, in gallons, leaks out of the tanker from $t = 0$ to $t = 10$? \\
+
+    \begin{oneparchoices}
+        \choice $54$
+        \choice $271$
+        \choice $865$
+        \choice $8,647$
+        \choice $14,778$
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
