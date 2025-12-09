@@ -1,0 +1,273 @@
+\textbf{\underline{\large{3.6: Intro to AP: Reasoning with Tabular Data}}} \par
+
+Reasoning with tabular data (aka Table Problems) has been one of the most commonly recurring topics on the AP exam. It is often the first free-response question on the exam. \par
+
+There are two main kinds of table problems. The first kind appears in multiple choice questions that include tables of values meant to be plugged into the Chain, Product, or Quotient Rule. These tables often contain distractor values, so the challenge is identifying only the information you actually need. The second and more common type is a word problem involving an unknown function paired with specific data points. These problems closely connect to Accumulation of Rates and Rectilinear Motion topics, since they require interpreting how a function behaves based on limited numerical information. It is this second kind of problems which we will investigate here. \par
+
+An analysis of the past ten years of AP exams reveals the most common subtopics on the test. They are, in order: \par
+
+\begin{itemize}
+    \item Riemann and trapezoidal sums.
+    \item Overestimate vs underestimate.
+    \item Tangent approximations using secant lines.
+    \item Graphic problems with the First Derivative Test.
+    \item Interpretation of units.
+    \item Mean value, intermediate value theorem.
+\end{itemize}
+
+For this section, we need to recall our \hyperlink{key phrases and units}{key phrases and units} for accumulation of rates problems, along with our \hyperlink{tips for explaining answers}{tips for explaining answers}.
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Analyze the Relationship Between Rates of Change and Integrals with Tabular Data.
+\end{tcolorbox}
+
+Let us consider a problem similar to the ones in the Accumulation of Rates section. but with a table of data as part of the problem. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 3.6.1: } At 6am at the \textit{Popular Potatoes} potato chip factory, there are already $5$ tons of potatoes in the factory. More potatoes are delivered from 6am ($t = 6$) to noon ($t = 12$) at a rate modeled by \begin{align*}
+        P(t) = 9 - \dfrac{9\sin(x - 2)}{x - 2}
+    \end{align*}
+    tons of potatoes per hour. Workers arrive at 6am and begin to process the potatoes to turn them into potato chips. Their supervisor measures their rate of output every hour and records her findings in the chart below, \begin{align*}
+        \arraycolsep=22pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|}
+            \hline
+            t & 6 & 9 & 13 & 14 & 16 \\ \hline
+            C(t) & 7.9 & 6.5 & 3.9 & 3.1 & 1.3 \\
+            \hline
+        \end{array}
+    \end{align*}
+    where $t$ represents the time after midnight (in hours) and $C(t)$ represents the rate of potatoes processed in tons per hour. The supervisor determines that the workers' rate of processing is a decreasing function throughout the day. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item How many tons of potatoes arrive at the \textit{Popular Potatoes} factory between 6am and noon? \\
+        \item Use a left Riemann sum with sub-intervals indicated by the table to approximate $\int_6^{16} C(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem. \\
+        \item Is your approximation in part (b) an under or over-approximation? Explain. \\
+        \item Approximate $C'(11.5)$. Explain the meaning of your answer \\
+        \item The workers end their shift at 4pm. At that time, are there still potatoes in the factory left to process? Explain your reasoning.
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 3.6.1: } \par
+    a) Since this question asks for a total amount, we know that we must find the integral of the rate of potatoes that are being delivered to the factory. Therefore, we have \begin{align*}
+        \text{Total tons} = \int_6^{12} P(t) \, dt = \int_6^{12} 9 - \dfrac{9\sin(x - 2)}{x - 2} = \boxed{54.899 \text{ tons of potatoes}}
+    \end{align*}
+    b) Using our setup for approximation with left-hand rectangles, we have \begin{align*}
+        \int_6^{16} C(t) \, dt \approx (9 - 6) \cdot 7.9 + (13 - 9) \cdot 6.5 + (14 - 13) \cdot 3.9 + (16 - 14) \cdot 3.1 = 59.8
+    \end{align*}
+    Therefore, \textbf{approximately 59.8 tons of potatoes were processed into chips between 6am and 4pm}. \par
+    \begin{tcolorbox}[interesting]
+        Note the use of the word ``approximately.'' Because the Riemann sum is an \textit{approximation}, we must use ``approximately'' in our answer.
+    \end{tcolorbox} \vspace{5.5pt}
+    c) For this question, let's simply refer to our \hyperlink{chart for over and underestimations}{chart for over and underestimations}. From the table, we know that function $C(t)$ is a decreasing function, and we also know that we are creating left-hand Riemann rectangles. Therefore, we know that our Riemann approximation must be an $\boxed{\text{overestimation}}$. \par
+    \vspace{11pt}
+    d) The first thing we notice about the problem is that $t = 11.5$ is not a value on our table. So, to approximate $C'(11.5)$, let's utilize the average rate of change formula, using the closest $t$ values greater than and less than $11.5$. \begin{align*}
+        C'(11.5) \approx \dfrac{f(b) - f(a)}{b - a} = \dfrac{3.9 - 6.5}{13 - 9} = -0.65
+    \end{align*}
+    Therefore, we can say that \textbf{at $t = 11.5$, the rate of potatoes processed is decreasing by approximately 0.65 tons per hour per hour}. \par
+    \begin{tcolorbox}[interesting]
+        Once again, notice how we must use ``approximately'' in our answer!
+    \end{tcolorbox} \vspace{5.5pt}
+    e) To determine if there were still potatoes left to process, we need to take the total number of potatoes that have been processed and subtract that from the total number of potatoes there were to process. \par
+    \vspace{11pt}
+    From the problem, we know that we start with $5$ tons of potatoes, and we found from part (a) that we accumulate an extra $54.899$ tons of potatoes. We also know from part (b) that approximately $59.8$ tons of potatoes were processed. Therefore, we have \begin{align*}
+        \text{Potatoes left} = 5 + 54.899 - 59.8 = 0.099 \text{ tons}
+    \end{align*}
+    Therefore, \textbf{there are still potatoes in the factory left to process}.
+    \begin{tcolorbox}[interesting]
+        Some astute students may notice that our value of $59.8$ was an estimate, so how do we know for certain that not all the potatoes were processed? Well, in part (c), we determined that this value was an overestimate. This means it represents the maximum possible processed amount. Since we are subtracting this maximum from $5 + 54.899$, even this largest possible subtraction still leaves a positive amount. Any more accurate value (which would be smaller) would leave even more potatoes remaining. Therefore, we can conclude with certainty that there are still potatoes left to process.
+    \end{tcolorbox}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 3.6.2: } Below is a chart showing specific values of the rate of sewage flowing through a pipeline according to time in minutes. \begin{align*}
+        \arraycolsep=11pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|c|c|}
+            \hline
+            t \text{ (minutes)} & 0 & 4 & 6 & 10 & 13 & 15 & 20 \\ \hline
+            C(t) \text{ (gallons/min)} & 83 & 68 & 83 & 48 & 38 & 30 & 38 \\
+            \hline
+        \end{array}
+    \end{align*}
+    Assume $V(t)$ is a continuous and differentiable function. \par
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item Estimate $V'(7)$. Show the work that leads to your answer. Indicate the units. \\
+        \item Use a trapezoidal sum with subintervals indicated by the table to approximate $\int_0^{20} V(t) \, dt$. Using correct units, explain the meaning of this value in the context of the problem. \\
+        \item Find the value of $\int_0^{20} V'(t) \, dt$ and explain the meaning of this value in the context of the problem.
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 3.6.2: } \par
+    a) Just like in part (d) in \textbf{Ex 3.6.1}, we will utilize the average rate of change formula with the closest $t$ values great than and less than $7$. \begin{align*}
+        V'(7) \approx \dfrac{f(b) - f(a)}{b - a} = \dfrac{48 - 83}{10 - 6} = \boxed{-8.75 \si{gal \per min^2}}
+    \end{align*}
+    b) Using our setup for the trapezoidal rule, we get \begin{align*}
+        \int_0^{20} V(t) \, dt &\approx \dfrac{83 + 68}{2} \cdot (4 - 0) + \dfrac{68 + 83}{2} \cdot (6 - 4) + \dfrac{83 + 48}{2} \cdot (10 - 6) \\[5.5pt]
+        & + \dfrac{48 + 38}{2} \cdot (13 - 10) + \dfrac{38 + 30}{2} \cdot (15 - 13) + \dfrac{30 + 38}{2} \cdot (20 - 15) \\[11pt]
+        & = 1082
+    \end{align*}
+    Therefore, we can say that \textbf{approximately 1082 gallons of sewage flowed through the pipeline between $t = 0$ minutes and $t = 20$ minutes}. \par
+    \vspace{11pt}
+    c) For this problem, since we see an integral and a derivative, we know that we must utilize the Fundamental Theorem of Calculus. Therefore, we have \begin{align*}
+        \int_0^{20} V'(t) \, dt = V(20) - V(0) = 38 - 83 = -45 \si{gal \per min}
+    \end{align*}
+    From this result, we can say that \textbf{the total change of the rate of flow between $t = 0$ and $t = 20$ minutes is -45 gallons per minutes}.
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{3.6 Free Response Homework}} \par
+
+\onequestion{1. Below is a chart showing the rate of water flowing through a pipeline according to time in minutes. Use this information to answer each of the questions below.} \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (minutes)} & 0 & 8 & 16 & 24 & 32 & 40 & 48 \\ \hline
+        V(t) \si{(m^3 \per min)} & 26 & 32 & 43 & 24 & 19 & 24 & 26 \\
+        \hline
+    \end{array}
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Estimate $V'(7)$. Show the work that leads to your answer. Indicate the units. 
+    \item Find $\int_8^{40} V'(t) \, dt$. 
+    \item Use a trapezoidal sum with sub-intervals indicated by the table to approximate \\ $\int_0^{48} V(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem.
+    \item Using correct units, explain the meaning of $\dfrac{1}{48}\int_0^{48} V(t) \, dt$ in the context of the problem.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{2. A small plant is purchased from a nursery and the change in height of the plant is measured at the end of each day for four days. The data, where $H(t)$ is measured in millimeters per day and $t$ is measured in days, are listed below.} \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (days)} & 0 & 8 & 16 & 24 & 32 & 40 & 48 \\ \hline
+        H(t) \text{ (mm per day)} & 26 & 32 & 43 & 24 & 19 & 24 & 26 \\
+        \hline
+    \end{array}
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Estimate $H'(3)$. Show the work that leads to your answer. Indicate the units. 
+    \item Explain how one would know that the plant's growth is not increasing at a decreasing rate.
+    \item Use right-hand rectangles with sub-intervals indicated by the table to approximate $\int_0^4 H(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem. 
+    \item Using correct units, explain the meaning of $\dfrac{1}{4}\int_0^4 H(t) \, dt$ in the context of the problem.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{3. The rate of consumption of fuel, in gallons per minute, recorded during an airplane flight is given by a twice differentiable and strictly increasing function $R(t)$. A table of selected values of $R(t)$ for the time interval $0 \leq t \leq 90$ is shown below.} \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (minutes)} & 0 & 20 & 40 & 50 & 60 & 90 \\ \hline
+        H(t) \text{ (gallons/min)} & 20 & 30 & 40 & 55 & 65 & 70 \\
+        \hline
+    \end{array} 
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Estimate $R'(30)$. Show the work that leads to your answer. Indicate the units.
+    \item Use right-hand Riemann rectangles to approximate $\int_0^{90} R(t) \, dt$ and indicate units of measure. Explain the meaning of $\int_0^{90} R(t) \, dt$ in terms of the fuel consumption. 
+    \item Use left-hand rectangles to find $\dfrac{1}{70}\int_{20}^{90} R(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{70}\int_{20}^{90} R(t) \, dt$ in terms of the fuel consumption.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{4. A diabetic patient tests his blood glucose level every morning. After being put on insulin, the data below shows the glucose levels, $G(t)$, in milligrams per deciliter (mg/dL) over one week.} \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (days)} & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\ \hline
+        G(t) \text{ (mg/dL)} & 233 & 198 & 185 & 168 & 147 & 130 & 147 \\
+        \hline 
+    \end{array}
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Estimate $G'(3.7)$. Using the correct units, explain the meaning of the result.
+    \item Use midpoint Riemann rectangles to approximate $\int_1^7 G(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{7}\int_1^7 G(t) \, dt$ in terms of the patient's glucose levels.
+    \item Ignoring the last data point, $M(t) = 237.6e^{-0.082t}$ is a model of $G(t)$. Find $M'(3.7)$. Is $M(t)$ decreasing at an increasing rate? Show the work that leads to your conclusion.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{5. Diabetic patients take a test called A1c every three months, which measures the three-month average percentage of glycated hemoglobin (that is, hemoglobin covered in glucose.) Let $A(t)$ represent the A1c score, measured as a percentage. The following data shows a patient's A1c score over the course of 21 months.} \begin{align*}
+    \arraycolsep=11pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (months)} &  0 & 3 & 6 & 9 & 12 & 15 & 18 & 21 \\ \hline
+        A(t) \text{ (\%)} & 10.2 & 10.0 & 10.5 & 9.1 & 8.0 & 8.9 & 8.3 & 8.6 \\
+        \hline 
+    \end{array}
+\end{align*} 
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Find $\int_0^{21} A'(t) \, dt$. Show the work that leads to your answer. Explain the meaning of $\int_0^{21} A'(t) \, dt$ in terms of A1c scores. 
+    \item Use a right-hand Riemann approximation to approximate $\int_0^{21} A(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{21}\int_0^{21} A(t) \, dt$ in terms of the patient's A1c score.
+    \item A model of $A(t)$ is $B(t) = -0.305x + 10.571 + 0.1\sin(\pi x)$. Find $\dfrac{1}{21}\int_0^{21} B(t) \, dt$.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{6. A family leases solar panels on their house. At the end of the year, they receieve a report, including the table below, which shows the monthly production $P(t)$ of electricity, in kilowatts per month (kW/month), from the panels.} \begin{align*}
+    \arraycolsep=11pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (months)} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+        P(t) \text{ (kW/month)} & 160.3 & 192.8 & 345.7 & 746.1 & 944.2 & 873.0 & 1128.6 \\ \hline
+        t \text{ (months)} & 7 & 8 & 9 & 10 & 11 & 12 & \cellcolor{gray!70} \\ \hline
+        P(t) \text{ (kW/month)} & 928.3 & 851.3 & 751.3 & 535.5 & 216.4 & 150.7 & \cellcolor{gray!70} \\
+        \hline 
+    \end{array}
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Use a right-hand Riemann approximation to approximate $\int_0^{12} P(t) \, dt$. Indicate the units.
+    \item A model of $P(t)$ is $k(t) = 660 - 489\cos \left(\dfrac{\pi}{6}t\right)$ is a model of $P(t)$. Find $\int_0^{12} k(t) \, dt$.
+    \item Using the model $k(t) = 660 - 489\cos\left(\dfrac{\pi}{6}t\right)$, show that the production is decreasing at $t = 9$. Is the production decreasing at an increasing rate?
+\end{enumerate} \vspace{11pt}
+
+\onequestion{7. Dr. Quattrin analyzes his PG\&E bill to track his consumption of both electricity ($C_e(t)$) and gas ($C_g(t)$) over the course of a year. The tables below are the result. $C_e(t)$ is measured in kilowatts (kW) and $C_g(t)$ is measured in therms (thm).} \begin{align*}
+    \arraycolsep=11pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (months)} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+        C_e(t) \text{ (kW)} & 390.7 & 660 & 667.1 & 538.4 & 420.5 & 412.1 & 347.8 \\ \hline
+        C_g(t) \text{ (thm)} & 87.6 & 84.6 & 109 & 116 & 79.8 & 53.9 & 42.9 \\ \hline
+        t \text{ (months)} & 7 & 8 & 9 & 10 & 11 & 12 & \cellcolor{gray!70} \\ \hline
+        C_e(t) \text{ (kW)} & 287.5 & 303.1 & 322.4 & 342.5 & 390.3 & 384.2 & \cellcolor{gray!70} \\ \hline
+        C_g(t) \text{ (thm)} & 24.9 & 25.6 & 18 & 20.3 & 48.9 & 91.8 & \cellcolor{gray!70} \\
+        \hline
+    \end{array}
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Approximate $C_e'(3.4)$ and $C_g'(3.4)$. Using correct units, explain the meaning of these estimations in terms of increasing and/or decreasing consumption of each commodity at $t = 3.4$
+    \item Use right-hand Riemann rectangles to approximate $\int_0^{12} C_e(t) \, dt$. Indicate the units. 
+    \item Use midpoint Riemann rectangles to approximate $\int_0^{12} C_g(t) \, dt$. Indicate the units.
+    \item Using the correct units, explain the meaning of $\dfrac{1}{12}\int_0^{12} C_g(t) \, dt$.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{8. Dr. Quattrin decides to lease solar panels from Sunrun Solar. After a year, he reanalyzes his PG\&E bill to track both his consumption of electricity ($C_e(t)$) and his production of electricity ($P_e(t)$) over the course of a year. The tables below show the consumption of electricity, measured in kilowatts (kWs).} \begin{align*}
+    \arraycolsep=11pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (months)} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+        C_e(t) \text{ (kW)} & 326.5 & 660.0 & 667.1 & 538.4 & 420.5 & 412.1 & 347.8 \\ \hline
+        t \text{ (months)} & 7 & 8 & 9 & 10 & 11 & 12 & \cellcolor{gray!70} \\ \hline
+        C_e(t) \text{ (kW)} & 287.5 & 303.1 & 322.4 & 342.5 & 390.3 & 384.2 & \cellcolor{gray!70} \\
+        \hline 
+    \end{array}
+\end{align*}
+The equation below is a model for the production in kW per month that PG\&E buys back. \begin{align*}
+    P_e(t) = 407 - 374.2\cos\left(\dfrac{\pi}{6}t\right)
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How much power does PG\&E buy back from the Quattrins over the course of the year? Indicate the units.
+    \item Using a trapezoidal approximation, approximate the amount of power the Quattrins consume over the course of the year. Based on this estimate and your answer for part (a), does Dr. Quattrin owe PG\&E for electricity at the end of the year, or does PG\&E owe Dr. Quattrin a refund?
+    \item Electricity costs \$0.28 per kW. Write an expression for amount due on the PG\&E bill at time $t$ months.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{9. Dr. Quattrin's paternal grandmother's family originated in the alpine town of Sauris, Italy, where the temperature in January changes at a rate of $W(t)$ degrees Celsius per hour. $W(t)$ is a twice-differentiable, increasing, and concave up function with selected values in the table below. At midnight ($t = 0$), the temperature in Sauris is $-8^{\circ} \si{C}$.} \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        t \text{ (hours after midnight)} & 0 & 1 & 3 & 6 & 8 \\ \hline
+        W(t) \text{ (deg Celsius per hr)} & -2.6 & -3.1 & -1.2 & 1.9 & 2.5 \\
+        \hline 
+    \end{array}
+\end{align*} 
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item At approximately what rate is the rate of change of the temperature changing at 2am ($t = 2$)? Indicate the units.
+    \item Use a right Riemann sum with sub-intervals indicated by the table to approximate $\int_0^8 W(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem.
+    \item Set up, but do not solve, an integral equation which would determine the temperature in Sauris at 1pm.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{10. \href{https://secure-media.collegeboard.org/apc/calcab_98_9666.pdf\#page=4}{{\text{\textcolor{blue}{1998 AP Calculus AB \#3}}}}} \\[11pt]
+\onequestion{11. \href{https://secure-media.collegeboard.org/apc/calculus_ab_01.pdf\#page=3}{{\text{\textcolor{blue}{2001 AP Calculus AB \#2}}}}} \\[11pt]
+\onequestion{12. \href{https://secure-media.collegeboard.org/apc/ap07_calculus_bc_frq.pdf\#page=5}{{\text{\textcolor{blue}{2007 AP Calculus BC \#5}}}}} \\[11pt]
