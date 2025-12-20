@@ -46,7 +46,7 @@ Now, before we attempt this problem, there are many key phrases and concepts tha
             & \text{Average rate of change:} &\qquad& \dfrac{f(b) - f(a)}{b - a} \\[11pt]
             & \text{Average value of $f(x)$:} &\qquad& \dfrac{1}{b - a}\int_a^b f(x) \, dx \\[11pt]
             & \text{Amount increase/decrease:} &\qquad& \text{rate of change positive/negative} \\[11pt]
-            & \text{Rate of change inc/dec:} &\qquad& \dfrac{d}{dt}\text{[rate of change] positive/negative} \\
+            & \text{Rate of change inc/dec:} &\qquad& \tdiff\text{[rate of change] positive/negative} \\
         \end{alignat*}
     \end{minipage}}}
 \end{center}
@@ -141,7 +141,7 @@ With those instructions out the way, we can finally look at the solution for \te
     \end{center}
 
     Note how each function increases and then decreases. Since $H(t) = \int_8^t E(x) - L(x) \, dx$, we can use the Fundamental Theorem of Calculus to determine the derivative. \begin{align*}
-        H'(t) &= \dfrac{d}{dt}\int_8^t E(x) - L(x) \, dx \\[11pt]
+        H'(t) &= \tdiff\int_8^t E(x) - L(x) \, dx \\[11pt]
         & = E(t) - L(t) \\[11pt]
         & = E(16) - L(16) \\[11pt]
         & = 14

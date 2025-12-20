@@ -1,0 +1,40 @@
+\ifx\mainfile\undefined
+  \documentclass[11pt]{exam}
+  \input{../Support/Settings.tex}
+  \def\graphicsdir{../Support/}
+  \def\inputpathChapterFour{}
+  \begin{document}
+
+  \externaldocument{../Chapter3/Chapter3}
+  \setcounter{page}{\getpagerefnumber{ChapterThreeEndPage} + 1}
+\fi
+
+% Title Page
+
+\vspace*{2.5cm}
+\begin{center}
+    {\fontsize{48}{48}\selectfont \textbf{Chapter 4:}} \\
+    \vspace{72pt}
+    {\fontsize{48}{48}\selectfont \textbf{Advanced}} \\
+    \vspace{24pt}
+    {\fontsize{48}{48}\selectfont \textbf{Derivative}} \\
+    \vspace{24pt}
+    {\fontsize{48}{48}\selectfont \textbf{Applications}}
+\end{center}
+
+\setcounter{sectioncount}{0}
+\setcounter{chaptercount}{4}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterFour Chapter4Overview.tex}
+
+\newpage
+
+\stepcounter{sectioncount}
+\input{\inputpathChapterFour Chapter4Section1.tex}
+
+\ifx\mainfile\undefined
+  \end{document}
+\fi 

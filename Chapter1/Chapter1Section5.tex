@@ -140,28 +140,8 @@ Of course, if we want to find a second derivative, we can use implicit different
     \item Finding the equation of a tangent line
     \item Finding points where the tangent line is horizontal and/or vertical
     \item Finding points on a curve with a particular slope
-    \item Finding the second derivative and apply the Second Derivative Test
     \item Finding the particular solution (this will have to wait for the next chapter)
 \end{itemize}
-
-Remember: 
-\begin{center}
-    \fbox{\fbox{\begin{minipage}{0.96\textwidth}
-        \vspace{11pt}
-        \begin{center}
-            The Second Derivative Test
-        \end{center}
-        \vspace{11pt}
-        For a function $f$: 
-        \vspace{11pt}
-        \begin{center}
-            1) If $f'(c) = 0$ and $f''(c) > 0$, then $f$ has a relative minimum at $c$ \\[11pt]
-            2) If $f'(c) = 0$ and $f''(c) < 0$, then $f$ has a relative maximum at $c$ \\[11pt]
-        \end{center}
-    \end{minipage}}}
-\end{center}
-
-This is necessary because one cannot create a sign pattern without an \textbf{explicitly} stated function, so the First Derivative Test will not work on problems which require implicit differentiation to find the derivative. \par
 
 \begin{tcolorbox}[objective]
     \begin{center}
@@ -173,22 +153,23 @@ This is necessary because one cannot create a sign pattern without an \textbf{ex
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.5.7: } Consider the curve given by $x^2 + 4xy + y^2 = -12$. \\[11pt]
-
-    (a) Show that $\deriv = -\dfrac{x + 2y}{2x + y}$ \\[11pt]
-    (b) Find the point(s) where the equation of the tangent line(s) is/are horizontal. \\[11pt]
-    (c) Find the value(s) of $\deriv[2] \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
+    \textbf{Ex 1.5.7: } Consider the curve given by $x^2 + 4xy + y^2 = -12$. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item Show that $\deriv = -\dfrac{x + 2y}{2x + y}$ \\
+        \item Find the point(s) where the equation of the tangent line(s) is/are horizontal. \\
+        \item Find the value(s) of $\deriv[2] \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
+    \end{enumerate}
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.5.7: } \\[11pt]
-    (a) Because we have a $4xy$ term, we need to use the product rule \begin{align*}
+    \textbf{Sol 1.5.7: } \par
+    a) Because we have a $4xy$ term, we need to use the product rule \begin{align*}
         & \diff \left[x^2 + 4xy + y^2 = -12\right] \\[11pt]
         & 2x + 4x\deriv + 4y(1) + 2y\deriv = 0 \\[11pt]
         & 4x\deriv+ 2y\deriv = -2x - 4y \\[11pt]
         & (4x + 2y)\deriv = -2x - 4y \\[11pt]
         & \deriv = \dfrac{-2x - 4y}{4x + 2y} = \boxed{-\dfrac{x + 2y}{2x + y}}
     \end{align*}
-    (b) Horizontal lines have a slope of $0$, so we need to find when $\deriv = 0$. \begin{align*}
+    b) Horizontal lines have a slope of $0$, so we need to find when $\deriv = 0$. \begin{align*}
         & \deriv = 0 \\[11pt]
         & -\dfrac{x + 2y}{2x + y} = 0 \\[11pt]
         & x + 2y = 0 \\[11pt]
@@ -201,22 +182,7 @@ This is necessary because one cannot create a sign pattern without an \textbf{ex
         & y^2 = 4 \therefore y = \pm 2 \\[11pt]
         & x = -2y \rightarrow \boxed{(-4, 2) \text{ and } (4, -2)}
     \end{align*}
-    (c) What is really asked here is to apply the Second Derivative Test, because we cannot create a sign pattern for non-functions. The $y$ is not isolated in the equation. \begin{align*}
-        & \deriv[2] \begin{aligned}[t]
-            & = \diff \left[\deriv = -\dfrac{x + 2y}{2x + y}\right] \\[11pt]
-            & = \dfrac{(2x + y)\left(1 + 2\deriv\right) - (x + 2y)\left(2 + \deriv\right)}{(2x + y)^2} \\[11pt]
-        \end{aligned} \\[11pt]
-        & \deriv[2] \eval_{(-4, 2)} \begin{aligned}[t]
-            & = \dfrac{(2(-4) + 2)\left(1 + 2(0)\right) - (-4 + 2(2))\left(2 + 0\right)}{(2(-4) + 2)^2} \\[11pt]
-            & = \dfrac{6}{(-6)^2} > 0
-        \end{aligned} \\[11pt]
-        & \deriv[2] \eval_{(4, -2)} \begin{aligned}[t]
-            & = \dfrac{(2(4) - 2)\left(1 + 2(0)\right) - (4 + 2(-2))\left(2 + 0\right)}{(2(4) + 2)^2} \\[11pt]
-            & = \dfrac{6}{(-6)^2} < 0
-        \end{aligned}
-    \end{align*}
-    $\boxed{(-4, 2) \text{ will be a minimum}}$ because the second derivative is positive. \\[11pt]
-    $\boxed{(4, -2) \text{ will be a maximum}}$ because the second derivative is negative.
+    c) This part requires a technique which we will revisit in Chapter 4.
 \end{tcolorbox}
 
 Be Careful!! There is a lot of algebraic simplification that happens in these problems, and it is easy to make mistakes. Take your time with the simplifications so that you don't make careless mistakes. \par
@@ -276,7 +242,6 @@ Find $\deriv$ for each of these equations by implicit differentiation. \par
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item Show that $\deriv = \dfrac{-y - 2x}{2y + x}$.
     \item Find the point(s) $P$ on $x^2 + xy + y^2 = 12$ where the tangent line is horizontal.
-    \item Find the value(s) of $\deriv[2] \forcespace$ at the point(s) found in part (b). Does the curve have a local maximum, a local minimum, or neither at those points? Justify your answer.
 \end{enumerate} \vspace{11pt}
  
 \onequestion{33. Consider the curve given by $xy + y^3 = 4x$.}
