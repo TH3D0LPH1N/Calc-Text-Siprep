@@ -226,12 +226,533 @@ Now, we can revisit \textbf{Ex 1.5.7} part (c), which we previously could not do
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 4.1.4: } Determine if the critical values of $y = \left(3 - x^2\right)e^x$ are at a maximum or a minimum value. 
+    \textbf{Ex 4.1.5: } Determine if the critical values of $y = \left(3 - x^2\right)e^x$ are at a maximum or a minimum value. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 4.1.4: } First, let's find the critical values. \begin{align*}
+    \textbf{Sol 4.1.5: } First, let's find the critical values. \begin{align*}
         \deriv = \left(3 - x^2\right)e^x + e^x(-2x) &= 0 \\[11pt]
         -e^x\left(x^2 + 2x - 3\right) &= 0 \\[11pt]
         -e^x(x + 3)(x - 1) &= 0
     \end{align*}
+    From here, we can see that our critical values are $x = -3, \, 1$. The derivative is never $DNE$. So, let's find the second derivative and substitute in our values. \begin{align*}
+        \deriv &= -e^x\left(x^2 + 2x - 3\right) \\[11pt]
+        \deriv[2] &= -e^x(2x + 2) + \left(x^2 + 2x - 3\right)\left(-e^x\right) \\[11pt]
+        &= -e^x\left(x^2 + 4x - 1\right) \\[11pt]
+        \deriv[2] \eval_{x = 1} &= -4e \\[11pt]
+        \deriv[2] \eval_{x = -3} &= 4e^{-3}
+    \end{align*}
+    By the Second Derivative Test, we can determine that $\boxed{x = 1 \text{ is a maximum}}$ and $\boxed{x = -3 \text{ is a minimum}}$.
 \end{tcolorbox}
+
+\bigskip
+
+\textbf{\large{Optimization}} \par
+
+Optimization is a practical application of finding maxima and minima for functions. As stated before, this idea revolutionized thinking and is a critical component of all industries. We've previously approached this topic in precalculus, but now, this concept forms a much more fundamental part of what we need to be able to do. \par
+
+\begin{tcolorbox}
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Solve Optimization Problems.
+\end{tcolorbox}
+
+Every optimization problem looks a bit different, but they all follow a similar progression. You must first identify your variables and any formula you need. Use algebra to eliminate any variables, and take the derivative of \textbf{the function you're trying to optimize}. That is the most common mistake in optimization: taking the derivative of the wrong function. Now, let's take a look at the following example:
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.1.6: } The volume of a cylindrical cola can is $32\pi \si{in^3}$. What is the minimum surface area for such a can?
+\end{tcolorbox}
+
+The word ``minimum'' tells us that we have an optimization problem. Recall our workflow for tackling optimization problems:
+
+\begin{center}
+    \begin{tcolorbox}[default]
+        \begin{center}
+            \textbf{Strategy For Optimization Problems} \\[22pt]
+        \end{center}
+        \begin{tikzpicture}[node distance=2cm]
+        
+            \node (read) [startstop] 
+                {Read the problem to decide on a primary equation (the one to maximize)};
+            \node (decision) [decision, below of=read, yshift=-1cm, xshift=-3.5cm] 
+                {Are there more than two variables?};
+            \node (secondary) [process, right of=decision, xshift=6cm] 
+                {Create a secondary equation};
+            \node (picture) [process, below of=secondary] 
+                {Draw and label a picture. \\ Do not use $x$ or $y$!};
+            \node (isolate) [process, below of=picture] 
+                {Isolate the variable to eliminate from the primary equation.};
+            \node (substitute) [process, below of=isolate] 
+                {Substitute into the primary equation.};
+            \node (derivative) [process, below of=decision, yshift=-4cm] 
+                {Take the derivative and set it equal to zero.};
+            \node (critical) [process, below of=derivative] 
+                {Solve for the critical values. \\ \textbf{Don't forget endpoints!}};
+            \node (sign) [process, below of=critical] 
+                {Check the sign pattern to determine max vs. minimum.};
+            \node (answer) [startstop, below of=sign, xshift=3.5cm] 
+                {Reread the problem and \textbf{answer the question that was asked.}};
+
+            % Arrows
+            \draw [arrow] ([xshift=-3.5cm]read.south) -- (decision.north);
+            \draw [arrow] (decision) -- (secondary) node[midway, above] {\textbf{Yes}};
+            \draw [arrow] (secondary) -- (picture);
+            \draw [arrow] (picture) -- (isolate);
+            \draw [arrow] (isolate) -- (substitute);
+            \draw [arrow] (substitute) -- (derivative);
+            \draw [arrow] (decision.south) -- (derivative) node[midway, left] {\textbf{No}};
+            \draw [arrow] (derivative) -- (critical);
+            \draw [arrow] (critical) -- (sign);
+            \draw [arrow] (sign.south) -- ([xshift=-3.5cm]answer.north);
+    
+        \end{tikzpicture}
+    \end{tcolorbox}
+\end{center}
+
+So, let's tackle our example. \par
+
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.1.6: } The problem asks to minimize surface area, which is determined by: \begin{align*}
+        S = 2\pi r^2 + 2\pi rh 
+    \end{align*}
+    As there are more than two variables in this equation, either $r$ or $h$ needs to be eliminated in this formula before differentiating. The volume is $V = \pi r^2h = 32\pi$, so $h = \dfrac{32}{r^2}$ and \begin{align*}
+        & S \begin{aligned}[t]
+            & = 2\pi r^2 + 2\pi r\left(\dfrac{32}{r^2}\right) \\[11pt]
+            & = 2\pi r^2 + \dfrac{64\pi}{r}
+        \end{aligned} \\[11pt]
+        & S' = 4\pi r - \dfrac{64\pi}{r^2} = 0 \\[11pt]
+        & \therefore 4\pi r = \dfrac{64\pi}{r^2} \\[11pt]
+        & r^3 = 16 \rightarrow r = 2.5198
+    \end{align*}
+    Now, let's make a sign pattern to determine if this critical value is a minimum. \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (4,0);
+
+            \node at (2,-0.6) {2.520};
+            \node at (-0.5, -0.6) {$r$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (-0.5, 0.5) {$S'$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    Because the derivative changes from negative to positive, we know that 2.5198 is a minimum. We can plug it back into our surface area equation to find our minimum surface area. \begin{align*}
+        & S(2.5198) = 2\pi(2.5198)^2 + \dfrac{64\pi}{2.5198} \\[11pt]
+        & S(2.5198) = 119.687 \si{in^2}
+    \end{align*}
+    Therefore, the minimum surface area of the cola can is $\boxed{119.687 \si{in^2}}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.1.7: } The owner of the Rancho Grande has $3000$ yards of fencing material with which to enclose a rectangular piece of grazing land along the straight portion of a river. If fencing is not required along the river, what are the dimensions of the largest area he can enclose? What is the area? \par
+    \vspace{11pt}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[ultra thick] (0,0) -- (0,3) node[midway, left] {$w$};
+            \draw[ultra thick] (0,3) -- (7,3) node[midway, above] {$l$};
+            \draw[ultra thick] (7,3) -- (7,0);
+            \draw[ultra thick, blue, dashed] (0,0) -- (7,0) node[midway, below, blue] {River};
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.1.7: } We first begin with our area formula, $A = lw$. Now, as we know, we need to express one variable in terms of the other. We can do this by utilizing the fact about perimeter to complete the problem. \begin{align*}
+        P &= l + 2w \\[11pt]
+        3000 &= l + 2w \\[11pt]
+        3000 - 2w &= l
+    \end{align*} 
+    Let's substitute this back into our area formula. \begin{align*}
+        A &= (3000 - 2w)w \\[11pt]
+        A &= 3000w - 2w^2
+    \end{align*}
+    Now, since we have an equation with one independent variable, we can take the derivative easily. \begin{align*}
+        \dfrac{dA}{dw} = 3000 - 4w &= 0 \\[11pt]
+        w &= 750 \\[11pt]
+        l &= 1500
+    \end{align*}
+    So, we would want a $\boxed{\text{width of } 750 \si{yards}}$ and a $\boxed{\text{length of } 1500 \si{yards}}$. This would give us an area of $\boxed{1,125,000 \si{yd^2}}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.1.8: } Find the point on the curve $y = \dfrac{e^{-x^2}}{2}$ that is closest to the origin. 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.1.8: } We want to minimize the distance to the origin, so we will be using the Pythagorean Theorem to find the distance. \begin{align*}
+        D &= \sqrt{x^2 + y^2} \\[11pt]
+        D &= \sqrt{x^2 + \left(\dfrac{e^{-x^2}}{2}\right)^2} \\[11pt]
+        \dfrac{dD}{dx} &= \dfrac{1}{2}\left(x^2 + \dfrac{e^{-2x^2}}{4}\right)^{-\frac{1}{2}}\left(2x - xe^{-2x^2}\right) = 0 \\[11pt]
+        x &= 0, \, \pm 0.841
+    \end{align*}
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2, -0.6) {$-0.841$};
+            \node at (4, -0.6) {$0$};
+            \node at (6, -0.6) {$0.841$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (-0.5, 0.5) {$\dfrac{dD}{dx}$};
+        \end{tikzpicture}
+    \end{center}
+    By the First Derivative Test, we know that $x = 0$ is a minimum of the curve. Plugging that value back into our original equation gives us our desired point of $\boxed{(0, \, 0.5)}$. 
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{4.1 Free Response Homework}} \par
+
+Find the critical and extreme values for each function. \par
+
+\twoquestion{1. $y = 2x^3 + 9x^2 - 168x$}{2. $y = 3x^4 + 2x^3 + 12x^2 + 12x - 42$} \\[11pt]
+\twoquestion{3. $y = \dfrac{x^2 + 1}{x^3 - 4x}$}{4. $y = \dfrac{x - 5}{x^2 + 9}$} \\[11pt]
+\twoquestion{5. $y = \sqrt{9x^3 - 4x^2 - 27x + 12}$}{6. $y = \sqrt{\dfrac{3x}{9 - x^2}}$} \\[11pt]
+\twoquestion{7. $y = x^2\sqrt[3]{9 - x^2}$}{8. $y = \left(x - x^2\right)3^x$} \\[11pt]
+\twoquestion{9. $y = \dfrac{\sqrt{3}}{2}x + \cos (x) \bargap x \in [-2\pi, \, 2\pi]$}{10. $y = \cot^{-1} \left(\dfrac{1}{x}\right) - \tan^{-1} (x)$} \\[11pt]
+\onequestion{11. $y = \ln \left(x^2 + 4x + 14\right)$} \\[11pt]
+\onequestion{12.}
+\begin{center}
+    \includegraphics[width = 0.75\textwidth]{\graphicsdir Chapter 4 Graphics/4.1-Graphic1.png}
+\end{center}
+
+For 13 -- 16, find the absolute maximum and minimum values of $f$ on the given intervals. \par
+
+\twoquestion{13. $f(t) = \dfrac{x}{x^2 + 1} \bargap x \in [0, \, 2]$}{14. $f(t) = \sqrt[3]{t}(8 - t) \bargap t \in [0, \, 8]$} \\[11pt]
+\twoquestion{15. $f(z) = ze^{-z} \bargap z \in [0, \, 2]$}{16. $f(x) = \dfrac{\ln x}{x} \bargap x \in [1, \, 3]$} \\[11pt]
+\twoquestion{17. $f(x) = e^{-x} - e^{-2x} \bargap x \in [0, \, 1]$}{$f(y) = \sin \left(\dfrac{y}{3}\right) + \dfrac{2y}{9} \bargap y \in [-10, \, 15]$} \\[11pt]
+
+For each of the following functions, apply the First Derivative Test, then verify the results with the Second Derivative Test. \par
+
+\twoquestion{19. $f(x) = x^2\ln x$}{20. $h(f) = f^3 - 12f + 21$} \\[11pt]
+\twoquestion{21. $f(x) = xe^{-x^2}$}{22. $h(t) = e^{t^3 + t^2 + 1}$} \\[11pt]
+
+Solve these problems algebraically. \par
+
+\onequestion{23. Find two positive numbers whose product is $110$ and whose sum is a minimum.} \\[11pt]
+\onequestion{24. Find a positive number such that the sum of the number and its reciprocal is a minimum.} \\[11pt]
+\onequestion{25. A farmer with $750$ feet of fencing material wants to enclose a rectangular area and divide it into four smaller rectangular pens with sides parallel to one side of the rectangle. What is the largest possible total area.} \\[11pt]
+\onequestion{26. If $1200 \si{cm^2}$ of material is available to make a box with an open top and a square base, find a maximum volume the box can contain.} \\[11pt]
+\onequestion{28. Find the point(s) on the curve $y = \dfrac{1}{x^2 + 1}$ that is/are closest to the origin.} \\[11pt]
+\onequestion{29. Find the area of the largest rectangle that can be inscribed in the ellipse $\dfrac{x^2}{16} + \dfrac{y^2}{9} = 1$.} \\[11pt]
+\onequestion{30. Find the maximum volume of a cylinder inscribed in a sphere with radius $10$.} 
+\begin{center}
+    \begin{tikzpicture}[scale=1.2]
+        \shade[ball color = gray!40, opacity = 0.4] (0,0) circle (2cm);
+        \draw[thick] (0,0) circle (2cm);
+        \draw[thick] (-2,0) arc (180:360:2 and 0.6);
+        \draw[dashed, thick] (2,0) arc (0:180:2 and 0.6);
+        \fill[fill=black] (0,0) circle (1pt);
+
+        \draw[thick] (1.414, 1.414) -- (1.414, -1.414);
+        \draw[thick] (-1.414, 1.414) -- (-1.414, -1.414);
+        \draw[thick] (-1.414,1.414) arc (180:360:1.414 and 0.3);
+        \draw[dashed, thick] (1.414, 1.414) arc (0:180:1.414 and 0.3);
+        \draw[thick] (-1.414, -1.414) arc (180:360:1.414 and 0.3);
+        \draw[dashed, thick] (1.414, -1.414) arc (0:180:1.414 and 0.3);
+
+
+        \draw[<->, thick] (0.05,0.05) -- (1.409, 1.409) node[midway, below, yshift=-5pt, xshift=5pt] {$10$};
+        \draw[<->, thick] (0, 0.05) -- (0, 1.409) node[midway, left] {$x$};
+        \draw[<->, thick] (0, 1.409) -- (1.409, 1.409) node[midway, above] {$r$};
+    \end{tikzpicture}
+\end{center}
+
+\onequestion{31. A piece of wire $10 \si{m}$ long is cut into two pieces. One piece is bent into a square, while the other is bent into an equilateral triangle.} 
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Find where the wire should be cut to maximize the area enclosed.
+    \item Find where the wire should be cut to minimize the area enclosed. 
+\end{enumerate} \vspace{11pt}
+
+\onequestion{32. You need to enclose $500 \si{cm^3}$ of fluid in a cylinder. If the material you are using costs $0.001$ dollars per $\text{cm}^3$, find the size of the cylinder that minimizes the cost. If the product that you are containing is a sports drink, do you think that the size that minimizes the cost is the most efficient size? Explain} \\[11pt]
+\onequestion{33. The height of a man jumping off of a high dive is given by the function $h(t) = -4.9t^2 + 2t + 10$ on the domain $0 \leq t \leq 1.64715$. Find the absolute maximum and minimum heights modeled by this function.} \\[11pt]
+\onequestion{34. Given the area of a triangle can be calculated with the formula $A = \dfrac{1}{2}ab\sin (\theta)$, what value of $\theta$ will maximize the area of a triangle (given that $a$ and $b$ are constants)?} \\[11pt]
+\onequestion{35. You operate a tour service that offers the following rates for the tours: $\$200$ per person if the minimum number of people book the tour ($50$ people is the minimum) and for each person past $50$, up to a maximum of $80$ people, the cost per person is decreased by $\$2$. It costs you $\$6000$ to operate the tour plus $\$32$ per person.}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Write a function that represents cost, $C(x)$.
+    \item Write a function that represents revenue, $R(x)$.
+    \item Given that profit can be represented as $P(x) = R(x) - C(x)$, write a function that represents profit and state the domain for the function.
+    \item Find the number of people that maximizes your profit. What is the maximum profit?
+\end{enumerate} \vspace{11pt}
+
+\textbf{\large{4.1 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question Give the value of $x$ where the function $f(x) = x^3 - 9x^2 + 24x + 4$ has a relative maximum point. \\
+
+    \begin{oneparchoices}
+        \choice $4$
+        \choice $-2$
+        \choice $2$
+        \choice $-4$
+        \choice $3$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Give the value of $x$ where the function $f(x) = x^3 - \dfrac{33}{2}x^2 + 84x - 2$ has a relative minimum point. \\
+
+    \begin{oneparchoices}
+        \choice $-4$
+        \choice $-7$
+        \choice $4$
+        \choice $5$
+        \choice $7$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Give the approximate location of a relative maximum point for the function $f(x) = 3x^3 + 5x^2 - 3x$. \\
+
+    \begin{oneparchoices}
+        \choice $(-1.357, \, 5.779)$
+        \choice $(0.2457, \, -0.3908)$
+        \choice $(-1.357, \, 5.713)$ \\[11pt]
+        \makebox[0.2\textwidth] \choice $(0.2457, \, -0.3216)$
+        \makebox[0.2\textwidth] \choice $(-1.357, \, -0.3908)$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Consider the following sign pattern: \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (12,0);
+
+            \node at (2, -0.6) {$-2$};
+            \node at (4, -0.6) {$-\sqrt{2}$};
+            \node at (6, -0.6) {$0$};
+            \node at (8, -0.6) {$\sqrt{2}$};
+            \node at (10, -0.6) {$2$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (8,0.5) {$0$};
+            \node at (10,0.5) {$0$};
+            \node at (11,0.5) {$-$};
+            \node at (-0.5, 0.5) {$\deriv$};
+        \end{tikzpicture}
+    \end{center}
+    What value of $x$ does $y$ has a local minimum? \\
+
+    \begin{oneparchoices}
+        \choice $-2$
+        \choice $-\sqrt{2}$
+        \choice $0$
+        \choice $\sqrt{2}$
+        \choice $2$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Find the absolute maximum of $y = -\sqrt{25 - x^2}$ on the interval $x \in [-2, \, 4]$. \\
+
+    \begin{oneparchoices}
+        \choice $-2$
+        \choice $0$
+        \choice $-5$
+        \choice $-\sqrt{21}$
+        \choice $-3$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Find the absolute maximum value of $y = \sqrt{36 - x^2}$ on the interval $x \in [-2, \, 2]$. \\
+
+    \begin{oneparchoices}
+        \choice $5$
+        \choice $6$
+        \choice $7$
+        \choice $0$
+        \choice $1$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The graph of the function $f(x) = 2x^{\frac{5}{3}} - 5x^{\frac{2}{3}}$ is increasing on which of the following intervals. \begin{center}
+        $\hfill \text{I. $1 < x$} \hfill \text{II. $0 < x < 1$} \hfill \text{III. $x < 0$} \hfill$
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice I only 
+        \choice II only
+        \choice III only 
+        \choice I and II only
+        \choice II and III only
+    \end{oneparchoices} \par \horizontalline
+
+    \question If $f(x) = x^2e^{-2x}$, then the graph of $f$ is increasing for all $x$ such that \\
+
+    \begin{oneparchoices}
+        \choice $0 < x < 1$
+        \choice $0 < x < \dfrac{1}{2}$
+        \choice $0 < x < 2$
+        \choice $x < 0$
+        \choice $x > 0$
+    \end{oneparchoices} \par \horizontalline
+
+    \question If $f(x) = \dfrac{x}{\ln (7x)}$, then what is the interval of decreasing? \\
+
+    \begin{oneparchoices}
+        \choice $\left(0, \, \dfrac{1}{7}\right)$
+        \choice $\left(0, \, \dfrac{1}{7}\right) \cup \left(\dfrac{1}{7}, \, \dfrac{1}{7}e\right)$
+        \choice $(1, 7e)$
+        \choice $(1, 7)$
+        \choice $\left(1, \, \dfrac{1}{7}e\right)$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Suppose $f'(x) = \dfrac{(x + 1)^3(x - 4)^2}{\left(x^4 + 1\right)}$. Which of the following statements must be true? \begin{center}
+        \begin{tabular}{l}
+            I. The slope of the line tangent to $y = f(x)$ at $x = 1$ is $36$. \\[11pt]
+            II. $f(x)$ is increasing on $x \in (1, \, 4)$. \\[11pt]
+            III. $f(x)$ has a minimum at $x = -1$.
+        \end{tabular}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice II only 
+        \choice I and III only
+        \choice II and III only 
+        \choice I and II only
+        \choice I, II, and III
+    \end{oneparchoices} \par \horizontalline
+
+    \question Consider the following sign pattern: \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2, -0.6) {$-4$};
+            \node at (4, -0.6) {$-1$};
+            \node at (6, -0.6) {$2$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$-$};
+            \node at (-0.5, 0.5) {$f'(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $-4$
+        \choice $-1$
+        \choice $1$
+        \choice $2$
+        \choice None of these
+    \end{oneparchoices} \par \horizontalline
+
+    \question The sum of two positive integers is $x$ and $y$ is $150$. Find the value of $x$ that minimizes $P = x^3 - 150xy$. \\
+
+    \begin{oneparchoices}
+        \choice $x = 25$
+        \choice $x = 50$
+        \choice $x = 75$
+        \choice $x = 100$
+        \choice $x = 125$
+    \end{oneparchoices} \par \horizontalline
+
+    \question The sum of two positive integers $x$ and $y$ is $120$. Find the value of $x$ that minimizes $P = x^3 - 120xy$. \\
+
+    \begin{oneparchoices}
+        \choice $x = 20$
+        \choice $x = 40$
+        \choice $x = 60$
+        \choice $x = 80$
+        \choice $x = 100$
+    \end{oneparchoices} \par \horizontalline
+
+    \question A farmer has $100$ yards of fence to enclose a field, subdivide it into two equal pens, and further subdivide one of those pens into two equal fields as shown below. 
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[thick] (0,0) -- (0,4);
+            \draw[thick] (0,4) -- (7,4);
+            \draw[thick] (0,2) -- (7,2);
+            \draw[thick] (3.5,2) -- (3.5,0);
+            \draw[thick] (0,0) -- (3.5,0) node[midway, below] {$y$};
+            \draw[thick] (3.5,0) -- (7,0) node[midway, below] {$y$};
+            \draw[thick] (7,4) -- (7,2) node[midway, right] {$x$};
+            \draw[thick] (7,2) -- (7,0) node[midway, right] {$x$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $12.5$
+        \choice $10$
+        \choice $\dfrac{100}{11}$
+        \choice $\dfrac{25}{3}$
+        \choice None of these
+    \end{oneparchoices} \par \horizontalline
+
+    \question A farmer with $890 \si{ft}$ of fencing wants to enclose a rectangular area and then divide it into four pens with fencing parallel to one side of the rectangle. What is the largest possible total area of the four pens? \\
+
+    \begin{oneparchoices}
+        \choice $19,825.5 \si{ft^2}$
+        \choice $19,805.5 \si{ft^2}$
+        \choice $19,801.5 \si{ft^2}$
+        \choice $19,902.5 \si{ft^2}$
+        \choice $19,791.5 \si{ft^2}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question A rectangle with one side on the $x$-axis has its upper vertices on the graph of $y = 1 - \dfrac{x^2}{9}$, as shown in the figure below. What is the maximum area of the rectangle? 
+    \begin{center}
+        \includegraphics[width = 0.75\textwidth]{\graphicsdir Chapter 4 Graphics/4.1-Graphic2.png}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice $\sqrt{3}$
+        \choice $\dfrac{\sqrt{3}}{2}$
+        \choice $\dfrac{2}{3}$
+        \choice $\dfrac{4\sqrt{3}}{3}$
+        \choice None of these
+    \end{oneparchoices} \par \horizontalline
+
+    \question In a certain community, an epidemic spreads in a way that the percentage $P$ of the population that is infected after $t$ months is modeled by \begin{align*}
+        P(t) = \dfrac{kt^2}{\left(C + t^2\right)^2},
+    \end{align*}
+    where $C$ and $k$ are constants. Find $t$, such that $P$ is maximized. \\
+
+    \begin{oneparchoices}
+        \choice $0$
+        \choice $\sqrt{C}$
+        \choice $\sqrt{k}$
+        \choice $\sqrt{\dfrac{C}{3}}$
+        \choice None of these
+    \end{oneparchoices} \par \horizontalline
+
+    \question Consider the following table below: \begin{align*}
+        \arraycolsep=16.5pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            x & g(x) & g'(x) & g''(x) & f(x) & f'(x) & f''(x) \\ \hline
+            0 & 2 & 3 & -2 & 2 & 1 & -2 \\ \hline
+            2 & 4 & 2 & 0 & 4 & 0 & 3 \\ \hline
+            4 & 1 & -1 & 3 & 0 & 2 & -1 \\
+            \hline 
+        \end{array}
+    \end{align*}
+    At $x = 2$, $f(x)$ has a: \\
+
+    \begin{oneparchoices}
+        \choice Local min.
+        \choice Local max.
+        \choice Point of inflection
+        \choice Zero
+        \choice None of these
+    \end{oneparchoices} \par \horizontalline
+
+    \question Let $f(x)$ and $g(x)$ be twice-differentiable functions with selected values given in the table in \textbf{question 18}. Let $h(x) = g(f(x))$. At $x = 2$, $h(x)$ has a: \\
+
+    \begin{oneparchoices}
+        \choice Local min.
+        \choice Local max.
+        \choice Point of inflection
+        \choice Zero
+        \choice None of these
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
