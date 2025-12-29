@@ -162,3 +162,228 @@ Now that we've gone over the Mean Value Theorem, we need to consider when this t
     \end{array}
 \end{align*}
 
+Moving on, let's talk about functions that are not differentiable. "Not differentiable" simply means the derivative does not exist at some point in the function. This can happen one of three ways: \par
+
+\begin{enumerate}
+    \item A function is not differentiable if it is not continuous (see table above).
+    \item A function is not differentiable if at some point, the tangent line at that point is vertical. \\
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{\graphicsdir Chapter 4 Graphics/4.2-Graphic7.png}
+    \end{center}
+    \item A function is not differentiable if it is not "smooth". \\
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{\graphicsdir Chapter 4 Graphics/4.2-Graphic8.png}
+    \end{center}
+\end{enumerate}
+
+The Mean Value Theorem often arises in AP Table Problems like this one: \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.2.3: } Below is a chart showing specific values of the rate of sewage flowing through a pipeline according to time in minutes. \begin{align*}
+        \arraycolsep=11pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|c|c|}
+            \hline
+            t \text{ (minutes)} & 0 & 4 & 6 & 10 & 13 & 15 & 20 \\ \hline
+            V(t) \text{ (gallons/min)} & 83 & 68 & 83 & 48 & 38 & 30 & 38 \\
+            \hline 
+        \end{array}
+    \end{align*} 
+    Assume $V(t)$ is a continuous and differentiable function. Explain why there are at least two times between $t = 0$ and $t = 20$ when $V'(t) = 0$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.2.3: } Because $V(t)$ is a continuous and differentiable function, the Mean Value Theorem applies. Since $V(0) = V(6) = 83$, we have \begin{align*}
+        V'(t) = \dfrac{V(6) - V(0)}{6 - 0} = \dfrac{0}{6} = 0 \quad \checkmark
+    \end{align*}
+    Similarly, since $V(13) = V(26) = 38$, we have \begin{align*}
+        V'(t) = \dfrac{V(26) - V(13)}{26 - 13} = \dfrac{0}{13} = 0 \quad \checkmark
+    \end{align*}
+    There may be more $c$-values where $V'(t) = 0$, but as we can see, we have at least two. \par
+    \begin{tcolorbox}[interesting]
+        Astute students may notice that we can also apply Rolle's Theorem to this problem, since $f(a) = f(b)$!
+    \end{tcolorbox}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.2.4: } Below is a chart showing specific values of the rate of sewage flowing through a pipeline according to time in minutes. \begin{align*}
+        \arraycolsep=11pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|c|c|}
+            \hline
+            t \text{ (minutes)} & 0 & 4 & 6 & 10 & 13 & 15 & 20 \\ \hline
+            V(t) \text{ (gallons/min)} & 83 & 68 & 83 & 48 & 38 & 30 & 38 \\
+            \hline 
+        \end{array}
+    \end{align*}
+    Assume $V(t)$ is a continuous and differentiable function. Explain why there are at least two times between $t = 0$ and $t = 20$ when $V'(t) = 74$.
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.2.4: } For this problem, we have to be a little careful! The Mean Value Theorem would not be very useful in this problem, as we cannot find a $\dfrac{V(b) - V(a)}{b - a}$ that is equal to $74$. Instead, let's turn to another theorem in our arsenal: the Intermediate Value Theorem. \par
+    \vspace{11pt}
+    Because $V(t)$ is continuous and $68 < 74 < 83$, according to the Intermediate Value Theorem, $V(t)$ will attain the height (or value) of $74$ between $V(0) = 83$ and $V(4) = 68$, and $V(4) = 68$ and $V(6) = 83$. Thus, we have found our two times where $V(t) = 74$.
+\end{tcolorbox}
+
+\newpage
+
+\textbf{\large{4.2 Free Response Homework}} \par
+
+Verify that the following functions fit all the conditions of the Mean Value Theorem, and then find all values of $c$ that satisfy the conclusion of the Mean Value Theorem. \par
+
+\twoquestion{1. $f(x) = x^3 - 3x^2 + 2x + 5 \bargap x \in [0, \, 2]$}{2. $f(x) = \sin (2\pi x) \bargap x \in [-1, \, 1]$} \\[11pt]
+\twoquestion{3. $g(t) = t\sqrt{t + 6} \bargap t \in [-4, \, 0]$}{4. $H(t) = \dfrac{t}{(t - 6)^2} \bargap t \in [2, \, 8]$} \\[11pt]
+
+\onequestion{5. Given the graph of the function below, estimate all values of $c$ that satisfy the conclusion of the Mean Value Theorem for the interval $[1, \, 8]$.}
+\begin{center}
+    \includegraphics[width = 0.75\textwidth]{\graphicsdir Chapter 4 Graphics/4.2-Graphic9.png}
+\end{center}
+
+\onequestion{6. of the function below, estimate all values of $c$ that satisfy the conclusion of the Mean Value Theorem for the interval $[1, \, 9]$. }
+\begin{center}
+    \includegraphics[width = 0.75\textwidth]{\graphicsdir Chapter 4 Graphics/4.2-Graphic10.png}
+\end{center}
+\vspace{11pt}
+
+Determine if the following functions fit the conditions of the Intermediate Value Theorem, and determine the range of the results. \par
+
+\twoquestion{7. $f(x) = x^3 - 3x^2 + 2x + 5 \bargap x \in [0, \, 2]$}{8. $f(x) = \sin (2\pi x) \bargap x \in [-1, \, 1]$} \\[11pt]
+\twoquestion{9. $g(t) = t\sqrt{t + 6} \bargap t \in [-4, \, 0]$}{10. $H(t) = \dfrac{t}{(t - 6)^2} \bargap t \in [2, \, 8]$} \\[11pt]
+
+\onequestion{11. On May 15th, the weather in the town of Tarcía cahnges at a rate of $W(t)$ degrees Fahrenheit per hour. $W(t)$ is a twice-differentiable, increasing, and concave up function with selected values in the table below.} \begin{align*}
+    \arraycolsep=11pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        t \text{ (hours since midnight)} & 0 & 1 & 3 & 6 & 8 \\ \hline
+        W(t) \text{ (deg Fahrenheit per hour)} & -2.4 & -2.1 & -1.2 & 1.8 & 4.5 \\
+        \hline
+    \end{array}
+\end{align*}
+
+At midnight ($t = 0$), the weather in Tarcía is 40 degrees Fahrenheit.
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Is there a time in $0 \leq t \leq 8$ when the rate of change of the temperature equals $7$ degrees Fahrenheit per hour? Justify your answer.
+    \item Is there a time in $0 \leq t \leq 8$ when $W(t) = 0$? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{12. Star Formation Rate (SFR) observations of red-shift allow scientists to track the total mass gained in a galaxy by the making of new stars. Below is a table of such data:} \begin{align*}
+    \arraycolsep=5.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        t & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+        \text{SFR} & 0.0029 & 0.0051 & 0.0055 & 0.0049 & 0.0042 & 0.0035 & 0.0029 & 0.0025 & 0.0021 \\
+        \hline
+    \end{array}
+\end{align*}
+
+SFR is measured in solar masses per cubic parsec per gigayear (millions of years), and $t$ is measured in gigayears. 
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Is there a time in $0 \leq t \leq 8$ when $SFR = 0$? Justify your answer.
+    \item Is there a time in $0 \leq t \leq 8$ when $SFR = 0.0056$? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+\textbf{\large{4.2 Multiple Choice Homework}} \par
+
+\begin{questions}
+    \question Let $f$ be a polynomial function with degree greater than $2$. If $a \neq b$ and $f(a) = f(b) = 1$, which of the following must be true of at least one value of $x$ between $a$ and $b$? \begin{center}
+        $\hfill \text{I. $f(x) = 0$} \hfill \text{II. $f'(x) = 0$} \hfill \text{III. $f''(x) = 0$} \hfill$
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice I only 
+        \choice II only
+        \choice III only 
+        \choice II and III only
+        \choice I, II, and III
+    \end{oneparchoices} \par \horizontalline
+
+    \question Which of the following functions \textbf{fail} to meet the conditions of the Mean Value Theorem? \begin{center}
+        \begin{tabular}{l}
+            I. $3x^{\frac{2}{3}} - 1 \bargap x \in [-1, \, 2]$ \\[11pt]
+            II. $|3x - 2| \bargap x \in [1, \, 2]$. \\[11pt]
+            III. $4x^3 - 2x + 3 \bargap x \in [-1, \, 2]$.
+        \end{tabular}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice I only 
+        \choice II only
+        \choice III only 
+        \choice I and II only
+        \choice II and III only
+    \end{oneparchoices} \par \horizontalline
+
+    \question $y = -2x^2 + x - 2$ is defined on $x \in [1, \, 3]$. Find the $c$-value determined by the Mean Value Theorem. \\
+
+    \begin{oneparchoices}
+        \choice $c = \dfrac{1}{2}$
+        \choice $c = \dfrac{5}{4}$
+        \choice $c = \dfrac{3}{2}$
+        \choice $c = 2$
+        \choice $c = \dfrac{9}{4}$
+    \end{oneparchoices} \par \horizontalline
+
+    \question Let $g(x)$ be a continuous function on the interval $[0, \, 1]$ and let $g(1) = 0$ and $g(0) = 1$. Which of the following statements is not necessarily true? \\
+
+    \begin{oneparchoices}
+        \choice There exists a number $c$ on $[0, \, 1]$ such that $g(c) \geq g(x)$ for all $x \in [0, \, 1]$. \\[11pt]
+        \makebox[0.035\textwidth] \choice For all $a$ and $b$ in $[0, \, 1]$, if $a = b$, then $g(a) = g(b)$. \\[11pt]
+        \makebox[0.035\textwidth] \choice There exists a number $c$ on $[0, \, 1]$ such that $g(c) = \dfrac{1}{2}$. \\[11pt]
+        \makebox[0.035\textwidth] \choice There exists a number $c$ on $[0, \, 1]$ such that $g(c) = \dfrac{3}{2}$. \\[11pt]
+        \makebox[0.035\textwidth] \choice For all $c$ in $(0, \, 1)$, $\lim_{x \to c} g(x) = g(c)$.
+    \end{oneparchoices} \par \horizontalline
+
+    \question The graph of a differentiable function $f$ is shown below on the closed interval $[0, \, 5]$. How many values of $x$ in the open interval $(0, \, 5)$ satisfy the conclusion of the Mean Value Theorem for $f$ on $[0, \, 5]$. \begin{align*}
+        \begin{tikzpicture}[scale=1.25]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = $y$,
+                domain = 0:5,
+                samples = 100,
+                width=5cm,
+                height=5cm,
+                xmin = -0.4, xmax = 5.5,
+                xtick = {1, 2, 3, 4, 5},
+                xticklabels = {, , , , $5$},
+                ymin = -0.4, ymax = 5.5,
+                ytick = {1, 2, 3, 4, 5},
+                yticklabels = {, , , , $5$}
+            ]
+              \addplot[ultra thick] {x + cos(deg(x * pi)) + 1/pi * sin(deg(x * pi))};
+            \end{axis}
+        \end{tikzpicture}
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice $1$
+        \choice $2$
+        \choice $3$
+        \choice $4$
+        \choice $5$
+    \end{oneparchoices} \par \horizontalline
+
+    \question To which of the following phrases does the equation $Y = \dfrac{f(b) - f(a)}{b - a}$ pertain? \\
+
+    \begin{oneparchoices}
+        \choice The Mean Value Theorem \\[11pt]
+        \makebox[0.035\textwidth] \choice The Average Value Theorem \\[11pt]
+        \makebox[0.035\textwidth] \choice The Intermediate Value Theorem \\[11pt]
+        \makebox[0.035\textwidth] \choice The Extreme Value Theorem \\[11pt]
+        \makebox[0.035\textwidth] \choice Rolle's Theorem
+    \end{oneparchoices} \par \horizontalline
+
+    \question The table below shows particular values of a differentiable function $E(t)$. At how many times on the interval $t \in [0, \, 12]$ does the Mean Value Theorem guarantee that $E'(t) = 0$? \begin{align*}
+        \arraycolsep=16.5pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            t \text{ (hours)} & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 \\ \hline
+            E(t) & 10 & 4 & 10 & 5 & 7 & 3 & 7 & 5 \\
+            \hline
+        \end{array}
+    \end{align*}
+
+    \begin{oneparchoices}
+        \choice $0$
+        \choice $1$
+        \choice $2$
+        \choice $3$
+        \choice $4$
+    \end{oneparchoices} \par \horizontalline
+\end{questions}
