@@ -1,0 +1,491 @@
+\textbf{\underline{\large{4.3: Accumulation of Rates Revisited}}} \par
+
+In Chapter 3 Section 4, we skipped many questions involving critical and extreme values. We will revisit those problems here in this section. \par
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Solve Critical Values and Extreme Value Problems in the Context of Accumulation of Rates.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.3.1: } \begin{center}
+        \underline{The Amusement Park Problem (AP 2002)}
+    \end{center} \vspace{11pt}
+    The rate at which people enter a park is given by the function \begin{align*}
+        E(t) = \dfrac{15600}{t^2 - 24t + 160},
+    \end{align*} and the rate at which they are leaving is given by \begin{align*}
+        L(t) = \dfrac{9890}{t^2 - 38t + 370} - 76.
+    \end{align*} Both $E(t)$ and $L(t)$ are measured in people per hour where $t$ is the number of hours past midnight. The functions are valid for when the park is open, $8 \leq t \leq 24$. At $t = 8$ there are no people in the park. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, start=4]
+        \item At what time $t$, for $8 \leq t \leq 24$, does the model predict the number of people in the park is at at maximum?
+    \end{enumerate} \vspace{11pt}
+    \footnotesize{\textit{(Ex 3.4.1)}}
+\end{tcolorbox} 
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.3.1: } \par
+    (d) Recall that $H(t) = \int_8^t (E(x) - L(x)) \, dx$. To find the maximum number of people, we have to set the derivative $H'(t)$ equal to zero. \textbf{We must also check the endpoints}, which are also critical values themselves. \begin{align*}
+        H'(t) = E(t) - L(t) = 0
+    \end{align*}
+    Using a graphing calculator, we find that the zero is at $t = 16.046$. Therefore, our critical values are $8$, $16.046$, and $24$. Now, let's analyze all these values. \par
+    \vspace{11pt}
+    \begin{enumerate}
+        \item At $t = 8$, $H(8) = 0$ (this was given at the beginning of the problem) \\
+        \item At $t = 16.046$, $H(16.046) = \int_8^{16.046} (E(x) - L(x)) \, dx = 5023$ \\
+        \item At $t = 24$, $H(24) = \int_8^{24} (E(x) - L(x)) \, dx = 1453$
+    \end{enumerate} \vspace{11pt}
+    
+    Because $5023$ is the largest of these three $H$ values, the maximum number of people in the park occurs at $\boxed{t = 16.046}$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.3.2: } \begin{center}
+        \underline{The Synthetic Oil Problem}
+    \end{center} \vspace{11pt}
+    A certain industrial chemical reaction produces synthetic oil at a rate of \begin{align*}
+        S(t) = \dfrac{15t}{1 + 3t}.
+    \end{align*}
+    At the same time, the oil is removed from the reaction vessel by a skimmer that has a rate of \begin{align*}
+        R(t) = 2 + 5\sin \left(\dfrac{4\pi}{25}t\right).
+    \end{align*}
+    Both functions have units of gallons per hour, and the reaction runs from $t = 0$ to $t = 6$. At time $t = 0$, the reaction vessel contains 2500 gallons of oil. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em, start=4]
+        \item For the interval indicated above, at what time $t$ is the amount of oil in the reaction vessel at a minimum? What is the minimum value? Justify your answers.
+    \end{enumerate} \vspace{11pt}
+    \footnotesize{\textit{(Ex 3.4.3)}}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.3.2: } \par
+    (d) Recall that $P(t) = 2500 + \int_0^t (S(x) - R(x)) \, dx$. Now, just like the last example, let's set the derivative $P'(t)$ equal to zero and check the endpoints. \begin{align*}
+        P'(t) = S(t) - R(t) = 0
+    \end{align*}
+    Using a graphing calculator, we find that the zero is at $t = 5.117$. Analyzing these values, we have: \par
+    \vspace{11pt}
+    \begin{enumerate}
+        \item At $t = 0$, $P(0) = 2500$ (Again, this was given in the problem) \\
+        \item At $t = 5.117$, $P(5.117) = 2500 + \int_0^{5.117} (S(x) - R(x)) \, dx = 2492.367$ \\
+        \item At $t = 6$, $P(6) = 2500 + \int_0^{6} (S(x) - R(x)) \, dx = 2493.277$ \\
+    \end{enumerate} \vspace{11pt}
+
+    As $2492.367$ is the lowest of these three $P$ values, the minimum amount of oil in the reaction vessel is $\boxed{2492.367 \text{ gallons}}$ and occurs at $\boxed{t = 5.117}$ gallons.
+\end{tcolorbox}
+
+Now, let's do an accumulation of rates problems that combines all of the concepts that we have learned. \par
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.3.3: } \begin{center}
+        \underline{The Donner Summit Snowfall Problem}
+    \end{center} \vspace{11pt}
+    The snowfall in Donner Summit is tracked by the US Weather Service. For the month of March in 2022, $S(t)$ represents the rate of snowfall in inches per day and its data is presented in the table below. \begin{align*}
+        \arraycolsep=11pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|c|c|c|c|c|c|}
+            \hline
+            t \text{ (days)} & 1 & 3 & 4 & 7 & 11 & 15 & 21 \\ \hline
+            V(t) \text{ (inches/day)} & 1.4 & 4.9 & 4.4 & 0.1 & 4.6 & 0.2 & 2.7 \\
+            \hline 
+        \end{array}
+    \end{align*}
+    The equation \begin{align*}
+        M(t) = 0.65 - 0.35\cos \left(\dfrac{5x^{0.95}}{6}\right)
+    \end{align*}
+    represents the rate at which the snow melts in inches per day, where $t$ is measured in days. \\
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item Find $\int_1^{21} M(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{21 - 1}\int_1^{21} M(t) \, dt \smallforcespace$ in the context of the problem. \\
+        \item Using a right Riemann Sum, find $\int_1^{21} S(t) \, dt$. State the correct units. \\
+        \item Approximate $S'(5)$. Using the correct units, explain $S'(5)$ in the context of the problem. \\
+        \item Assume \begin{align*}
+            S(t) = 2.5 - 2.5\cos \left(\dfrac{10x^9}{9}\right)
+        \end{align*}
+        would model the snow fall. If there were $9$ inches of snow on the ground at the beginning of day $1$, find the minimum amount of snow on the ground between $t = 1$ and $t = 7$.
+    \end{enumerate} \vspace{11pt}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.3.3: } \par
+    (a) Using \fbox{\texttt{MATH}} \fbox{\texttt{9}} on our calculators, we can find that $\int_1^{21} M(t) \, dt = \boxed{13.023 \si{inches}}$. Referencing our key phrases and units table, we find that $\dfrac{1}{21 - 1}\int_1^{21} M(t) \, dt \forcespace$ is the \textbf{approximate average snow melt, in inches per day, between $t = 1$ and $t = 21$ days}. \par
+    \vspace{11pt}
+    (b) \begin{align*}
+        \int_1^{21} S(t) \, dt &\approx (3 - 1) \cdot 4.9 + (4 - 3) \cdot 4.4 + (7 - 4) \cdot 0.1 \\[5.5pt]
+        & + (11 - 7) \cdot 4.6 + (15 - 11) \cdot 0.2 + (21 - 15) \cdot 2.7 \\[11pt]
+        &= \boxed{49.9 \text{ inches of snow}}
+    \end{align*}
+    (c) $S'(5) \approx \dfrac{6 - 2}{4 - 7} = \boxed{-\dfrac{4}{3} \si{in \per day^2}}$. In the context of the problem, this means that \textbf{the rate of snowfall, in inches per day, is decreasing by $\dfrac{4}{3}$ inches per day per day on day 5}. \par
+    \vspace{11pt}
+    (d) \begin{align*}
+        A(t) &= 9 + \int_1^t (S(x) - M(x)) , \, dx \\[11pt]
+        A'(t) &= S(t) - M(t) = 0 \\[11pt]
+        t &= 0.541, \, 5.751
+    \end{align*}
+    Creating a table to track our values of $t$ and $A(t)$, we have \begin{align*}
+        \arraycolsep=11pt\def\arraystretch{1.5}
+        \begin{array}{|c|c|}
+            \hline
+            t & A(t) \\ \hline
+            0 & 9 \\ \hline
+            0.541 & 8.781 \\ \hline
+            5.751 & 22.955 \\ \hline
+            7 & 22.096 \\
+            \hline
+        \end{array}
+    \end{align*}
+    It's clear from the table that the minimum amount of snow on the ground is $\boxed{8.781 \si{inches}}$. \par
+    \vspace{11pt}
+    Make sure to answer the question that is being asked! This question specifically asked for the \textit{amount} of snow.
+\end{tcolorbox}
+
+So, to summarize, to find the extrema of a function, you must first determine the amount equation (the primary function being analyzed) and then identify all critical values. These critical values are found by solving for where the first derivative is zero $\left(\dfrac{dy}{dx} = 0\right)$, where the derivative does not exist $\left(\dfrac{dy}{dx} = DNE\right)\forcespace$, or by identifying the endpoints of any given domain restrictions. Once these values are established, you calculate the corresponding function values for each critical point and organize them into a table for comparison. Finally, use this data to identify the absolute maximums or minimums to provide a specific answer to the original question. \par
+
+\newpage
+
+\textbf{\large{4.3 Free Response Homework}} \par
+
+\begin{center}
+    \underline{1. The Chlorine Problem}
+\end{center}
+
+The number of parts per million (ppm), $C(t)$, of chlorine in a pool changes at the rate of \begin{align*}
+    C'(t) = 1 - 3e^{-0.2\sqrt{t}}
+\end{align*}
+ppm per day, where $t$ is measured in days. There are $50 \si{ppm}$ of chlorine in the pool at time $t = 0$. Chlorine should be added to the pool if the level drops below $40 \si{ppm}$. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Is the amount of chlorine increasing or decreasing at $t = 9$? Why or why not?
+    \item For what value of $t$ is the amount of chlorine at a minimum? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{2. The Ellis Island Problem (II)}
+\end{center}
+
+In 1920, Dr. Quattrin's grandfather Andrea returned to America from Italy after fighting in World War I. He arrived in New York Harbor on the \textit{SS Pannonia} and, despite having established residency in 1913, had to be processed through the Immigration Center at Ellis Island. There were 1123 non-citizen, third-class passengers on the \textit{Pannonia} that had to go through processing. Immigrants entered the processing line at a rate modeled by the function \begin{align*}
+    E(t) = 8843\left(\dfrac{t}{5}\right)^4\left(1 - \dfrac{t}{10}\right)^5.
+\end{align*}
+where $t$, in $0 \leq t \leq 10$, is measured in hours after the ship began offloading immigrants. The new arrivals were processed out a rate of 250 people per hour. The \textit{Pannonia} was the third ship in port, so there were already 2500 people in line when the \textit{Pannonia} passenger got into line. \par
+\vspace{11pt}
+Assuming no new ships entered the harbor, what was the absolute maximum number of people in the processing line? Justify your answer. \\
+
+\begin{center}
+    \underline{3. The Post Office Letter Problem (II)}
+\end{center}
+
+Letters arrive at a post office at a rate of \begin{align*}
+    P(t) = 8 + t\sin \left(\dfrac{t^3}{80}\right)
+\end{align*}
+hundred letters per hour over the course of a workday. The day begins at $9$ am $(t = 0)$ and ends at $5$ pm $(t = 8)$. There are three hundred letters in the office at $9$ am. Workers send letters out of the office at a constant rate of five hundred letters per hour. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Write an expression for $L(t)$, the total number of letters in the post office at time $t$.
+    \item What is the maximum number of letters in the office over the course of the workday $(0 \leq t \leq 8)$?
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{4. The Ski Resort Problem}
+\end{center}
+A ski resort uses a snow machine to control the snow level on a ski slope. Over a $24$-hour period the volume of snow added to the slope per hour is modeled by the equation \begin{align*}
+    S(t) = 24 - t\sin^2 \left(\dfrac{t}{14}\right).
+\end{align*}
+The rate that the snow melts is modeled by \begin{align*}
+    M(t) = 10 + 8\cos \left(\dfrac{t}{3}\right).
+\end{align*}
+Both $M(t)$ and $S(t)$ are measured in $\text{yd}^3/\text{h}$ and $t$ is measured in hours for $0 \leq t \leq 24$. At time $t = 0$, the slope holds $50 \si{yd^3}$ of snow. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Write an expression for $A(t)$, the total amount of snow on the mountain at time $t$.
+    \item Find the absolute maximum and minimum amount of snow on the mountain during $0 \leq t \leq 24$. Indicate the units.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{5. The Trinary Star Problem (II)}
+\end{center}
+
+More than 30\% of observed star systems have multiple stars, and 70\% of those have more than two stars. When stars are closed together, they exchange mass in a process known as accretion. Consider a trinary system where $S_1$ is larger than $S_2$, and $S_2$ is larger than $S_3$. $S_3$ will lose mass to $S_2$, and $S_2$ will lose mass to $S_1$. While scientific readings are not available because of the time scale, let us suppose that $S_2$ loses mass to the larger $S_1$ at a rate of \begin{align*}
+    L(t) = 1 + (0.01t)^2 + 0.23\sin \left(\dfrac{\pi}{25}t\right)
+\end{align*}
+and gains mass from the smaller $S_3$ at a rate of \begin{align*}
+    G(t) = 0.2 + 0.15\sqrt{t}
+\end{align*}
+where $0 \leq t \leq 100$ years. $L(t)$ and $G(t)$ are measured in yottatons per year (Y/yr). (A yottaton is $10^{26}$ tons, or $10^{-7}$ solar masses.) \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Write an expression for $M(t)$, the total mass of $S_2$ at time $t$.
+    \item If the mass of $S_2$ is $1,000,000$ yottatons at $t = 0$, find the minimum mass of $S_2$ on the time interval $0 \leq t \leq 100$.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{6. The Flooded Basement Problem (II)}
+\end{center}
+
+The basement of a house is flooded, and water keeps pouring in at a rate of \begin{align*}
+    w(t) = 95\sqrt{t}\sin^2 \left(\dfrac{t}{6}\right)
+\end{align*}
+gallons per hour. At the same time, water is being pumped out at a rate of \begin{align*}
+    r(t) = 275\sin^2 \left(\dfrac{t}{3}\right).
+\end{align*}
+When the pump is started, at time $t = 0$, there is 1200 gallons of water in the basement. Water continues to pour in and be pumped out for the interval $0 \leq t \leq 18$. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Write an expression for $G(t)$, the total gallons of water in the basement at time $t$.
+    \item Find the minimum amount of water in the basement on the time interval $0 \leq t \leq 18$.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{7. The King Philip Problem}
+\end{center}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \vspace{-5.5pt}
+    \centering
+    \includegraphics[width=0.38\textwidth]{\graphicsdir Chapter 4 Graphics/4.3-Graphic1.png}
+\end{wrapfigure}
+On Ocean Beach at the foot of Noriega St. is a shipwreck buried in the sand. In $1858$, the clipper King Philip ran aground. It was stripped of salvageable material, but the $45\%$ of its hull is still buried on the beach, and it appears every few years as the tide washes the sand in and out. As the sand washes in or is added by the National Park Service, the height changes at a rate of \begin{align*}
+    A(t) = \dfrac{6t}{1 + 2t},
+\end{align*}
+and, as the tide washes sand out, the height changes at a rate of \begin{align*}
+    B(t) = 2 + 7\cos \left(\dfrac{\pi}{15}t\right)\sin \left(\dfrac{3\pi}{16}t\right)
+\end{align*}
+Both $A(t)$ and $B(t)$ are both measured in inches above the wreck per year for $0 \leq t \leq 10$. At $t = 0$, the height is $10$ inches above the wreck. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Find the total inches of sand above the wreck which are washed out in the first five years. Indicate the correct units.
+    \item Is the rate of change of the height increasing or decreasing at $t = 6$ years? Justify your answer.
+    \item Write an expression for $H(t)$, the total number of inches of sand above the wreck at time $t$.
+    \item What is the absolute minimum number of inches of sand above the wreck over the course of the ten years described in the problem?
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{8. The Cat Population Problem (II)}
+\end{center}
+
+The Peninsula Humane Society (PHS) is dedicated to the care and adoption of as many animals who they receive as possible. Since cats breed seasonally, the number of cats and kittens they receive into their facility in a given year varies roughly sinusoidally with time. The data available from 2019 show the rate $R(t)$, measured in healthy cats per month, varies with time, measured in months after New Years Day, according to the equation \begin{align*}
+    R(t) = 120 - 88\cos \left(\dfrac{\pi}{6}(t - 2)\right).
+\end{align*}
+The rate $A(t)$ at which adoption occur, measured in cats per month, varies with time, measured in months after New Year's Day, according to the equation \begin{align*}
+    A(t) = 125 - 85\cos \left(\dfrac{\pi}{6}(t - 3)\right).
+\end{align*}
+On New Years' Day ($t = 0$), there were 131 cats in the PHS nursery waiting to be adopted. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many cats and kittens were received at PHS in $2019$?
+    \item Find $A'(10.3)$. Using the correct units, explain the meaning of $A'(10.3)$ in the context of the problem.
+    \item Find the number of healthy cats and kittens predicted by the models to be in the PHS facility at the end of $2019$.
+    \item Find the time when the number of healthy cats and kittens in the PHS facility during $2019$ was at an absolute maximum. Indicate the units.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{9. The Oak Island Problem}
+\end{center}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \vspace{-5.5pt}
+    \centering
+    \includegraphics[width=0.38\textwidth]{\graphicsdir Chapter 4 Graphics/4.3-Graphic2.png}
+\end{wrapfigure}
+
+The search for treasure on Oak Island has been ongoing since 1795. In the last ten years, modern engineering techniques have been brought to bear by the Lagina brothers. They hired ROC Drilling to sink $8$-foot-diameter metal tubes (called caissons) down to $200$ feet and then use a hammer grab to excavate the ``spoils.'' The hammer grab brings up the spoils at a rate of \begin{align*}
+    H(t) = 9 + 4\cos \left(\dfrac{t^2}{14}\right).
+\end{align*}
+The spoils are then taken to a wash plant where they are rinsed and sorted into piles by size so they can be visually inspected to find artifacts. A shift supervisor measures their rate of output every few hours and records the findings in the chart below. \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        t \text{ (hours)} & 0 & 1 & 3 & 5 & 8 \\ \hline
+        P(t) \si{(yd^3 \per hour)} & 0 & 8.1 & 14.5 & 12.3 & 3.2 \\
+        \hline 
+    \end{array}
+\end{align*}
+At the beginning of the day there are $2 \si{yd^3}$ at the wash plant from the day before. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Find the total amount of spoils pulled from the caisson by the hammer grab during the eight hours described on the table. Indicate the correct units. 
+    \item Use a right Riemann Sum with sub-intervals indicated by the table to approximate $\int_0^8 P(t) \, dt \forcespace$ Using correct units, explain the meaning of this value in the context of the problem.
+    \item Assume the equation \begin{align*}
+        W(t) = 0.1t(10 - t)^2
+    \end{align*}
+    models the $P(t)$ data in the table. Write an expression for $U(t)$, the amount of unwashed spoils at time $t$.
+    \item What is the absolute maximum amount of unwashed spoils waiting to be cleaned?
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{10. The Callaghan Ranch Harvest Problem}
+\end{center}
+
+In $1867$, Dr. Quattrin's great-great grandfather Michael Callaghan bought $160$ acres of public land in Solano County to raise wheat and sheep. By $1890$, the ranch had grown to $1210$ acres. Prior to the advent of the combine harvester, reaping and threshing were done by different machines. The table below shows the rate at which wheat on the ranch was gathered by a \textit{McCormick} Reaper on a given $12$-hour workday. \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        t \text{ (hours)} & 0 & 2 & 5 & 9 & 12 \\ \hline
+        R(t) \si{(acres  \per hour)} & 3.1 & 2.5 & 1.6 & 2.7 & 1.6 \\
+        \hline 
+    \end{array}
+\end{align*}
+Time $t$ is measured in hours after 6 am $(t = 0)$ and $R(t)$ is measured in acres per hour. The wheat was then delivered to the barn and put through the threshing machine. At the start of the day, there are $2.4$ acres of wheat in the barn. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Is the rate at which the wheat is being harvested at $9:30$ am $(t = 3.5)$ increasing or decreasing? Explain the result in the context of the problem using the appropriate units.
+    \item Use a right-hand Riemann approximation to approximate the total amount of wheat harvested on this particular day.
+    \item The thresher processed the wheat into grain and hay at a rate of \begin{align*}
+        P(t) = \dfrac{2.1x}{\sqrt{x^2 + 1}}
+    \end{align*}
+    acres per hour. How much wheat has been threshed by noon $(t = 6)$ when the farm hands break for lunch?
+    \item Write an equation for $0 \leq t \leq 12$ which would determine the amount of wheat in the barn at any time $t$. Using your estimate for the amount of wheat reaped in part (b) above, find the amount of unthreshed wheat in the barn at the end of the day.
+    \item Assume $R(t)$ can be modeled by the equation \begin{align*}
+        Q(t) = 3.3 - \dfrac{3}{20}t - 0.9\sin \left(\dfrac{\pi}{7}t\right)
+    \end{align*}
+    What is the minimum amount of unthreshed wheat in the barn?
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{11. The Yuma Desalting Problem}
+\end{center}
+
+\begin{wrapfigure}[6]{r}{0.4\textwidth}
+    \vspace{-5.5pt}
+    \centering
+    \includegraphics[width=0.38\textwidth]{\graphicsdir Chapter 4 Graphics/4.3-Graphic3.png}
+\end{wrapfigure}
+
+The desalting plant at Yuma, AZ removes alkaline (salt) products from the Colorado River to make the water better for irrigation downstream in Mexico. Data from a pilot run of the plant shows that water enters the plant at a rate $W(t)$ as shown on the table below:
+\vspace{49.5pt} %Correcting for image spacing, might patch this if time allows.
+\begin{align*}
+    \arraycolsep=11pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (months)} & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+        W(t) \text{ (acre-feet/month)} & 0 & 2375 & 3189 & 3411 & 3207 & 2169 \\ \hline
+        t \text{ (months)} & 6 & 7 & 8 & 9 & 10 & \cellcolor{gray!70}\\ \hline
+        W(t) \text{ (acre-feet/month)} & 2269 & 2151 & 2167 & 3022 & 2293 & \cellcolor{gray!70} \\
+        \hline 
+    \end{array}
+\end{align*}
+The rate $P(t)$ of outflow of processed water, in acre-feet per month, is modeled by \begin{align*}
+    P(t) = -0.55t^4 + 15t^3 - 158t^2 + 722t + 1032
+\end{align*}
+for $0 \leq t \leq 10$. Based on supplies available, not all the water gets processed before returning to the Colorado River. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Using a midpoint Riemann Sum, approximate the volume of water that enters the plant during these ten months.
+    \item Set up an equation for $U(t)$ which would define the amount of unprocessed water that exits the plant. Using your answer in part (a), approximate $U(10)$. Indicate the units.
+    \item Approximate $W'(6)$. Using the correct units, explain the meaning of your answer in the context of the problem.
+    \item Assuming $W(t)$ can be modeled by \begin{align*}
+        E(t) = 2800 + 750\sin \left(\dfrac{2\pi}{11}t\right),
+    \end{align*}
+    find the time at which there is an absolute maximum amount of unprocessed water flowing through the plant for $0 \leq t \leq 10$. Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{12. The 49er Sack Leader Problem (II)}
+\end{center}
+
+The table below shows Nick Bosa's sack rate, in sacks per game, over his first four seasons. \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        g \text{ (games completed)} & 0 & 19 & 21 & 41 & 57 \\ \hline
+        B(g) \text{ (sacks per game)} & 0 & 0.68 & 0.62 & 0.98 & 1.16 \\
+        \hline
+    \end{array}
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Using a right-hand Riemann Approximation, determine the approximate number of sacks Nick Bosa had during these four years. Round to the nearest whole number. 
+    \item Using the data on the table, estimate $B'(32)$. Based on this estimate, was Bosa's sack total increasing at an increasing or decreasing rate? Using the correct units, explain your answer.
+    \item Disregarding his injury-shortened 2020 season, a model for Bosa's sack rate per game can be given with the equation \begin{align*}
+        S_B(g) = 0.15\sqrt{g}.
+    \end{align*}
+    Find $\dfrac{1}{57}\int_0^{57} S_B(g) \, dg$. Using the correct units, explain this result in the context of the problem.
+    \item Assume that \begin{align*}
+        A(g) = -0.001g^2 + 0.073g - 0.004
+    \end{align*}
+    models the rate of Aldon Smith's sacks over his first $50$ games from $2011$ to $2014$. During what game is the difference between Bosa's and Smith's sack totals at a maximum? Show your calculations.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{13. The Groundwater Replenishment System Problem}
+\end{center}
+
+Disparagingly referred to as \textit{Toilet to Tap}, Orange County's GWRS (Groundwater Replenishment System) has converted $400$ billion gallons of raw sewage into drinkable water over the past fifteen years. That is about $25,000$ gallons every eight hours. The process occurs in three phases: microfiltration, reverse osmosis, and ultraviolet disinfection. Let us assume that the rate $R(t)$, in gallons per hour, at which raw sewage enters the process is modeled by the graph below, formed by three linear functions. 
+\begin{center}
+    \includegraphics[width = 0.6\textwidth]{\graphicsdir Chapter 4 Graphics/4.3-Graphic4.png}
+\end{center}
+Further, let use assume the rate at which the raw sewage is converted to treated sewage, in gallons per hour, in the microfiltration process is modeled by \begin{align*}
+    T(t) = 83e^{0.5t}\sqrt{8t - t^2}
+\end{align*}
+for $t \in [0, \, 8]$ hours. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many gallons of raw sewage have entered the process in these eight hours? 
+    \item Find $T'(6.2)$. Using the correct units, explain the meaning of this result in the context of the problem.
+    \item Assuming there is no raw sewage left from the previous process, write an expression for $A(t)$, the total amount of sewage present within the process at any time $t$.
+    \item Find the maximum amount of raw sewage in process during the microfiltration phase.
+    \item Was all the raw sewage converted? Explain your reasoning.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{14. The Groundwater Replenishment System Problem (II)} 
+\end{center}
+
+Disparagingly referred to as \textit{Toilet to Tap}, Orange County's GWRS (Groundwater Replenishment System) has converted $400$ billion gallons of raw sewage into drinkable water over the past fifteen years. That is about $25,000$ gallons every eight hours. The process occurs in three phases: microfiltration, reverse osmosis, and ultraviolet disinfection. Let us assume that the rate $T(t)$, in gallons per hour, at which treated sewage enters the reverse osmosis process is modeled by \begin{align*}
+    T(t) = 3800e^{-0.4t}\sqrt{8t - t^2}
+\end{align*}
+gallons for $0 \leq t \leq 8$ hours. \par
+
+Further, let us assume that the rate $N(t)$ at which the treated sewage is converted to non-potable (non-drinkable) water, in gallons per hour, in the reverse osmosis process is modeled by the table below. \begin{align*}
+    \arraycolsep=16.5pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|}
+        \hline
+        t \text{ (hours)} & 0 & 1.8 & 4.4 & 6.3 & 8 \\ \hline
+        N(t) \text{ (gallons per hour)} & 0 & 2301 & 3107 & 4320 & 5204 \\
+        \hline
+    \end{array} 
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many gallons of treated sewage have entered the process in these eight hours? Round to the nearest gallon.
+    \item Find $N'(5.2)$. Using the correct units, explain the meaning of the result in the context of the problem.
+    \item Use a trapezoidal sum to approximate the amount of non-potable water that exits the system in these eight hours. Round to the nearest gallon.
+    \item Assuming these is $1200$ gallons of treated sewage in the system at the left from the previous process, use the answers to part (a) and (c) above to approximate, to the nearest gallon, the amount of treated sewage still in the system at the end of these eight hours.
+    \item Assume \begin{align*}
+        M(t) = -1 + 1650\sqrt{t} + 352\cos \left(\dfrac{\pi}{4}x\right)
+    \end{align*}
+    is a model of the $N(t)$ data given above. What is the maximum amount, to the nearest gallon, of water in the system for $0 \leq t \leq 8$ hours? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{15. The Groundwater Replenishment System Problem (III)}
+\end{center}
+
+Disparagingly referred to as \textit{Toilet to Tap}, Orange County's GWRS (Groundwater Replenishment System) has converted $400$ billion gallons of raw sewage into drinkable water over the past fifteen years. That is about $25,000$ gallons every eight hours. The process occurs in three phases: microfiltration, reverse osmosis, and ultraviolet disinfection. Let us assume that $N(t)$ and $P(t)$, in gallons per hour, are the rates at which non-potable (non-drinkable) water enters and the potable (drinkable) water exits the ultraviolet disinfection process. Further, let us assume that $N(t)$ and $P(t)$ are modeled by the equations \begin{align*}
+    N(t) = 3750 - 3000\cos \left(\dfrac{\pi}{8}x^{1.5}\right)
+\end{align*}
+and \begin{align*}
+    P(t) = 1125\sqrt{8x - x^2}
+\end{align*}
+for $t \in [0, \, 8]$ hours. \\
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item How many gallons of non-potable water have entered the process in these eight hours?
+    \item Find $P'(5.3)$. Using the correct units, explain the meaning of the result in terms of the situation. 
+    \item Assuming there are $4500$ gallons of non-potable water left from the previous process, write an expression for the $A(t)$, the total amount of non-potable water present within the process at any time $t$.
+    \item Find the time at which the minimum amount of non-potable water in process during the microfiltration phase.
+\end{enumerate} \vspace{11pt}
+
+\begin{center}
+    \underline{16. The WWII Aircraft Problem}
+\end{center}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \vspace{-5.5pt}
+    \centering
+    \includegraphics[width=0.38\textwidth]{\graphicsdir Chapter 4 Graphics/4.3-Graphic5.png}
+\end{wrapfigure}
+
+The table below shows the rates, in thousand of military planes per month, at which aircraft were built during World War II, where $t$ is measured in months after the beginning of $1939$. $A(t)$ represents the rate at which the Axis powers (Germany and Japan) were building aircraft, and $U(t)$ represents the rate at which the United States was building aircraft. During the first six months of the war, the Axis powers had produced 4.9 thousand planes and the US had produced 1.2 thousand planes. \begin{align*}
+    \arraycolsep=11pt\def\arraystretch{1.5}
+    \begin{array}{|c|c|c|c|c|c|c|}
+        \hline
+        t \text{ (months)} & 6 & 18 & 30 & 42 & 54 & 66 \\ \hline
+        A(t) \text{ (thousand planes per month)} & 1.06 & 1.3 & 1.4 & 2.1 & 3.5 & 5.7 \\ \hline
+        U(t) \text{ (thousand planes per month)} & 0.18 & 0.5 & 1.6 & 4.0 & 7.2 & 8.1 \\
+        \hline
+    \end{array}
+\end{align*}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Using a right-hand Riemann Sum, approximate the number of aircraft built by the Axis powers during these 66 months
+    \item Approximate $U'(20)$. Using the correct units, explain the meaning of this result
+    \item Assume \begin{align*}
+        X(t) = 0.757e^{0.028t}
+    \end{align*}
+    models the data for $A(t)$ and \begin{align*}
+        S(t) = 0.164e^{0.067t}
+    \end{align*}
+    models the data for $U(t)$. Set up an equation that would model the difference between the Axis and US aircraft production.
+    \item Find the maximum difference between the Axis and US aircraft production
+\end{enumerate}
+
+% There is no multiple choice for this section
