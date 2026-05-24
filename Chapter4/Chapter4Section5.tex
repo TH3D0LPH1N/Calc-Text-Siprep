@@ -716,7 +716,9 @@ Sketch the possible graph of a function that satisfies the conditions indicated 
 
 % Some questions were omitted.
 
-\textbf{\large{4.4 Multiple Choice Homework}} \par
+\newpage
+
+\textbf{\large{4.5 Multiple Choice Homework}} \par
 
 \begin{questions}
     \question Which of the following graphs has these two sign patterns: \par 
@@ -734,18 +736,923 @@ Sketch the possible graph of a function that satisfies the conditions indicated 
             \node at (4,0.5) {$DNE$};
             \node at (5,0.5) {$+$};
             \node at (-0.5, 0.5) {$f'$};
-        \end{tikzpicture} \hfill \begin{tikzpicture}[baseline=(current bounding box.center)]
-            \draw[<->, thick] (0,0) -- (6,0);
+    \end{tikzpicture} \hfill \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \draw[<->, thick] (0,0) -- (6,0);
 
-            \node at (2,-0.6) {$2$};
-            \node at (4,-0.6) {$3.5$};
-            \node at (-0.5, -0.6) {$x$};
+        \node at (2,-0.6) {$2$};
+        \node at (4,-0.6) {$3.5$};
+        \node at (-0.5, -0.6) {$x$};
 
-            \node at (1,0.5) {$+$};
-            \node at (2,0.5) {$DNE$};
-            \node at (3,0.5) {$+$};
-            \node at (4,0.5) {$DNE$};
-            \node at (5,0.5) {$-$};
-            \node at (-0.5, 0.5) {$f''$};
-        \end{tikzpicture}$
-\end{questions}
+        \node at (1,0.5) {$+$};
+        \node at (2,0.5) {$DNE$};
+        \node at (3,0.5) {$+$};
+        \node at (4,0.5) {$DNE$};
+        \node at (5,0.5) {$-$};
+        \node at (-0.5, 0.5) {$f''$};
+    \end{tikzpicture}$ \\
+
+    \begin{oneparchoices}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.5 * x^2}; 
+                \addplot [
+                        domain=2:3.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+                \addplot [
+                        domain=3.5:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * x^2 + 20 * x - 48};
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(4 - (x - 2)^2)^(0.5)}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * cos((pi / 2) * deg(x))}; 
+                \draw [ultra thick, black] (axis cs:2, 2) 
+                to [bend left=25] (axis cs:5, -3);
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(6 / pi) * acos(x - 1) * pi / 180 - 3}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(3 * (x - 2))^(0.5) - 3}; 
+            \end{axis}
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question Which of the following graphs has these two sign patterns: \par 
+    \vspace{11pt}
+    $\begin{tikzpicture}[baseline=(current bounding box.center)]
+        \draw[<->, thick] (0,0) -- (4,0);
+
+        \node at (2,-0.6) {$2$};
+        \node at (-0.5, -0.6) {$x$};
+
+        \node at (1,0.5) {$-$};
+        \node at (2,0.5) {$DNE$};
+        \node at (3,0.5) {$+$};
+        \node at (-0.5, 0.5) {$f'$};
+    \end{tikzpicture} \hfill \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \draw[<->, thick] (0,0) -- (6,0);
+
+        \node at (2,-0.6) {$1$};
+        \node at (4,-0.6) {$2$};
+        \node at (-0.5, -0.6) {$x$};
+
+        \node at (1,0.5) {$+$};
+        \node at (2,0.5) {$0$};
+        \node at (3,0.5) {$-$};
+        \node at (4,0.5) {$DNE$};
+        \node at (5,0.5) {$-$};
+        \node at (-0.5, 0.5) {$f''$};
+    \end{tikzpicture}$ \\
+
+    \begin{oneparchoices}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.5 * x^2}; 
+                \addplot [
+                        domain=2:3.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+                \addplot [
+                        domain=3.5:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * x^2 + 20 * x - 48};
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(4 - (x - 2)^2)^(0.5)}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * cos((pi / 2) * deg(x))}; 
+                \draw [ultra thick, black] (axis cs:2, 2) 
+                to [bend left=25] (axis cs:5, -3);
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(6 / pi) * acos(x - 1) * pi / 180 - 3}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(3 * (x - 2))^(0.5) - 3}; 
+            \end{axis}
+        \end{tikzpicture} 
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question Which of the following graphs has these two sign patterns: \par 
+    \vspace{11pt}
+    $\begin{tikzpicture}[baseline=(current bounding box.center)]
+        \draw[<->, thick] (0,0) -- (4,0);
+
+        \node at (2,-0.6) {$2$};
+        \node at (-0.5, -0.6) {$x$};
+
+        \node at (1,0.5) {$+$};
+        \node at (2,0.5) {$DNE$};
+        \node at (3,0.5) {$-$};
+        \node at (-0.5, 0.5) {$f'$};
+    \end{tikzpicture} \hfill \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \draw[<->, thick] (0,0) -- (6,0);
+
+        \node at (2,-0.6) {$1$};
+        \node at (4,-0.6) {$2$};
+        \node at (-0.5, -0.6) {$x$};
+
+        \node at (1,0.5) {$+$};
+        \node at (2,0.5) {$0$};
+        \node at (3,0.5) {$-$};
+        \node at (4,0.5) {$DNE$};
+        \node at (5,0.5) {$-$};
+        \node at (-0.5, 0.5) {$f''$};
+    \end{tikzpicture}$ \\
+
+    \begin{oneparchoices}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.5 * x^2}; 
+                \addplot [
+                        domain=2:3.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+                \addplot [
+                        domain=3.5:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * x^2 + 20 * x - 48};
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(4 - (x - 2)^2)^(0.5)}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * cos((pi / 2) * deg(x))}; 
+                \draw [ultra thick, black] (axis cs:2, 2) 
+                to [bend left=25] (axis cs:5, -3);
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(6 / pi) * acos(x - 1) * pi / 180 - 3}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(3 * (x - 2))^(0.5) - 3}; 
+            \end{axis}
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question Which of the following graphs has these two sign patterns: \par 
+    \vspace{11pt}
+    $\begin{tikzpicture}[baseline=(current bounding box.center)]
+        \draw[<->, thick] (0,0) -- (6,0); 
+
+        \node at (2,-0.6) {$2$};
+        \node at (4,-0.6) {$3.5$};
+        \node at (-0.5, -0.6) {$x$};
+
+        \node at (1,0.5) {$+$};
+        \node at (2,0.5) {$DNE$};
+        \node at (3,0.5) {$-$};
+        \node at (4,0.5) {$DNE$};
+        \node at (5,0.5) {$+$};
+        \node at (-0.5, 0.5) {$f'$};
+    \end{tikzpicture} \hfill \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \draw[<->, thick] (0,0) -- (4,0);
+
+        \node at (2,-0.6) {$2$};
+        \node at (-0.5, -0.6) {$x$};
+
+        \node at (1,0.5) {$-$};
+        \node at (2,0.5) {$DNE$};
+        \node at (3,0.5) {$+$};
+        \node at (-0.5, 0.5) {$f''$};
+    \end{tikzpicture}$ \\
+
+    \begin{oneparchoices}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.5 * x^2}; 
+                \addplot [
+                        domain=2:3.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+                \addplot [
+                        domain=3.5:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * x^2 + 20 * x - 48};
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(4 - (x - 2)^2)^(0.5)}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {2 * x^2 - 14 * x + 22};
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {-2 * cos((pi / 2) * deg(x))}; 
+                \draw [ultra thick, black] (axis cs:2, 2) 
+                to [bend left=25] (axis cs:5, -3);
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-3.25, ymax=3.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-3.5,-3,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:2, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(6 / pi) * acos(x - 1) * pi / 180 - 3}; 
+                \addplot [
+                        domain=2:5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {(3 * (x - 2))^(0.5) - 3}; 
+            \end{axis}
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question Which of the graphs of $y = g(x)$ below has $g'(x) < 0$ and $g''(x) > 0$? \\
+
+    \begin{oneparchoices}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {ln(x)}; 
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {1 / x}; 
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.5 * x + 1}; 
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.44 * x^2 + 0.25}; 
+            \end{axis}
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question Which of the graphs of $y = g(x)$ below has $g'(x) > 0$ and $g''(x) > 0$? \\
+
+    \begin{oneparchoices}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {ln(x)}; 
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {1 / x}; 
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.5 * x + 1}; 
+            \end{axis}
+        \end{tikzpicture}
+        \choice \vspace{11pt} \begin{tikzpicture}[scale = 0.7]
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.25, xmax=5.25,
+                ymin=-0.25, ymax=4.25, % Set y-axis from -5 to 5
+                xtick={0,1,...,5}, % Shorthand for spacing by 1
+                ytick={0,1,...,4}, % Shorthand for spacing by 1
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,3.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                        domain=0:5.5, 
+                        samples=100, 
+                        color=black,
+                        ultra thick,
+                    ]
+                    {0.44 * x^2 + 0.25}; 
+            \end{axis}
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+\end{questions} 
