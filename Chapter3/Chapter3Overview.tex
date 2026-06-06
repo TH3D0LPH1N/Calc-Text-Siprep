@@ -28,14 +28,14 @@ But, how can we find the exact area? With the Riemann sum, we are only coming up
 \end{align*}
 
 This is where the definite integral comes in. The definite integral provides a precise way to calculate the exact area under a curve by taking the limit of the Riemann sum as the number of rectangles approaches infinity. In other words, instead of merely approximating the area with a finite number of rectangles, the definite integral captures what happens when the width of each rectangle becomes infinitesimally small. We write this limit in a compact form as: \begin{align*}
-    \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{i = 1}^n f\left(x_i\right) \cdot \Delta x,
+    \int_a^b f(x) \,\mathrm{d}x = \lim_{n \to \infty} \sum_{i = 1}^n f\left(x_i\right) \cdot \Delta x,
 \end{align*}
 where $a$ is the "lower bound" and $b$ is the "upper bound." Mathematicians sometimes nuance this statement as \par
 
 \begin{center}
     \fbox{\fbox{\begin{minipage}{0.96\textwidth}
         \begin{align*}
-            \int_a^b f(x) \, dx = \lim_{n \to \infty} \sum_{k = 1}^n f(a + k\Delta x) \cdot \Delta x \text{, where } \Delta x = \dfrac{b - a}{n} \\
+            \int_a^b f(x) \,\mathrm{d}x = \lim_{n \to \infty} \sum_{k = 1}^n f(a + k\Delta x) \cdot \Delta x \text{, where } \Delta x = \dfrac{b - a}{n} \\
         \end{align*}
     \end{minipage}}}
 \end{center}

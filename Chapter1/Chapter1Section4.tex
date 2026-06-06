@@ -16,8 +16,8 @@ Just as with the first derivative, there are several symbols for the second deri
         \begin{center}
             Higher Order Derivative Symbols
             \\[11pt]
-            $\deriv[2] = \text{``d squared y, d - x squared''} \rightarrow \dfrac{d^3y}{dx^3}, \; \dfrac{d^4y}{dx^4} \dots \dfrac{d^ny}{dx^n}$ \\[11pt]
-            $\dfrac{d^2}{dx^2} = \text{``d squared, d - x squared''} \rightarrow \dfrac{d^3}{dx^3}, \; \dfrac{d^4}{dx^4} \dots \dfrac{d^n}{dx^n}$ \\[11pt]
+            $\deriv[2] = \text{``d squared y, d - x squared''} \rightarrow \dfrac{\dd ^3y}{\dd x^3}, \; \dfrac{\dd ^4y}{\dd x^4} \dots \dfrac{\dd ^ny}{\dd x^n}$ \\[11pt]
+            $\dfrac{\dd ^2}{\dd x^2} = \text{``d squared, d - x squared''} \rightarrow \dfrac{\dd ^3}{\dd x^3}, \; \dfrac{\dd ^4}{\dd x^4} \dots \dfrac{\dd ^n}{\dd x^n}$ \\[11pt]
             $f''(x) = \text{``f double prime of x''} \rightarrow f'''(x), \; f^{IV}(x) \dots f^{n}(x)$ \\[11pt]
             $y'' = \text{``y double prime''}$ 
         \end{center} 
@@ -33,32 +33,32 @@ Just as with the first derivative, there are several symbols for the second deri
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.4.1: } $\dfrac{d^2}{dx^2} \left[x^4 - 7x^3 - 3x^2 + 2x - 5\right]$
+    \textbf{Ex 1.4.1: } $\dfrac{\dd ^2}{\dd x^2} \left[x^4 - 7x^3 - 3x^2 + 2x - 5\right]$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.4.1: } \begin{align*}
-        \dfrac{d^2}{dx^2} \left[x^4 - 7x^3 - 3x^2 + 2x - 5\right] &= \diff \left[\diff \left[x^4 - 7x^3 - 3x^2 + 2x - 5\right]\right] \\[11pt]
+        \dfrac{\dd ^2}{\dd x^2} \left[x^4 - 7x^3 - 3x^2 + 2x - 5\right] &= \diff \left[\diff \left[x^4 - 7x^3 - 3x^2 + 2x - 5\right]\right] \\[11pt]
         & = \diff \left[4x^3 - 21x^2 - 6x + 2\right] \\[11pt]
         & = \boxed{12x^2 - 42x - 6}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
  
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.4.2: } Find $\dfrac{d^3y}{dx^3}$ if $y = \sin (3x)$.
+    \textbf{Ex 1.4.2: } Find $\dfrac{\dd ^3y}{\dd x^3}$ if $y = \sin (3x)$.
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.4.2: } \begin{align*}
         & y = \sin (3x) \\[11pt]
         & \deriv = \cos (3x) \cdot 3 = 3\cos (3x) \\[11pt]
         & \deriv[2] = 3(-\sin (3x)) \cdot 3 = -9\sin (3x) \\[11pt]
-        & \dfrac{d^3y}{dx^3} = -9\cos (3x) \cdot 3 = \boxed{-27\cos (3x)}
+        & \dfrac{\dd ^3y}{\dd x^3} = -9\cos (3x) \cdot 3 = \boxed{-27\cos (3x)}
     \end{align*}
 \end{tcolorbox}
 
 More complicated functions, in particular \hyperlink{Composite Function}{composite functions}, have a more complicated process. When the Chain Rule is applied, the result often includes a product or a quotient. Therefore, the second derivative will require the Product or Quotient Rules, as well as possibly the Chain Rule. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 1.4.3: } $y = e^{3x^2}$, find $\dfrac{d^y}{dx^2}$. 
+    \textbf{Ex 1.4.3: } $y = e^{3x^2}$, find $\dfrac{\dd ^y}{\dd x^2}$. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 1.4.3: }\begin{align*}

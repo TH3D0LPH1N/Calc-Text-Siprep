@@ -369,7 +369,7 @@ So, let's tackle our example. \par
         A &= 3000w - 2w^2
     \end{align*}
     Now, since we have an equation with one independent variable, we can take the derivative easily. \begin{align*}
-        \dfrac{dA}{dw} = 3000 - 4w &= 0 \\[11pt]
+        \dfrac{\dd A}{\dd w} = 3000 - 4w &= 0 \\[11pt]
         w &= 750 \\[11pt]
         l &= 1500
     \end{align*}
@@ -383,7 +383,7 @@ So, let's tackle our example. \par
     \textbf{Sol 4.1.8: } We want to minimize the distance to the origin, so we will be using the Pythagorean Theorem to find the distance. \begin{align*}
         D &= \sqrt{x^2 + y^2} \\[11pt]
         D &= \sqrt{x^2 + \left(\dfrac{e^{-x^2}}{2}\right)^2} \\[11pt]
-        \dfrac{dD}{dx} &= \dfrac{1}{2}\left(x^2 + \dfrac{e^{-2x^2}}{4}\right)^{-\frac{1}{2}}\left(2x - xe^{-2x^2}\right) = 0 \\[11pt]
+        \dfrac{\dd D}{\dd x} &= \dfrac{1}{2}\left(x^2 + \dfrac{e^{-2x^2}}{4}\right)^{-\frac{1}{2}}\left(2x - xe^{-2x^2}\right) = 0 \\[11pt]
         x &= 0, \, \pm 0.841
     \end{align*}
     \begin{center}
@@ -402,7 +402,7 @@ So, let's tackle our example. \par
             \node at (5,0.5) {$-$};
             \node at (6,0.5) {$0$};
             \node at (7,0.5) {$+$};
-            \node at (-0.5, 0.5) {$\dfrac{dD}{dx}$};
+            \node at (-0.5, 0.5) {$\dfrac{\dd D}{\dd x}$};
         \end{tikzpicture}
     \end{center}
     By the First Derivative Test, we know that $x = 0$ is a minimum of the curve. Plugging that value back into our original equation gives us our desired point of $\boxed{(0, \, 0.5)}$. 

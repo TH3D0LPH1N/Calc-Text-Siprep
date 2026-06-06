@@ -1,47 +1,10 @@
-So far, we've only seen how to recreate the original graph given information regarding the derivative. However, let's go the other way around and also take a look at how we can obtain the graphs of the first and second derivative from the original graph. \par 
+\textbf{\underline{\large{4.6: Graphical Analysis I}}} \par
+
+In the last section, we looked at graphing functions given information regarding their derivative, but now, we will reverse that process. As we already know, there is a significant amount of layering and parallelism between a function and its first and second derivatives. The zeroes and signs of one shed light on the intervals of increasing, decreasing, extreme points, concavity, and/or point(s) of inclusion of another. \par 
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 4.5.5: } Sketch a possible graph of the first and second derivative of the function shown below. \par
-    \vspace{11pt}
-
-    \begin{center}
-        \begin{tikzpicture}
-            % Generated with Google Gemini
-
-            \begin{axis}[
-                axis lines = middle,
-                xlabel = $x$,
-                ylabel = {$y$},
-                xmin=-5.5, xmax=5.5,
-                ymin=-3.5, ymax=3.5, % Set y-axis from -5 to 5
-                xtick={-5,-4,...,5}, % Shorthand for spacing by 1
-                ytick={-3,-2,...,3}, % Shorthand for spacing by 1
-                grid = both,
-                grid style = {dashed, gray!70},
-                width=15cm,
-                height=10cm,
-                axis line style={-stealth},
-                ]
-                \addplot [
-                    domain=-4:2, % Only plot the part that fits (sqrt(5) approx 2.23)
-                    samples=100, 
-                    color=black,
-                    very thick,
-                ]
-                {-0.264 * x^4 - 1.075 * x^3 + 0.442 * x^2 + 3.108 * x + 0.045};
-                % \addplot[
-                %     only marks,
-                %     mark=*,
-                %     mark size=2pt,
-                %     color=black
-                % ]
-                % coordinates {
-                %     (0, 0) (-0.5, -0.184) (-1, -0.135) 
-                % };
-            \end{axis}
-        \end{tikzpicture}
-    \end{center}
+    \textbf{Ex 4.6.1: } Find the sign patterns of $f(x) = 9x - x^3$, $f'(x) = 9 - 3x^2$, and $f''(x) = -6x$ and compare them. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 4.5.5: } Let's begin by identifying some points that the first derivative will pass through. We know that the zeroes of the graph of the first derivative are the extreme values of the original function. Therefore, let's find the extrema of our graph and create a sign pattern. It appears that the graph has local maximums at $x = -3, \, 1$ and a local minimum at $x = -1$.
-\end{tcolorbox} 
+    \textbf{Sol 4.6.1: } Let's find the zeroes of each function, along with their respective sign patterns. \par 
+\end{tcolorbox}

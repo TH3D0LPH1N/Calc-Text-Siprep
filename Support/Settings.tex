@@ -44,12 +44,13 @@
 
 \newcommand{\horizontalline}{\noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}} 
 \newcommand{\parthline}{\hspace{-17.5pt} \horizontalline}
-\newcommand{\diff}{\dfrac{d}{dx}}
-\newcommand{\tdiff}{\dfrac{d}{dt}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\diff}{\dfrac{\mathrm{d}}{\mathrm{d}x}}
+\newcommand{\tdiff}{\dfrac{\mathrm{d}}{\mathrm{d}t}}
 \newcommand{\deriv}[1][]{%
     \ifthenelse{\equal{#1}{}}%
-        {\dfrac{dy}{dx}}
-        {\dfrac{d^{#1}y}{dx^{#1}}}
+        {\dfrac{\mathrm{d}y}{\mathrm{d}x}}
+        {\dfrac{\mathrm{d}^{#1}y}{\mathrm{d}x^{#1}}}
 }
 \newcommand{\forcespace}{\vphantom{\Bigg|}}
 \newcommand{\smallforcespace}{\vphantom{\Big|}}

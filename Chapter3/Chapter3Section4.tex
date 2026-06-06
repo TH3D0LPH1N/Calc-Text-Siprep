@@ -1,6 +1,6 @@
 \textbf{\underline{\large{3.4: Accumulation of Rates}}} \par
 
-As we saw with the Riemann sums, in $\int f(x) \, dx$, $f(x_i) \cdot \, dx$ is the area of a rectangle (height times base). The $\int \forcespace$ is the sum of the areas. The main concept in these ``accumulation of rates'' problem is that since a definite integral is a sum of values, the integral of a rate of change over some time $t$ equals the total change over that time $t$. \par
+As we saw with the Riemann sums, in $\int f(x) \,\mathrm{d}x$, $f(x_i) \cdot \,\mathrm{d}x$ is the area of a rectangle (height times base). The $\int \forcespace$ is the sum of the areas. The main concept in these ``accumulation of rates'' problem is that since a definite integral is a sum of values, the integral of a rate of change over some time $t$ equals the total change over that time $t$. \par
 
 \begin{tcolorbox}[objective]
     \begin{center}
@@ -23,7 +23,7 @@ Beginning in 2002, CollegeBoard shifted emphasis on understanding of the accumul
     \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
         \item How many people have entered the park at $4$ pm ($t = 16$)? Round your answer to the nearest whole number. \\
         \item The price of admission is $\$36$ until $4$ pm ($t = 16$). After that, the price drops to $\$20$. How much money is collected from admissions that day? Round your answer to the nearest whole number. \\
-        \item Let $H(t) = \int_8^t E(x) - L(x) \, dx$ for $8 \leq t \leq 24$. The value of $H(16)$ to the nearest whole number is $5023$. Find the value of $H'(16)$ and explain the meaning of $H(16)$ and $H'(16)$ in the context of the amusement park. \\
+        \item Let $H(t) = \int_8^t E(x) - L(x) \,\mathrm{d}x$ for $8 \leq t \leq 24$. The value of $H(16)$ to the nearest whole number is $5023$. Find the value of $H'(16)$ and explain the meaning of $H(16)$ and $H'(16)$ in the context of the amusement park. \\
         \item At what time $t$, for $8 \leq t \leq 24$, does the model predict the number of people in the park is at at maximum?
     \end{enumerate}
 \end{tcolorbox}
@@ -39,12 +39,12 @@ Now, before we attempt this problem, there are many key phrases and concepts tha
             \textbf{Key Phrases for Interpreting Accumulation of Rates Problems}
         \end{center}
         \begin{alignat*}{2}
-            & \text{Total change:} &\qquad& \int_a^b R(t) \, dt \text{ or } \int_a^t (\text{incoming rate} - \text{outgoing rate}) \, dx \\[11pt]
+            & \text{Total change:} &\qquad& \int_a^b R(t) \,\mathrm{d}t \text{ or } \int_a^t (\text{incoming rate} - \text{outgoing rate}) \,\mathrm{d}x \\[11pt]
             & \text{Total rate of change:} &\qquad& \text{incoming rate} - \text{outgoing rate} \\[11pt]
-            & \text{Total amount:} &\qquad& \text{initial value} + \int_a^t (\text{incoming rate} - \text{outgoing rate}) \, dx \\[11pt]
-            & \text{Instantaneous rate of change:} &\qquad& \dfrac{dx}{dt} \text{ or } R(t) \\[11pt]
+            & \text{Total amount:} &\qquad& \text{initial value} + \int_a^t (\text{incoming rate} - \text{outgoing rate}) \,\mathrm{d}x \\[11pt]
+            & \text{Instantaneous rate of change:} &\qquad& \dfrac{\dd x}{\dd t} \text{ or } R(t) \\[11pt]
             & \text{Average rate of change:} &\qquad& \dfrac{f(b) - f(a)}{b - a} \\[11pt]
-            & \text{Average value of $f(x)$:} &\qquad& \dfrac{1}{b - a}\int_a^b f(x) \, dx \\[11pt]
+            & \text{Average value of $f(x)$:} &\qquad& \dfrac{1}{b - a}\int_a^b f(x) \,\mathrm{d}x \\[11pt]
             & \text{Amount increase/decrease:} &\qquad& \text{rate of change positive/negative} \\[11pt]
             & \text{Rate of change inc/dec:} &\qquad& \tdiff\text{[rate of change] positive/negative} \\
         \end{alignat*}
@@ -54,7 +54,7 @@ Now, before we attempt this problem, there are many key phrases and concepts tha
 Note that there is a difference between a function that is increasing or decreasing and its derivative that is increasing or decreasing. \par
 
 One technique that is super useful in accumulation of rates problem is unit analysis. By analyzing the units of the problem, we are able to interpret what the question is asking, and provide an appropriate answer. For instance, if $R(t)$ is measured in miles per hour, \begin{align*}
-    \int_a^b R(t) \, dt = \int_a^b \dfrac{\text{miles}}{\text{hour}}(\text{hours}) = \text{miles}
+    \int_a^b R(t) \,\mathrm{d}t = \int_a^b \dfrac{\text{miles}}{\text{hour}}(\text{hours}) = \text{miles}
 \end{align*}
 
 To that end, let's take a look at the above chart, but with the intended units of the answer. \par
@@ -123,12 +123,12 @@ With those instructions out the way, we can finally look at the solution for \te
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.4.1: } \par
     a) Since $E(t)$ is a rate in people per hour, the number of people who have entered the park will be an integral from $t = 8$ to $t = 16$. Therefore, \begin{align*}
-        \text{Total entered} &= \int_8^{16} E(t) \, dt \\[11pt]
+        \text{Total entered} &= \int_8^{16} E(t) \,\mathrm{d}t \\[11pt]
         & = 6126.105 \\[11pt]
         & \approx \boxed{6126 \text{ people}}
     \end{align*}
-    b) Since there are different entry fees for different times of day, we need to determine how many people paid each fee. So, we will have to do $\int_8^{16} E(t) \, dt$ and $\int_{16}^{24} E(t) \, dt$. Conveniently, we know that $\int_8^{16} E(t) \, dt = 6126$ people from the previous problem, so we can just find $\int_{16}^{24} E(t) \, dt$. \begin{align*}
-        \int_{16}^{24} E(t) \, dt \approx 1808 \text{ people}
+    b) Since there are different entry fees for different times of day, we need to determine how many people paid each fee. So, we will have to do $\int_8^{16} E(t) \,\mathrm{d}t$ and $\int_{16}^{24} E(t) \,\mathrm{d}t$. Conveniently, we know that $\int_8^{16} E(t) \,\mathrm{d}t = 6126$ people from the previous problem, so we can just find $\int_{16}^{24} E(t) \,\mathrm{d}t$. \begin{align*}
+        \int_{16}^{24} E(t) \,\mathrm{d}t \approx 1808 \text{ people}
     \end{align*}
     The total revenue that the park gets from admissions means multiplying the number of people by the admission charge. Therefore, we have \begin{align*}
         \text{Total revenue} &= \$36 \cdot 6126 + \$20 \cdot 1808 \\[11pt]
@@ -140,8 +140,8 @@ With those instructions out the way, we can finally look at the solution for \te
         \includegraphics[width = 0.6\textwidth]{\graphicsdir Chapter 3 Graphics/3.4-Graphic1.png}
     \end{center}
 
-    Note how each function increases and then decreases. Since $H(t) = \int_8^t E(x) - L(x) \, dx$, we can use the Fundamental Theorem of Calculus to determine the derivative. \begin{align*}
-        H'(t) &= \tdiff\int_8^t E(x) - L(x) \, dx \\[11pt]
+    Note how each function increases and then decreases. Since $H(t) = \int_8^t E(x) - L(x) \,\mathrm{d}x$, we can use the Fundamental Theorem of Calculus to determine the derivative. \begin{align*}
+        H'(t) &= \tdiff\int_8^t E(x) - L(x) \,\mathrm{d}x \\[11pt]
         & = E(t) - L(t) \\[11pt]
         & = E(16) - L(16) \\[11pt]
         & = 14
@@ -169,22 +169,22 @@ With those instructions out the way, we can finally look at the solution for \te
     \end{align*}
     On New Years' Day ($t = 0$), there were 131 cats in the PHS nursery waiting to be adopted. \\
     \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-        \item $\int_0^{12} R(t) \, dt = 1440$ cats. Using the correct units, explain the meaning of this result in context of the problem. \\
+        \item $\int_0^{12} R(t) \,\mathrm{d}t = 1440$ cats. Using the correct units, explain the meaning of this result in context of the problem. \\
         \item Assume $A'(10.3) = -28.008$. Using the correct units, explain the meaning of $A'(10.3)$ in context of the problem. \\
-        \item $C(t) = 131 + \int_0^{12} R(t) - A(t) \, dt = 71$. Using the correct units, explain the meaning of this result in context of the problem. \\
-        \item Using the correct units, explain the meaning of $\dfrac{1}{t}\int_0^t R(x) \, dx$ in the context of the problem. \\
+        \item $C(t) = 131 + \int_0^{12} R(t) - A(t) \,\mathrm{d}t = 71$. Using the correct units, explain the meaning of this result in context of the problem. \\
+        \item Using the correct units, explain the meaning of $\dfrac{1}{t}\int_0^t R(x) \,\mathrm{d}x$ in the context of the problem. \\
         \item Suppose $R(7.4) = 185.4$ and $R'(7.4) = -30.8$. Using the correct units, explain the meaning of this information in context of the problem.
     \end{enumerate}
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.4.2: } \par
-    a) $R(t)$ is the rate at which healthy cats per month are received at PHS. Therefore, $\int_0^{12} R(t) \, dt \forcespace$ would be the total number of cats received over this time period. So, \textbf{1440 healthy cats were received at PHS between $t = 0$ and $t = 12$ (or, during the 12 months of 2019).} \par
+    a) $R(t)$ is the rate at which healthy cats per month are received at PHS. Therefore, $\int_0^{12} R(t) \,\mathrm{d}t \forcespace$ would be the total number of cats received over this time period. So, \textbf{1440 healthy cats were received at PHS between $t = 0$ and $t = 12$ (or, during the 12 months of 2019).} \par
     \vspace{11pt}
     b) $A(t)$ is the rate at which adoptions occur, measured in cats per month. Therefore, \textbf{the rate at which adoptions are occurring at $t = 10.3$ is decreasing by 28.008 cats per month, per month.} \par
     \vspace{11pt}
-    c) $C(t) = 131 + \int_0^t R(x) - A(x) \, dx$ represents the total number of cats and kittens sheltered at PHS at any time $t$. So, we can say that \textbf{the number of cats and kittens sheltered at PHS at the end of the 12 months of 2019 is 71 cats and kittens.} \par
+    c) $C(t) = 131 + \int_0^t R(x) - A(x) \,\mathrm{d}x$ represents the total number of cats and kittens sheltered at PHS at any time $t$. So, we can say that \textbf{the number of cats and kittens sheltered at PHS at the end of the 12 months of 2019 is 71 cats and kittens.} \par
     \vspace{11pt}
-    d) $\dfrac{1}{t}\int_0^t R(x) \, dx$ is the average number of cats and kittens being received at any time $t$. Therefore, \textbf{$\dfrac{1}{t}\int_0^t R(x) \, dx \forcespace$ represents the average number of cats and kittens, in cats and kittens per month, that have been received at PHS during the interval $[0, t]$ of 2019.} \par
+    d) $\dfrac{1}{t}\int_0^t R(x) \,\mathrm{d}x$ is the average number of cats and kittens being received at any time $t$. Therefore, \textbf{$\dfrac{1}{t}\int_0^t R(x) \,\mathrm{d}x \forcespace$ represents the average number of cats and kittens, in cats and kittens per month, that have been received at PHS during the interval $[0, t]$ of 2019.} \par
     \vspace{11pt}
     e) $R(7.4) > 0$ and $R'(7.4) < 0$. So, we can say that \textbf{at $t = 7.4$, the total number of cats and kittens that have been received at PHS is increasing at a decreasing rate of -30.8 cats and kittens per month, per month.} \par
     \vspace{11pt}
@@ -211,12 +211,12 @@ With those instructions out the way, we can finally look at the solution for \te
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.4.3: } \par
     a) To find the total amount removed over the time interval, we integrate the rate $R(t)$ over $0 \leq t \leq 6$. \begin{align*}
-        \text{Amount removed} &= \int_0^6 \left(2 + 5\sin \left(\dfrac{4\pi}{25}t\right) \right) \, dt \\[11pt]
-        & = \int_0^6 R(t) \, dt \\[11pt]
+        \text{Amount removed} &= \int_0^6 \left(2 + 5\sin \left(\dfrac{4\pi}{25}t\right) \right) \,\mathrm{d}t \\[11pt]
+        & = \int_0^6 R(t) \,\mathrm{d}t \\[11pt]
         & = \boxed{31.816 \text{ gallons}}
     \end{align*}
     b) Let $P(t)$ represent the total amount of oil in the reaction vessel at time $t$. Initially, $P(0) = 2500$ gallons. The net change of oil is production minus removal, which is $S(t) - R(t)$. Since the variable $t$ is the upper boundary, we need to use a dummy variable $x$ in the integrand. This gives us the expression \begin{align*}
-        \boxed{P(t) = 2500 + \int_0^t (S(x) - R(x)) \, dx}.
+        \boxed{P(t) = 2500 + \int_0^t (S(x) - R(x)) \,\mathrm{d}x}.
     \end{align*}
     c) The rate of change of $P$ is $P'(t) = S(t) - R(t)$. Therefore, at $t = 4$, \begin{align*}
         P'(4) &= S(4) - R(4) \\[11pt]
@@ -239,8 +239,8 @@ and the death rate for the penguins on the island is modeled by \begin{align*}
     D(t) = 110e^{0.09t} \text{ puffins per year}.
 \end{align*}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Using the correct units, explain the meaning of $\int_0^{50} (B(t) - D(t)) \, dt$. 
-    \item Using the correct units, explain the meaning of $\dfrac{1}{25} \int_0^{25} B(t) \, dt$. 
+    \item Using the correct units, explain the meaning of $\int_0^{50} (B(t) - D(t)) \,\mathrm{d}t$. 
+    \item Using the correct units, explain the meaning of $\dfrac{1}{25} \int_0^{25} B(t) \,\mathrm{d}t$. 
     \item Using the correct units, explain the meaning of $D'(35)$, 
     \item Using the correct units, explain the meaning of $\dfrac{B(35) - B(10)}{35 - 10}$. 
     \item Suppose $D(35) = 2567$ and $D'(35) = 143.8$. Using the correct units, explain the meaning of these data in context of the number of puffin deaths.
@@ -252,9 +252,9 @@ and the death rate for the penguins on the island is modeled by \begin{align*}
 
 Metabolism is the body's process of converting ingested substances to other compounds. Alcohol is absorbed into the blood stream, then, through oxidation, it is detoxified and removed from the blood. Research shows that, after consuming three shots of alcohol in rapid succession, an average (180 lb) adult, fasting male has the alcohol metabolized at a rate modeled by $R(t) = 0.04\left(t^2 - 8t + 6\right)e^{-t}$, where $R(t)$ is the measured in percentage of alcohol in the blood stream per hour, $t$ is measured in hours after consuming the third drink and is valid for $0 \leq t \leq 6$. \\
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item $\int_0^{2.5} R(t) \, dt = 0.029$. Using the correct units, explain the meaning of this result. 
+    \item $\int_0^{2.5} R(t) \,\mathrm{d}t = 0.029$. Using the correct units, explain the meaning of this result. 
     \item At $t = 2$ hours, $R(t)$ is negative and $R'(2) = 0.011$. Using the correct units, explain the meaning of this result in terms of the amount of alcohol in the blood stream. 
-    \item Using the correct units, explain the meaning of $\dfrac{2}{5}\int_0^{2.5} R(t) \, dt$. 
+    \item Using the correct units, explain the meaning of $\dfrac{2}{5}\int_0^{2.5} R(t) \,\mathrm{d}t$. 
     \item Using the correct units, explain the meaning of $\dfrac{R(5) - R(1)}{5 - 1}$.
 \end{enumerate} \vspace{11pt}
 
@@ -410,7 +410,7 @@ During the same time interval, sewage is pumped out at a rate of \begin{align*}
         \makebox[0.035\textwidth] \choice The rate at which the temperature is changing at the end of the 24th day.
     \end{oneparchoices} \par \horizontalline
 
-    \question For $t \geq 0$ hours, $H$ is a differentiable function of $t$ that gives the temperature, in degrees Celsius, at an Arctic weather station. Which of the following is the best interpretation of $\int_0^t H(x) \, dx$. \\
+    \question For $t \geq 0$ hours, $H$ is a differentiable function of $t$ that gives the temperature, in degrees Celsius, at an Arctic weather station. Which of the following is the best interpretation of $\int_0^t H(x) \,\mathrm{d}x$. \\
 
     \begin{oneparchoices}
         \choice The change in temperature during the first day. \\[11pt]
@@ -452,9 +452,9 @@ During the same time interval, sewage is pumped out at a rate of \begin{align*}
     \question Let $R(t)$ represent the rate in gal/hr at which water is leaking out of a tank, where $t$ is measured in hours. Which of the following expressions represents the average rate of change of gallons of water per hour that leaks out in the first three hours? \\
 
     \begin{oneparchoices}
-        \choice $\int_0^3 R(t) \, dt$
-        \choice $\dfrac{1}{3}\int_0^3 R(t) \, dt$
-        \choice $\int_0^3 R'(t) \, dt$
+        \choice $\int_0^3 R(t) \,\mathrm{d}t$
+        \choice $\dfrac{1}{3}\int_0^3 R(t) \,\mathrm{d}t$
+        \choice $\int_0^3 R'(t) \,\mathrm{d}t$
         \choice $R(3) - R(0)$
         \choice $\dfrac{R(3) - R(0)}{3 - 0}$
     \end{oneparchoices} \par \horizontalline
@@ -469,7 +469,7 @@ During the same time interval, sewage is pumped out at a rate of \begin{align*}
         \choice $148,561$
     \end{oneparchoices} \par \horizontalline 
 
-    \question The rate at which ice is melting in a pond is given by $\dfrac{dV}{dt} = \sqrt{1 + 2^t}$, where $V$ is the volume of the ice in cubic feet and $t$ is the time in minutes. The amount of ice which has melted in the first five minutes is \\
+    \question The rate at which ice is melting in a pond is given by $\dfrac{\dd V}{\dd t} = \sqrt{1 + 2^t}$, where $V$ is the volume of the ice in cubic feet and $t$ is the time in minutes. The amount of ice which has melted in the first five minutes is \\
 
     \begin{oneparchoices}
         \choice $14.49 \si{ft^3}$

@@ -8,13 +8,13 @@ As we have seen, we can deduce things about a function if its derivative is know
         \begin{center}
             Symbol for the Integral
             \\[11pt]
-            $\hfill \int f(x) \, dx \hfill \text{``the integral of f of x, d-x''} \hfill$ \\[11pt] 
+            $\hfill \int f(x) \,\mathrm{d}x \hfill \text{``the integral of f of x, d-x''} \hfill$ \\[11pt] 
         \end{center} 
         \vspace{11pt}
     \end{minipage}}}
 \end{center}
 
-The $dx$ is called the differential. For now, we will treat it as part of the integral symbol. It tells us the independent variable of the function [usually, but not always, $x$]. It does have a meaning on its own, but we will explore that later. \par
+The $\dd x$ is called the differential. For now, we will treat it as part of the integral symbol. It tells us the independent variable of the function [usually, but not always, $x$]. It does have a meaning on its own, but we will explore that later. \par
 
 Looking at the integral as an antiderivative, we should be able to figure out the basic process. Remember: \begin{center}
     $\diff \left[x^n\right] = nx^{n - 1}$ \\[11pt]
@@ -23,7 +23,7 @@ Looking at the integral as an antiderivative, we should be able to figure out th
 \end{center}
 
 It follows that if we are starting with the derivative and want to reverse the process, the power must increase by one and we should divide by this new power. Formally, \begin{align*}
-    \int x^n \, dx = \dfrac{x^{n + 1}}{n + 1} + C \text{ for } n \neq -1
+    \int x^n \,\mathrm{d}x = \dfrac{x^{n + 1}}{n + 1} + C \text{ for } n \neq -1
 \end{align*}
 
 The $+C$ is to account for any constant that might've been in the equation before the derivative was taken. Note that $n = -1$ does not work with this rule because it results in a division by zero. However, we know from our derivative rules that the derivative of $\ln x$ yields $x^{-1}$. Therefore, we can append our anti-power rule. \par
@@ -34,8 +34,8 @@ The $+C$ is to account for any constant that might've been in the equation befor
         \begin{center}
             \textbf{The Complete Anti-Power Rule}
             \\[11pt]
-            $\int x^n \, dx = \dfrac{x^{n + 1}}{n + 1} + C \text{ for } n \neq -1$ \\[11pt]
-            $\int \dfrac{1}{x} \, dx = \ln |x| + C$ 
+            $\int x^n \,\mathrm{d}x = \dfrac{x^{n + 1}}{n + 1} + C \text{ for } n \neq -1$ \\[11pt]
+            $\int \dfrac{1}{x} \,\mathrm{d}x = \ln |x| + C$ 
         \end{center} 
         \vspace{11pt}
     \end{minipage}}}
@@ -46,8 +46,8 @@ Since $\diff \left[f(x) + g(x)\right] = \diff \left[f(x)\right] + \left[g(x)\rig
     \fbox{\fbox{\begin{minipage}{0.96 \textwidth}
         \vspace{5.5pt}
         \begin{align*}
-            \int (f(x) + g(x)) \, dx &= \int f(x) \, dx + \int g(x) \, dx \\[11pt]
-            \int c(f(x)) \, dx &= c\int f(x) \, dx 
+            \int (f(x) + g(x)) \,\mathrm{d}x &= \int f(x) \,\mathrm{d}x + \int g(x) \,\mathrm{d}x \\[11pt]
+            \int c(f(x)) \,\mathrm{d}x &= c\int f(x) \,\mathrm{d}x 
         \end{align*}
         \vspace{5.5pt}
     \end{minipage}}}
@@ -65,32 +65,32 @@ These allow us to integrate a polynomial by integrating each term separately. \p
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.1.1: } $\int \left(3x^2 + 4x + 5\right) \, dx$
+    \textbf{Ex 2.1.1: } $\int \left(3x^2 + 4x + 5\right) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.1: } \begin{align*}
-        \int \left(3x^2 + 4x + 5\right) \, dx &= 3\dfrac{x^{2 + 1}}{2 + 1} + 4\dfrac{x^{1 + 1}}{1 + 1} + 5\dfrac{x^{0 + 1}}{0 + 1} + C \\[11pt]
+        \int \left(3x^2 + 4x + 5\right) \,\mathrm{d}x &= 3\dfrac{x^{2 + 1}}{2 + 1} + 4\dfrac{x^{1 + 1}}{1 + 1} + 5\dfrac{x^{0 + 1}}{0 + 1} + C \\[11pt]
         & = \dfrac{3x^3}{3} + \dfrac{4x^2}{2} + \dfrac{5x^1}{1} + C \\[11pt]
         & = \boxed{x^3 + 2x^2 + 5x + C}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.1.2: } $\int \left(x^4 + 4x^2 + 5 + \dfrac{1}{x} - \dfrac{1}{x^5}\right) \, dx$
+    \textbf{Ex 2.1.2: } $\int \left(x^4 + 4x^2 + 5 + \dfrac{1}{x} - \dfrac{1}{x^5}\right) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.2: } \begin{align*}
-        \int \left(x^4 + 4x^2 + 5 + \dfrac{1}{x} - \dfrac{1}{x^5}\right) \, dx &= \dfrac{x^{4 + 1}}{4 + 1} + \dfrac{4x^{2 + 1}}{2 + 1} + \dfrac{5x^{0 + 1}}{0 + 1} + \ln |x| - \dfrac{x^{-5 + 1}}{-5 + 1} + C \\[11pt]
+        \int \left(x^4 + 4x^2 + 5 + \dfrac{1}{x} - \dfrac{1}{x^5}\right) \,\mathrm{d}x &= \dfrac{x^{4 + 1}}{4 + 1} + \dfrac{4x^{2 + 1}}{2 + 1} + \dfrac{5x^{0 + 1}}{0 + 1} + \ln |x| - \dfrac{x^{-5 + 1}}{-5 + 1} + C \\[11pt]
         & = \boxed{\dfrac{1}{5}x^5 + \dfrac{4}{3}x^3 + 5x + \ln |x| + \dfrac{1}{4x^4} + C}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.1.3: } $\int \left(x^2 + \sqrt[3]{x} - \dfrac{4}{x}\right) \, dx$
+    \textbf{Ex 2.1.3: } $\int \left(x^2 + \sqrt[3]{x} - \dfrac{4}{x}\right) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.3: } \begin{align*}
-        \int \left(x^2 + \sqrt[3]x - \dfrac{4}{x}\right) \, dx &= \int \left(x^2 + x^{\frac{1}{3}} - \dfrac{4}{x}\right) \, dx \\[11pt]
+        \int \left(x^2 + \sqrt[3]x - \dfrac{4}{x}\right) \,\mathrm{d}x &= \int \left(x^2 + x^{\frac{1}{3}} - \dfrac{4}{x}\right) \,\mathrm{d}x \\[11pt]
         & = \dfrac{x^{2 + 1}}{2 + 1} + \dfrac{x^{\frac{1}{3} + 1}}{\frac{1}{3} + 1 } - 4\ln |x| + C \\[11pt]
         & = \boxed{\dfrac{1}{3}x^3 - \dfrac{3}{4}x^{\frac{4}{3}} + 4\ln |x| + C}
     \end{align*}
@@ -99,11 +99,11 @@ These allow us to integrate a polynomial by integrating each term separately. \p
 Integrals of products and quotients can be done easily IF they can be turned into a polynomial. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.1.4: } $\int \left(x^2 + \sqrt[3]{x}\right)(2x + 1) \, dx$
+    \textbf{Ex 2.1.4: } $\int \left(x^2 + \sqrt[3]{x}\right)(2x + 1) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.4: } \begin{align*}
-        \int \left(x^2 + \sqrt[3]{x}\right)(2x + 1) \, dx &= \int \left(2x^3 + 2x^{\frac{4}{3}} + x^2 + x^{\frac{1}{3}}\right) \, dx \\[11pt]
+        \int \left(x^2 + \sqrt[3]{x}\right)(2x + 1) \,\mathrm{d}x &= \int \left(2x^3 + 2x^{\frac{4}{3}} + x^2 + x^{\frac{1}{3}}\right) \,\mathrm{d}x \\[11pt]
         & = \dfrac{2x^4}{4} + \dfrac{2x^{\frac{7}{3}}}{\frac{7}{3}} + \dfrac{x^3}{3} + \dfrac{x^{\frac{4}{3}}}{\frac{4}{3}} \\[11pt]
         & = \boxed{\dfrac{1}{2}x^4 + \dfrac{6}{7}x^{\frac{7}{3}} + \dfrac{1}{3}x^3 + \dfrac{3}{4}x^{\frac{4}{3}} + C}
     \end{align*}
@@ -117,7 +117,7 @@ The next example is called an initial value problem. It has an ordered pair (or 
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.5: } \begin{align*}
         & f(x) \begin{aligned}[t]
-            & = \int \left(4x^3 - 6x + 3\right) \, dx \\[11pt]
+            & = \int \left(4x^3 - 6x + 3\right) \,\mathrm{d}x \\[11pt]
             & = x^4 - 3x^2 + 3x + C 
         \end{aligned} \\[11pt]
         & f(0) \begin{aligned}[t]
@@ -136,15 +136,15 @@ Now, let's take a look at a type of problem called a \textit{rectilinear motion}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.6: } \begin{align*}
         & v(t) \begin{aligned}[t]
-            & = \int a(t) \, dt \\[11pt]
-            & = \int \left(3t^2 + 8t + 1\right) \, dt \\[11pt]
+            & = \int a(t) \,\mathrm{d}t \\[11pt]
+            & = \int \left(3t^2 + 8t + 1\right) \,\mathrm{d}t \\[11pt]
             & = t^3 + 4t^2 + t + C_1 
         \end{aligned} \\[11pt]
         & 3 = (0)^3 + 4(0)^2 + (0) + C_1 \therefore 3 = C_1 \\[11pt]
         & v(t) = t^3 + 4t^2 + t + 3 \\[11pt]
         & x(t) \begin{aligned}[t]
-            & = \int v(t) \, dt \\[11pt]
-            & = \int \left(t^3 + 4t^2 + t + 3\right) \, dt \\[11pt]
+            & = \int v(t) \,\mathrm{d}t \\[11pt]
+            & = \int \left(t^3 + 4t^2 + t + 3\right) \,\mathrm{d}t \\[11pt]
             & = \dfrac{1}{4}t^4 + \dfrac{4}{3}t^3 + \dfrac{1}{2}t^2 + 3t + C_2 \\[11pt]
         \end{aligned} \\[11pt]
         & 1 = \dfrac{1}{4}(0)^4 + \dfrac{4}{3}(0)^3 + \dfrac{1}{2}(0)^2 + 3(0) + C_2 \therefore 1 = C_2 \\[11pt]
@@ -158,15 +158,15 @@ Now, let's take a look at a type of problem called a \textit{rectilinear motion}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.7: } \begin{align*}
         & v(t) \begin{aligned}[t]
-            & = \int a(t) \, dt \\[11pt]
+            & = \int a(t) \,\mathrm{d}t \\[11pt]
             & = \int \left(12t^2 - 6t + 4\right) \\[11pt]
             & = 4t^3 - 3t^2 - 4t + C_1 
         \end{aligned} \\[11pt]
         & 0 = 4(1)^3 - 3(1)^2 + 4(1) + C_1 \therefore -5 = C_1 \\[11pt]
         & v(t) = 4t^3 - 3t^2 - 4t - 5 \\[11pt]
         & x(t) \begin{aligned}[t]
-            & = \int v(t) \, dt \\[11pt]
-            & = \int \left(4t^3 - 3t^2 - 4t - 5\right) \, dt \\[11pt]
+            & = \int v(t) \,\mathrm{d}t \\[11pt]
+            & = \int \left(4t^3 - 3t^2 - 4t - 5\right) \,\mathrm{d}t \\[11pt]
             & = t^4 - t^3 - 2t^2 - 5t + C_2
         \end{aligned} \\[11pt]
         & 3 = (1)^4 - (1)^3 - 2(1)^2 - 5(1) + C_2 \therefore 6 = C_2 \\[11pt]
@@ -184,12 +184,12 @@ The proof of all the transcendental integral rules can be left to a more formal 
         \end{center}
         \vspace{11pt}
         \begin{align*}
-            & \int \cos (u) \, du = \sin (u) + C && \int \csc (u)\cot (u) \, du = -\csc (u) + C \\[11pt]
-            & \int \sin (u) \, du = -\cos (u) + C && \int \sec (u)\tan (u) \, du = \sec (u) + C \\[11pt]
-            & \int \sec^2 (u) \, du = \tan (u) + C && \int \csc^2 (u) \, du = -\cot (u) + C \\[11pt]
-            & \int e^u \, du = e^u + C && \int \dfrac{1}{u} \, du  = \ln |u| + C \\[11pt]
-            & \int a^u \, du = \dfrac{a^u}{\ln |a|} + C && \int \dfrac{1}{\sqrt{1 - u^2}} \, du = \sin^{-1} (u) + C \\[11pt]
-            & \int \dfrac{1}{1 + u^2} \, du = \tan^{-1} (u) + C && \int \dfrac{1}{u\sqrt{u^2 - 1}} \, du = sec^{-1} + C \\[11pt]
+            & \int \cos (u) \,\mathrm{d}u = \sin (u) + C && \int \csc (u)\cot (u) \,\mathrm{d}u = -\csc (u) + C \\[11pt]
+            & \int \sin (u) \,\mathrm{d}u = -\cos (u) + C && \int \sec (u)\tan (u) \,\mathrm{d}u = \sec (u) + C \\[11pt]
+            & \int \sec^2 (u) \,\mathrm{d}u = \tan (u) + C && \int \csc^2 (u) \,\mathrm{d}u = -\cot (u) + C \\[11pt]
+            & \int e^u \,\mathrm{d}u = e^u + C && \int \dfrac{1}{u} \,\mathrm{d}u  = \ln |u| + C \\[11pt]
+            & \int a^u \,\mathrm{d}u = \dfrac{a^u}{\ln |a|} + C && \int \dfrac{1}{\sqrt{1 - u^2}} \,\mathrm{d}u = \sin^{-1} (u) + C \\[11pt]
+            & \int \dfrac{1}{1 + u^2} \,\mathrm{d}u = \tan^{-1} (u) + C && \int \dfrac{1}{u\sqrt{u^2 - 1}} \,\mathrm{d}u = sec^{-1} + C \\[11pt]
         \end{align*}
     \end{minipage}}}
 \end{center}
@@ -197,21 +197,21 @@ The proof of all the transcendental integral rules can be left to a more formal 
 Note that there are only three integrals that yield inverse trig functions, but there were six inverse trig derivatives. This is because the other three derivative rules are just the negatives of the first three. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.1.8: } $\int \left(\sin (x) + 3\cos (x)\right) \, dx$
+    \textbf{Ex 2.1.8: } $\int \left(\sin (x) + 3\cos (x)\right) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.8: } \begin{align*}
-        \int \left(\sin (x) + 3\cos (x)\right) \, dx &= \int \sin (x) \, dx + 3\int \cos (x) \, dx \\[11pt]
+        \int \left(\sin (x) + 3\cos (x)\right) \,\mathrm{d}x &= \int \sin (x) \,\mathrm{d}x + 3\int \cos (x) \,\mathrm{d}x \\[11pt]
         & = \boxed{-\cos (x) + 3\sin (x) + C}
     \end{align*}
  \end{tcolorbox} \vspace{11pt}
 
  \begin{tcolorbox}[example]
-    \textbf{Ex 2.1.9: } $\int \left(e^x + 4 + 3\csc^2 (x)\right) \, dx$
+    \textbf{Ex 2.1.9: } $\int \left(e^x + 4 + 3\csc^2 (x)\right) \,\mathrm{d}x$
  \end{tcolorbox}
  \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.9: } \begin{align*}
-        \int \left(e^x + 4 + 3\csc^2 (x)\right) \, dx &= \int e^x \, dx + 4\int \, dx + 3\int \csc^2 (x) \, dx \\[11pt]
+        \int \left(e^x + 4 + 3\csc^2 (x)\right) \,\mathrm{d}x &= \int e^x \,\mathrm{d}x + 4\int \,\mathrm{d}x + 3\int \csc^2 (x) \,\mathrm{d}x \\[11pt]
         & = \boxed{e^x + 4x - 3\cot (x) + C}
     \end{align*}
  \end{tcolorbox} 
@@ -226,19 +226,19 @@ Now, let's take a look at some more complex integrals that yield inverse trig fu
         \end{center}
         \vspace{11pt}
         \begin{align*}
-            & \int \dfrac{1}{\sqrt{a^2 - u^2}} \, du = \sin^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
-            & \int \dfrac{1}{u^2 + a^2} \, du = \dfrac{1}{a}\tan^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
-            & \int \dfrac{1}{u\sqrt{u^2 - a^2}} \, du = \dfrac{1}{a}\sec^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
+            & \int \dfrac{1}{\sqrt{a^2 - u^2}} \,\mathrm{d}u = \sin^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
+            & \int \dfrac{1}{u^2 + a^2} \,\mathrm{d}u = \dfrac{1}{a}\tan^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
+            & \int \dfrac{1}{u\sqrt{u^2 - a^2}} \,\mathrm{d}u = \dfrac{1}{a}\sec^{-1} \left(\dfrac{u}{a}\right) + C \\[11pt]
         \end{align*}
     \end{minipage}}}
 \end{center}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.1.10: } Find $\int \dfrac{1}{x^2 + 4} \, dx$
+    \textbf{Ex 2.1.10: } Find $\int \dfrac{1}{x^2 + 4} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.10:} All we need to do is apply our formula above. \begin{align*}
-        \int \dfrac{1}{x^2 + 4} \, dx = \boxed{\dfrac{1}{2}\tan^{-1} \left(\dfrac{x}{2}\right) + C}
+        \int \dfrac{1}{x^2 + 4} \,\mathrm{d}x = \boxed{\dfrac{1}{2}\tan^{-1} \left(\dfrac{x}{2}\right) + C}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
@@ -248,8 +248,8 @@ Now, let's take a look at some more complex integrals that yield inverse trig fu
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.1.11: } \begin{align*}
         & y \begin{aligned}[t]
-            & = \int (\sec (x)(\sec (x)\tan (x))) \, dx \\[11pt]
-            & = \int \left(\sec^2 (x)\right) \, dx + \int (\sec (x)\tan (x)) \, dx \\[11pt]
+            & = \int (\sec (x)(\sec (x)\tan (x))) \,\mathrm{d}x \\[11pt]
+            & = \int \left(\sec^2 (x)\right) \,\mathrm{d}x + \int (\sec (x)\tan (x)) \,\mathrm{d}x \\[11pt]
             & = \tan (x) + \sec (x) + C  
         \end{aligned} \\[11pt]
         & 0 = \tan (0) + \sec (0) + C \\[11pt]
@@ -264,15 +264,15 @@ Now, let's take a look at some more complex integrals that yield inverse trig fu
 
 Perform the antidifferentiation. \par
 
-\twoquestion{1. $\int \left(6x^2 - 2x + 3\right) \, dx$}{2. $\int \left(x^3 + 3x^2 - 2x + 4\right) \, dx$} \\[11pt]
-\twoquestion{3. $\int \dfrac{2}{\sqrt[3]{x}} \, dx$}{4. $\int \left(8x^4 - 4x^3 + 9x^2 + 2x + 1\right) \, dx$} \\[11pt]
-\twoquestion{5. $\int x^3\left(4x^2 + 5\right) \, dx$}{6. $\int (4x - 1)(3x + 8) \, dx$} \\[11pt]
-\twoquestion{7. $\int \left(\sqrt{x} - \dfrac{6}{\sqrt{x}}\right) \, dx$}{8. $\int \dfrac{x^2 + \sqrt{x} + 3}{x} \, dx$} \\[11pt]
-\twoquestion{9. $\int (x + 1)^3 \, dx$}{10. $\int (4x - 3)^2 \, dx$} \\[11pt]
-\twoquestion{11. $\int \left(\sqrt{x} + 3\sqrt{3} - \dfrac{6}{\sqrt{x}}\right) \, dx$}{12. $\int \dfrac{4x^3 + \sqrt{x} + 3}{x^2} \, dx$} \\[11pt]
-\twoquestion{13. $\int \left(x^2 + 5x + 6\right) \, dx$}{14. $\int \dfrac{x^2 - 4x + 7}{x} \, dx$} \\[11pt]
-\twoquestion{15. $\int \dfrac{x^5 - 7x^3 + 2x - 9}{2x} \, dx$}{16. $\int \dfrac{x^3 + 3x^2 + 3x + 1}{x + 1} \, dx$} \\[11pt]
-\twoquestion{17. $\int \left(y^2 + 5\right)^2 \, dy$}{18. $\int \left(4t^2 + 1\right)\left(3t^3 + 7\right) \, dt$} \\[11pt]
+\twoquestion{1. $\int \left(6x^2 - 2x + 3\right) \,\mathrm{d}x$}{2. $\int \left(x^3 + 3x^2 - 2x + 4\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{3. $\int \dfrac{2}{\sqrt[3]{x}} \,\mathrm{d}x$}{4. $\int \left(8x^4 - 4x^3 + 9x^2 + 2x + 1\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{5. $\int x^3\left(4x^2 + 5\right) \,\mathrm{d}x$}{6. $\int (4x - 1)(3x + 8) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{7. $\int \left(\sqrt{x} - \dfrac{6}{\sqrt{x}}\right) \,\mathrm{d}x$}{8. $\int \dfrac{x^2 + \sqrt{x} + 3}{x} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{9. $\int (x + 1)^3 \,\mathrm{d}x$}{10. $\int (4x - 3)^2 \,\mathrm{d}x$} \\[11pt]
+\twoquestion{11. $\int \left(\sqrt{x} + 3\sqrt{3} - \dfrac{6}{\sqrt{x}}\right) \,\mathrm{d}x$}{12. $\int \dfrac{4x^3 + \sqrt{x} + 3}{x^2} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{13. $\int \left(x^2 + 5x + 6\right) \,\mathrm{d}x$}{14. $\int \dfrac{x^2 - 4x + 7}{x} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{15. $\int \dfrac{x^5 - 7x^3 + 2x - 9}{2x} \,\mathrm{d}x$}{16. $\int \dfrac{x^3 + 3x^2 + 3x + 1}{x + 1} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{17. $\int \left(y^2 + 5\right)^2 \,\mathrm{d}y$}{18. $\int \left(4t^2 + 1\right)\left(3t^3 + 7\right) \,\mathrm{d}t$} \\[11pt]
 
 Complete the following problems. \par
 
@@ -285,7 +285,7 @@ Complete the following problems. \par
 \textbf{\large{2.1 Multiple Choice Homework}} \par
 
 \begin{questions}
-    \question $\int \dfrac{1}{x^2} \, dx = $ \\
+    \question $\int \dfrac{1}{x^2} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $\ln \left(x^2\right) + C$
@@ -295,7 +295,7 @@ Complete the following problems. \par
         \choice $-\dfrac{2}{x^3} + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int x\left(10 + 8x^4\right) \, dx = $ \\
+    \question $\int x\left(10 + 8x^4\right) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $5x^2 + \dfrac{4}{3}x^6 + C$ 
@@ -305,7 +305,7 @@ Complete the following problems. \par
         \makebox[0.24 \textwidth] \choice $5x^2 + \dfrac{8}{7}x^6 + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int x\sqrt{3x} \, dx$ \\
+    \question $\int x\sqrt{3x} \,\mathrm{d}x$ \\
 
     \begin{oneparchoices}
         \choice $\dfrac{2\sqrt{3}}{5}x^{\frac{5}{2}} + C$ 
@@ -315,7 +315,7 @@ Complete the following problems. \par
         \choice $\dfrac{5\sqrt{3}}{2}x^{\frac{3}{2}} + C$ 
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int (x - 1)\sqrt{x} \, dx = $ \\
+    \question $\int (x - 1)\sqrt{x} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $\dfrac{3}{2}\sqrt{x} - \dfrac{1}{\sqrt{x}} + C$

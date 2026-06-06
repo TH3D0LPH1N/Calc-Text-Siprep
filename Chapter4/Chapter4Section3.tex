@@ -25,15 +25,15 @@ In Chapter 3 Section 4, we skipped many questions involving critical and extreme
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 4.3.1: } \par
-    (d) Recall that $H(t) = \int_8^t (E(x) - L(x)) \, dx$. To find the maximum number of people, we have to set the derivative $H'(t)$ equal to zero. \textbf{We must also check the endpoints}, which are also critical values themselves. \begin{align*}
+    (d) Recall that $H(t) = \int_8^t (E(x) - L(x)) \,\mathrm{d}x$. To find the maximum number of people, we have to set the derivative $H'(t)$ equal to zero. \textbf{We must also check the endpoints}, which are also critical values themselves. \begin{align*}
         H'(t) = E(t) - L(t) = 0
     \end{align*}
     Using a graphing calculator, we find that the zero is at $t = 16.046$. Therefore, our critical values are $8$, $16.046$, and $24$. Now, let's analyze all these values. \par
     \vspace{11pt}
     \begin{enumerate}
         \item At $t = 8$, $H(8) = 0$ (this was given at the beginning of the problem) \\
-        \item At $t = 16.046$, $H(16.046) = \int_8^{16.046} (E(x) - L(x)) \, dx = 5023$ \\
-        \item At $t = 24$, $H(24) = \int_8^{24} (E(x) - L(x)) \, dx = 1453$
+        \item At $t = 16.046$, $H(16.046) = \int_8^{16.046} (E(x) - L(x)) \,\mathrm{d}x = 5023$ \\
+        \item At $t = 24$, $H(24) = \int_8^{24} (E(x) - L(x)) \,\mathrm{d}x = 1453$
     \end{enumerate} \vspace{11pt}
     
     Because $5023$ is the largest of these three $H$ values, the maximum number of people in the park occurs at $\boxed{t = 16.046}$.
@@ -57,15 +57,15 @@ In Chapter 3 Section 4, we skipped many questions involving critical and extreme
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 4.3.2: } \par
-    (d) Recall that $P(t) = 2500 + \int_0^t (S(x) - R(x)) \, dx$. Now, just like the last example, let's set the derivative $P'(t)$ equal to zero and check the endpoints. \begin{align*}
+    (d) Recall that $P(t) = 2500 + \int_0^t (S(x) - R(x)) \,\mathrm{d}x$. Now, just like the last example, let's set the derivative $P'(t)$ equal to zero and check the endpoints. \begin{align*}
         P'(t) = S(t) - R(t) = 0
     \end{align*}
     Using a graphing calculator, we find that the zero is at $t = 5.117$. Analyzing these values, we have: \par
     \vspace{11pt}
     \begin{enumerate}
         \item At $t = 0$, $P(0) = 2500$ (Again, this was given in the problem) \\
-        \item At $t = 5.117$, $P(5.117) = 2500 + \int_0^{5.117} (S(x) - R(x)) \, dx = 2492.367$ \\
-        \item At $t = 6$, $P(6) = 2500 + \int_0^{6} (S(x) - R(x)) \, dx = 2493.277$ \\
+        \item At $t = 5.117$, $P(5.117) = 2500 + \int_0^{5.117} (S(x) - R(x)) \,\mathrm{d}x = 2492.367$ \\
+        \item At $t = 6$, $P(6) = 2500 + \int_0^{6} (S(x) - R(x)) \,\mathrm{d}x = 2493.277$ \\
     \end{enumerate} \vspace{11pt}
 
     As $2492.367$ is the lowest of these three $P$ values, the minimum amount of oil in the reaction vessel is $\boxed{2492.367 \text{ gallons}}$ and occurs at $\boxed{t = 5.117}$ gallons.
@@ -91,8 +91,8 @@ Now, let's do an accumulation of rates problems that combines all of the concept
     \end{align*}
     represents the rate at which the snow melts in inches per day, where $t$ is measured in days. \\
     \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-        \item Find $\int_1^{21} M(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{21 - 1}\int_1^{21} M(t) \, dt \smallforcespace$ in the context of the problem. \\
-        \item Using a right Riemann Sum, find $\int_1^{21} S(t) \, dt$. State the correct units. \\
+        \item Find $\int_1^{21} M(t) \,\mathrm{d}t$. Using the correct units, explain the meaning of $\dfrac{1}{21 - 1}\int_1^{21} M(t) \,\mathrm{d}t \smallforcespace$ in the context of the problem. \\
+        \item Using a right Riemann Sum, find $\int_1^{21} S(t) \,\mathrm{d}t$. State the correct units. \\
         \item Approximate $S'(5)$. Using the correct units, explain $S'(5)$ in the context of the problem. \\
         \item Assume \begin{align*}
             S(t) = 2.5 - 2.5\cos \left(\dfrac{10x^9}{9}\right)
@@ -102,17 +102,17 @@ Now, let's do an accumulation of rates problems that combines all of the concept
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 4.3.3: } \par
-    (a) Using \fbox{\texttt{MATH}} \fbox{\texttt{9}} on our calculators, we can find that $\int_1^{21} M(t) \, dt = \boxed{13.023 \si{inches}}$. Referencing our key phrases and units table, we find that $\dfrac{1}{21 - 1}\int_1^{21} M(t) \, dt \forcespace$ is the \textbf{approximate average snow melt, in inches per day, between $t = 1$ and $t = 21$ days}. \par
+    (a) Using \fbox{\texttt{MATH}} \fbox{\texttt{9}} on our calculators, we can find that $\int_1^{21} M(t) \,\mathrm{d}t = \boxed{13.023 \si{inches}}$. Referencing our key phrases and units table, we find that $\dfrac{1}{21 - 1}\int_1^{21} M(t) \,\mathrm{d}t \forcespace$ is the \textbf{approximate average snow melt, in inches per day, between $t = 1$ and $t = 21$ days}. \par
     \vspace{11pt}
     (b) \begin{align*}
-        \int_1^{21} S(t) \, dt &\approx (3 - 1) \cdot 4.9 + (4 - 3) \cdot 4.4 + (7 - 4) \cdot 0.1 \\[5.5pt]
+        \int_1^{21} S(t) \,\mathrm{d}t &\approx (3 - 1) \cdot 4.9 + (4 - 3) \cdot 4.4 + (7 - 4) \cdot 0.1 \\[5.5pt]
         & + (11 - 7) \cdot 4.6 + (15 - 11) \cdot 0.2 + (21 - 15) \cdot 2.7 \\[11pt]
         &= \boxed{49.9 \text{ inches of snow}}
     \end{align*}
     (c) $S'(5) \approx \dfrac{6 - 2}{4 - 7} = \boxed{-\dfrac{4}{3} \si{in \per day^2}}$. In the context of the problem, this means that \textbf{the rate of snowfall, in inches per day, is decreasing by $\dfrac{4}{3}$ inches per day per day on day 5}. \par
     \vspace{11pt}
     (d) \begin{align*}
-        A(t) &= 9 + \int_1^t (S(x) - M(x)) , \, dx \\[11pt]
+        A(t) &= 9 + \int_1^t (S(x) - M(x)) , \,\mathrm{d}x \\[11pt]
         A'(t) &= S(t) - M(t) = 0 \\[11pt]
         t &= 0.541, \, 5.751
     \end{align*}
@@ -133,7 +133,7 @@ Now, let's do an accumulation of rates problems that combines all of the concept
     Make sure to answer the question that is being asked! This question specifically asked for the \textit{amount} of snow.
 \end{tcolorbox}
 
-So, to summarize, to find the extrema of a function, you must first determine the amount equation (the primary function being analyzed) and then identify all critical values. These critical values are found by solving for where the first derivative is zero $\left(\dfrac{dy}{dx} = 0\right)$, where the derivative does not exist $\left(\dfrac{dy}{dx} = DNE\right)\forcespace$, or by identifying the endpoints of any given domain restrictions. Once these values are established, you calculate the corresponding function values for each critical point and organize them into a table for comparison. Finally, use this data to identify the absolute maximums or minimums to provide a specific answer to the original question. \par
+So, to summarize, to find the extrema of a function, you must first determine the amount equation (the primary function being analyzed) and then identify all critical values. These critical values are found by solving for where the first derivative is zero $\left(\dfrac{\dd y}{\dd x} = 0\right)$, where the derivative does not exist $\left(\dfrac{\dd y}{\dd x} = DNE\right)\forcespace$, or by identifying the endpoints of any given domain restrictions. Once these values are established, you calculate the corresponding function values for each critical point and organize them into a table for comparison. Finally, use this data to identify the absolute maximums or minimums to provide a specific answer to the original question. \par
 
 \newpage
 
@@ -289,7 +289,7 @@ The spoils are then taken to a wash plant where they are rinsed and sorted into 
 At the beginning of the day there are $2 \si{yd^3}$ at the wash plant from the day before. \\
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item Find the total amount of spoils pulled from the caisson by the hammer grab during the eight hours described on the table. Indicate the correct units. 
-    \item Use a right Riemann Sum with sub-intervals indicated by the table to approximate $\int_0^8 P(t) \, dt \forcespace$ Using correct units, explain the meaning of this value in the context of the problem.
+    \item Use a right Riemann Sum with sub-intervals indicated by the table to approximate $\int_0^8 P(t) \,\mathrm{d}t \forcespace$ Using correct units, explain the meaning of this value in the context of the problem.
     \item Assume the equation \begin{align*}
         W(t) = 0.1t(10 - t)^2
     \end{align*}
@@ -381,7 +381,7 @@ The table below shows Nick Bosa's sack rate, in sacks per game, over his first f
     \item Disregarding his injury-shortened 2020 season, a model for Bosa's sack rate per game can be given with the equation \begin{align*}
         S_B(g) = 0.15\sqrt{g}.
     \end{align*}
-    Find $\dfrac{1}{57}\int_0^{57} S_B(g) \, dg$. Using the correct units, explain this result in the context of the problem.
+    Find $\dfrac{1}{57}\int_0^{57} S_B(g) \,\mathrm{d}g$. Using the correct units, explain this result in the context of the problem.
     \item Assume that \begin{align*}
         A(g) = -0.001g^2 + 0.073g - 0.004
     \end{align*}

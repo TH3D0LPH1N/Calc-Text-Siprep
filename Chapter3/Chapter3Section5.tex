@@ -1,6 +1,6 @@
 \textbf{\underline{\large{3.5: Integral Approximations: Riemann Rectangles and Trapezoidal Sums}}} \par
 
-We have been focusing on anti-derivatives of functions were the equation is known. But let us suppose we need to evaluate an integral where either the function is unknown or cannot be anti-differentiated---such as $\int_{-2}^3 e^{x^2} \, dx$. This is where the concepts that we touched on in the overview of the chapter come into play. If we have some exact $y$-values, we could approximate the area geometrically. This can be done by dividing the area in question into rectangles, and then finding the area of each rectangle. There are three way to draw the rectangles: \par
+We have been focusing on anti-derivatives of functions were the equation is known. But let us suppose we need to evaluate an integral where either the function is unknown or cannot be anti-differentiated---such as $\int_{-2}^3 e^{x^2} \,\mathrm{d}x$. This is where the concepts that we touched on in the overview of the chapter come into play. If we have some exact $y$-values, we could approximate the area geometrically. This can be done by dividing the area in question into rectangles, and then finding the area of each rectangle. There are three way to draw the rectangles: \par
 
 \begin{center}
     \fbox{\fbox{\begin{minipage}{0.96\textwidth}
@@ -38,7 +38,7 @@ We have been focusing on anti-derivatives of functions were the equation is know
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.5.1: } Use a left hand Riemann sum with four equal sub-intervals to approximate $\int_1^5 f(x) \, dx$ given the table of values below. \begin{align*}
+    \textbf{Ex 3.5.1: } Use a left hand Riemann sum with four equal sub-intervals to approximate $\int_1^5 f(x) \,\mathrm{d}x$ given the table of values below. \begin{align*}
         \arraycolsep=22pt\def\arraystretch{1.5}
         \begin{array}{|c|c|c|c|c|c|}
             \hline
@@ -56,7 +56,7 @@ We have been focusing on anti-derivatives of functions were the equation is know
     \end{center}
     \vspace{11pt}
     So, to find the areas of the rectangle, we multiply the width of the rectangle by the height. The width of the rectangle is the difference between adjacent $x$-values. Because we are asked to find a left hand Riemann sum, we are gonna start with the leftmost height. Therefore, we have \begin{align*}
-        \int_1^5 x^2 \, dx \approx (2 - 1) \cdot 1 + (3 - 2) \cdot 4 + (4 - 3) \cdot 9 + (5 - 4) \cdot 16 = \boxed{30}
+        \int_1^5 x^2 \,\mathrm{d}x \approx (2 - 1) \cdot 1 + (3 - 2) \cdot 4 + (4 - 3) \cdot 9 + (5 - 4) \cdot 16 = \boxed{30}
     \end{align*}
     Notice how we never use the $f(x)$ value of $25$. This is because when we are using left-hand rectangles, we will never make a rectangle that 
 \end{tcolorbox}
@@ -76,7 +76,7 @@ With this example, we can create some steps for approximation an integral with r
 Although \textbf{Ex 3.5.1} had rectangles of equal width, this does not necessarily have to be true
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.5.2: } Use a right hand Riemann sum with the sub-intervals defined below to approximate $\int_2^{14} f(x) \, dx$ given the table of values below. \begin{align*}
+    \textbf{Ex 3.5.2: } Use a right hand Riemann sum with the sub-intervals defined below to approximate $\int_2^{14} f(x) \,\mathrm{d}x$ given the table of values below. \begin{align*}
         \arraycolsep=22pt\def\arraystretch{1.5}
         \begin{array}{|c|c|c|c|c|}
             \hline
@@ -94,7 +94,7 @@ Although \textbf{Ex 3.5.1} had rectangles of equal width, this does not necessar
     \end{center}
     \vspace{11pt}
     Now, as this time we are asked to find a right hand Riemann sum, we start from the right. So, we have \begin{align*}
-        \int_2^{14} f(x) \, dx \approx (14 - 10) \cdot 12 + (10 - 5) \cdot 7 + (5 - 2) \cdot 10 = \boxed{113}
+        \int_2^{14} f(x) \,\mathrm{d}x \approx (14 - 10) \cdot 12 + (10 - 5) \cdot 7 + (5 - 2) \cdot 10 = \boxed{113}
     \end{align*}
 \end{tcolorbox} 
 
@@ -115,7 +115,7 @@ The third kind of Riemann rectangle is where the height comes from the midpoints
             \hline
         \end{array}
     \end{align*}
-    Use the Riemann sum with midpoint rectangles and the sub-intervals given by the table to approximate the value of $\int_0^{120} R(t) \, dt \forcespace$.
+    Use the Riemann sum with midpoint rectangles and the sub-intervals given by the table to approximate the value of $\int_0^{120} R(t) \,\mathrm{d}t \forcespace$.
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.5.3: } Recall the structure of midpoint rectangles: \\
@@ -130,7 +130,7 @@ The third kind of Riemann rectangle is where the height comes from the midpoints
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.5.4: } Use the midpoint rule and the given data to approximate the value of $\int_0^{2.6} f(x) \, dx$. \begin{align*}
+    \textbf{Ex 3.5.4: } Use the midpoint rule and the given data to approximate the value of $\int_0^{2.6} f(x) \,\mathrm{d}x$. \begin{align*}
         \arraycolsep=16.5pt\def\arraystretch{1.5}
         \begin{array}{|c|c|c|c|c|c|c|c|}
             \hline
@@ -142,14 +142,14 @@ The third kind of Riemann rectangle is where the height comes from the midpoints
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.5.4: } For this example, we simply follow the steps in \textbf{Ex 3.5.3}. This gives us \begin{align*}
-        \int_0^{2.6} f(x) \, dx \approx (0.8 - 0) \cdot 2.3 + (1.6 - 0.8) \cdot 4.3 + (2.6 - 1.6) \cdot 5.9 = \boxed{11.18}
+        \int_0^{2.6} f(x) \,\mathrm{d}x \approx (0.8 - 0) \cdot 2.3 + (1.6 - 0.8) \cdot 4.3 + (2.6 - 1.6) \cdot 5.9 = \boxed{11.18}
     \end{align*}
 \end{tcolorbox}
 
 The left, right, and midpoint rectangle methods estimate the area under a curve by using rectangles with constant heights. The trapezoidal rule builds on this idea by connecting the tops of the rectangles with straight lines, creating shapes that better match the curve. It can be seen as the average of the left and right rectangle methods and serves as a simple step toward more accurate ways to approximate areas. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.5.5: } Using the table of data from \textbf{Ex 3.5.4} approximate $\int_0^{2.6} f(x) \, dx$ with 6 trapezoids.
+    \textbf{Ex 3.5.5: } Using the table of data from \textbf{Ex 3.5.4} approximate $\int_0^{2.6} f(x) \,\mathrm{d}x$ with 6 trapezoids.
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.5.5: } Since this is a new method that we are approaching, let's try visualizing it. We can first start by drawing the heights. \\
@@ -168,7 +168,7 @@ The left, right, and midpoint rectangle methods estimate the area under a curve 
         A_{\text{trapezoid}} = \left(\dfrac{b_1 + b_2}{2}\right) \cdot h,
     \end{align*}
     to calculate this Riemann sum: \begin{align*}
-        \int_0^{2.6} f(x) \, dx & \approx \dfrac{3.5 + 2.3}{2} \cdot (0.4 - 0) + \dfrac{2.3 + 3.2}{2} \cdot (0.8 - 0.4) + \dfrac{3.2 + 4.3}{2} \cdot (1.2 - 0.8) \\[5.5pt]
+        \int_0^{2.6} f(x) \,\mathrm{d}x & \approx \dfrac{3.5 + 2.3}{2} \cdot (0.4 - 0) + \dfrac{2.3 + 3.2}{2} \cdot (0.8 - 0.4) + \dfrac{3.2 + 4.3}{2} \cdot (1.2 - 0.8) \\[5.5pt]
         & + \dfrac{4.3 + 4.7}{2} \cdot (1.6 - 1.2) + \dfrac{4.7 + 5.9}{2} \cdot (2.1 - 1.6) + \dfrac{5.9 + 4.1}{2} \cdot (2.6 - 2.1) \\[11pt]
         & = \boxed{8.15}
     \end{align*}
@@ -180,13 +180,13 @@ Let's say we have points $x_0, \, x_1, \, x_2, \ldots, x_n$ and $f(x)$ values $f
     \dfrac{b - a}{n}.
 \end{align*}
 Now, let's start writing out the Riemann sum in its complete form. We do the method as we described in $\textbf{Ex 3.5.5}$, taking adjacent $x-values$ as the heights and adjacent pairs of $f(x)$-values as the bases. Therefore, we get{\small{\begin{align*}
-    \int_a^b f(x) \, dx \approx \dfrac{f(x_0) + f(x_1)}{2}\left(\dfrac{b - a}{n}\right) + \dfrac{f(x_1) + f(x_2)}{2}\left(\dfrac{b - a}{n}\right) + \cdots + \dfrac{f(x_{n - 1}) + f(x_n)}{2}\left(\dfrac{b - a}{n}\right).
+    \int_a^b f(x) \,\mathrm{d}x \approx \dfrac{f(x_0) + f(x_1)}{2}\left(\dfrac{b - a}{n}\right) + \dfrac{f(x_1) + f(x_2)}{2}\left(\dfrac{b - a}{n}\right) + \cdots + \dfrac{f(x_{n - 1}) + f(x_n)}{2}\left(\dfrac{b - a}{n}\right).
 \end{align*}}}
 Factoring out $\dfrac{b - a}{n}$ and simplifying the fraction gives us\begin{align*}
-    \int_a^b f(x) \, dx \approx \left(\dfrac{b - a}{n}\right)\left(\dfrac{f(x_0) + f(x_1) + f(x_1) + f(x_2) + \cdots f(x_{n - 1}) + f(x_n)}{2}\right).
+    \int_a^b f(x) \,\mathrm{d}x \approx \left(\dfrac{b - a}{n}\right)\left(\dfrac{f(x_0) + f(x_1) + f(x_1) + f(x_2) + \cdots f(x_{n - 1}) + f(x_n)}{2}\right).
 \end{align*}
 We can simplify this even further to \begin{align*}
-    \int_a^b f(x) \, dx \approx \left(\dfrac{b - a}{2n}\right)\left(f(x_0) + 2f(x_1) + 2(fx_2) + \cdots + 2f(x_{n - 1}) + f(x_n)\right).
+    \int_a^b f(x) \,\mathrm{d}x \approx \left(\dfrac{b - a}{2n}\right)\left(f(x_0) + 2f(x_1) + 2(fx_2) + \cdots + 2f(x_{n - 1}) + f(x_n)\right).
 \end{align*}
 
 This gives us the Trapezoidal Rule for equal sub-intervals. \par
@@ -198,7 +198,7 @@ This gives us the Trapezoidal Rule for equal sub-intervals. \par
             \textbf{The Trapezoidal Rule for Riemann summations}
         \end{center}
         \begin{align*}
-            \int_a^b f(x) \, dx \approx \left(\dfrac{b - a}{2n}\right)\left(f(x_0) + 2f(x_1) + 2(fx_2) + \cdots + 2f(x_{n - 1}) + f(x_n)\right). \\
+            \int_a^b f(x) \,\mathrm{d}x \approx \left(\dfrac{b - a}{2n}\right)\left(f(x_0) + 2f(x_1) + 2(fx_2) + \cdots + 2f(x_{n - 1}) + f(x_n)\right). \\
         \end{align*}
     \end{minipage}}}
 \end{center}
@@ -219,8 +219,8 @@ Let's see this formula in use with an example. \par
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.5.6: } Note that this question is asking for the \textit{average value} of the function. Therefore, we will have to use our average value formula. \begin{align*} 
-        f_{avg} &= \dfrac{1}{b - a}\int_a^b f(x) \, dx \\[11pt]
-        & = \dfrac{1}{70 - 10}\int_{10}^{70} f(x) \, dx \\[11pt]
+        f_{avg} &= \dfrac{1}{b - a}\int_a^b f(x) \,\mathrm{d}x \\[11pt]
+        & = \dfrac{1}{70 - 10}\int_{10}^{70} f(x) \,\mathrm{d}x \\[11pt]
         & \approx \dfrac{1}{70 - 10}\left(\dfrac{70 - 10}{2(6)}\right)\begin{aligned}[t]
             (&3.649 + 2 \cdot 4.718 + 2 \cdot 6.482 + 2 \cdot 9.389 \\[5.5pt]
             & + 2 \cdot 14.182 + 2 \cdot 22.086 + 35.115)
@@ -378,10 +378,10 @@ Estimate the average value of the function on $x \in [0, \, 8]$ using:
 
 Use this information to answer each of the questions below. Make sure you express your answer in correct units. 
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Find an approximation for $\int_0^{60} v(t) \, dt$ using midpoint rectangles. 
-    \item Find an approximation for $\int_0^{30} v(t) \, dt$ using trapezoids. 
-    \item Find an approximation for $\int_{30}^{60} v(t) \, dt$ using left-hand rectangles.
-    \item Find an approximation for $\int_{0}^{40} v(t) \, dt$ using right-hand rectangles.
+    \item Find an approximation for $\int_0^{60} v(t) \,\mathrm{d}t$ using midpoint rectangles. 
+    \item Find an approximation for $\int_0^{30} v(t) \,\mathrm{d}t$ using trapezoids. 
+    \item Find an approximation for $\int_{30}^{60} v(t) \,\mathrm{d}t$ using left-hand rectangles.
+    \item Find an approximation for $\int_{0}^{40} v(t) \,\mathrm{d}t$ using right-hand rectangles.
 \end{enumerate} \vspace{11pt}
 
 \onequestion{4. Below is a chart showing the rate of water flowing through a pipeline according to time in minutes:} \begin{align*}
@@ -396,8 +396,8 @@ Use this information to answer each of the questions below. Make sure you expres
 
 Use this information to answer each of the questions below. Make sure you express your answer in correct units.
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Find an approximation for $\int_0^{48} V(t) \, dt$ using midpoint rectangles. 
-    \item Find an approximation for $\int_0^{16} V(t) \, dt$ using right-hand rectangles. 
+    \item Find an approximation for $\int_0^{48} V(t) \,\mathrm{d}t$ using midpoint rectangles. 
+    \item Find an approximation for $\int_0^{16} V(t) \,\mathrm{d}t$ using right-hand rectangles. 
 \end{enumerate} \vspace{11pt}
 
 \onequestion{5. Below is a chart of your speed driving to school in meters per second:} \begin{align*}
@@ -412,8 +412,8 @@ Use this information to answer each of the questions below. Make sure you expres
 
 Use this information to answer each of the questions below. Make sure you express your answer in correct units.
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Find an approximation for $\int_0^{360} v(t) \, dt$ using left-hand rectangles. 
-    \item Find an approximation for $\int_0^{220} v(t) \, dt$ using trapezoids. 
+    \item Find an approximation for $\int_0^{360} v(t) \,\mathrm{d}t$ using left-hand rectangles. 
+    \item Find an approximation for $\int_0^{220} v(t) \,\mathrm{d}t$ using trapezoids. 
 \end{enumerate} \vspace{11pt}
 
 \onequestion{6. Below is a chart showing the velocity of the Flash is he runs across the country:} \begin{align*}
@@ -428,8 +428,8 @@ Use this information to answer each of the questions below. Make sure you expres
 
 Use this information to answer each of the questions below. Make sure you express your answer in correct units.
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Find an approximation for $\int_0^{24} v(t) \, dt$ using midpoint rectangles. 
-    \item Find an approximation for $\int_0^{16} v(t) \, dt$ using trapezoids. 
+    \item Find an approximation for $\int_0^{24} v(t) \,\mathrm{d}t$ using midpoint rectangles. 
+    \item Find an approximation for $\int_0^{16} v(t) \,\mathrm{d}t$ using trapezoids. 
 \end{enumerate} \vspace{11pt}
 
 \onequestion{7. Below is a chart showing the rate of sewage flowing through a pipeline according to time in minutes:} \begin{align*}
@@ -444,8 +444,8 @@ Use this information to answer each of the questions below. Make sure you expres
 
 Use this information to answer each of the questions below. Make sure you express your answer in correct units.
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Find an approximation for $\int_0^{20} V(t) \, dt$ using trapezoids. 
-    \item Find an approximation for $\int_0^{20} V(t) \, dt$ using left-hand rectangles. 
+    \item Find an approximation for $\int_0^{20} V(t) \,\mathrm{d}t$ using trapezoids. 
+    \item Find an approximation for $\int_0^{20} V(t) \,\mathrm{d}t$ using left-hand rectangles. 
 \end{enumerate} \vspace{11pt}
 
 \onequestion{8. Star Formation Rate (SFR) observations of red-shift allow scientists to track the total mass gained in a galaxy by the making of new stars. Below is a table of such data:} \begin{align*}
@@ -464,8 +464,8 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
     \item Use right-hand rectangles to approximate the average solar masses per cubic parsec per gigayear.
 \end{enumerate} \vspace{11pt}
 
-\onequestion{9. Use (a) the trapezoidal rule and (b) the midpoint rule to approximate $\int_0^2 \sqrt[4]{1 + x^2} \, dx$ with the specified value of $n = 8$ (8 intervals).} \\[11pt]
-\onequestion{10. Use (a) the trapezoidal rule and (b) the midpoint rule to approximate $\int_1^2 \dfrac{\ln x}{1 + x} \, dx$ with the specified value of $n = 10$ (10 intervals).} \\[11pt]
+\onequestion{9. Use (a) the trapezoidal rule and (b) the midpoint rule to approximate $\int_0^2 \sqrt[4]{1 + x^2} \,\mathrm{d}x$ with the specified value of $n = 8$ (8 intervals).} \\[11pt]
+\onequestion{10. Use (a) the trapezoidal rule and (b) the midpoint rule to approximate $\int_1^2 \dfrac{\ln x}{1 + x} \,\mathrm{d}x$ with the specified value of $n = 10$ (10 intervals).} \\[11pt]
 
 \textbf{\large{3.5 Multiple Choice Homework}} \par
 \begin{questions}
@@ -493,11 +493,11 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
     Of the following, which has the smallest value? Assume each approximation is done with $6$ equal subintervals. \\
 
     \begin{oneparchoices}
-        \choice $\int_1^3 f(x) \, dx$ \\[11pt]
-        \makebox[0.035\textwidth] \choice Left-hand Riemann approximation of $\int_1^3 f(x) \, dx$. \\[11pt]
-        \makebox[0.035\textwidth] \choice Right-hand Riemann approximation of $\int_1^3 f(x) \, dx$. \\[11pt]
-        \makebox[0.035\textwidth] \choice Midpoint Riemann approximation of $\int_1^3 f(x) \, dx$. \\[11pt]
-        \makebox[0.035\textwidth] \choice Trapezoidal approximation of $\int_1^3 f(x) \, dx$.
+        \choice $\int_1^3 f(x) \,\mathrm{d}x$ \\[11pt]
+        \makebox[0.035\textwidth] \choice Left-hand Riemann approximation of $\int_1^3 f(x) \,\mathrm{d}x$. \\[11pt]
+        \makebox[0.035\textwidth] \choice Right-hand Riemann approximation of $\int_1^3 f(x) \,\mathrm{d}x$. \\[11pt]
+        \makebox[0.035\textwidth] \choice Midpoint Riemann approximation of $\int_1^3 f(x) \,\mathrm{d}x$. \\[11pt]
+        \makebox[0.035\textwidth] \choice Trapezoidal approximation of $\int_1^3 f(x) \,\mathrm{d}x$.
     \end{oneparchoices} \par \horizontalline
 
     \question The table below gives the values for the rate at which water flowed into a lake, with readings taken at specific times. \begin{align*}
@@ -547,7 +547,7 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
             \hline
         \end{array}
     \end{align*}
-    What is the right Riemann approximation of $\int_3^{12} f(x) \, dx$? \\
+    What is the right Riemann approximation of $\int_3^{12} f(x) \,\mathrm{d}x$? \\
 
     \begin{oneparchoices}
         \choice $69$
@@ -561,7 +561,7 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
     \begin{center}
         \includegraphics[width = 0.55\textwidth]{\graphicsdir Chapter 3 Graphics/3.5-Graphic14.png}
     \end{center}
-    The approximate value of $\int_0^8 f(x) \, dx$, using eight right-hand rectangles with equal widths is \\
+    The approximate value of $\int_0^8 f(x) \,\mathrm{d}x$, using eight right-hand rectangles with equal widths is \\
 
     \begin{oneparchoices}
         \choice $18.5$
@@ -575,7 +575,7 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
     \begin{center}
         \includegraphics[width = 0.55\textwidth]{\graphicsdir Chapter 3 Graphics/3.5-Graphic14.png}
     \end{center}
-    The approximate value of $\int_0^8 f(x) \, dx$, using eight left-hand rectangles with equal widths, is \\
+    The approximate value of $\int_0^8 f(x) \,\mathrm{d}x$, using eight left-hand rectangles with equal widths, is \\
 
     \begin{oneparchoices}
         \choice $23$
@@ -589,7 +589,7 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
     \begin{center}
         \includegraphics[width = 0.55\textwidth]{\graphicsdir Chapter 3 Graphics/3.5-Graphic14.png}
     \end{center}
-    The approximate value of $\int_0^8 f(x) \, dx$, using eight trapezoids with equal widths, is \\
+    The approximate value of $\int_0^8 f(x) \,\mathrm{d}x$, using eight trapezoids with equal widths, is \\
 
     \begin{oneparchoices}
         \choice $37$
@@ -603,7 +603,7 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
     \begin{center}
         \includegraphics[width = 0.55\textwidth]{\graphicsdir Chapter 3 Graphics/3.5-Graphic14.png}
     \end{center}
-    The approximate value of $\int_0^8 f(x) \, dx$, using four midpoint rectangles with equal widths, is \\
+    The approximate value of $\int_0^8 f(x) \,\mathrm{d}x$, using four midpoint rectangles with equal widths, is \\
 
     \begin{oneparchoices}
         \choice $20$
@@ -622,7 +622,7 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
             \hline
         \end{array}
     \end{align*}
-    Using the sub-intervals defined by the table, estimate $\int_2^{14} f(x) \,dx$ using a right-hand Riemann approximation. \\
+    Using the sub-intervals defined by the table, estimate $\int_2^{14} f(x) \,\mathrm{d}x$ using a right-hand Riemann approximation. \\
 
     \begin{oneparchoices}
         \choice $296$
@@ -641,7 +641,7 @@ SFR is measured in solar masses per cubic parsec per gigayear (millions of years
             \hline
         \end{array}
     \end{align*}
-    Use the trapezoidal rule to approximate $\int_1^5 f(x) \, dx$. \\
+    Use the trapezoidal rule to approximate $\int_1^5 f(x) \,\mathrm{d}x$. \\
 
     \begin{oneparchoices}
         \choice $4.1$

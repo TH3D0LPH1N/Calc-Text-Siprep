@@ -2,7 +2,7 @@
 
 In this course, derivatives have primarily been interpreted as the slope of the tangent line. But, as with \href{https://www.merriam-webster.com/dictionary/rectilinear\%20motion}{\text{\textcolor{blue}{rectilinear motion}}}, there are other contexts for the derivative. One overarching concept is that the derivative is a \textbf{rate of change}. The tendency is to think of rates as distance per time unit, like miles per hour or meters per second, but even slope is a rate of change---it is just that the rise and run are both measured as distances. \par
 
-The idea behind related rates is two-fold. First, change is occurring in two or more measurements that are related to each other by the geometry (or algebra) of the situation. Second, an implicit Chain Rule situation exists in that the $x$ and $y$-values are functions of time, which may or may not be a variable in the problem. Therefore, when taking the derivative of an $x$ or $y$, an \textbf{implicit rate term} $\left(\dfrac{dx}{dx} \text{ or } \dfrac{dy}{dt}\right) \forcespace$ often occurs. \par
+The idea behind related rates is two-fold. First, change is occurring in two or more measurements that are related to each other by the geometry (or algebra) of the situation. Second, an implicit Chain Rule situation exists in that the $x$ and $y$-values are functions of time, which may or may not be a variable in the problem. Therefore, when taking the derivative of an $x$ or $y$, an \textbf{implicit rate term} $\left(\dfrac{\dd x}{\dd x} \text{ or } \dfrac{\dd y}{\dd t}\right) \forcespace$ often occurs. \par
 
 \begin{tcolorbox}[objective]
     \begin{center}
@@ -32,12 +32,12 @@ Now, let's take a look at this different (related rates) cola problem.
         & V = \pi r^2h = 32\pi \\[11pt]
         & h = \dfrac{32}{r^2} \\[11pt]
         & \tdiff\left[h = \dfrac{32}{r^2}\right] \\[11pt]
-        & \dfrac{dh}{dt} = -\dfrac{64}{r^2}\left(\dfrac{dr}{dt}\right)
+        & \dfrac{\dd h}{\dd t} = -\dfrac{64}{r^2}\left(\dfrac{\dd r}{\dd t}\right)
     \end{align*}
-    Now that we have a method to find what we are looking for, $\dfrac{dr}{dt}$, let's substitute in the values that we are given in the problem. \begin{align*}
+    Now that we have a method to find what we are looking for, $\dfrac{\dd r}{\dd t}$, let's substitute in the values that we are given in the problem. \begin{align*}
         & h = 4 \rightarrow \dfrac{32}{r^2} = 4 \rightarrow r^2 = 8 \\[11pt]
-        & \dfrac{1}{4} = -\dfrac{64}{8}\left(\dfrac{dr}{dt}\right) \\[11pt]
-        & \dfrac{dr}{dt} = \boxed{-\dfrac{1}{32} \si{in \per sec}}
+        & \dfrac{1}{4} = -\dfrac{64}{8}\left(\dfrac{\dd r}{\dd t}\right) \\[11pt]
+        & \dfrac{\dd r}{\dd t} = \boxed{-\dfrac{1}{32} \si{in \per sec}}
     \end{align*}
 \end{tcolorbox}
 
@@ -101,15 +101,15 @@ A classic related rates problem is the falling ladder.
     \textbf{Sol 1.8.2: } As can be seen in the visual, the height of the top of the ladder and the distance the bottom of the ladder is from the wall is related through the Pythagorean theorem. Both are variables, because the ladder is moving. \begin{align*}
         x^2 + y^2 = 13^2
     \end{align*}
-    We are given the information that the bottom of the ladder slides away from the wall at $4 \si{ft \per sec}$. Therefore, we can say that our $\dfrac{dx}{dt} \forcespace = 4$. To find $\dfrac{dy}{dt}$, we differentiate $x^2 + y^2 = 13^2$ to get \begin{align*}
-        2x\dfrac{dx}{dt} + 2y\dfrac{dy}{dt} = 0
+    We are given the information that the bottom of the ladder slides away from the wall at $4 \si{ft \per sec}$. Therefore, we can say that our $\dfrac{\dd x}{\dd t} \forcespace = 4$. To find $\dfrac{\dd y}{\dd t}$, we differentiate $x^2 + y^2 = 13^2$ to get \begin{align*}
+        2x\dfrac{\dd x}{\dd t} + 2y\dfrac{\dd y}{\dd t} = 0
     \end{align*}
-    Although this may seem like a complex four equation variable, we already know $x$ and $\dfrac{dx}{dt} \forcespace$. We also can determine that $y = 12$ by the Pythagorean theorem. So, \begin{align*}
-        & 2x\dfrac{dx}{dt} + 2y\dfrac{dy}{dt} = 0 \\[11pt]
-        & 2(5)(4) + 2(12)\dfrac{dy}{dt} = 0 \\[11pt]
-        & \dfrac{dy}{dt} = \boxed{-\dfrac{5}{3} \si{ft \per sec}}
+    Although this may seem like a complex four equation variable, we already know $x$ and $\dfrac{\dd x}{\dd t} \forcespace$. We also can determine that $y = 12$ by the Pythagorean theorem. So, \begin{align*}
+        & 2x\dfrac{\dd x}{\dd t} + 2y\dfrac{\dd y}{\dd t} = 0 \\[11pt]
+        & 2(5)(4) + 2(12)\dfrac{\dd y}{\dd t} = 0 \\[11pt]
+        & \dfrac{\dd y}{\dd t} = \boxed{-\dfrac{5}{3} \si{ft \per sec}}
     \end{align*}
-    It should make sense that $\dfrac{dy}{dt}$ is negative because the top of the ladder is sliding down.
+    It should make sense that $\dfrac{\dd y}{\dd t}$ is negative because the top of the ladder is sliding down.
 \end{tcolorbox}
 
 Below are some of the equations you should know for the AP exam: \par
@@ -163,10 +163,10 @@ Another common related rates problem is where a tank of a particular shape is fi
 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 1.8.3: } The units on the rate of change tell us that this is a change in volume, or $\dfrac{dV}{dt}$. Therefore, we use the equation \begin{align*}
+    \textbf{Sol 1.8.3: } The units on the rate of change tell us that this is a change in volume, or $\dfrac{\dd V}{\dd t}$. Therefore, we use the equation \begin{align*}
         V = \dfrac{1}{3}\pi r^2h
     \end{align*}
-    But, there are too many variables in this equation to differentiate as it stands. Since the rate of the change of the height---$\dfrac{dh}{dt} \forcespace$---is what we are looking for, we can eliminate $r$ from the equation. By similar triangles, we have \begin{align*}
+    But, there are too many variables in this equation to differentiate as it stands. Since the rate of the change of the height---$\dfrac{\dd h}{\dd t} \forcespace$---is what we are looking for, we can eliminate $r$ from the equation. By similar triangles, we have \begin{align*}
         & \dfrac{r}{h} = \dfrac{4}{8} \\[11pt]
         & r = \dfrac{1}{2}h
     \end{align*}
@@ -174,11 +174,11 @@ Another common related rates problem is where a tank of a particular shape is fi
         & V = \dfrac{1}{3}\pi\left(\dfrac{1}{2}h\right)^2h \\[11pt]
         & V = \dfrac{\pi}{12}h^3
     \end{align*}
-    Differentiate and plug in our given values to solve for $\dfrac{dh}{dt}$. \begin{align*}
+    Differentiate and plug in our given values to solve for $\dfrac{\dd h}{\dd t}$. \begin{align*}
         & V = \dfrac{\pi}{12}h^3 \\[11pt]
-        & \dfrac{dV}{dt} = \dfrac{\pi}{4}h^2\dfrac{dh}{dt} \\[11pt]
-        & 10 = \dfrac{\pi}{4}(6)^2\dfrac{dh}{dt} \\[11pt]
-        & \dfrac{dh}{dt} = \boxed{\dfrac{10}{9\pi} \si{ft \per min}}
+        & \dfrac{\dd V}{\dd t} = \dfrac{\pi}{4}h^2\dfrac{\dd h}{\dd t} \\[11pt]
+        & 10 = \dfrac{\pi}{4}(6)^2\dfrac{\dd h}{\dd t} \\[11pt]
+        & \dfrac{\dd h}{\dd t} = \boxed{\dfrac{10}{9\pi} \si{ft \per min}}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
@@ -202,18 +202,18 @@ Another common related rates problem is where a tank of a particular shape is fi
     \textbf{Sol 1.8.4: } As we can see in the picture, the distance between the two cars are related by the Pythagorean theorem. \begin{align*}
         x^2 + y^2 = r^2
     \end{align*}
-    We know several pieces of information. The southbound car is moving at $20$ miles per hour; i.e. $\dfrac{dy}{dt} = -20$. By similar logic, we can deduce each of the following: \begin{align*}
-        & \dfrac{dy}{dt} = -20 && \dfrac{dx}{dt} = -30 \\[11pt]
+    We know several pieces of information. The southbound car is moving at $20$ miles per hour; i.e. $\dfrac{\dd y}{\dd t} = -20$. By similar logic, we can deduce each of the following: \begin{align*}
+        & \dfrac{\dd y}{\dd t} = -20 && \dfrac{\dd x}{\dd t} = -30 \\[11pt]
         & y = 0.8 && x = 0.6
     \end{align*}
     And, by the Pythagorean Theorem, $r = 1$. Now we take the derivative of the Pythagorean theorem to get \begin{align*}
-        2x\dfrac{dx}{dt} + 2y\dfrac{dy}{dt} = 2r\dfrac{dr}{dt}
+        2x\dfrac{\dd x}{\dd t} + 2y\dfrac{\dd y}{\dd t} = 2r\dfrac{\dd r}{\dd t}
     \end{align*}
     This is essentially an equation in six variables. But, we know five of those variables, so let's substitute and solve. \begin{align*}
-        & 2(0.8)(-30) + (2)(0.6)(-20) = 2(1.0)\dfrac{dr}{dt} \\[11pt]
-        & \dfrac{dr}{dt} = \boxed{-36 \si{mph}}
+        & 2(0.8)(-30) + (2)(0.6)(-20) = 2(1.0)\dfrac{\dd r}{\dd t} \\[11pt]
+        & \dfrac{\dd r}{\dd t} = \boxed{-36 \si{mph}}
     \end{align*}
-    It should make sense that $\dfrac{dr}{dt} \forcespace$ is negative since the two cars are approaching one another. The units also make sense: since $r$ is in miles and $h$ is in hours, the final units should be miles per hour.
+    It should make sense that $\dfrac{\dd r}{\dd t} \forcespace$ is negative since the two cars are approaching one another. The units also make sense: since $r$ is in miles and $h$ is in hours, the final units should be miles per hour.
 \end{tcolorbox}
 
 \begin{tcolorbox}[default]

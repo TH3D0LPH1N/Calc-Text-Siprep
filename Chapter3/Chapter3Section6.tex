@@ -42,7 +42,7 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
     where $t$ represents the time after midnight (in hours) and $C(t)$ represents the rate of potatoes processed in tons per hour. The supervisor determines that the workers' rate of processing is a decreasing function throughout the day. \\
     \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
         \item How many tons of potatoes arrive at the \textit{Popular Potatoes} factory between 6am and noon? \\
-        \item Use a left Riemann sum with sub-intervals indicated by the table to approximate $\int_6^{16} C(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem. \\
+        \item Use a left Riemann sum with sub-intervals indicated by the table to approximate $\int_6^{16} C(t) \,\mathrm{d}t \forcespace$. Using correct units, explain the meaning of this value in the context of the problem. \\
         \item Is your approximation in part (b) an under or over-approximation? Explain. \\
         \item Approximate $C'(11.5)$. Explain the meaning of your answer \\
         \item The workers end their shift at 4pm. At that time, are there still potatoes in the factory left to process? Explain your reasoning.
@@ -51,10 +51,10 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.6.1: } \par
     a) Since this question asks for a total amount, we know that we must find the integral of the rate of potatoes that are being delivered to the factory. Therefore, we have \begin{align*}
-        \text{Total tons} = \int_6^{12} P(t) \, dt = \int_6^{12} 9 - \dfrac{9\sin(x - 2)}{x - 2} = \boxed{54.899 \text{ tons of potatoes}}
+        \text{Total tons} = \int_6^{12} P(t) \,\mathrm{d}t = \int_6^{12} 9 - \dfrac{9\sin(x - 2)}{x - 2} = \boxed{54.899 \text{ tons of potatoes}}
     \end{align*}
     b) Using our setup for approximation with left-hand rectangles, we have \begin{align*}
-        \int_6^{16} C(t) \, dt \approx (9 - 6) \cdot 7.9 + (13 - 9) \cdot 6.5 + (14 - 13) \cdot 3.9 + (16 - 14) \cdot 3.1 = 59.8
+        \int_6^{16} C(t) \,\mathrm{d}t \approx (9 - 6) \cdot 7.9 + (13 - 9) \cdot 6.5 + (14 - 13) \cdot 3.9 + (16 - 14) \cdot 3.1 = 59.8
     \end{align*}
     Therefore, \textbf{approximately 59.8 tons of potatoes were processed into chips between 6am and 4pm}. \par
     \begin{tcolorbox}[interesting]
@@ -93,8 +93,8 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
     Assume $V(t)$ is a continuous and differentiable function. \par
     \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
         \item Estimate $V'(7)$. Show the work that leads to your answer. Indicate the units. \\
-        \item Use a trapezoidal sum with subintervals indicated by the table to approximate $\int_0^{20} V(t) \, dt$. Using correct units, explain the meaning of this value in the context of the problem. \\
-        \item Find the value of $\int_0^{20} V'(t) \, dt$ and explain the meaning of this value in the context of the problem.
+        \item Use a trapezoidal sum with subintervals indicated by the table to approximate $\int_0^{20} V(t) \,\mathrm{d}t$. Using correct units, explain the meaning of this value in the context of the problem. \\
+        \item Find the value of $\int_0^{20} V'(t) \,\mathrm{d}t$ and explain the meaning of this value in the context of the problem.
     \end{enumerate}
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
@@ -103,14 +103,14 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
         V'(7) \approx \dfrac{f(b) - f(a)}{b - a} = \dfrac{48 - 83}{10 - 6} = \boxed{-8.75 \si{gal \per min^2}}
     \end{align*}
     b) Using our setup for the trapezoidal rule, we get \begin{align*}
-        \int_0^{20} V(t) \, dt &\approx \dfrac{83 + 68}{2} \cdot (4 - 0) + \dfrac{68 + 83}{2} \cdot (6 - 4) + \dfrac{83 + 48}{2} \cdot (10 - 6) \\[5.5pt]
+        \int_0^{20} V(t) \,\mathrm{d}t &\approx \dfrac{83 + 68}{2} \cdot (4 - 0) + \dfrac{68 + 83}{2} \cdot (6 - 4) + \dfrac{83 + 48}{2} \cdot (10 - 6) \\[5.5pt]
         & + \dfrac{48 + 38}{2} \cdot (13 - 10) + \dfrac{38 + 30}{2} \cdot (15 - 13) + \dfrac{30 + 38}{2} \cdot (20 - 15) \\[11pt]
         & = 1082
     \end{align*}
     Therefore, we can say that \textbf{approximately 1082 gallons of sewage flowed through the pipeline between $t = 0$ minutes and $t = 20$ minutes}. \par
     \vspace{11pt}
     c) For this problem, since we see an integral and a derivative, we know that we must utilize the Fundamental Theorem of Calculus. Therefore, we have \begin{align*}
-        \int_0^{20} V'(t) \, dt = V(20) - V(0) = 38 - 83 = -45 \si{gal \per min}
+        \int_0^{20} V'(t) \,\mathrm{d}t = V(20) - V(0) = 38 - 83 = -45 \si{gal \per min}
     \end{align*}
     From this result, we can say that \textbf{the total change of the rate of flow between $t = 0$ and $t = 20$ minutes is -45 gallons per minutes}.
 \end{tcolorbox}
@@ -130,9 +130,9 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
 \end{align*}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item Estimate $V'(7)$. Show the work that leads to your answer. Indicate the units. 
-    \item Find $\int_8^{40} V'(t) \, dt$. 
-    \item Use a trapezoidal sum with sub-intervals indicated by the table to approximate \\ $\int_0^{48} V(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem.
-    \item Using correct units, explain the meaning of $\dfrac{1}{48}\int_0^{48} V(t) \, dt$ in the context of the problem.
+    \item Find $\int_8^{40} V'(t) \,\mathrm{d}t$. 
+    \item Use a trapezoidal sum with sub-intervals indicated by the table to approximate \\ $\int_0^{48} V(t) \,\mathrm{d}t \forcespace$. Using correct units, explain the meaning of this value in the context of the problem.
+    \item Using correct units, explain the meaning of $\dfrac{1}{48}\int_0^{48} V(t) \,\mathrm{d}t$ in the context of the problem.
 \end{enumerate} \vspace{11pt}
 
 \onequestion{2. A small plant is purchased from a nursery and the change in height of the plant is measured at the end of each day for four days. The data, where $H(t)$ is measured in millimeters per day and $t$ is measured in days, are listed below.} \begin{align*}
@@ -147,8 +147,8 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item Estimate $H'(3)$. Show the work that leads to your answer. Indicate the units. 
     \item Explain how one would know that the plant's growth is not increasing at a decreasing rate.
-    \item Use right-hand rectangles with sub-intervals indicated by the table to approximate $\int_0^4 H(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem. 
-    \item Using correct units, explain the meaning of $\dfrac{1}{4}\int_0^4 H(t) \, dt$ in the context of the problem.
+    \item Use right-hand rectangles with sub-intervals indicated by the table to approximate $\int_0^4 H(t) \,\mathrm{d}t \forcespace$. Using correct units, explain the meaning of this value in the context of the problem. 
+    \item Using correct units, explain the meaning of $\dfrac{1}{4}\int_0^4 H(t) \,\mathrm{d}t$ in the context of the problem.
 \end{enumerate} \vspace{11pt}
 
 \onequestion{3. The rate of consumption of fuel, in gallons per minute, recorded during an airplane flight is given by a twice differentiable and strictly increasing function $R(t)$. A table of selected values of $R(t)$ for the time interval $0 \leq t \leq 90$ is shown below.} \begin{align*}
@@ -162,8 +162,8 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
 \end{align*}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item Estimate $R'(30)$. Show the work that leads to your answer. Indicate the units.
-    \item Use right-hand Riemann rectangles to approximate $\int_0^{90} R(t) \, dt$ and indicate units of measure. Explain the meaning of $\int_0^{90} R(t) \, dt$ in terms of the fuel consumption. 
-    \item Use left-hand rectangles to find $\dfrac{1}{70}\int_{20}^{90} R(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{70}\int_{20}^{90} R(t) \, dt$ in terms of the fuel consumption.
+    \item Use right-hand Riemann rectangles to approximate $\int_0^{90} R(t) \,\mathrm{d}t$ and indicate units of measure. Explain the meaning of $\int_0^{90} R(t) \,\mathrm{d}t$ in terms of the fuel consumption. 
+    \item Use left-hand rectangles to find $\dfrac{1}{70}\int_{20}^{90} R(t) \,\mathrm{d}t$. Using the correct units, explain the meaning of $\dfrac{1}{70}\int_{20}^{90} R(t) \,\mathrm{d}t$ in terms of the fuel consumption.
 \end{enumerate} \vspace{11pt}
 
 \onequestion{4. A diabetic patient tests his blood glucose level every morning. After being put on insulin, the data below shows the glucose levels, $G(t)$, in milligrams per deciliter (mg/dL) over one week.} \begin{align*}
@@ -177,7 +177,7 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
 \end{align*}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item Estimate $G'(3.7)$. Using the correct units, explain the meaning of the result.
-    \item Use midpoint Riemann rectangles to approximate $\int_1^7 G(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{7}\int_1^7 G(t) \, dt$ in terms of the patient's glucose levels.
+    \item Use midpoint Riemann rectangles to approximate $\int_1^7 G(t) \,\mathrm{d}t$. Using the correct units, explain the meaning of $\dfrac{1}{7}\int_1^7 G(t) \,\mathrm{d}t$ in terms of the patient's glucose levels.
     \item Ignoring the last data point, $M(t) = 237.6e^{-0.082t}$ is a model of $G(t)$. Find $M'(3.7)$. Is $M(t)$ decreasing at an increasing rate? Show the work that leads to your conclusion.
 \end{enumerate} \vspace{11pt}
 
@@ -191,9 +191,9 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
     \end{array}
 \end{align*} 
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Find $\int_0^{21} A'(t) \, dt$. Show the work that leads to your answer. Explain the meaning of $\int_0^{21} A'(t) \, dt$ in terms of A1c scores. 
-    \item Use a right-hand Riemann approximation to approximate $\int_0^{21} A(t) \, dt$. Using the correct units, explain the meaning of $\dfrac{1}{21}\int_0^{21} A(t) \, dt$ in terms of the patient's A1c score.
-    \item A model of $A(t)$ is $B(t) = -0.305x + 10.571 + 0.1\sin(\pi x)$. Find $\dfrac{1}{21}\int_0^{21} B(t) \, dt$.
+    \item Find $\int_0^{21} A'(t) \,\mathrm{d}t$. Show the work that leads to your answer. Explain the meaning of $\int_0^{21} A'(t) \,\mathrm{d}t$ in terms of A1c scores. 
+    \item Use a right-hand Riemann approximation to approximate $\int_0^{21} A(t) \,\mathrm{d}t$. Using the correct units, explain the meaning of $\dfrac{1}{21}\int_0^{21} A(t) \,\mathrm{d}t$ in terms of the patient's A1c score.
+    \item A model of $A(t)$ is $B(t) = -0.305x + 10.571 + 0.1\sin(\pi x)$. Find $\dfrac{1}{21}\int_0^{21} B(t) \,\mathrm{d}t$.
 \end{enumerate} \vspace{11pt}
 
 \onequestion{6. A family leases solar panels on their house. At the end of the year, they receieve a report, including the table below, which shows the monthly production $P(t)$ of electricity, in kilowatts per month (kW/month), from the panels.} \begin{align*}
@@ -208,8 +208,8 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
     \end{array}
 \end{align*}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
-    \item Use a right-hand Riemann approximation to approximate $\int_0^{12} P(t) \, dt$. Indicate the units.
-    \item A model of $P(t)$ is $k(t) = 660 - 489\cos \left(\dfrac{\pi}{6}t\right)$ is a model of $P(t)$. Find $\int_0^{12} k(t) \, dt$.
+    \item Use a right-hand Riemann approximation to approximate $\int_0^{12} P(t) \,\mathrm{d}t$. Indicate the units.
+    \item A model of $P(t)$ is $k(t) = 660 - 489\cos \left(\dfrac{\pi}{6}t\right)$ is a model of $P(t)$. Find $\int_0^{12} k(t) \,\mathrm{d}t$.
     \item Using the model $k(t) = 660 - 489\cos\left(\dfrac{\pi}{6}t\right)$, show that the production is decreasing at $t = 9$. Is the production decreasing at an increasing rate?
 \end{enumerate} \vspace{11pt}
 
@@ -228,9 +228,9 @@ Let us consider a problem similar to the ones in the Accumulation of Rates secti
 \end{align*}
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item Approximate $C_e'(3.4)$ and $C_g'(3.4)$. Using correct units, explain the meaning of these estimations in terms of increasing and/or decreasing consumption of each commodity at $t = 3.4$
-    \item Use right-hand Riemann rectangles to approximate $\int_0^{12} C_e(t) \, dt$. Indicate the units. 
-    \item Use midpoint Riemann rectangles to approximate $\int_0^{12} C_g(t) \, dt$. Indicate the units.
-    \item Using the correct units, explain the meaning of $\dfrac{1}{12}\int_0^{12} C_g(t) \, dt$.
+    \item Use right-hand Riemann rectangles to approximate $\int_0^{12} C_e(t) \,\mathrm{d}t$. Indicate the units. 
+    \item Use midpoint Riemann rectangles to approximate $\int_0^{12} C_g(t) \,\mathrm{d}t$. Indicate the units.
+    \item Using the correct units, explain the meaning of $\dfrac{1}{12}\int_0^{12} C_g(t) \,\mathrm{d}t$.
 \end{enumerate} \vspace{11pt}
 
 \onequestion{8. Dr. Quattrin decides to lease solar panels from Sunrun Solar. After a year, he reanalyzes his PG\&E bill to track both his consumption of electricity ($C_e(t)$) and his production of electricity ($P_e(t)$) over the course of a year. The tables below show the consumption of electricity, measured in kilowatts (kWs).} \begin{align*}
@@ -264,7 +264,7 @@ The equation below is a model for the production in kW per month that PG\&E buys
 \end{align*} 
 \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
     \item At approximately what rate is the rate of change of the temperature changing at 2am ($t = 2$)? Indicate the units.
-    \item Use a right Riemann sum with sub-intervals indicated by the table to approximate $\int_0^8 W(t) \, dt \forcespace$. Using correct units, explain the meaning of this value in the context of the problem.
+    \item Use a right Riemann sum with sub-intervals indicated by the table to approximate $\int_0^8 W(t) \,\mathrm{d}t \forcespace$. Using correct units, explain the meaning of this value in the context of the problem.
     \item Set up, but do not solve, an integral equation which would determine the temperature in Sauris at 1pm.
 \end{enumerate} \vspace{11pt}
 

@@ -12,8 +12,8 @@ Up to this point, we've seen how integration can be used to find the exact area 
         If $f(x)$ is a continuous function on $[a, b]$, then: \par
         \vspace{11pt}
         \begin{enumerate}
-            \item $\diff \int_c^x f(t) \, dt = f(x)$ or $\diff \int_c^u f(t) \, dt = f(u) \cdot \dfrac{du}{dx}$ \\[11pt]
-            \item If $F'(x) = f(x)$, then $\int_a^b f(x) \, dx = F(b) - F(a)$.
+            \item $\diff \int_c^x f(t) \,\mathrm{d}t = f(x)$ or $\diff \int_c^u f(t) \,\mathrm{d}t = f(u) \cdot \dfrac{\dd u}{\dd x}$ \\[11pt]
+            \item If $F'(x) = f(x)$, then $\int_a^b f(x) \,\mathrm{d}x = F(b) - F(a)$.
         \end{enumerate}
         \vspace{11pt}
     \end{minipage}}}
@@ -35,14 +35,14 @@ The idea of the integral meaning the area may not make sense initially, mainly b
 Let us first consider part 2 of the Fundamental Theorem of Calculus, since it has a very practical application. This part of the Fundamental Theorem of Calculus gives us a clear method for evaluating definite integrals. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.1.1: } Evaluate $\int_2^8 (4x + 3) \, dx$
+    \textbf{Ex 3.1.1: } Evaluate $\int_2^8 (4x + 3) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.1.1: } First, let's start by treating this as a regular antiderivative \begin{align*}
-        \int (4x + 3) \, dx = 2x^2 + 3x
+        \int (4x + 3) \,\mathrm{d}x = 2x^2 + 3x
     \end{align*}
     Note that our $+C$ will not be needed, as we will be taking a definite integral. Now, let's apply the Fundamental Theorem of Calculus. \begin{align*}
-        \int_2^8 f(x) \, dx &= F(8) - F(2) \\[11pt]
+        \int_2^8 f(x) \,\mathrm{d}x &= F(8) - F(2) \\[11pt]
         & = \left(2x^2 + 3x\right) \eval_2^8 \\[11pt]
         & = 2(8)^2 + 3(8) - \left(2(2)^2 + 3(2)\right) \\[11pt]
         & = \boxed{138}
@@ -51,33 +51,33 @@ Let us first consider part 2 of the Fundamental Theorem of Calculus, since it ha
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.1.2: } Evaluate $\int_1^4 \dfrac{1}{\sqrt{x}} \, dx$ 
+    \textbf{Ex 3.1.2: } Evaluate $\int_1^4 \dfrac{1}{\sqrt{x}} \,\mathrm{d}x$ 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.1.2: } \begin{align*}
-        \int_1^4 \dfrac{1}{\sqrt{x}} \, dx &= 2\sqrt{x} \eval_1^4 \\[11pt]
+        \int_1^4 \dfrac{1}{\sqrt{x}} \,\mathrm{d}x &= 2\sqrt{x} \eval_1^4 \\[11pt]
         & = 2\sqrt{(4)} - 2\sqrt{(1)} \\[11pt]
         & = \boxed{2}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.1.3: } Evaluate $\int_0^{\frac{\pi}{2}} \sin (x) \, dx$
+    \textbf{Ex 3.1.3: } Evaluate $\int_0^{\frac{\pi}{2}} \sin (x) \,\mathrm{d}x$
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.1.3: } \begin{align*}
-        \int_0^{\frac{\pi}{2}} \sin (x) \, dx &= -\cos (x) \eval_0^{\frac{\pi}{2}} \\[11pt]
+        \int_0^{\frac{\pi}{2}} \sin (x) \,\mathrm{d}x &= -\cos (x) \eval_0^{\frac{\pi}{2}} \\[11pt]
         & = -\cos \left(\dfrac{\pi}{2}\right) + \cos(0) \\[11pt]
         & = \boxed{1}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.1.4: } Evaluate $\int_1^2 \dfrac{4 + u^2}{u^3} \, du$
+    \textbf{Ex 3.1.4: } Evaluate $\int_1^2 \dfrac{4 + u^2}{u^3} \,\mathrm{d}u$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.1.4: } \begin{align*}
-        \int_1^2 \dfrac{4 + u^2}{u^3} \, du &= \int_1^2 \left(4u^{-3} + u^{-1}\right) \, du \\[11pt]
+        \int_1^2 \dfrac{4 + u^2}{u^3} \,\mathrm{d}u &= \int_1^2 \left(4u^{-3} + u^{-1}\right) \,\mathrm{d}u \\[11pt]
         & = \left(-2u^{-2} + \ln |u|\right) \eval_1^2 \\[11pt]
         & = -2(2)^{-2} + \ln 2 - (-2(1)^{-2} + \ln 1) \\[11pt]
         & = \boxed{\dfrac{3}{2} + \ln 2}
@@ -85,11 +85,11 @@ Let us first consider part 2 of the Fundamental Theorem of Calculus, since it ha
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.1.5: } Evaluate $\int_{-5}^5 \dfrac{1}{x^3} \, dx$
+    \textbf{Ex 3.1.5: } Evaluate $\int_{-5}^5 \dfrac{1}{x^3} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.1.5: } When initially looking at the problem, one may simply proceed with finding the definite integral. \begin{align*}
-        \int_{-5}^5 \dfrac{1}{x^3} \, dx & = -\dfrac{1}{x^2} \eval_{-5}^5 \\[11pt]
+        \int_{-5}^5 \dfrac{1}{x^3} \,\mathrm{d}x & = -\dfrac{1}{x^2} \eval_{-5}^5 \\[11pt]
         & = -\dfrac{1}{(-5)^2} + \dfrac{1}{(5)^2} \\[11pt]
         & = 0
     \end{align*}
@@ -106,21 +106,21 @@ Just as we had many properties for the indefinite integral, we have many propert
         \end{center}
         \vspace{11pt}
         \begin{enumerate}
-            \item $\int_a^b f(x) \, dx = -\int_b^a f(x) \, dx$ \\[11pt]
-            \item $\int_a^a f(x) \, dx = 0$ \\[11pt]
-            \item $\int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx$, where $a < c < b$
+            \item $\int_a^b f(x) \,\mathrm{d}x = -\int_b^a f(x) \,\mathrm{d}x$ \\[11pt]
+            \item $\int_a^a f(x) \,\mathrm{d}x = 0$ \\[11pt]
+            \item $\int_a^b f(x) \,\mathrm{d}x = \int_a^c f(x) \,\mathrm{d}x + \int_c^b f(x) \,\mathrm{d}x$, where $a < c < b$
         \end{enumerate}
         \vspace{11pt}
     \end{minipage}}}
 \end{center}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.1.6: } If $\int_{-5}^2 f(x) \, dx = -17$ and $\int_5^2 f(x) \, dx = -4$, find $\int_{-5}^5 f(x) \, dx$.
+    \textbf{Ex 3.1.6: } If $\int_{-5}^2 f(x) \,\mathrm{d}x = -17$ and $\int_5^2 f(x) \,\mathrm{d}x = -4$, find $\int_{-5}^5 f(x) \,\mathrm{d}x$.
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.1.6: } \begin{align*}
-        \int_{-5}^5 f(x) \, dx &= \int_{-5}^2 f(x) \, dx + \int_2^5 f(x) \, dx \\[11pt]
-        & = \int_{-5}^2 f(x) \, dx - \int_5^2 f(x) \, dx \\[11pt]
+        \int_{-5}^5 f(x) \,\mathrm{d}x &= \int_{-5}^2 f(x) \,\mathrm{d}x + \int_2^5 f(x) \,\mathrm{d}x \\[11pt]
+        & = \int_{-5}^2 f(x) \,\mathrm{d}x - \int_5^2 f(x) \,\mathrm{d}x \\[11pt]
         & = -17 - (-4) \\[11pt]
         & = \boxed{-13}
     \end{align*}
@@ -129,11 +129,11 @@ Just as we had many properties for the indefinite integral, we have many propert
 Part I of the Fundamental Theorem of Calculus is very important for the $\textbf{theory}$ of calculus, but is limited (hehe) in the context of this course to L'Hospital problems which will will explore in a later chapter. Here is how the formula may be applied. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 3.1.7: } Use the Fundamental Theorem of Calculus to find $f'(t)$ if $f(t) = \int_2^{3t^2} (4x + 3) \, dx$ 
+    \textbf{Ex 3.1.7: } Use the Fundamental Theorem of Calculus to find $f'(t)$ if $f(t) = \int_2^{3t^2} (4x + 3) \,\mathrm{d}x$ 
 \end{tcolorbox} 
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.1.7: } \begin{align*}
-        f'(t) &= \tdiff \int_2^{3t^2} (4x + 3) \, dx \\[11pt]
+        f'(t) &= \tdiff \int_2^{3t^2} (4x + 3) \,\mathrm{d}x \\[11pt]
         & = \left(4\left(3t^2\right) + 3\right)(6t) \\[11pt]
         & = \boxed{72t^3 + 18t}
     \end{align*}
@@ -145,46 +145,46 @@ Part I of the Fundamental Theorem of Calculus is very important for the $\textbf
 
 Use part II of the Fundamental Theorem of Calculus to evaluate the integral, or explain why the integral cannot be evaluated. \par
 
-\twoquestion{1. $\int_{-1}^3 x^5 \, dx$}{2. $\int_2^7 (5x - 1) \, dx$} \\[11pt]
-\twoquestion{3. $\int_{-5}^5 \dfrac{2}{x^3} \, dx$}{4. $\int_{-3}^{-1} \dfrac{x^7 - 4x^3 - 3}{x} \, dx$} \\[11pt]
-\twoquestion{5. $\int_1^2 \dfrac{3}{t^4} \, dt$}{6. $\int_{\frac{\pi}{4}}^{\frac{3\pi}{4}} \csc (y)\cot (y) \, dy$} \\[11pt]
-\twoquestion{7. $\int_0^{\frac{\pi}{4}} \sec^2 (y) \, dy$}{8. $\int_1^9 \dfrac{3}{2z} \, dz$} \\[11pt]
-\twoquestion{9. $\int_1^8 \dfrac{x^2 - 4}{\sqrt[3]{x}} \, dx$}{10. $\int_{\pi}^{\frac{5\pi}{4}}\sin (y) \, dy$} \\[11pt]
-\twoquestion{11. $\int_1^4 \dfrac{x^4 - 4x^2 - 5}{x^2} \, dx$}{12. $\int_3^5 \left(x^2 + 5x + 6\right) \, dx$} \\[11pt]
-\twoquestion{13. $\int_{\pi}^{\frac{\pi}{4}} \cos (y) \, dy$}{14. $\int_1^4 \dfrac{x^3 - 2x^2 - 4x}{x^2} \, dx$} \\[11pt]
-\twoquestion{15. $\int_1^2 \dfrac{x^2 - 4x + 7}{x} \, dx$}{16. $\int_1^{16} \dfrac{2x^2 - 1}{\sqrt[4]{x}}$} \\[11pt]
+\twoquestion{1. $\int_{-1}^3 x^5 \,\mathrm{d}x$}{2. $\int_2^7 (5x - 1) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{3. $\int_{-5}^5 \dfrac{2}{x^3} \,\mathrm{d}x$}{4. $\int_{-3}^{-1} \dfrac{x^7 - 4x^3 - 3}{x} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{5. $\int_1^2 \dfrac{3}{t^4} \,\mathrm{d}t$}{6. $\int_{\frac{\pi}{4}}^{\frac{3\pi}{4}} \csc (y)\cot (y) \,\mathrm{d}y$} \\[11pt]
+\twoquestion{7. $\int_0^{\frac{\pi}{4}} \sec^2 (y) \,\mathrm{d}y$}{8. $\int_1^9 \dfrac{3}{2z} \,\mathrm{d}z$} \\[11pt]
+\twoquestion{9. $\int_1^8 \dfrac{x^2 - 4}{\sqrt[3]{x}} \,\mathrm{d}x$}{10. $\int_{\pi}^{\frac{5\pi}{4}}\sin (y) \,\mathrm{d}y$} \\[11pt]
+\twoquestion{11. $\int_1^4 \dfrac{x^4 - 4x^2 - 5}{x^2} \,\mathrm{d}x$}{12. $\int_3^5 \left(x^2 + 5x + 6\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{13. $\int_{\pi}^{\frac{\pi}{4}} \cos (y) \,\mathrm{d}y$}{14. $\int_1^4 \dfrac{x^3 - 2x^2 - 4x}{x^2} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{15. $\int_1^2 \dfrac{x^2 - 4x + 7}{x} \,\mathrm{d}x$}{16. $\int_1^{16} \dfrac{2x^2 - 1}{\sqrt[4]{x}}$} \\[11pt]
 
 Use the following values for problems 17 - 27 to evaluate the given integrals. \begin{align*}
     \arraycolsep=55pt\def\arraystretch{2.2} 
     \begin{array}[c]{|c|c|}
         \hline
-        \int_{-2}^5 f(x) \, dx = -2 & \int_1^5 f(x) \, dx = 3 \\[5.5pt] \hline
-        \int_{-2}^1 g(x) \, dx = 4 & \int_5^1 g(x) \, dx = 9 \\[5.5pt] \hline
-        \int_1^5 h(x) \, dx = 7 & \int_5^{-2} h(x) \, dx = -6 \\[5.5pt] 
+        \int_{-2}^5 f(x) \,\mathrm{d}x = -2 & \int_1^5 f(x) \,\mathrm{d}x = 3 \\[5.5pt] \hline
+        \int_{-2}^1 g(x) \,\mathrm{d}x = 4 & \int_5^1 g(x) \,\mathrm{d}x = 9 \\[5.5pt] \hline
+        \int_1^5 h(x) \,\mathrm{d}x = 7 & \int_5^{-2} h(x) \,\mathrm{d}x = -6 \\[5.5pt] 
         \hline
     \end{array}
 \end{align*}
 
-\twoquestion{17. $\int_{-2}^1 f(x) \, dx$}{18. $\int_{-2}^5 g(x) \, dx$} \\[11pt]
-\twoquestion{19. $\int_{-2}^1 h(x) \, dx$}{20. $\int_1^5 (f(x) - g(x)) \, dx$} \\[11pt]
-\twoquestion{21. $\int_{-2}^5 (g(x) + h(x)) \, dx$}{22. $\int_{-2}^1 (h(x) - f(x)) \, dx$} \\[11pt]
-\twoquestion{23. $\int_{-2}^5 (h(x) + f(x)) \, dx$}{24. $\int_1^5 (2f(x) + 3h(x)) \, dx$} \\[11pt]
-\twoquestion{25. $\int_{-2}^1 (2f(x) - 3g(x)) \, dx$}{26. $\int_{-2}^5 \left(\dfrac{1}{2}g(x) + 4h(x)\right) \, dx$} \\[11pt]
-\twoquestion{27. $\int_1^5 \left(\dfrac{1}{3}h(x) + 2f(x)\right) \, dx$}{28. $\int_5^5 (f(x) + g(x) + h(x)) \, dx$} \\[11pt]
+\twoquestion{17. $\int_{-2}^1 f(x) \,\mathrm{d}x$}{18. $\int_{-2}^5 g(x) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{19. $\int_{-2}^1 h(x) \,\mathrm{d}x$}{20. $\int_1^5 (f(x) - g(x)) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{21. $\int_{-2}^5 (g(x) + h(x)) \,\mathrm{d}x$}{22. $\int_{-2}^1 (h(x) - f(x)) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{23. $\int_{-2}^5 (h(x) + f(x)) \,\mathrm{d}x$}{24. $\int_1^5 (2f(x) + 3h(x)) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{25. $\int_{-2}^1 (2f(x) - 3g(x)) \,\mathrm{d}x$}{26. $\int_{-2}^5 \left(\dfrac{1}{2}g(x) + 4h(x)\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{27. $\int_1^5 \left(\dfrac{1}{3}h(x) + 2f(x)\right) \,\mathrm{d}x$}{28. $\int_5^5 (f(x) + g(x) + h(x)) \,\mathrm{d}x$} \\[11pt]
 
 Use part I of the Fundamental Theorem of Calculus to find the derivative of the function. \par
 
-\twoquestion{29. $g(y) = \int_2^y t^2\sin (t) \, dt$}{30. $g(x) = \int_0^x \sqrt{1 + 2t} \, dt$} \\[11pt]
-\twoquestion{31. $F(x) = \int_x^2 \cos \left(t^2\right) \, dt$}{32. $h(x) = \int_2^{\frac{1}{x}} \arctan (t) \, dt$} \\[11pt]
-\twoquestion{33. $y = \int_3^{\sqrt{x}} \dfrac{\cos (t)}{t} \, dt$}{34. $f(x) = \int_e^{x^2} \ln \left(t^2 + 1\right) \, dt$} \\[11pt]
-\twoquestion{35. $f(x) = \int_{10}^{x^2} t\ln t \, dt$}{36. $f(x) = \int_{e^x}^5 \left(t^3 + t + 1\right) \, dt$} \\[11pt]
-\twoquestion{37. If $F(x) = \int_1^{t^2} \dfrac{\sqrt{1 + u^4}}{u} \, du$, find $F'(t)$.}{38. If $h(x) = \int_{\pi}^{\sqrt{x}} e^{5t} \, dt$, find $h'(x)$.} \\[11pt]
-\twoquestion{39. If $h(m) = \int_5^{\cos (m)} t^2\cos^{-1} (t) \, dt$, find $h'(m)$.}{40. If $h(y) = \int_5^{\ln y} \dfrac{e^t}{t^4} \, dt$, find $h'(y)$.} \\[11pt]
+\twoquestion{29. $g(y) = \int_2^y t^2\sin (t) \,\mathrm{d}t$}{30. $g(x) = \int_0^x \sqrt{1 + 2t} \,\mathrm{d}t$} \\[11pt]
+\twoquestion{31. $F(x) = \int_x^2 \cos \left(t^2\right) \,\mathrm{d}t$}{32. $h(x) = \int_2^{\frac{1}{x}} \arctan (t) \,\mathrm{d}t$} \\[11pt]
+\twoquestion{33. $y = \int_3^{\sqrt{x}} \dfrac{\cos (t)}{t} \,\mathrm{d}t$}{34. $f(x) = \int_e^{x^2} \ln \left(t^2 + 1\right) \,\mathrm{d}t$} \\[11pt]
+\twoquestion{35. $f(x) = \int_{10}^{x^2} t\ln t \,\mathrm{d}t$}{36. $f(x) = \int_{e^x}^5 \left(t^3 + t + 1\right) \,\mathrm{d}t$} \\[11pt]
+\twoquestion{37. If $F(x) = \int_1^{t^2} \dfrac{\sqrt{1 + u^4}}{u} \,\mathrm{d}u$, find $F'(t)$.}{38. If $h(x) = \int_{\pi}^{\sqrt{x}} e^{5t} \,\mathrm{d}t$, find $h'(x)$.} \\[11pt]
+\twoquestion{39. If $h(m) = \int_5^{\cos (m)} t^2\cos^{-1} (t) \,\mathrm{d}t$, find $h'(m)$.}{40. If $h(y) = \int_5^{\ln y} \dfrac{e^t}{t^4} \,\mathrm{d}t$, find $h'(y)$.} \\[11pt]
 
 \textbf{\large{3.1 Multiple Choice Homework}} \par
 
 \begin{questions}
-    \question If $\int_{-5}^2 f(x) \, dx = -17$ and $\int_5^2 f(x) \, dx = -4$, then $\int_{-5}^5 f(x) \, dx = $ \\
+    \question If $\int_{-5}^2 f(x) \,\mathrm{d}x = -17$ and $\int_5^2 f(x) \,\mathrm{d}x = -4$, then $\int_{-5}^5 f(x) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $-21$
@@ -194,7 +194,7 @@ Use part I of the Fundamental Theorem of Calculus to find the derivative of the 
         \choice $21$
     \end{oneparchoices} \par \horizontalline
 
-    \question Let $f$ and $g$ be continuous functions such that $\int_0^6 f(x) \, dx = 9$, $\int_3^6 f(x) \, dx = 5$, and $\int_3^0 g(x) \, dx = -7$. What is the value of $\int_0^3 \left(\dfrac{1}{2}f(x) - 3g(x)\right) \, dx$. \\
+    \question Let $f$ and $g$ be continuous functions such that $\int_0^6 f(x) \,\mathrm{d}x = 9$, $\int_3^6 f(x) \,\mathrm{d}x = 5$, and $\int_3^0 g(x) \,\mathrm{d}x = -7$. What is the value of $\int_0^3 \left(\dfrac{1}{2}f(x) - 3g(x)\right) \,\mathrm{d}x$. \\
 
     \begin{oneparchoices}
         \choice $-23$
@@ -204,7 +204,7 @@ Use part I of the Fundamental Theorem of Calculus to find the derivative of the 
         \choice $23$
     \end{oneparchoices} \par \horizontalline
 
-    \question Given that $\int_2^3 P(t) \, dt = 7$ and $\int_2^7 P(t) \, dt = -2$, what is $\int_7^3 P(t) \, dt$? \\
+    \question Given that $\int_2^3 P(t) \,\mathrm{d}t = 7$ and $\int_2^7 P(t) \,\mathrm{d}t = -2$, what is $\int_7^3 P(t) \,\mathrm{d}t$? \\
 
     \begin{oneparchoices}
         \choice $-9$
@@ -214,12 +214,12 @@ Use part I of the Fundamental Theorem of Calculus to find the derivative of the 
         \choice not enough information
     \end{oneparchoices} \par \horizontalline
 
-    \question Based on the information below, find $\int_1^{-2} (g(x) + f(x)) \, dx$ \begin{align*}
+    \question Based on the information below, find $\int_1^{-2} (g(x) + f(x)) \,\mathrm{d}x$ \begin{align*}
         \arraycolsep=55pt\def\arraystretch{2.2} 
         \begin{array}[c]{|c|c|}
             \hline
-            \int_{-2}^5 f(x) \, dx = -2 & \int_1^5 f(x) \, dx = 3 \\[5.5pt] \hline
-            \int_{-2}^1 g(x) \, dx = 4 & \int_5^1 g(x) \, dx = 9 \\[5.5pt] 
+            \int_{-2}^5 f(x) \,\mathrm{d}x = -2 & \int_1^5 f(x) \,\mathrm{d}x = 3 \\[5.5pt] \hline
+            \int_{-2}^1 g(x) \,\mathrm{d}x = 4 & \int_5^1 g(x) \,\mathrm{d}x = 9 \\[5.5pt] 
             \hline
         \end{array}
     \end{align*}
@@ -232,12 +232,12 @@ Use part I of the Fundamental Theorem of Calculus to find the derivative of the 
         \choice $9$
     \end{oneparchoices} \par \horizontalline
 
-    \question Based on the information below, find $\int_5^{-2} (g(x) - f(x)) \, dx$ \begin{align*}
+    \question Based on the information below, find $\int_5^{-2} (g(x) - f(x)) \,\mathrm{d}x$ \begin{align*}
         \arraycolsep=55pt\def\arraystretch{2.2} 
         \begin{array}[c]{|c|c|}
             \hline
-            \int_{-2}^5 f(x) \, dx = -2 & \int_1^5 f(x) \, dx = 3 \\[5.5pt] \hline
-            \int_{-2}^1 g(x) \, dx = 4 & \int_5^1 g(x) \, dx = 9 \\[5.5pt] 
+            \int_{-2}^5 f(x) \,\mathrm{d}x = -2 & \int_1^5 f(x) \,\mathrm{d}x = 3 \\[5.5pt] \hline
+            \int_{-2}^1 g(x) \,\mathrm{d}x = 4 & \int_5^1 g(x) \,\mathrm{d}x = 9 \\[5.5pt] 
             \hline
         \end{array}
     \end{align*}
@@ -253,9 +253,9 @@ Use part I of the Fundamental Theorem of Calculus to find the derivative of the 
     \question Using the table values from questions 5 and 6, which of the following cannot be determined? \\
 
     \begin{oneparchoices}
-        \choice $\int_5^1 (g(x) + f(x)) \, dx$
-        \makebox[0.30\textwidth] \choice $\int_1^{-2} (g(x) - f(x)) \, dx$ \\[11pt]
-        \makebox[0.035\textwidth] \choice $\int_{-2}^5 3g(x)(-4(f(x))) \, dx$ 
-        \makebox[0.26\textwidth] \choice $\int_1^5 (3g(x) + 4f(x)) \, dx$ 
+        \choice $\int_5^1 (g(x) + f(x)) \,\mathrm{d}x$
+        \makebox[0.30\textwidth] \choice $\int_1^{-2} (g(x) - f(x)) \,\mathrm{d}x$ \\[11pt]
+        \makebox[0.035\textwidth] \choice $\int_{-2}^5 3g(x)(-4(f(x))) \,\mathrm{d}x$ 
+        \makebox[0.26\textwidth] \choice $\int_1^5 (3g(x) + 4f(x)) \,\mathrm{d}x$ 
     \end{oneparchoices} \par \horizontalline
 \end{questions}

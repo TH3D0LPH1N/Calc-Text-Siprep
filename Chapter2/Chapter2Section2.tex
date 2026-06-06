@@ -55,9 +55,9 @@ The derivative of a composite function often becomes a product of two functions:
 \begin{enumerate}
     \item Make sure that you are integrating a product or quotient.
     \item Identify the inner function of the composite and set $u$ equal to it.
-    \item Differentiate $u$ to find $du$ in terms of $dx$.
-    \item Adjust the integral by multiplying and dividing by a constant if needed so a factor matches $du$. [See \textbf{Ex 2.2.2}]
-    \item Rewrite the integral entirely in terms of $u$ and $du$.
+    \item Differentiate $u$ to find $\dd u$ in terms of $\dd x$.
+    \item Adjust the integral by multiplying and dividing by a constant if needed so a factor matches $\dd u$. [See \textbf{Ex 2.2.2}]
+    \item Rewrite the integral entirely in terms of $u$ and $\dd u$.
     \item Integrate using the power rule or other appropriate rules.
     \item Substitute back the original $x$-expression for $u$.
 \end{enumerate}
@@ -72,15 +72,15 @@ This is one of those mathematical processes that makes little sense when first s
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.1: } $\int 3x^2\left(x^3 + 5\right)^{10} \, dx$
+    \textbf{Ex 2.2.1: } $\int 3x^2\left(x^3 + 5\right)^{10} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.1: } \begin{align*}
         & \left(x^3 + 5\right) \text{ is the inner function.} \\[11pt]
         & \curvedarrow u = x^3 + 5 \\[5.5pt]
-        & \curvedarrow du = 3x^2 \, dx \\[11pt]
-        & \int 3x^2\left(x^3 + 5\right)^{10} \, dx \begin{aligned}[t]
-            & = \int u^{10} \, du \\[11pt]
+        & \curvedarrow \dd u = 3x^2 \,\mathrm{d}x \\[11pt]
+        & \int 3x^2\left(x^3 + 5\right)^{10} \,\mathrm{d}x \begin{aligned}[t]
+            & = \int u^{10} \,\mathrm{d}u \\[11pt]
             & = \dfrac{u^{11}}{11} + C \\[11pt]
             & = \boxed{\dfrac{1}{11}\left(x^3 + 5\right)^{11}}
         \end{aligned}
@@ -88,34 +88,34 @@ This is one of those mathematical processes that makes little sense when first s
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.2: } $\int x\left(x^2 + 5\right)^3 \, dx$
+    \textbf{Ex 2.2.2: } $\int x\left(x^2 + 5\right)^3 \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.2: } \begin{align*}
         & \left(x^2 + 5\right) \text{ is the inner function.} \\[11pt]
         & \curvedarrow u = x^2 + 5 \\[5.5pt]
-        & \curvedarrow du = 2x \, dx \\[11pt]
-        & \int x\left(x^2 + 5\right)^3 \, dx \begin{aligned}[t]
-            & = \dfrac{1}{2}\int (2x)\left(x^2 + 5\right)^3 \, dx \\[11pt]
-            & = \dfrac{1}{2}\int u^3 \, du \\[11pt]
+        & \curvedarrow \dd u = 2x \,\mathrm{d}x \\[11pt]
+        & \int x\left(x^2 + 5\right)^3 \,\mathrm{d}x \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)\left(x^2 + 5\right)^3 \,\mathrm{d}x \\[11pt]
+            & = \dfrac{1}{2}\int u^3 \,\mathrm{d}u \\[11pt]
             & = \dfrac{1}{2} \cdot \dfrac{u^4}{4} + C \\[11pt]
             & = \boxed{\dfrac{1}{8}\left(x^2 + 5\right)^4 + C}
         \end{aligned}
     \end{align*}
-    Notice how the factor of $2$ from $du = 2x\,dx$ is accounted for by multiplying by $\frac{1}{2}$ when substituting. This ensures the integral is correctly expressed in terms of $u$.
+    Notice how the factor of $2$ from $\dd u = 2x\,\mathrm{d}x$ is accounted for by multiplying by $\frac{1}{2}$ when substituting. This ensures the integral is correctly expressed in terms of $u$.
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.3: } $\int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \, dx$
+    \textbf{Ex 2.2.3: } $\int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.3: } \begin{align*}
         & \sqrt[4]{x^4 + 2x^2 - 5} \text{ is the inner function.} \\[11pt]
         & \curvedarrow u = x^4 + 2x^2 - 5 \\[5.5pt]
-        & \curvedarrow du = \left(4x^3 + 4x\right)\, dx = 4\left(x^3 + x\right) \, dx \\[11pt]
-        & \int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \, dx \begin{aligned}[t]
-            & = \dfrac{1}{4}\int 4\left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \, dx \\[11pt]
-            & = \dfrac{1}{4}\int \sqrt[4]{u} \, du \\[11pt]
+        & \curvedarrow \dd u = \left(4x^3 + 4x\right)\,\mathrm{d}x = 4\left(x^3 + x\right) \,\mathrm{d}x \\[11pt]
+        & \int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \,\mathrm{d}x \begin{aligned}[t]
+            & = \dfrac{1}{4}\int 4\left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \,\mathrm{d}x \\[11pt]
+            & = \dfrac{1}{4}\int \sqrt[4]{u} \,\mathrm{d}u \\[11pt]
             & = \dfrac{1}{4} \cdot \dfrac{4u^{\frac{5}{4}}}{5} + C \\[11pt]
             & = \boxed{\dfrac{1}{5}\left(x^4 + 2x^2 - 5\right)^{\frac{5}{4}} + C}
         \end{aligned}
@@ -123,15 +123,15 @@ This is one of those mathematical processes that makes little sense when first s
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.4: } $\int \dfrac{3x^2 + 4x - 5}{\left(x^3 + 2x^2 - 5x + 2\right)^3} \, dx$
+    \textbf{Ex 2.2.4: } $\int \dfrac{3x^2 + 4x - 5}{\left(x^3 + 2x^2 - 5x + 2\right)^3} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.4: } \begin{align*}
         & x^3 + 2x^2 - 5x + 2 \text{ is the inner function.} \\[11pt]
         & \curvedarrow u = x^3 + 2x^2 - 5x + 2 \\[5.5pt]
-        & \curvedarrow du = \left(3x^2 + 4x - 5\right) \, dx \\[11pt]
-        & \int \dfrac{3x^2 + 4x - 5}{\left(x^3 + 2x^2 - 5x + 2\right)^3} \, dx \begin{aligned}[t]
-            & = \int \dfrac{1}{u^3} \, du \\[11pt]
+        & \curvedarrow \dd u = \left(3x^2 + 4x - 5\right) \,\mathrm{d}x \\[11pt]
+        & \int \dfrac{3x^2 + 4x - 5}{\left(x^3 + 2x^2 - 5x + 2\right)^3} \,\mathrm{d}x \begin{aligned}[t]
+            & = \int \dfrac{1}{u^3} \,\mathrm{d}u \\[11pt]
             & = -\dfrac{1}{2}u^{-2} + C \\[11pt]
             & = \boxed{-\dfrac{1}{2}\left(x^3 + 2x^2 - 5x + 2\right)^{-2} + C}
         \end{aligned} 
@@ -141,15 +141,15 @@ This is one of those mathematical processes that makes little sense when first s
 Of course, u-substitution will apply to the transcendental functions as well. \par
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.5: } $\int \sin (5x) \, dx$
+    \textbf{Ex 2.2.5: } $\int \sin (5x) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.5: } \begin{align*}
         & \curvedarrow u = 5x \\[5.5pt]
-        & \curvedarrow du = 5 \, dx \\[11pt]
-        & \int \sin (5x) \, dx \begin{aligned}[t]
-            & = \dfrac{1}{5}\int 5\sin (5x) \, dx \\[11pt]
-            & = \dfrac{1}{5}\int \sin (u) \, du \\[11pt]
+        & \curvedarrow \dd u = 5 \,\mathrm{d}x \\[11pt]
+        & \int \sin (5x) \,\mathrm{d}x \begin{aligned}[t]
+            & = \dfrac{1}{5}\int 5\sin (5x) \,\mathrm{d}x \\[11pt]
+            & = \dfrac{1}{5}\int \sin (u) \,\mathrm{d}u \\[11pt]
             & = \dfrac{1}{5} \cdot (-\cos (u)) + C \\[11pt]
             & = \boxed{-\dfrac{1}{5}\cos (5x) + C}
         \end{aligned}
@@ -157,14 +157,14 @@ Of course, u-substitution will apply to the transcendental functions as well. \p
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.6: } $\int \sin^6 (x)\cos (x) \, dx$
+    \textbf{Ex 2.2.6: } $\int \sin^6 (x)\cos (x) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.6: }\begin{align*}
         & \curvedarrow u = \sin (x) \\[5.5pt]
-        & \curvedarrow du = \cos (x) \, dx \\[11pt]
-        & \int \sin^6 (x)\cos (x) \, dx \begin{aligned}[t]
-            & = \int u^6 \, du \\[11pt]
+        & \curvedarrow \dd u = \cos (x) \,\mathrm{d}x \\[11pt]
+        & \int \sin^6 (x)\cos (x) \,\mathrm{d}x \begin{aligned}[t]
+            & = \int u^6 \,\mathrm{d}u \\[11pt]
             & = \dfrac{1}{7}u^7 + C \\[11pt]
             & = \boxed{\dfrac{1}{7}\sin^7 (x) + C}
         \end{aligned}
@@ -172,15 +172,15 @@ Of course, u-substitution will apply to the transcendental functions as well. \p
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.7: } $\int x^5\sin \left(x^6\right) \, dx$ 
+    \textbf{Ex 2.2.7: } $\int x^5\sin \left(x^6\right) \,\mathrm{d}x$ 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.7: } \begin{align*}
         & \curvedarrow u = x^6 \\[5.5pt]
-        & \curvedarrow du = 6x^5 \, dx \\[11pt]
-        & \int x^5\sin \left(x^6\right) \, dx \begin{aligned}[t]
-            & = \dfrac{1}{6}\int 6x^5\sin \left(x^6\right) \, dx \\[11pt]
-            & = \dfrac{1}{6}\int \sin (u) \, du \\[11pt]
+        & \curvedarrow \dd u = 6x^5 \,\mathrm{d}x \\[11pt]
+        & \int x^5\sin \left(x^6\right) \,\mathrm{d}x \begin{aligned}[t]
+            & = \dfrac{1}{6}\int 6x^5\sin \left(x^6\right) \,\mathrm{d}x \\[11pt]
+            & = \dfrac{1}{6}\int \sin (u) \,\mathrm{d}u \\[11pt]
             & = -\dfrac{1}{6}\cos (u) + C \\[11pt]
             & = \boxed{-\dfrac{1}{6}\cos \left(x^6\right) + C}
         \end{aligned}
@@ -188,31 +188,31 @@ Of course, u-substitution will apply to the transcendental functions as well. \p
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.8: } $\int \cot^3 (x)\csc^2 (x) \, dx$ 
+    \textbf{Ex 2.2.8: } $\int \cot^3 (x)\csc^2 (x) \,\mathrm{d}x$ 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.8 } \begin{align*}
         & \curvedarrow u = \cot (x) \\[5.5pt]
-        & \curvedarrow du = -\csc^2 (x) \, dx \\[11pt]
-        & \int \cot^3 (x)\csc^2 (x) \, dx \begin{aligned}[t]
-            & = -\int \cot^3 (x)\left(-\csc^2 (x)\right) \, dx \\[11pt]
-            & = -\int u^3 \, du \\[11pt]
-            & = -\dfrac{1}{4}u^4 \, du + C \\[11pt]
+        & \curvedarrow \dd u = -\csc^2 (x) \,\mathrm{d}x \\[11pt]
+        & \int \cot^3 (x)\csc^2 (x) \,\mathrm{d}x \begin{aligned}[t]
+            & = -\int \cot^3 (x)\left(-\csc^2 (x)\right) \,\mathrm{d}x \\[11pt]
+            & = -\int u^3 \,\mathrm{d}u \\[11pt]
+            & = -\dfrac{1}{4}u^4 \,\mathrm{d}u + C \\[11pt]
             & = \boxed{-\dfrac{1}{4}\cot^4 (x) + C}
         \end{aligned}
     \end{align*}
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.9: } $\int \dfrac{\cos (\sqrt{x})}{\sqrt{x}} \, dx$
+    \textbf{Ex 2.2.9: } $\int \dfrac{\cos (\sqrt{x})}{\sqrt{x}} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Ex 2.2.9: } \begin{align*}
         & \curvedarrow u = \sqrt{x} \\[5.5pt]
-        & \curvedarrow du = \dfrac{1}{2}x^{-\frac{1}{2}} \\[11pt]
-        & \int \dfrac{\cos (\sqrt{x})}{\sqrt{x}} \, dx \begin{aligned}[t]
-            & = 2\int (\cos (\sqrt{x}))\left(\dfrac{1}{2}x^{-\frac{1}{2}}\right) \, dx \\[11pt]
-            & = 2\int \cos (u) \, du \\[11pt]
+        & \curvedarrow \dd u = \dfrac{1}{2}x^{-\frac{1}{2}} \\[11pt]
+        & \int \dfrac{\cos (\sqrt{x})}{\sqrt{x}} \,\mathrm{d}x \begin{aligned}[t]
+            & = 2\int (\cos (\sqrt{x}))\left(\dfrac{1}{2}x^{-\frac{1}{2}}\right) \,\mathrm{d}x \\[11pt]
+            & = 2\int \cos (u) \,\mathrm{d}u \\[11pt]
             & = 2\sin (u) + C \\[11pt]
             & = \boxed{2\sin (\sqrt{x}) + C}
         \end{aligned}
@@ -220,15 +220,15 @@ Of course, u-substitution will apply to the transcendental functions as well. \p
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.10: } $\int xe^{x^2 + 1} \, dx$
+    \textbf{Ex 2.2.10: } $\int xe^{x^2 + 1} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.10: } \begin{align*}
         & \curvedarrow u = x^2 + 1 \\[5.5pt]
-        & \curvedarrow du = 2x \, dx \\[11pt]
-        & \int xe^{x^2 + 1} \, dx \begin{aligned}[t]
-            & = \dfrac{1}{2}\int (2x)e^{x^2 + 1} \, dx \\[11pt]
-            & = \dfrac{1}{2}\int e^u \, du \\[11pt]
+        & \curvedarrow \dd u = 2x \,\mathrm{d}x \\[11pt]
+        & \int xe^{x^2 + 1} \,\mathrm{d}x \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)e^{x^2 + 1} \,\mathrm{d}x \\[11pt]
+            & = \dfrac{1}{2}\int e^u \,\mathrm{d}u \\[11pt]
             & = \dfrac{1}{2}e^u + C \\[11pt]
             & = \boxed{\dfrac{1}{2}e^{x^2 + 1} + C}
         \end{aligned}
@@ -236,15 +236,15 @@ Of course, u-substitution will apply to the transcendental functions as well. \p
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.11: } $\int \dfrac{x}{\sqrt{1 - x^4}} \, dx$
+    \textbf{Ex 2.2.11: } $\int \dfrac{x}{\sqrt{1 - x^4}} \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Sol 2.2.11: } \begin{align*}
         & \curvedarrow u = x^2 \\[5.5pt]
-        & \curvedarrow du = 2x \, dx \\[11pt]
-        & \int \dfrac{x}{\sqrt{1 - x^4}} \, dx \begin{aligned}[t]
-            & = \dfrac{1}{2}\int (2x)\dfrac{1}{\sqrt{1 - \left(x^2\right)^2}} \, dx \\[11pt]
-            & = \dfrac{1}{2} \int \dfrac{1}{\sqrt{1 - u^2}} \, du \\[11pt]
+        & \curvedarrow \dd u = 2x \,\mathrm{d}x \\[11pt]
+        & \int \dfrac{x}{\sqrt{1 - x^4}} \,\mathrm{d}x \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)\dfrac{1}{\sqrt{1 - \left(x^2\right)^2}} \,\mathrm{d}x \\[11pt]
+            & = \dfrac{1}{2} \int \dfrac{1}{\sqrt{1 - u^2}} \,\mathrm{d}u \\[11pt]
             & = \dfrac{1}{2}\sin^{-1} (u) + C \\[11pt]
             & = \boxed{\dfrac{1}{2}\sin^{-1} \left(x^2\right) + C} 
         \end{aligned}
@@ -252,18 +252,18 @@ Of course, u-substitution will apply to the transcendental functions as well. \p
 \end{tcolorbox} \vspace{11pt}
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 2.2.12: } $\int \left(xe^{x^2} + 4x^2 - 3\sin (5x)\right) \, dx$
+    \textbf{Ex 2.2.12: } $\int \left(xe^{x^2} + 4x^2 - 3\sin (5x)\right) \,\mathrm{d}x$
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
     \textbf{Ex 2.2.12: } \begin{align*}
-        \int \left(xe^{x^2} + 4x^2 - 3\sin (5x)\right) \, dx = \int xe^{x^2} \,dx + \int 4x^2 \, dx - \int 3\sin (5x) \,dx
+        \int \left(xe^{x^2} + 4x^2 - 3\sin (5x)\right) \,\mathrm{d}x = \int xe^{x^2} \,\mathrm{d}x + \int 4x^2 \,\mathrm{d}x - \int 3\sin (5x) \,\mathrm{d}x
     \end{align*} \vspace{-11pt} \begin{align*}
         &\curvedarrow u_1 = x^2 && \curvedarrow u_2 = 5x \\[5.5pt]
-        &\curvedarrow du_1 = 2x \, dx && \curvedarrow du_2 = 5 \, dx
+        &\curvedarrow du_1 = 2x \,\mathrm{d}x && \curvedarrow du_2 = 5 \,\mathrm{d}x
     \end{align*} \vspace{-11pt} \begin{align*}
-        \int xe^{x^2} \, dx + \int 4x^2 \, dx - \int 3\sin (5x) \, dx \begin{aligned}[t]
-            & = \dfrac{1}{2}\int (2x)e^{x^2} \, dx + 4\int x^2 \, dx - \dfrac{3}{5}\int 5\sin(5x) \, dx \\[11pt]
-            & = \dfrac{1}{2}\int e^{u_1} \, du_1 + 4\int x^2 \, dx - \dfrac{3}{5}\int \sin \left(u_2\right) \, du_2 \\[11pt]
+        \int xe^{x^2} \,\mathrm{d}x + \int 4x^2 \,\mathrm{d}x - \int 3\sin (5x) \,\mathrm{d}x \begin{aligned}[t]
+            & = \dfrac{1}{2}\int (2x)e^{x^2} \,\mathrm{d}x + 4\int x^2 \,\mathrm{d}x - \dfrac{3}{5}\int 5\sin(5x) \,\mathrm{d}x \\[11pt]
+            & = \dfrac{1}{2}\int e^{u_1} \,\mathrm{d}u_1 + 4\int x^2 \,\mathrm{d}x - \dfrac{3}{5}\int \sin \left(u_2\right) \,\mathrm{d}u_2 \\[11pt]
             & = \dfrac{1}{2}e^{u_1} + 4\dfrac{x^3}{3} - \dfrac{3}{5}(-\cos (u_2)) + C \\[11pt]
             & = \boxed{\dfrac{1}{2}e^{x^2} + \dfrac{4}{3}x^3 + \dfrac{3}{5}\cos (5x) + C}
         \end{aligned}
@@ -276,47 +276,47 @@ Of course, u-substitution will apply to the transcendental functions as well. \p
 
 Perform the antidifferentiation. \par
 
-\twoquestion{1. $\int \left(5x + 3\right)^3 \, dx$}{2. $\int \left(x^3\left(x^4 + 5\right)\right)^{24} \, dx$} \\[11pt]
-\twoquestion{3. $\int \left(1 + x^3\right)^2 \, dx$}{4. $\int (2 - x)^{\frac{2}{3}} \, dx$} \\[11pt]
-\twoquestion{5. $\int x\sqrt{2x^2 + 3} \, dx$}{6. $\int \dfrac{1}{(5x + 2)^3} \, dx$} \\[11pt]
-\twoquestion{7. $\int \dfrac{x^3}{\sqrt{1 + x^4}} \, dx$}{8. $\int \dfrac{x + 1}{\sqrt[3]{x^2 + 2x + 3}} \, dx$} \\[11pt]
-\twoquestion{9. $\int \left(x^5 - \sin (3x) + xe^{x^2}\right) \, dx$}{10. $\int \left(x^2\sec^2 \left(x^3\right) + \dfrac{\ln^3 x}{x}\right) \, dx$} \\[11pt]
-\twoquestion{11. $\int x^4\cos \left(x^5\right) \, dx$}{12. $\int \sin (7x + 1) \, dx$} \\[11pt]
-\twoquestion{13. $\int \sec^2 (3x - 1) \, dx$}{14. $\int \dfrac{\sin (\sqrt{x})}{\sqrt{x}} \, dx$} \\[11pt]
-\twoquestion{15. $\int \tan^4 (x)\sec^2 (x) \, dx$}{16. $\int \dfrac{\ln x}{x} \, dx$} \\[11pt]
-\twoquestion{17. $\int e^{6x} \, dx$}{18. $\int \dfrac{\cos (2x)}{\sin^3 (2x)} \, dx$} \\[11pt]
-\twoquestion{19. $\int \dfrac{x\ln \left(x^2 + 1\right)}{x^2 + 1} \, dx$}{20. $\int \dfrac{e^{\sqrt{x}}}{\sqrt{x}} \, dx$} \\[11pt]
-\twoquestion{21. $\int \sqrt{\cot (x)}\csc^2 (x) \, dx$}{22. $\int \dfrac{1}{x^2}\sin \left(\dfrac{1}{x}\right)\cos \left(\dfrac{1}{x}\right) \, dx$} \\[11pt]
-\twoquestion{23. $\int \dfrac{x}{1 + x^4} \, dx$}{24. $\int \dfrac{\cos (x)}{\sqrt{1 - \sin^2 (x)}} \, dx$} \\[11pt]
+\twoquestion{1. $\int \left(5x + 3\right)^3 \,\mathrm{d}x$}{2. $\int \left(x^3\left(x^4 + 5\right)\right)^{24} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{3. $\int \left(1 + x^3\right)^2 \,\mathrm{d}x$}{4. $\int (2 - x)^{\frac{2}{3}} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{5. $\int x\sqrt{2x^2 + 3} \,\mathrm{d}x$}{6. $\int \dfrac{1}{(5x + 2)^3} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{7. $\int \dfrac{x^3}{\sqrt{1 + x^4}} \,\mathrm{d}x$}{8. $\int \dfrac{x + 1}{\sqrt[3]{x^2 + 2x + 3}} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{9. $\int \left(x^5 - \sin (3x) + xe^{x^2}\right) \,\mathrm{d}x$}{10. $\int \left(x^2\sec^2 \left(x^3\right) + \dfrac{\ln^3 x}{x}\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{11. $\int x^4\cos \left(x^5\right) \,\mathrm{d}x$}{12. $\int \sin (7x + 1) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{13. $\int \sec^2 (3x - 1) \,\mathrm{d}x$}{14. $\int \dfrac{\sin (\sqrt{x})}{\sqrt{x}} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{15. $\int \tan^4 (x)\sec^2 (x) \,\mathrm{d}x$}{16. $\int \dfrac{\ln x}{x} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{17. $\int e^{6x} \,\mathrm{d}x$}{18. $\int \dfrac{\cos (2x)}{\sin^3 (2x)} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{19. $\int \dfrac{x\ln \left(x^2 + 1\right)}{x^2 + 1} \,\mathrm{d}x$}{20. $\int \dfrac{e^{\sqrt{x}}}{\sqrt{x}} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{21. $\int \sqrt{\cot (x)}\csc^2 (x) \,\mathrm{d}x$}{22. $\int \dfrac{1}{x^2}\sin \left(\dfrac{1}{x}\right)\cos \left(\dfrac{1}{x}\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{23. $\int \dfrac{x}{1 + x^4} \,\mathrm{d}x$}{24. $\int \dfrac{\cos (x)}{\sqrt{1 - \sin^2 (x)}} \,\mathrm{d}x$} \\[11pt]
 
 \textbf{\large{2.2 Free Response Homework Set B}} \par
 
 Perform the antidifferentiation. \par
 
-\twoquestion{1. $\int (2x + 5)\left(x^2 + 5x + 6\right)^6 \, dx$}{2. $\int 3t^2\left(t^3 + 1\right)^5 \, dt$} \\[11pt]
-\twoquestion{3. $\int \dfrac{10m + 15}{\sqrt[4]{m^2 + 3m + 1}} \, dm$}{4. $\int \dfrac{3x^2}{\left(1 + x^3\right)^5} \, dx$} \\[11pt]
-\twoquestion{5. $\int (4s + 1)^5 \, ds$}{6. $\int \dfrac{5t}{t^2 + 1} \, dt$} \\[11pt]
-\twoquestion{7. $\int \dfrac{3m^2}{m^3 + 8} \, dm$}{8. $\int (181x + 1)^5 \, dx$} \\[11pt]
-\twoquestion{9. $\int \dfrac{v^2}{5 - v^3} \, dv$}{10. $\int \left(x^7 - \cot(5x) + xe^{x^2}\right) \, dx$} \\[11pt]
-\twoquestion{11. $\int \dfrac{\cos (x)}{1 + \sin (x)} \, dx$}{12. $\int \left(x^2\sec^2\left(4x^3\right) + 2xe^{x^2}\right) \, dx$} \\[11pt]
-\twoquestion{13. $\int \sec^2 (2x) \, dx$}{14. $\int \dfrac{\csc^2 \left(e^{-x}\right)}{e^x} \, dx$} \\[11pt]
-\twoquestion{15. $\int \dfrac{\sec (\ln x)\tan (\ln x)}{3x} \, dx$}{16. $\int \left(x^5 + \dfrac{7}{x^2} - e^{2x} + \sec^2 (x)\right) \, dx$} \\[11pt]
-\twoquestion{17. $\int e^x\csc \left(e^x\right)\cot \left(e^x\right) \, dx$}{18. $\int \left(e^x - 2\right)\left(e^x - 1\right) \, dx$} \\[11pt]
-\twoquestion{19. $\int x^2\sin \left(x^3\right) \, dx$}{20. $\int te^{5t^2 + 1} \, dt$} \\[11pt]
-\twoquestion{21. $\int \left(e^y + 1\right)^2 \, dy$}{22. $\int x\sec^2 \left(x^2\right)\sqrt{\tan \left(x^2\right)} \, dx$} \\[11pt]
-\twoquestion{23. $\int \sin (3t)\cos^5 (3t) \, dt$}{24. $\int x\cos \left(x^2\right)e^{\sin \left(x^2\right)} \, dx$} \\[11pt]
-\twoquestion{25. $\int \tan (\theta)\ln (\sec (\theta)) \, d\theta$}{26. $\int \left(e^{4y} + 2y^2 - 7\cos (3y)\right) \, dy$} \\[11pt]
-\twoquestion{27. $\int \dfrac{\sin (x + 4)}{\cos^7 (x + 4)} \, dx$}{28. $\int \left(\dfrac{2x}{x^2 + 5} - \sec^2 (3x) + xe^{x^2} - \pi\right) \, dx$} \\[11pt]
-\twoquestion{29. $\int e^{2t}\sec^2 \left(e^{2t}\right) \, dt$}{30. $\int \dfrac{18\ln m}{m} \, dm$} \\[11pt]
+\twoquestion{1. $\int (2x + 5)\left(x^2 + 5x + 6\right)^6 \,\mathrm{d}x$}{2. $\int 3t^2\left(t^3 + 1\right)^5 \,\mathrm{d}t$} \\[11pt]
+\twoquestion{3. $\int \dfrac{10m + 15}{\sqrt[4]{m^2 + 3m + 1}} \,\mathrm{d}m$}{4. $\int \dfrac{3x^2}{\left(1 + x^3\right)^5} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{5. $\int (4s + 1)^5 \,\mathrm{d}s$}{6. $\int \dfrac{5t}{t^2 + 1} \,\mathrm{d}t$} \\[11pt]
+\twoquestion{7. $\int \dfrac{3m^2}{m^3 + 8} \,\mathrm{d}m$}{8. $\int (181x + 1)^5 \,\mathrm{d}x$} \\[11pt]
+\twoquestion{9. $\int \dfrac{v^2}{5 - v^3} \,\mathrm{d}v$}{10. $\int \left(x^7 - \cot(5x) + xe^{x^2}\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{11. $\int \dfrac{\cos (x)}{1 + \sin (x)} \,\mathrm{d}x$}{12. $\int \left(x^2\sec^2\left(4x^3\right) + 2xe^{x^2}\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{13. $\int \sec^2 (2x) \,\mathrm{d}x$}{14. $\int \dfrac{\csc^2 \left(e^{-x}\right)}{e^x} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{15. $\int \dfrac{\sec (\ln x)\tan (\ln x)}{3x} \,\mathrm{d}x$}{16. $\int \left(x^5 + \dfrac{7}{x^2} - e^{2x} + \sec^2 (x)\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{17. $\int e^x\csc \left(e^x\right)\cot \left(e^x\right) \,\mathrm{d}x$}{18. $\int \left(e^x - 2\right)\left(e^x - 1\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{19. $\int x^2\sin \left(x^3\right) \,\mathrm{d}x$}{20. $\int te^{5t^2 + 1} \,\mathrm{d}t$} \\[11pt]
+\twoquestion{21. $\int \left(e^y + 1\right)^2 \,\mathrm{d}y$}{22. $\int x\sec^2 \left(x^2\right)\sqrt{\tan \left(x^2\right)} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{23. $\int \sin (3t)\cos^5 (3t) \,\mathrm{d}t$}{24. $\int x\cos \left(x^2\right)e^{\sin \left(x^2\right)} \,\mathrm{d}x$} \\[11pt]
+\twoquestion{25. $\int \tan (\theta)\ln (\sec (\theta)) \, d\theta$}{26. $\int \left(e^{4y} + 2y^2 - 7\cos (3y)\right) \,\mathrm{d}y$} \\[11pt]
+\twoquestion{27. $\int \dfrac{\sin (x + 4)}{\cos^7 (x + 4)} \,\mathrm{d}x$}{28. $\int \left(\dfrac{2x}{x^2 + 5} - \sec^2 (3x) + xe^{x^2} - \pi\right) \,\mathrm{d}x$} \\[11pt]
+\twoquestion{29. $\int e^{2t}\sec^2 \left(e^{2t}\right) \,\mathrm{d}t$}{30. $\int \dfrac{18\ln m}{m} \,\mathrm{d}m$} \\[11pt]
 \onequestion{31. $\int \sec^2 (y)\tan^5 (y)$. Verify your answer by taking the derivative.} \\[11pt]
 \onequestion{32. $\int \left(\cos (\theta)e^{\sin (\theta)} + \dfrac{\theta}{\theta^2 + 1}\right) \, d\theta$. Verify your answer by taking the derivative.} \\[11pt]
-\onequestion{33. $\int t\sec^2 \left(4t^2\right)\sqrt{\tan \left(4t^2\right)} \, dt$. Verify your answer by taking the derivative.} \\[11pt]
-\onequestion{34. $\int \dfrac{2y\cos \left(y^2\right)}{\sin^4 \left(y^2\right)} \, dy$. Verify your answer by taking the derivative.} \\[11pt]
+\onequestion{33. $\int t\sec^2 \left(4t^2\right)\sqrt{\tan \left(4t^2\right)} \,\mathrm{d}t$. Verify your answer by taking the derivative.} \\[11pt]
+\onequestion{34. $\int \dfrac{2y\cos \left(y^2\right)}{\sin^4 \left(y^2\right)} \,\mathrm{d}y$. Verify your answer by taking the derivative.} \\[11pt]
 
 \textbf{\large{2.2 Multiple Choice Homework}} \par
 
 \begin{questions}
-    \question $\int \dfrac{x}{x^2 - 4} \, dx = $ \\
+    \question $\int \dfrac{x}{x^2 - 4} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $-\dfrac{1}{4\left(x^2 - 4\right)^2} + C$
@@ -326,7 +326,7 @@ Perform the antidifferentiation. \par
         \makebox[0.22\textwidth] \choice $\dfrac{1}{2}\arctan \left(\dfrac{x}{2}\right) + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \dfrac{e^{\sqrt{x}}}{2\sqrt{x}} \, dx = $ \\
+    \question $\int \dfrac{e^{\sqrt{x}}}{2\sqrt{x}} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $\ln \left(\sqrt{x}\right) + C$
@@ -336,7 +336,7 @@ Perform the antidifferentiation. \par
         \choice $e^{\sqrt{x}} + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question When using the substitution $u = \sqrt{1 + x}$, an antiderivative of $\int 60x\sqrt{1 + x} \, dx$ is. \\
+    \question When using the substitution $u = \sqrt{1 + x}$, an antiderivative of $\int 60x\sqrt{1 + x} \,\mathrm{d}x$ is. \\
 
     \begin{oneparchoices}
         \choice $20u^3 - 60u + C$ 
@@ -346,7 +346,7 @@ Perform the antidifferentiation. \par
         \makebox[0.22\textwidth] \choice $12u^6 - 20u^4 + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \dfrac{3x^2}{\sqrt{x^3 + 3}} \, dx = $ \\
+    \question $\int \dfrac{3x^2}{\sqrt{x^3 + 3}} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $2\sqrt{x^3 + 3} + C$ 
@@ -356,7 +356,7 @@ Perform the antidifferentiation. \par
         \makebox[0.21\textwidth] \choice $\ln \left(x^3 + 3\right) + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int x\left(x^2 - 1\right)^4 \, dx = $ \\
+    \question $\int x\left(x^2 - 1\right)^4 \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $\dfrac{1}{10}x^2\left(x^2 - 1\right)^5 + C$
@@ -366,7 +366,7 @@ Perform the antidifferentiation. \par
         \makebox[0.22\textwidth] \choice $\dfrac{1}{5}\left(x^2 - x\right)^5 + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int 4x^2\sqrt{3 + x^3} \, dx = $ \\
+    \question $\int 4x^2\sqrt{3 + x^3} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $\dfrac{16\left(3 + x^3\right)^{\frac{3}{2}}}{9} + C$
@@ -376,7 +376,7 @@ Perform the antidifferentiation. \par
         \makebox[0.21\textwidth] \choice $\dfrac{8}{3\left(3 + x^3\right)^{\frac{1}{2}}} + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \left(x^3 + 2 + \dfrac{1}{x^2 + 1}\right) \, dx = $ \\
+    \question $\int \left(x^3 + 2 + \dfrac{1}{x^2 + 1}\right) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $\dfrac{x^4}{4} + 2x + \tan^{-1} (x) + C$
@@ -386,7 +386,7 @@ Perform the antidifferentiation. \par
         \makebox[0.09\textwidth] \choice $4 + 2x + \tan^{-1} (x) + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \cos (3 - 2x) \, dx = $ \\
+    \question $\int \cos (3 - 2x) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $\sin (3 - 2x) + C$
@@ -396,7 +396,7 @@ Perform the antidifferentiation. \par
         \makebox[0.22\textwidth] \choice $-\dfrac{1}{5}\sin (3 - 2x) + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \dfrac{x - 2}{x - 1} \, dx = $ \\
+    \question $\int \dfrac{x - 2}{x - 1} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $-\ln |x - 1| + C$
@@ -406,7 +406,7 @@ Perform the antidifferentiation. \par
         \makebox[0.22\textwidth] \choice $x - \sqrt{x - 1} + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \dfrac{e^{x^2} - 2x}{e^{x^2}} \, dx = $ \\
+    \question $\int \dfrac{e^{x^2} - 2x}{e^{x^2}} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $x - e^{x^2} + C$ 
@@ -416,7 +416,7 @@ Perform the antidifferentiation. \par
         \choice $-e^{-x^2} + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int 6\sin (x)\cos^2 (x) \, dx = $ \\
+    \question $\int 6\sin (x)\cos^2 (x) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $2\sin^3 (x) + C$
@@ -426,7 +426,7 @@ Perform the antidifferentiation. \par
         \makebox[0.22\textwidth] \choice $3\sin^2 (x)\cos^2 (x) + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \dfrac{4x}{1 + x^2} \, dx = $ \\
+    \question $\int \dfrac{4x}{1 + x^2} \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $4\arctan (x) + C$
@@ -436,7 +436,7 @@ Perform the antidifferentiation. \par
         \makebox[0.21\textwidth] \choice $2x^2 + 4\ln |x| + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \dfrac{x}{4 + x^2} \, dx = $ \\
+    \question $\int \dfrac{x}{4 + x^2} \,\mathrm{d}x = $ \\
     
     \begin{oneparchoices}
         \choice $\tan^{-1} \left(\dfrac{x}{2}\right) + C$
@@ -446,7 +446,7 @@ Perform the antidifferentiation. \par
         \makebox[0.22\textwidth] \choice $\dfrac{1}{2}\tan^{-1} \left(\dfrac{x}{2}\right) + C$
     \end{oneparchoices} \par \horizontalline
 
-    \question $\int \left(2^x - 4e^{2\ln x}\right) \, dx = $ \\
+    \question $\int \left(2^x - 4e^{2\ln x}\right) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $2^x\ln 2 - \dfrac{4}{3}e^{2\ln x} + C$
@@ -467,9 +467,9 @@ Perform the antidifferentiation. \par
     \end{oneparchoices} \par \horizontalline
 
     \question Which of the following statements are true? \begin{align*}
-        & \text{I. } \int x^4\sin \left(x^5\right) \, dx = -\dfrac{1}{5}\cos \left(x^5\right) + C \\[11pt]
-        & \text{II. } \int \tan (x) \, dx = \sec^2 (x) + C \\[11pt]
-        & \text{III. } \int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \, dx = \dfrac{1}{5}\left(x^4 + 2x^2 - 5\right)^{\frac{5}{4}} + C
+        & \text{I. } \int x^4\sin \left(x^5\right) \,\mathrm{d}x = -\dfrac{1}{5}\cos \left(x^5\right) + C \\[11pt]
+        & \text{II. } \int \tan (x) \,\mathrm{d}x = \sec^2 (x) + C \\[11pt]
+        & \text{III. } \int \left(x^3 + x\right)\sqrt[4]{x^4 + 2x^2 - 5} \,\mathrm{d}x = \dfrac{1}{5}\left(x^4 + 2x^2 - 5\right)^{\frac{5}{4}} + C
     \end{align*}
 
     \begin{oneparchoices}

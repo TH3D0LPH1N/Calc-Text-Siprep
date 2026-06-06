@@ -8,7 +8,7 @@ Recall \textbf{Ex 3.2.2}, where we had a function $y = x\cos \left(x^2\right)$ o
     \includegraphics[width = 0.6\textwidth]{\graphicsdir Chapter 3 Graphics/3.3-Graphic1.png}
 \end{center}
 
-In \textbf{Ex 3.2.2}, we found that $\int_0^{\sqrt{\pi}} x\cos \left(x^2\right) \, dx = 0 \forcespace$. But, there's clearly area under the curve, so how can the integral equal both the area and 0? Well, as it turns out, because the integral was created from rectangles with width $dx$ and height $f(x)$, a negative $f(x)$ will result in a rectangle with ``negative area.'' Take a look at the following graph: \\
+In \textbf{Ex 3.2.2}, we found that $\int_0^{\sqrt{\pi}} x\cos \left(x^2\right) \,\mathrm{d}x = 0 \forcespace$. But, there's clearly area under the curve, so how can the integral equal both the area and 0? Well, as it turns out, because the integral was created from rectangles with width $\dd x$ and height $f(x)$, a negative $f(x)$ will result in a rectangle with ``negative area.'' Take a look at the following graph: \\
 
 \begin{center}
     \includegraphics[width = 0.6\textwidth]{\graphicsdir Chapter 3 Graphics/3.3-Graphic2.png}
@@ -35,13 +35,13 @@ It's clear that by our definition of the definite integral, the ``area'' in red 
         x\cos \left(x^2\right) &= 0 \\[11pt]
         x &= 1.253
     \end{align*}
-    Now, by the rule $\int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx \forcespace$, where $a < c < b$, we can split our integral into two parts. Remember that we are negating the second term to compensate for the area being below the $x$-axis. \begin{align*}
-        \int_0^{\sqrt{\pi}} x\cos \left(x^2\right) \, dx \rightarrow \int_0^{1.253} x\cos \left(x^2\right) \, dx + \left(-\int_{1.253}^{\sqrt{\pi}} x\cos \left(x^2\right) \, dx\right)
+    Now, by the rule $\int_a^b f(x) \,\mathrm{d}x = \int_a^c f(x) \,\mathrm{d}x + \int_c^b f(x) \,\mathrm{d}x \forcespace$, where $a < c < b$, we can split our integral into two parts. Remember that we are negating the second term to compensate for the area being below the $x$-axis. \begin{align*}
+        \int_0^{\sqrt{\pi}} x\cos \left(x^2\right) \,\mathrm{d}x \rightarrow \int_0^{1.253} x\cos \left(x^2\right) \,\mathrm{d}x + \left(-\int_{1.253}^{\sqrt{\pi}} x\cos \left(x^2\right) \,\mathrm{d}x\right)
     \end{align*}
     Finally, using \fbox{\texttt{MATH}} \fbox{\texttt{9}}, we arrive at the answer $\boxed{1}$. \par
     \vspace{11pt}
     However, there is a much cleaner way to do this problem. As it turns out, if we simply take the integral of the absolute value of the integrand (the function that is being integrated), we arrive at the same answer. This is because the absolute value automatically accounts for both the parts of the graph that are above and below the $x$-axis, turning any negative “signed area” into positive area. Therefore, we can write \begin{align*}
-        \int_0^{\sqrt{\pi}} \left|x\cos \left(x^2\right)\right| \, dx, 
+        \int_0^{\sqrt{\pi}} \left|x\cos \left(x^2\right)\right| \,\mathrm{d}x, 
     \end{align*}
     which turns out to also evaluate to $\boxed{1}$.
 \end{tcolorbox}
@@ -69,7 +69,7 @@ Now that we've seen an example, let's generalize some steps to finding the total
     \end{center}
     \vspace{11pt}
     It's clear that the graph crosses the $x$-axis at $x = 1$. Therefore, to get the total area, let's set up our two-term integration and solve. \begin{align*}
-        & \int_{-1}^1 \left(x^3 - 2x^2 + 5x + 6\right) \, dx + \left(-\int_1^2 \left(x^3 - 2x^2 + 5x + 6\right) \, dx \right) \\[11pt]
+        & \int_{-1}^1 \left(x^3 - 2x^2 + 5x + 6\right) \,\mathrm{d}x + \left(-\int_1^2 \left(x^3 - 2x^2 + 5x + 6\right) \,\mathrm{d}x \right) \\[11pt]
         & = \left[\dfrac{x^4}{4} - \dfrac{2x^3}{3} - \dfrac{5x^2}{2} + 6x\right]_{-1}^1 - \left[\dfrac{x^4}{4} - \dfrac{2x^3}{3} - \dfrac{5x^2}{2} + 6x\right]_1^2 \\[11pt]
         & = \dfrac{32}{3} + \dfrac{29}{12} \\[11pt]
         & = \boxed{\dfrac{157}{12}}
@@ -88,7 +88,7 @@ Now that we've seen an example, let's generalize some steps to finding the total
     \end{center}
 
     Note that there are three regions here, so we will need to separate our integral into three terms. Our zeroes between $\left[-1, \, 2\right]$ are $0$ and $\sqrt{2}$. \begin{align*}
-        & \int_{-1}^0 \left(x^3 - 2x\right) \, dx + \left(-\int_0^{\sqrt{2}} \left(x^3 - 2x\right) \, dx\right) + \int_{\sqrt{2}}^2 \left(x^3 - 2x\right) \, dx \\[11pt]
+        & \int_{-1}^0 \left(x^3 - 2x\right) \,\mathrm{d}x + \left(-\int_0^{\sqrt{2}} \left(x^3 - 2x\right) \,\mathrm{d}x\right) + \int_{\sqrt{2}}^2 \left(x^3 - 2x\right) \,\mathrm{d}x \\[11pt]
         & = \left[\dfrac{x^4}{4} - x^2\right]_{-1}^0 - \left[\dfrac{x^4}{4} - x^2\right]_0^{\sqrt{2}} + \left[\dfrac{x^4}{4} - x^2\right]_{\sqrt{2}}^2 \\[11pt]
         & = \dfrac{3}{4} - (-1) + 1 \\[11pt]
         & = \boxed{\dfrac{11}{4}}
@@ -142,9 +142,9 @@ Therefore, the total mileage that you've covered is $3 + 3 + 6 = 12$ miles. Thes
         \vspace{11pt}
         Given $v$ is the velocity function and $x$ is the position function, \par
         \vspace{11pt}
-        $\hfill \text{Displacement} \rightarrow \int_a^b v \, dt \hfill \text{Total Distance} \rightarrow \int_a^b |v| \, dt \hfill$ \par
+        $\hfill \text{Displacement} \rightarrow \int_a^b v \,\mathrm{d}t \hfill \text{Total Distance} \rightarrow \int_a^b |v| \,\mathrm{d}t \hfill$ \par
         \vspace{11pt}
-        $\hfill \text{Position at } t = a \rightarrow x(a) + \int_a^b v \, dt \hfill$
+        $\hfill \text{Position at } t = a \rightarrow x(a) + \int_a^b v \,\mathrm{d}t \hfill$
         \vspace{11pt}
     \end{minipage}}}
 \end{center}
@@ -159,12 +159,12 @@ Therefore, the total mileage that you've covered is $3 + 3 + 6 = 12$ miles. Thes
 \begin{tcolorbox}[solution]
     \textbf{Sol 3.3.4: } \par
     a) \begin{align*}
-        \int_a^b v \, dt & = \int_1^4 \left(t^2 + t - 6\right) \, dt \\[11pt]
+        \int_a^b v \,\mathrm{d}t & = \int_1^4 \left(t^2 + t - 6\right) \,\mathrm{d}t \\[11pt]
         & = \left[\dfrac{t^3}{3} + \dfrac{t^2}{2} - 6t\right]_1^4 \\[11pt]
         & = \boxed{-\dfrac{21}{2} \si{meters}}
     \end{align*}
     b) $v(t) = 0$ when $t = 2$. \begin{align*}
-        \int_a^b |v| \, dt & = -\int_1^2 \left(t^2 + t - 6\right) \, dt + \int_2^4 \left(t^2 + t - 6\right) \, dt \\[11pt]
+        \int_a^b |v| \,\mathrm{d}t & = -\int_1^2 \left(t^2 + t - 6\right) \,\mathrm{d}t + \int_2^4 \left(t^2 + t - 6\right) \,\mathrm{d}t \\[11pt]
         & = -\left[\dfrac{t^3}{3} + \dfrac{t^2}{2} - 6t\right]_1^2 + \left[\dfrac{t^3}{3} + \dfrac{t^2}{2} - 6t\right]_2^4 \\[11pt]
         & = \boxed{\dfrac{89}{6} \si{meters}}
     \end{align*}
@@ -215,7 +215,7 @@ For problems \#17-20, show the setup to determine the area and solve the integra
     \begin{center}
         \includegraphics[width = 0.6\textwidth]{\graphicsdir Chapter 3 Graphics/3.3-Graphic5.png}
     \end{center}
-    In terms of $A$ and $B$, $\int_{-5}^3 f(x) \, dx + \int_{-2}^3 f(x) \, dx = $ \\
+    In terms of $A$ and $B$, $\int_{-5}^3 f(x) \,\mathrm{d}x + \int_{-2}^3 f(x) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $A$
@@ -229,7 +229,7 @@ For problems \#17-20, show the setup to determine the area and solve the integra
     \begin{center}
         \includegraphics[width = 0.6\textwidth]{\graphicsdir Chapter 3 Graphics/3.3-Graphic5.png}
     \end{center}
-    In terms of $A$ and $B$, $2\int_{-5}^3 f(x) \, dx + 3\int_{-2}^3 f(x) \, dx = $ \\
+    In terms of $A$ and $B$, $2\int_{-5}^3 f(x) \,\mathrm{d}x + 3\int_{-2}^3 f(x) \,\mathrm{d}x = $ \\
 
     \begin{oneparchoices}
         \choice $A$
