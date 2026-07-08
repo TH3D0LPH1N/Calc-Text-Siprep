@@ -3,8 +3,2364 @@
 In the last section, we looked at graphing functions given information regarding their derivative, but now, we will reverse that process. As we already know, there is a significant amount of layering and parallelism between a function and its first and second derivatives. The zeroes and signs of one shed light on the intervals of increasing, decreasing, extreme points, concavity, and/or point(s) of inclusion of another. \par 
 
 \begin{tcolorbox}[example]
-    \textbf{Ex 4.6.1: } Find the sign patterns of $f(x) = 9x - x^3$, $f'(x) = 9 - 3x^2$, and $f''(x) = -6x$ and compare them. 
+    \textbf{Ex 4.6.1: } Find the sign patterns and graphs of $f(x) = 9x - x^3$, $f'(x) = 9 - 3x^2$, and $f''(x) = -6x$ and compare them. 
 \end{tcolorbox}
 \begin{tcolorbox}[solution]
-    \textbf{Sol 4.6.1: } Let's find the zeroes of each function, along with their respective sign patterns. \par 
+    \textbf{Sol 4.6.1: } Let's find the zeroes of each function, along with their respective sign patterns. \begin{align*}
+        f(x) = 9x - x^3 = 0 \implies x = \pm 3
+    \end{align*} \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$-3$};
+            \node at (4,-0.6) {$0$};
+            \node at (6,-0.6) {$3$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$-$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$+$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$-$};
+            \node at (-0.5, 0.5) {$f(x)$};
+        \end{tikzpicture} 
+    \end{center} \vspace{11pt}
+    \begin{align*}
+        f'(x) = 9 - 3x^2 = 0 \implies x = \pm \sqrt{3} 
+    \end{align*} \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (6,0);
+
+            \node at (2,-0.6) {$-\sqrt{3}$};
+            \node at (4,-0.6) {$\sqrt{3}$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$}; 
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (-0.5, 0.5) {$f'(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    \begin{align*}
+        f''(x) = -6x = 0 \implies x = 0
+    \end{align*} \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (4,0);
+
+            \node at (2,-0.6) {$0$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$-$};
+            \node at (-0.5, 0.5) {$f''(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    Now, let's plot all these graphs to see how they look, using the graphing techniques in prior chapters. \\
+    \begin{center}
+        \begin{tikzpicture}
+            % Generated with Google Gemini
+
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-5.5, xmax=5.5,
+                ymin=-16, ymax=16, 
+                xtick={-5,-4,...,5}, 
+                ytick={-15,-12,...,15}, 
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=-6:6, 
+                    samples=100, 
+                    color=red,
+                    ultra thick,
+                ]
+                {9 * x - x^3};
+                \addplot[
+                    domain=-6:6, 
+                    samples=100, 
+                    color=blue,
+                    ultra thick,
+                ]
+                {9 - 3 * x^2};
+                \addplot[
+                    domain=-6:6, 
+                    samples=100, 
+                    color=green,
+                    ultra thick,
+                ]
+                {-6 * x};
+                \legend{$f(x)$, $f'(x)$, $f''(x)$}
+            \end{axis}
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    From this graph, we can clearly see that the extreme points of $f(x)$ line up with the zeroes of $f'(x)$, and the extreme points of $f'(x)$ line up with the zero of $f''(x)$ along with the POI of $f(x)$. Similarly, the positive portions of $f''(x)$ match the increasing portion of $f'(x)$ and the concave up portion of $f(x)$.
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[objective]
+    \begin{center}
+        OBJECTIVES \\[11pt]
+    \end{center}
+    Interpret Information in the Graph of a Derivative in Terms of the Graph of the ``Original'' Function.
+\end{tcolorbox} 
+
+The interconnectedness between a function, its first derivative, and its second derivative can be summarized thus: \par
+
+\begin{center}
+    % Generated by Claude
+    % Defining a temporary function within the scope of this center environment
+    {\newcommand{\signs}[3]{%
+        \begin{tabular}[t]{@{}r@{:~}l@{}}
+            $+$ & #1 \\
+            $0$ & #2 \\
+            $-$ & #3
+        \end{tabular}%
+    }
+    \def\arraystretch{2.2}
+    \begin{tabular}{|>{\centering\arraybackslash}m{1.6cm}|>{\centering\arraybackslash}m{3.7cm}|>{\centering\arraybackslash}m{3.7cm}|>{\centering\arraybackslash}m{3.7cm}|}
+        \hline
+        \rowcolor{gray!40}
+        \textbf{Sign of\ldots}
+        & \textbf{Tells you about $f(t)$}
+        & \textbf{Tells you about $f'(t)$}
+        & \textbf{Tells you about $f''(t)$} \\
+        \hline
+
+        \cellcolor{gray!40}$f(t)$
+        & \signs{above $x$-axis}{crosses $x$-axis}{below $x$-axis}
+        & 
+        &  \\
+        \hline
+
+        \cellcolor{gray!40}$f'(t)$
+        & \signs{$f(t)$ increasing}{extreme of $f(t)$}{$f(t)$ decreasing}
+        & \signs{$f'(t)$ increasing}{extreme of $f'(t)$}{$f'(t)$ decreasing}
+        &  \\
+        \hline
+
+        \cellcolor{gray!40}$f''(t)$
+        & \signs{$f(t)$ concave up}{POI of $f(t)$}{$f(t)$ concave down}
+        & \signs{$f'(t)$ increasing}{extreme of $f'(t)$}{$f'(t)$ decreasing}
+        & \signs{$f''(t)$ increasing}{zero of $f''(t)$}{$f''(t)$ decreasing} \\
+        \hline
+    \end{tabular}}
+\end{center} 
+
+The relationship here is present upwards. The zeroes of a function refer to the extremes of the one above it and the POIs of the one two levels up. We will explore this same concept with integrals in a later chapter. \par 
+
+Almost any trait can be found from a known first derivative curve, but unfortunately the derivative is not enough to tell the exact original curve. This is because although the critical values and $x$-values of the POI are known, their $y$-values cannot be found. Similarly, the zeroes of the original curve cannot be found from its derivative. \par 
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.6.2: } The graph below is of $f'(x)$. Find the sign patterns of $f'(x)$ and $f''(x)$. \\
+    \begin{center}
+        \begin{tikzpicture}
+            % Generated with Google Gemini
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-5.5, xmax=5.5,
+                ymin=-5.5, ymax=5.5, 
+                xtick={-5,-4,...,5}, 
+                ytick={-5,-4,...,5}, 
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=-6:6, 
+                    samples=100, 
+                    color=black,
+                    thick,
+                ]
+                {0.062 * x^4 + 0.11 * x^3 - 0.52 * x^2 + 0.11 * x};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
 \end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.6.2: } Let's begin with the sign pattern of $f'(x)$. This is pretty trivial, as we simply need to find the zeroes of $f'(x)$ and identify the intervals of increasing and decreasing. From the graph, we see that we have zeroes at $x = -4, \, 0$, and $2$. Therefore, we have: \\
+    \begin{center}
+        \fbox{
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$-4$};
+            \node at (4,-0.6) {$0$};
+            \node at (6,-0.6) {$2$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$-$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f'(x)$};
+        \end{tikzpicture}}
+    \end{center} \vspace{11pt}
+
+    Now, let's create the sign pattern for $f''(x)$. We know that the zeroes of $f''(x)$ must be the extreme points of $f'(x)$. and from the graph, those critical values appear to be $x = -2.9, \, 0$, and $1.7$. Identifying intervals of increasing and decreasing, we get the following sign pattern: \\
+    \begin{center}
+        \fbox{
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$-2.9$};
+            \node at (4,-0.6) {$0$};
+            \node at (6,-0.6) {$1.7$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f''(x)$};
+        \end{tikzpicture}}
+    \end{center}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.6.3: } The curve shown below is $y = f'(x)$, on the domain $x \in [-12, \, 11]$. \\
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-12.5, xmax=12.5,
+                ymin=-10.5, ymax=10.5, 
+                xtick={-12,-10,...,12}, 
+                ytick={-10,-8,...,10}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,  
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=-12:11, 
+                    samples=100, 
+                    color=black,
+                    thick,
+                ]
+                {0.0125 * x^3 + 0.025 * x^2 - 1.1625 * x - 3.375};
+                \addplot[
+                    only marks,
+                    mark=*,
+                    mark size=2pt,
+                    color=black
+                ]
+                coordinates {
+                    (11, 3.4) (-12, -7.3) (-9, 0) (-3, 0) (-6, 1.8) (5, -7) (10, 0)
+                };
+            \end{axis}
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item Where are the relative maximums and minimums of $y = f(x)$? \\
+        \item Where are the points of inflection of $y = f(x)$?
+    \end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Ex 4.6.3: } Let's first begin by creating some sign patterns and seeing what information we can extract out of them. \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$-9$};
+            \node at (4,-0.6) {$-3$};
+            \node at (6,-0.6) {$10$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f'(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (6,0);
+
+            \node at (2,-0.6) {$-6$};
+            \node at (4,-0.6) {$5$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$-$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f''(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    (a) Now, from our table, we know that a relative maximum or minimum of $f(x)$ occurs when $f'(x)$ switches signs (or when we are at the endpoints of the graph). This means that our relative maximums and minimums are $x = -12, \, -9, \, -3, \, 10$, and $11$. \par 
+    \vspace{11pt}
+    Now, we just need to determine which of these values are relative minimums and which are relative maximums. We know that a relative maximum is when the derivative changes from positive to negative, and vice versa. Therefore, from our graph, we can determine that we have relative maxima at $\boxed{x = -12, \, -3, \text{ and } 11}$ and relative minima at $\boxed{x = -9 \text{ and } 10}$. \par
+    \vspace{11pt}
+    (b) Taking a look at our table, we also see a point of inflection occurs when $f''(x)$ switches signs. From our sign pattern, it's clear that we have points of inflection at $\boxed{x = -6 \text{ and } 5}$. (Note that endpoints cannot be points of inflection!)
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.6.4: } Sketch a possible graph of the first and second derivative of the function shown below. \\
+    \begin{center}
+        \begin{tikzpicture}
+            % Generated with Google Gemini
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-5.5, xmax=5.5,
+                ymin=-3.5, ymax=3.5, 
+                xtick={-5,-4,...,5}, 
+                ytick={-3,-2,...,3}, 
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=-4:2, 
+                    samples=100, 
+                    color=black,
+                    very thick,
+                ]
+                {-0.264 * x^4 - 1.075 * x^3 + 0.442 * x^2 + 3.108 * x + 0.045};
+                % \addplot[
+                %     only marks,
+                %     mark=*,
+                %     mark size=2pt,
+                %     color=black
+                % ]
+                % coordinates {
+                %     (0, 0) (-0.5, -0.184) (-1, -0.135) 
+                % };
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.6.4: } The first step we should always take with these types of questions is to create sign patterns to figure out how the graphs will behave. It appears from our graph that we have relative maxima at $x = -3$ and $x = 1$, along with a single relative minimum at $x = -1$. Creating our sign pattern for the first derivative produces: \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$-3$};
+            \node at (4,-0.6) {$-1$};
+            \node at (6,-0.6) {$1$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$-$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$+$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$-$};
+            \node at (-0.5, 0.5) {$y'$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    Now, for the second derivative. From the graph, it appears that we have points of inflection at $x = -2$ and $x = 0$. Therefore, our sign pattern for the second derivative is: \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (6,0);
+
+            \node at (2,-0.6) {$-2$};
+            \node at (4,-0.6) {$0$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (-0.5, 0.5) {$y''$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    With this information, we can finally begin graphing. We know that for the graph of the first derivative, the zeroes have to be the extreme values of the original graph and the extremes have to be the points of inflection of the original graph. Therefore, we can produce this graph for the first derivative: \\
+    \begin{center}
+        \fbox{
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            % Generated with Google Gemini
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-5.5, xmax=5.5,
+                ymin=-3.5, ymax=3.5, 
+                xtick={-5,-4,...,5}, 
+                ytick={-3,-2,...,3}, 
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                % Kind of a "hacky" way to make the graph look more accurate, since the points of inflection aren't exactly at x = -2, 0
+                \addplot [
+                    domain=-4:-1, 
+                    samples=100, 
+                    color=blue,
+                    very thick,
+                ]
+                {3.16 * x^2 + 12.64 * x + 9.48};
+                \addplot [
+                    domain=-1:4, 
+                    samples=100, 
+                    color=blue,
+                    very thick,
+                ]
+                {-3.16 * x^2 + 3.16};
+                % \addplot[
+                %     only marks,
+                %     mark=*,
+                %     mark size=2pt,
+                %     color=black
+                % ]
+                % coordinates {
+                %     (0, 0) (-0.5, -0.184) (-1, -0.135) 
+                % };
+            \end{axis}
+        \end{tikzpicture}}
+    \end{center} \vspace{11pt}
+    Finally, we simply need to take a look at our sign pattern for the second derivative to figure out the graph for the second derivative. \\
+    \begin{center}
+        \fbox{
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            % Generated with Google Gemini
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-5.5, xmax=5.5,
+                ymin=-3.5, ymax=3.5, 
+                xtick={-5,-4,...,5}, 
+                ytick={-3,-2,...,3}, 
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=-4:4, 
+                    samples=100, 
+                    color=blue,
+                    very thick,
+                ]
+                {-2.8 * x^2 - 5.6 * x + 0};
+                % \addplot[
+                %     only marks,
+                %     mark=*,
+                %     mark size=2pt,
+                %     color=black
+                % ]
+                % coordinates {
+                %     (0, 0) (-0.5, -0.184) (-1, -0.135) 
+                % };
+            \end{axis}
+        \end{tikzpicture}} 
+    \end{center}
+\end{tcolorbox} \vspace{11pt}
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.6.5: } The graph below is of $f'(x)$ on $x \in [-7, \, 7]$. \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            % Generated with Google Gemini
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-8.5, xmax=8.5,
+                ymin=-5.5, ymax=5.5, 
+                xtick={-8,-7,...,8}, 
+                ytick={-5,-4,...,5}, 
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=10cm,
+                axis line style={-stealth},
+                ]
+                % Kind of a "hacky" way to make the graph look more accurate, since the points of inflection aren't exactly at x = -2, 0
+                \addplot [
+                    domain=-7:-3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-x - 3};
+                \addplot [
+                    domain=-3:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-(9 - x^2)^(1/2)};
+                \addplot [
+                    domain=3:5, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-2 * x + 6};
+                \addplot [
+                    domain=5:7, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {4 * x - 24};
+                \addplot[
+                    only marks,
+                    mark=*,
+                    mark size=2pt,
+                    color=black
+                ]
+                coordinates {
+                    (-7, 4) (7, 4)
+                };
+            \end{axis}
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    \begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+        \item Where are the relative maximums and minimums of $y = f(x)$? Justify your answer. \\
+        \item Where are the points of inflection of $y = f(x)$? Justify your answer. 
+    \end{enumerate} 
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.6.5: } Let's create some sign patterns for this graph. \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$-3$};
+            \node at (4,-0.6) {$3$};
+            \node at (6,-0.6) {$6$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$-$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f'(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$0$};
+            \node at (4,-0.6) {$3$};
+            \node at (6,-0.6) {$5$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f''(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    (a) We can follow the same process that we used for \textbf{Ex 4.6.3}. We know that a relative minimum or maximum occurs when $f'(x)$ switches signs (or when we are at the endpoints of the graph). This indicates that our relative maximums and minimums are $x = -7, \, -3, \, 6$, and $7$. (Note that $3$ is not a relative minimum or maximum because the derivative does not switch sign at that $x$ value). Taking a look at the graph and analyzing when the derivative changes sign, we see that we have relative maxima at $\boxed{-3 \text{ and } 7}$, and relative minima at $\boxed{-7 \text{ and } 6}$. \par 
+    \vspace{11pt}
+    (b) Let's look on our sign pattern to see when the second derivative switches signs. We see that we have a sign switch at $x = 0, 3$, and $5$. Therefore, we can say that $f(x)$ has points of inflection at $\boxed{x = 0, 3, \text{ and } 5}$.
+\end{tcolorbox}
+
+Now, let's move on to a practical application of this skill. We will learn how to apply interpreting and using the graph of the first derivative in the context of rectilinear motion. \par 
+
+\begin{tcolorbox}[example]
+    \textbf{Ex 4.6.6: } Consider a variation of the graph in \textbf{Ex 4.6.3}. If that graph represents the velocity $v(t)$ of a particle in rectilinear motion, what can be deduced about the acceleration and the distance? \\
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-12.5, xmax=12.5,
+                ymin=-10.5, ymax=10.5, 
+                xtick={-12,-10,...,12}, 
+                ytick={-10,-8,...,10}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=10cm,
+                height=10cm,  
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=-15:15, 
+                    samples=100, 
+                    color=black,
+                    thick,
+                ]
+                {0.0125 * x^3 + 0.025 * x^2 - 1.1625 * x - 3.375};
+                \legend{$v(t)$}
+                \addplot[
+                    only marks,
+                    mark=*,
+                    mark size=2pt,
+                    color=black
+                ]
+                coordinates {
+                    (-9, 0) (-3, 0) (-6, 1.8) (5, -7) (10, 0)
+                };
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{tcolorbox}
+\begin{tcolorbox}[solution]
+    \textbf{Sol 4.6.6: } Recall that velocity is the derivative of distance, and acceleration is the derivative of velocity. Therefore, we can reinterpret this problem as looking for the behavior of the original function and the second derivative given the first derivative. Let's take a look at the sign patterns that we created in $\textbf{Sol 4.6.3}$: \\
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (8,0);
+
+            \node at (2,-0.6) {$-9$};
+            \node at (4,-0.6) {$-3$};
+            \node at (6,-0.6) {$10$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$-$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$+$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$-$};
+            \node at (6,0.5) {$0$};
+            \node at (7,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f'(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \draw[<->, thick] (0,0) -- (6,0);
+
+            \node at (2,-0.6) {$-6$};
+            \node at (4,-0.6) {$5$};
+            \node at (-0.5, -0.6) {$x$};
+
+            \node at (1,0.5) {$+$};
+            \node at (2,0.5) {$0$};
+            \node at (3,0.5) {$-$};
+            \node at (4,0.5) {$0$};
+            \node at (5,0.5) {$+$};
+            \node at (-0.5, 0.5) {$f''(x)$};
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+    Let's begin with the acceleration. We know that a positive second derivative means that the particle is accelerating, and a negative second derivative means that the particle is decelerating. Simply by taking a look at our sign pattern, we can deduce that the particle is \textbf{accelerating to $t = -6$, decelerating from $t = -6$ to $t = 5$, and accelerating again beyond $t = 5$}. \par 
+    \vspace{11pt}
+    Now, moving on to the distance. From $\textbf{Sol 4.6.3}$, we determined that $s(t)$ has a relative maximum at $t = -3$ and relative minima at $t = -6 \text{ and } 5$. Therefore, we know that the \textbf{distance reaches a local maximum at $t = -3$ and local minimums at $t = -6$ and $t = 5$}. \par
+    \begin{tcolorbox}[interesting]
+        But, what about the distance of the particle from the origin? What can we say about that? As it turns out, we cannot determine any useful information about the particle's distance from the origin if we are simply given the graph of a higher derivative. This is related to the ``$+C$'' appended to the end of an integral, but we will dive into this in a later section!
+    \end{tcolorbox}
+\end{tcolorbox}
+
+\newpage
+
+ 
+
+\onequestion{1. Let $g(x)$ be a continuous function on $x \in [0, \, 6]$ where the graph of $g'(x)$ is the function shown below.}
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.5, xmax=6.5,
+                ymin=-1.5, ymax=2.5, 
+                xtick={0,1,...,6}, 
+                ytick={-1,0,...,2}, 
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,2},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=0:2, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {-(2 / pi) * acos(x - 1) * pi / 180 + 2}; 
+                \addplot [
+                    domain=2:6, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {-2 * (x - 3) * exp(-(x - 2))}; 
+            \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Identify the $x$-value(s) of the relative maximum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Identify the $x$-value(s) of the relative minimum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Where are the point(s) of inflection on $y = g(x)$? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{2. Let $g(x)$ be a continuous function on $x \in [0, \, 6]$ where the graph of $g'(x)$ is the function shown below.}
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.5, xmax=6.5,
+                ymin=-2.5, ymax=1.5, 
+                xtick={0,1,...,6}, 
+                ytick={-2,-1,...,1}, 
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-1.5,-1,...,0.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=0:2, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {(2 / pi) * acos(x - 1) * pi / 180 - 2}; 
+                \addplot [
+                    domain=2:6, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {2 * (x - 3) * exp(-(x - 2))}; 
+            \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Identify the $x$-value(s) of the relative maximum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Identify the $x$-value(s) of the relative minimum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Where are the point(s) of inflection on $y = g(x)$? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{3. Let $g(x)$ be a continuous function on $x \in [0, \, 6]$ where the graph of $g'(x)$ is the function shown below.}
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.5, xmax=6.5,
+                ymin=-1.5, ymax=1.5, 
+                xtick={0,1,...,6}, 
+                ytick={-1,0,...,1}, 
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,0.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=0:2, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {(2 / pi) * acos(x - 1) * pi / 180 - 1}; 
+                \addplot [
+                    domain=2:6, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {(x - 3) * exp(-(x - 2))}; 
+            \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Identify the $x$-value(s) of the relative maximum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Identify the $x$-value(s) of the relative minimum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Where are the point(s) of inflection on $y = g(x)$? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+ \onequestion{4. Let $g(x)$ be a continuous function on $x \in [0, \, 6]$ where the graph of $g'(x)$ is the function shown below.}
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-0.5, xmax=6.5,
+                ymin=-1.5, ymax=1.5, 
+                xtick={0,1,...,6}, 
+                ytick={-1,0,...,1}, 
+                minor xtick={0,0.5,...,5.5},  % Minor ticks at 0.5 (unlabeled)
+                minor ytick={-0.5,0,...,0.5},% Minor ticks at 0.5 (unlabeled)
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=15cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                ]
+                \addplot [
+                    domain=0:2, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {-(2 / pi) * acos(x - 1) * pi / 180 + 1}; 
+                \addplot [
+                    domain=2:6, 
+                    samples=100, 
+                    color=black,
+                    ultra thick,
+                ]
+                {-(x - 3) * exp(-(x - 2))}; 
+            \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Identify the $x$-value(s) of the relative maximum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Identify the $x$-value(s) of the relative minimum(s) of $y = g(x)$ on the interval $x \in [0, \, 6]$. Justify your answer. 
+    \item Where are the point(s) of inflection on $y = g(x)$? Justify your answer.
+\end{enumerate} \vspace{11pt}
+
+For problems 5-10, the curve given in the problem is $f'(x)$. Show the sign patterns of $f'(x)$ and $f''(x)$, and then find: \par
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item The critical values for the relative maximum(s) and minimum(s) of $f(x)$.
+    \item The $x$-coordinate(s) of the POI(s) of $f(x)$.
+    \item The interval(s) of increasing of $f(x)$.
+    \item The intervals where $f(x)$ is concave down.
+    \item A possible curve for $f(x)$ with $y$-intercept $(0, \, 0)$.
+\end{enumerate} 
+Make sure to pay attention to the coordinate scale! \\
+
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-3.5, xmax=3.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-3,-2,...,3}, 
+                ytick={-4,-3,...,4}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=7.5cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                clip=false,
+            ]
+            \node[anchor=north west] at (axis description cs:-0.15,1) {5.};
+            \addplot [
+                domain=-2.57:2.57, 
+                samples=100, 
+                color=black,
+                ultra thick,
+            ]
+            {(-2 / 3) * (x + 2) * x * (x - 2)}; 
+        \end{axis}
+    \end{tikzpicture} $\hfill$
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-3.5, xmax=3.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-3,-2,...,3}, 
+                ytick={-4,-3,...,4}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=7.5cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                clip=false,
+            ]
+            \node[anchor=north west] at (axis description cs:-0.15,1) {6.};
+            \addplot [
+                domain=-1.18:2.64, 
+                samples=100, 
+                color=black,
+                ultra thick,
+            ]
+            {x^2 * (x - 2)}; 
+        \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-3.5, xmax=3.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-3,-2,...,3}, 
+                ytick={-4,-3,...,4}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=7.5cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                clip=false,
+            ]
+            \node[anchor=north west] at (axis description cs:-0.15,1) {7.};
+            \addplot [
+                domain=-2.21:2.21, 
+                samples=100, 
+                color=black,
+                ultra thick,
+            ]
+            {(x + 2) * x^2 * (x - 2)}; 
+        \end{axis}
+    \end{tikzpicture} $\hfill$
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-3.5, xmax=3.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-3,-2,...,3}, 
+                ytick={-4,-3,...,4}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=7.5cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                clip=false,
+            ]
+            \node[anchor=north west] at (axis description cs:-0.15,1) {8.};
+            \addplot [
+                domain=-2.27:2.27, 
+                samples=100, 
+                color=black,
+                ultra thick,
+            ]
+            {(-1 / 3) * (x + 2) * x^3 * (x - 2)}; 
+        \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-3.5, xmax=3.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-3,-2,...,3}, 
+                ytick={-4,-3,...,4}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=7.5cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                clip=false,
+            ]
+            \node[anchor=north west] at (axis description cs:-0.15,1) {9.};
+            \addplot [
+                domain=-2.31:2.95, 
+                samples=100, 
+                color=black,
+                ultra thick,
+            ]
+            {(-1 / 3) * (x + 2) * x * (x - 2)^2}; 
+        \end{axis}
+    \end{tikzpicture} $\hfill$
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-3.5, xmax=3.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-3,-2,...,3}, 
+                ytick={-4,-3,...,4}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                width=7.5cm,
+                height=7.5cm,
+                axis line style={-stealth},
+                clip=false,
+            ]
+            \node[anchor=north west] at (axis description cs:-0.15,1) {10.};
+            \addplot [
+                domain=-2.91:2.91, 
+                samples=100, 
+                color=black,
+                ultra thick,
+            ]
+            {(x + 2) * (x - 2)}; 
+        \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+
+\onequestion{11. The graph of $f'(x)$ on $x \in [-7, \, 7]$ is shown below.} 
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        % Generated with Google Gemini
+        \begin{axis}[
+            axis lines = middle,
+            xlabel = $x$,
+            ylabel = {$y$},
+            xmin=-8.5, xmax=8.5,
+            ymin=-3.5, ymax=3.5, 
+            xtick={-8,-7,...,8}, 
+            ytick={-5,-4,...,5}, 
+            grid = both,
+            grid style = {dashed, gray!70},
+            width=15cm,
+            height=7.5cm,
+            axis line style={-stealth},
+            ]   
+            \addplot [
+                domain=-7:-4, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-x - 4};
+            \addplot [
+                domain=-4:0, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-(4 - (x + 2)^2)^(1/2)};
+            \addplot [
+                domain=0:4, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {(4 - (x - 2)^2)^(1/2)};
+            \addplot [
+                domain=4:7, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {(2 / 3) * x - 8 / 3};   
+            \addplot[
+                only marks,
+                mark=*,
+                mark size=2pt,
+                color=black
+            ]
+            coordinates {
+                (-7, 3) (7, 2)
+            };                  
+        \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Where are the relative maximum(s) and minimum(s) of $y = f(x)$? Justify your answer.
+    \item Where are the point(s) of inflection of $y = f(x)$? Justify your answer.
+    \item Find the equation of the line tangent to $y = f(x)$ at $x = 2$ if $f(2) = -3$.
+    \item On what interval(s) is $f(x)$ increasing and concave up? Explain your reasoning.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{12. The graph of $f'(x)$ on $x \in [-7, \, 7]$ is shown below.} 
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        % Generated with Google Gemini
+        \begin{axis}[
+            axis lines = middle,
+            xlabel = $x$,
+            ylabel = {$y$},
+            xmin=-8.5, xmax=8.5,
+            ymin=-3.5, ymax=3.5, 
+            xtick={-8,-7,...,8}, 
+            ytick={-5,-4,...,5}, 
+            grid = both,
+            grid style = {dashed, gray!70},
+            width=15cm,
+            height=7.5cm,
+            axis line style={-stealth},
+            ]   
+            \addplot [
+                domain=-7:-2, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-(6.25 - (x + 4.5)^2)^(1/2)};
+            \addplot [
+                domain=-2:-1, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {3 * x + 6};
+            \addplot [
+                domain=-1:0, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-3 * x};
+            \addplot [
+                domain=0:3, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-(2.25 - (x - 1.5)^2)^(1/2)};  
+            \addplot [
+                domain=3:7, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {0.5 * x - 1.5};  
+            \addplot[
+                only marks,
+                mark=*,
+                mark size=2pt,
+                color=black
+            ]
+            coordinates {
+                (-7, 0) (7, 2)
+            };                  
+        \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Where are the relative maximum(s) and minimum(s) of $y = f(x)$? Justify your answer.
+    \item Where are the point(s) of inflection of $y = f(x)$? Justify your answer.
+    \item Find the equation of the line tangent to $y = f(x)$ at $x = -1$ if $f(-1) = 1$.
+    \item On what interval(s) is $f(x)$ increasing and concave down? Explain your reasoning.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{13. The graph of $f'(x)$ on $x \in [-7, \, 7]$ is shown below.} 
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        % Generated with Google Gemini
+        \begin{axis}[
+            axis lines = middle,
+            xlabel = $x$,
+            ylabel = {$y$},
+            xmin=-8.5, xmax=8.5,
+            ymin=-2.5, ymax=4.5, 
+            xtick={-8,-7,...,8}, 
+            ytick={-5,-4,...,5}, 
+            grid = both,
+            grid style = {dashed, gray!70},
+            width=15cm,
+            height=7.5cm,
+            axis line style={-stealth},
+            ]   
+            \addplot [
+                domain=-7:-4, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-(4 / 3) * x - (16 / 3)};
+            \addplot [
+                domain=-4:4, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-(1 / 8) * (x - 4) * (x + 4)};
+            \addplot [
+                domain=4:7, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-(2.25 - (x - 5.5)^2)^(1/2)};   
+            \addplot[
+                only marks,
+                mark=*,
+                mark size=2pt,
+                color=black
+            ]
+            coordinates {
+                (-7, 4) (7, 0)
+            };                  
+        \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Where are the relative maximum(s) and minimum(s) of $y = f(x)$? Justify your answer.
+    \item Where are the point(s) of inflection of $y = f(x)$? Justify your answer.
+    \item Find the equation of the line tangent to $y = f(x)$ at $x = 0$ if $f(0) = -5$.
+    \item On what interval(s) is $f(x)$ decreasing and concave up? Explain your reasoning.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{14. The graph of $f'(x)$ on $x \in [0, \, 8]$ is shown below.} 
+\begin{center}
+    \begin{tikzpicture}[baseline=(current bounding box.center)]
+        % Generated with Google Gemini
+        \begin{axis}[
+            axis lines = middle,
+            xlabel = $x$,
+            ylabel = {$y$},
+            xmin=-0.5, xmax=9.5,
+            ymin=-2.5, ymax=3.5, 
+            xtick={0,1,...,9}, 
+            ytick={-2,-1,...,3}, 
+            grid = both,
+            grid style = {dashed, gray!70},
+            width=15cm,
+            height=7.5cm,
+            axis line style={-stealth},
+            ]   
+            \addplot [
+                domain=0:2, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {2};
+             \addplot [
+                domain=2:6, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {-2 * cos((pi / 2) * deg(x))};
+             \addplot [
+                domain=6:8, 
+                samples=100, 
+                    color=black,
+                    very thick,
+            ]
+            {2};
+            \addplot[
+                only marks,
+                mark=*,
+                mark size=2pt,
+                color=black
+            ]
+            coordinates {
+                (0, 2) (8, 2)
+            };                  
+        \end{axis}
+    \end{tikzpicture}
+\end{center} \vspace{11pt}
+\begin{enumerate}[label=\hspace{11pt}(\alph*), align=left, leftmargin=*, labelsep=0.25em]
+    \item Where are the relative maximum(s) and minimum(s) of $y = f(x)$? Justify your answer.
+    \item Where are the point(s) of inflection of $y = f(x)$? Justify your answer.
+    \item Find the equation of the line tangent to $y = f(x)$ at $x = 0$ if $f(0) = 0$.
+    \item On what interval(s) is $f(x)$ decreasing and concave up? Explain your reasoning.
+\end{enumerate} \vspace{11pt}
+
+\onequestion{15. \href{https://secure-media.collegeboard.org/secure/ap/pdf/calculus-bc/ap-2003-calculus-bc-free-response-questions.pdf\#page=5}{{\text{\textcolor{blue}{2003 AP Calculus BC \#4}}}}} \\[11pt]
+\onequestion{16. \href{https://secure-media.collegeboard.org/apc/calculus_ab_00.pdf\#page=4}{{\text{\textcolor{blue}{2000 AP Calculus AB \#3}}}}} \\[11pt]
+
+\newpage
+
+\textbf{\large{4.6 Multiple Choice Homework}} \par 
+
+\begin{questions}
+    \question Suppose the derivative of $f$ has the graph shown below. Which of the following could be the graph of $f$?
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+        % Generated with Google Gemini
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,-1,...,2}, 
+                ytick={-2,-1,...,2}, 
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:3, 
+                    samples=100, 
+                        color=blue,
+                        ultra thick,
+                ]
+                {x^2 - 1};           
+            \end{axis}
+        \end{tikzpicture}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x};           
+            \end{axis}
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-x};           
+            \end{axis}
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-x^2 + 1};           
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.19\textwidth] \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-(x + 1.732) * (x - 1.732) * x};           
+            \end{axis}
+        \end{tikzpicture}
+        \makebox[0.16\textwidth] \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {(x + 1.732) * (x - 1.732) * x};           
+            \end{axis}
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question $g(x)$ is a twice-differentiable function whose second derivative $g''(x)$ is graphed below. 
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                    axis lines = middle,
+                    xlabel = $x$,
+                    ylabel = {$y$},
+                    xmin=-2.5, xmax=2.5,
+                    ymin=-2.5, ymax=2.5, 
+                    xtick={-2,0,...,2}, 
+                    ytick={-2,0,...,2}, 
+                    minor tick num = 1,
+                    grid = both,
+                    width = 7cm,
+                    height = 7cm,
+                    grid style = {dashed, gray!70},
+                    axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-4:4, 
+                    samples=100, 
+                        color=blue,
+                        ultra thick,
+                ]
+                {2 * x - 2};           
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    Which of the following could be the graph of $g(x)$? \\
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-4:4, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {(x - 1)^2 - 1};           
+            \end{axis}
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=4.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-4,0,...,4}, 
+                ytick={-4,0,...,4}, 
+                minor tick num = 3,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-4:4, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-(x - 1)^2 + 1};           
+            \end{axis}
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=4.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-4,0,...,4}, 
+                ytick={-4,0,...,4}, 
+                minor tick num = 3,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-4:4, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {(1 / 3) * x^3 - x^2 + 1};           
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.19\textwidth] \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=4.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-4,0,...,4}, 
+                ytick={-4,0,...,4}, 
+                minor tick num = 3,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-4:4, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-(1 / 3) * x^3 + x^2 + 2};           
+            \end{axis}
+        \end{tikzpicture}
+        \makebox[0.16\textwidth] \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 5cm,
+                height = 5cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-4:4, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x^3 + 2};           
+            \end{axis}
+        \end{tikzpicture}
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question Which of the following pairs of graphs could represent the graph of $f$ and its derivative $f'$? \begin{align*}
+        \def\arraystretch{1.4}
+        \begin{array}{ccc}
+            & f & f' \\
+            \text{I.} & \parbox{0.43\textwidth}{\centering
+            \vspace{11pt}
+            \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.80]
+                \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-2:2, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x^3 - 3 * x};           
+            \end{axis}
+            \end{tikzpicture}
+            \vspace{11pt}} & \parbox{0.43\textwidth}{\centering
+            \vspace{11pt}
+            \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.80]
+                \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.5, xmax=2.5,
+                ymin=-2.5, ymax=2.5, 
+                xtick={-2,0,...,2}, 
+                ytick={-2,0,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-2:2, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {1 - x^2};            
+            \end{axis}
+            \end{tikzpicture}
+            \vspace{11pt}} \\
+            \text{II.} & \parbox{0.43\textwidth}{\centering
+            \vspace{11pt}
+            \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.80]
+                \begin{axis}[
+                        axis lines = middle,
+                        xlabel = $x$,
+                        ylabel = {$y$},
+                        xmin = {-pi/4},   xmax = {5*pi/4},
+                        ymin = -1.5,       ymax = 1.5,
+                        xtick = {0, pi/4, pi/2, 3 * pi/4, pi},
+                        xticklabels = {$0$, ,$\frac{\pi}{2}$, ,$\pi$},
+                        ytick = {-1, 0, 1},
+                        minor tick num = 1,
+                        grid = both,
+                        grid style = {dashed, gray!70},
+                        axis line style = {-stealth},
+                        ]
+                        \addplot [
+                            domain = 0:pi,
+                            samples = 100,
+                            color = black,
+                            very thick,
+                        ]
+                        {sin(deg(x))};
+                    \end{axis}
+            \end{tikzpicture}
+            \vspace{11pt}} & \parbox{0.43\textwidth}{\centering
+            \vspace{11pt}
+            \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.80]
+                \begin{axis}[
+                    axis lines = middle,
+                    xlabel = $x$,
+                    ylabel = {$y$},
+                    xmin = {-pi/4},   xmax = {5*pi/4},
+                    ymin = -1.5,       ymax = 1.5,
+                    xtick = {0, pi/4, pi/2, 3 * pi/4, pi},
+                    xticklabels = {$0$, ,$\frac{\pi}{2}$, ,$\pi$},
+                    ytick = {-1, 0, 1},
+                    minor tick num = 1,
+                    grid = both,
+                    grid style = {dashed, gray!70},
+                    axis line style = {-stealth},
+                    ]
+                    \addplot [
+                        domain = 0:pi,
+                        samples = 100,
+                        color = black,
+                        very thick,
+                    ]
+                    {cos(deg(x))};
+                \end{axis}
+            \end{tikzpicture}
+            \vspace{11pt}} \\
+            \text{III.} & \parbox{0.43\textwidth}{\centering
+            \vspace{11pt}
+            \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.80]
+                \begin{axis}[
+                    axis lines = middle,
+                    xlabel = $x$,
+                    ylabel = {$y$},
+                    xmin=-4.5, xmax=4.5,
+                    ymin=-2.5, ymax=2.5, 
+                    xtick={-4,-3,...,4}, 
+                    ytick={-2,-1,...,2}, 
+                    minor ytick={-1.5,-1,...,1.5},
+                    grid = both,
+                    grid style = {dashed, gray!70},
+                    axis line style={-stealth},
+                    ]   
+                    \addplot [
+                        domain=-4:4, 
+                        samples=100, 
+                            color=black,
+                            very thick,
+                    ]
+                    {(2 * x)/(x^2 + 1)};           
+                \end{axis}
+            \end{tikzpicture}
+            \vspace{11pt}} & \parbox{0.43\textwidth}{\centering
+            \vspace{11pt}
+            \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.80]
+                \begin{axis}[
+                    axis lines = middle,
+                    xlabel = $x$,
+                    ylabel = {$y$},
+                    xmin=-4.5, xmax=4.5,
+                    ymin=-2.5, ymax=2.5, 
+                    xtick={-4,-3,...,4}, 
+                    ytick={-2,-1,...,2}, 
+                    minor ytick={-1.5,-1,...,1.5},
+                    grid = both,
+                    grid style = {dashed, gray!70},
+                    axis line style={-stealth},
+                    ]   
+                    \addplot [
+                        domain=-4:4, 
+                        samples=100, 
+                            color=black,
+                            very thick,
+                    ]
+                    {(2 - 2 * x^2)/(x^2 + 1)^2};                
+                \end{axis}
+            \end{tikzpicture}
+            \vspace{11pt}}
+        \end{array}
+    \end{align*}
+    
+    \begin{oneparchoices}
+        \choice I only 
+        \choice II only
+        \choice III only 
+        \choice I and II only
+        \choice II and III only
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question This is the graph of $f'(x)$:
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=2.5,
+                ymin=-4.5, ymax=2.5, 
+                xtick={-4,-2,...,2}, 
+                ytick={-4,-2,...,2},
+                minor tick num = 1, 
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-5:3, 
+                    samples=100, 
+                    color=blue,
+                    ultra thick,
+                ]
+                {((x + 2) * x)/(x + 1)^2}; 
+                \draw[dashed, very thick] (-1,-5) -- (-1,3);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    Which of the following is the graph of $f(x)$? Make sure to pay attention to the coordinate scale. \\
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=2.5,
+                ymin=-8.5, ymax=4.5, 
+                xtick={-4,-2,...,2}, 
+                ytick={-8,-6,...,4}, 
+                minor xtick={-4,-3,...,2},
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-6:-1.01, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x + 1/(x + 1) - 1};       
+                \addplot [
+                    domain=-0.99:6, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x + 1/(x + 1) - 1};     
+                \draw[dashed, very thick] (-1,-9) -- (-1,5);
+            \end{axis}
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=2.5,
+                ymin=-2.5, ymax=4.5, 
+                xtick={-4,-2,...,2}, 
+                ytick={-2,0,...,4}, 
+                minor tick num = 1,
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-4.5:-1.05, 
+                    samples=100, 
+                    color=black,
+                    very thick,
+                ]
+                {1/(x + 1)^2 - 1};
+
+                \addplot [
+                    domain=-0.95:2.5, 
+                    samples=100, 
+                    color=black,
+                    very thick,
+                ]
+                {1/(x + 1)^2 - 1};     
+                \draw[dashed, very thick] (-1,-3) -- (-1,5);
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=2.5,
+                ymin=-4.5, ymax=8.5, 
+                xtick={-4,-2,...,2}, 
+                ytick={--4,-2,...,8}, 
+                minor xtick={-4,-3,...,2},
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-6:-1.01, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-(x + 1/(x + 1) - 1)};       
+                \addplot [
+                    domain=-0.99:6, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-(x + 1/(x + 1) - 1)};     
+                \draw[dashed, very thick] (-1,-4) -- (-1,9);
+               \end{axis}
+        \end{tikzpicture} 
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=2.5,
+                ymin=-0.5, ymax=6.5, 
+                xtick={-4,-2,...,2}, 
+                ytick={0,2,...,6}, 
+                minor tick num = 1,
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-6:-1.01, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x^2/(abs(x + 1))};       
+                \addplot [
+                    domain=-0.99:6, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x^2/(abs(x + 1))};     
+                \draw[dashed, very thick] (-1,-1) -- (-1,7);
+            \end{axis}
+        \end{tikzpicture} 
+    \end{oneparchoices} \par \horizontalline 
+
+    \newpage
+ 
+    \question The graph of $f(x)$ is shown below. Which graph, among the choice, is most likely to be $f'(x)$. 
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.75, xmax=2.75,
+                ymin=-1.75, ymax=3.75, 
+                xtick={-2,-1,...,2}, 
+                ytick={-1,0,...,3},
+                minor tick num = 1, 
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:-1.01, 
+                    samples=100, 
+                    color=blue,
+                    ultra thick,
+                ]
+                {x^2/(x^2 - 1)}; 
+                \addplot [
+                    domain=-0.99:0.99, 
+                    samples=100, 
+                    color=blue,
+                    ultra thick,
+                ]
+                {x^2/(x^2 - 1)};
+                \addplot [
+                    domain=1.01:3, 
+                    samples=100, 
+                    color=blue,
+                    ultra thick,
+                ]
+                {x^2/(x^2 - 1)};
+                \draw[dashed, very thick] (-1,-2) -- (-1,4);
+                \draw[dashed, very thick] (1,-2) -- (1,4);
+            \end{axis} 
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{oneparchoices}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.75, xmax=2.75,
+                ymin=-2.75, ymax=2.75, 
+                restrict y to domain=-3:3,
+                xtick={-2,-1,...,2}, 
+                ytick={-2,-1,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:-1.01, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {2 * x/(x^2 - 1)^2};       
+                \addplot [
+                    domain=-0.99:0.99, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {2 * x/(x^2 - 1)^2};
+                \addplot [
+                    domain=1.01:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {2 * x/(x^2 - 1)^2};      
+                \draw[dashed, very thick] (-1,-3) -- (-1,3);
+                \draw[dashed, very thick] (1,-3) -- (1,3);
+            \end{axis}
+        \end{tikzpicture}
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.75, xmax=2.75,
+                ymin=-2.75, ymax=2.75, 
+                restrict y to domain=-3:3,
+                xtick={-2,-1,...,2}, 
+                ytick={-2,-1,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:-1.01, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-2 * x/(x^2 - 1)^2};       
+                \addplot [
+                    domain=-0.99:0.99, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-2 * x/(x^2 - 1)^2};
+                \addplot [
+                    domain=1.01:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-2 * x/(x^2 - 1)^2};      
+                \draw[dashed, very thick] (-1,-3) -- (-1,3);
+                \draw[dashed, very thick] (1,-3) -- (1,3);
+            \end{axis}
+        \end{tikzpicture} \\[11pt]
+        \makebox[0.035\textwidth] \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.75, xmax=2.75,
+                ymin=-2.75, ymax=2.75, 
+                restrict y to domain=-3:3,
+                xtick={-2,-1,...,2}, 
+                ytick={-2,-1,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:-1.01, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-x^2/(x^2 - 1)};       
+                \addplot [
+                    domain=-0.99:0.99, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-x^2/(x^2 - 1)};
+                \addplot [
+                    domain=1.01:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {-x^2/(x^2 - 1)};      
+                \draw[dashed, very thick] (-1,-3) -- (-1,3);
+                \draw[dashed, very thick] (1,-3) -- (1,3);
+            \end{axis}
+        \end{tikzpicture} 
+        \choice \begin{tikzpicture}[baseline=(current bounding box.center)]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-2.75, xmax=2.75,
+                ymin=-2.75, ymax=2.75, 
+                restrict y to domain=-3:3,
+                xtick={-2,-1,...,2}, 
+                ytick={-2,-1,...,2}, 
+                minor tick num = 1,
+                grid = both,
+                width = 7cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \addplot [
+                    domain=-3:-1.01, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x^2/abs(x^2 - 1)};       
+                \addplot [
+                    domain=-0.99:0.99, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x^2/abs(x^2 - 1)};
+                \addplot [
+                    domain=1.01:3, 
+                    samples=100, 
+                        color=black,
+                        very thick,
+                ]
+                {x^2/abs(x^2 - 1)};      
+                \draw[dashed, very thick] (-1,-3) -- (-1,3);
+                \draw[dashed, very thick] (1,-3) -- (1,3);
+            \end{axis}
+        \end{tikzpicture} 
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question The figure shows the graph of $f'$, the derivative of a function $f$. The domain of $f'$ is the interval $-4 \leq x \leq 4$. Which of the following are true about the graph of $f$? 
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.7]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=4.5,
+                ymin=-3.5, ymax=3.5, 
+                xtick={-4,-3,...,4}, 
+                ytick={-3,-2,...,3}, 
+                grid = both,
+                width = 9cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \draw[blue, ultra thick, tension=1.2] (axis cs:-4.0, -1.0) 
+                    to[out=55, in=180, looseness=1] (axis cs:-3.0, 0.0)
+                    to[out=0, in=180] (axis cs:-1.0, -1.0)
+                    to[out=0, in=225] (axis cs:1.0, 0.0)
+                    to[out=50, in=180] (axis cs:2.0, 1.0)
+                    to[out=0, in=115] (axis cs:3.0, 0.0)
+                    to[out=-65, in=105] (axis cs:4.0, -3.0);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center} 
+    \begin{center}
+        \begin{tabular}{l}
+            I. At the points where $x = -3$ and $x = 2$ there are horizontal tangents. \\[11pt]
+            II. At the point where $x = 1$ there is a relative minimum point. \\[11pt]
+            III. At the point where $x = -3$ there is an inflection point.
+        \end{tabular}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice II only
+        \choice III only
+        \choice II and III only
+        \choice I, II, and III
+        \choice None
+    \end{oneparchoices} \par \horizontalline
+
+    \question The figure shows the graph of $f'$, the derivative of a function $f$. The domain of $f'$ is the interval $-3 \leq x \leq 3$. Which of the following are true about the graph of $f$? 
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.7]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-3.5, xmax=3.5,
+                ymin=-4.5, ymax=4.5, 
+                xtick={-3,-2,...,3}, 
+                ytick={-4,-3,...,4}, 
+                grid = both,
+                width = 7cm,
+                height = 9cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \draw[blue, ultra thick, tension=1.2] (axis cs:-3.0, 4.0) 
+                    to[out=-35, in=90] (axis cs:-2.0, 3.0)
+                    to[out=270, in=90] (axis cs:-1.0, 0.0)
+                    to[out=270, in=180] (axis cs:0.0, -1.0)
+                    to[out=0, in=245] (axis cs:1.0, 0.0)
+                    to[out=65, in=225] (axis cs:2.0, 1.0)
+                    to[out=45, in=215] (axis cs:3.0, 3.0);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center} 
+    \begin{center}
+        \begin{tabular}{l}
+            I. $f$ is increasing on the interval $(-2, \, 1)$. \\[11pt]
+            II. $f$ has an inflection point at $x = 0$. \\[11pt]
+            III. $f$ is concave up on the interval $(-1, \, 0)$.
+        \end{tabular}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice I only
+        \choice II only
+        \choice III only
+        \choice I and II only
+        \choice II and III only
+    \end{oneparchoices} \par \horizontalline
+
+    \newpage
+
+    \question The figure shows the graph of $f'$, the derivative of a function $f$. The domain of $f'$ is the interval $-3 \leq x \leq 3$. Which of the following are true about the graph of $f$? 
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.7]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=4.5,
+                ymin=-3.5, ymax=3.5, 
+                xtick={-4,-3,...,4}, 
+                ytick={-3,-2,...,3}, 
+                grid = both,
+                width = 9cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \draw[blue, ultra thick, tension=1.2] (axis cs:-4.0, 2.0) 
+                    to[out=-65 in=140, looseness=1] (axis cs:-3.0, 0.0)
+                    to[out=-40, in=210] (axis cs:-1.0, 0.0)
+                    to[out=35, in=180] (axis cs:1.0, 2.0)
+                    to[out=0, in=120] (axis cs:3.0, 0.0)
+                    to[out=300, in=120] (axis cs:4.0, -2.0);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    \begin{center}
+        \begin{tabular}{l}
+            I. $f$ is increasing on the interval $(-2, \, 1)$. \\[11pt]
+            II. $f$ is continuous at $x = 0$. \\[11pt]
+            III. $f$ has an inflection point at $x = -2$.
+        \end{tabular}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice I only
+        \choice II only
+        \choice III only
+        \choice II and III only
+        \choice I, II, and III
+    \end{oneparchoices} \par \horizontalline 
+
+    \question The graph of the second derivative of a function $f$ is shown below. Which of the following are true about the graph of $f$? 
+    \begin{center}
+        \begin{tikzpicture}[baseline=(current bounding box.center), scale=0.7]
+            \begin{axis}[
+                axis lines = middle,
+                xlabel = $x$,
+                ylabel = {$y$},
+                xmin=-4.5, xmax=4.5,
+                ymin=-3.5, ymax=3.5, 
+                xtick={-4,-3,...,4}, 
+                ytick={-3,-2,...,3}, 
+                grid = both,
+                width = 9cm,
+                height = 7cm,
+                grid style = {dashed, gray!70},
+                axis line style={-stealth},
+                ]   
+                \draw[blue, ultra thick, tension=1.2] (axis cs:-4.0, 2.0) 
+                    to[out=60, in=180, looseness=0.8] (axis cs:-3.0, 2.5)
+                    to[out=0, in=115, looseness=0.8] (axis cs:-1.0, 0.0)
+                    to[out=-65, in=180, looseness=0.8] (axis cs:1.0, -2.0)
+                    to[out=0, in=245, looseness=0.8] (axis cs:3.0, 0.0)
+                    to[out=65, in=255] (axis cs:4.0, 3.0);
+                \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    \begin{center}
+        \begin{tabular}{l}
+            I. $f$ has an inflection point at $x = -1$. \\[11pt]
+            II. $f$ is concave down on the interval $(-1, \, 3)$ \\[11pt]
+            III. $f'$ is increasing at $x = 1$.
+        \end{tabular}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice I only
+        \choice II only
+        \choice III only
+        \choice I and II only
+        \choice I, II, and III
+    \end{oneparchoices} \par \horizontalline 
+
+    \newpage
+
+    \question The derivative of the function $g$ is $g'(x) = \cos(\sin (x))$. At the point where $x = 0$, the graph of $g$: \par 
+    \begin{center}
+        \begin{tabular}{l}
+            I. is increasing. \\[11pt]
+            II. is concave down. \\[11pt]
+            III. attains a relative maximum point. 
+        \end{tabular}
+    \end{center} \vspace{11pt}
+
+    \begin{oneparchoices}
+        \choice I only
+        \choice II only
+        \choice III only
+        \choice I and III only
+        \choice I, II, and III
+    \end{oneparchoices} \par \horizontalline
+\end{questions}   
